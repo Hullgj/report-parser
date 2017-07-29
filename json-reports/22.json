@@ -1,0 +1,2747 @@
+{
+    "info": {
+        "added": 1501018725.865106, 
+        "started": 1501018726.283158, 
+        "duration": 154, 
+        "ended": 1501018880.619915, 
+        "owner": "", 
+        "score": 0.8, 
+        "id": 22, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": "2bd01ede5c5258d5fce2e38bc58348a62c11ce33", 
+        "package": "reboot", 
+        "route": "none", 
+        "custom": "21", 
+        "machine": {
+            "status": "stopped", 
+            "name": "cuckoo1", 
+            "label": "cuckoo1", 
+            "manager": "VirtualBox", 
+            "started_on": "2017-07-25 21:38:46", 
+            "shutdown_on": "2017-07-25 21:41:20"
+        }, 
+        "platform": "", 
+        "version": "2.0.4a3", 
+        "options": ""
+    }, 
+    "signatures": [
+        {
+            "markcount": 3, 
+            "families": [], 
+            "description": "Performs some HTTP requests", 
+            "severity": 2, 
+            "marks": [
+                {
+                    "category": "request", 
+                    "ioc": "GET http://www.msftncsi.com/ncsi.txt", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "request", 
+                    "ioc": "GET http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "request", 
+                    "ioc": "GET https://clients2.google.com/service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "references": [], 
+            "name": "network_http"
+        }, 
+        {
+            "markcount": 2, 
+            "families": [], 
+            "description": "The binary likely contains encrypted or compressed data.", 
+            "severity": 2, 
+            "marks": [
+                {
+                    "entropy": 7.854124193008595, 
+                    "section": {
+                        "size_of_data": "0x00009000", 
+                        "virtual_address": "0x0000f000", 
+                        "entropy": 7.854124193008595, 
+                        "name": ".rsrc", 
+                        "virtual_size": "0x00008ef0"
+                    }, 
+                    "type": "generic", 
+                    "description": "A section with a high entropy has been found"
+                }, 
+                {
+                    "entropy": 0.4864864864864865, 
+                    "type": "generic", 
+                    "description": "Overall entropy of this PE file is high"
+                }
+            ], 
+            "references": [
+                "http://www.forensickb.com/2013/03/file-entropy-explained.html", 
+                "http://virii.es/U/Using%20Entropy%20Analysis%20to%20Find%20Encrypted%20and%20Packed%20Malware.pdf"
+            ], 
+            "name": "packer_entropy"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "yara": [
+                {
+                    "meta": {
+                        "description": "Possibly employs anti-virtualization techniques", 
+                        "author": "nex"
+                    }, 
+                    "name": "vmdetect", 
+                    "offsets": {
+                        "virtualbox6": [
+                            [
+                                29546, 
+                                10
+                            ], 
+                            [
+                                29804, 
+                                10
+                            ]
+                        ], 
+                        "virtualbox5": [
+                            [
+                                29422, 
+                                9
+                            ], 
+                            [
+                                29760, 
+                                9
+                            ]
+                        ], 
+                        "virtualbox4": [
+                            [
+                                29462, 
+                                8
+                            ], 
+                            [
+                                29716, 
+                                8
+                            ]
+                        ], 
+                        "virtualbox3": [
+                            [
+                                26784, 
+                                12
+                            ], 
+                            [
+                                26813, 
+                                12
+                            ], 
+                            [
+                                26953, 
+                                20
+                            ], 
+                            [
+                                30348, 
+                                20
+                            ], 
+                            [
+                                30539, 
+                                12
+                            ], 
+                            [
+                                30560, 
+                                12
+                            ], 
+                            [
+                                30606, 
+                                12
+                            ], 
+                            [
+                                30627, 
+                                12
+                            ], 
+                            [
+                                30736, 
+                                20
+                            ], 
+                            [
+                                30776, 
+                                20
+                            ]
+                        ], 
+                        "virtualbox2": [
+                            [
+                                26936, 
+                                19
+                            ], 
+                            [
+                                29502, 
+                                11
+                            ], 
+                            [
+                                30312, 
+                                19
+                            ], 
+                            [
+                                30669, 
+                                19
+                            ], 
+                            [
+                                30712, 
+                                19
+                            ]
+                        ], 
+                        "virtualbox1": [
+                            [
+                                29956, 
+                                18
+                            ]
+                        ], 
+                        "xen6": [
+                            [
+                                31924, 
+                                13
+                            ], 
+                            [
+                                31930, 
+                                13
+                            ]
+                        ], 
+                        "virtualbox_mac_1b": [
+                            [
+                                26674, 
+                                4
+                            ], 
+                            [
+                                26724, 
+                                4
+                            ]
+                        ], 
+                        "vmware_mac_4b": [
+                            [
+                                27698, 
+                                2
+                            ], 
+                            [
+                                27780, 
+                                2
+                            ]
+                        ], 
+                        "vmware_mac_3b": [
+                            [
+                                27688, 
+                                1
+                            ], 
+                            [
+                                27770, 
+                                1
+                            ]
+                        ], 
+                        "vmware24": [
+                            [
+                                27051, 
+                                5
+                            ], 
+                            [
+                                27071, 
+                                16
+                            ], 
+                            [
+                                27080, 
+                                7
+                            ], 
+                            [
+                                27276, 
+                                5
+                            ], 
+                            [
+                                27318, 
+                                5
+                            ], 
+                            [
+                                27331, 
+                                5
+                            ], 
+                            [
+                                27367, 
+                                5
+                            ], 
+                            [
+                                27380, 
+                                5
+                            ], 
+                            [
+                                27396, 
+                                5
+                            ], 
+                            [
+                                27516, 
+                                5
+                            ], 
+                            [
+                                27632, 
+                                5
+                            ], 
+                            [
+                                27804, 
+                                5
+                            ], 
+                            [
+                                27884, 
+                                5
+                            ], 
+                            [
+                                27936, 
+                                5
+                            ], 
+                            [
+                                31132, 
+                                6
+                            ], 
+                            [
+                                31401, 
+                                5
+                            ], 
+                            [
+                                31414, 
+                                5
+                            ], 
+                            [
+                                31523, 
+                                5
+                            ], 
+                            [
+                                31548, 
+                                7
+                            ], 
+                            [
+                                31911, 
+                                5
+                            ], 
+                            [
+                                31917, 
+                                5
+                            ]
+                        ], 
+                        "vmware_mac_1b": [
+                            [
+                                27678, 
+                                0
+                            ], 
+                            [
+                                27760, 
+                                0
+                            ]
+                        ], 
+                        "vmware20": [
+                            [
+                                27449, 
+                                17
+                            ], 
+                            [
+                                27504, 
+                                17
+                            ], 
+                            [
+                                31456, 
+                                17
+                            ]
+                        ], 
+                        "vmware5": [
+                            [
+                                27570, 
+                                15
+                            ], 
+                            [
+                                27621, 
+                                15
+                            ], 
+                            [
+                                31497, 
+                                15
+                            ]
+                        ], 
+                        "vmware4": [
+                            [
+                                27571, 
+                                14
+                            ], 
+                            [
+                                27622, 
+                                14
+                            ], 
+                            [
+                                31498, 
+                                14
+                            ]
+                        ], 
+                        "vmware_mac_2b": [
+                            [
+                                27710, 
+                                3
+                            ], 
+                            [
+                                27792, 
+                                3
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "MDA6MDU6Njk=", 
+                        "MDA6MEM6Mjk=", 
+                        "MDA6MUM6MTQ=", 
+                        "MDA6NTA6NTY=", 
+                        "MDg6MDA6Mjc=", 
+                        "Vk13YXJl", 
+                        "Vk1XQVJF", 
+                        "Vk1XYXJl", 
+                        "VkJveE1vdXNl", 
+                        "VkJveEd1ZXN0", 
+                        "VkJveFNG", 
+                        "VkJveFNlcnZpY2U=", 
+                        "VkJveFRyYXk=", 
+                        "WGVuVk1N", 
+                        "aGdmcy5zeXM=", 
+                        "bWhnZnMuc3lz", 
+                        "dm13YXJl", 
+                        "dm1tb3VzZQ==", 
+                        "dmJveGhvb2suZGxs", 
+                        "dmJveHNlcnZpY2U=", 
+                        "dmJveHRyYXk="
+                    ]
+                }
+            ], 
+            "sha1": "124f46228d1e220d88ae5e9a24d6e713039a64f9", 
+            "name": "pafish.exe", 
+            "type": "PE32 executable (console) Intel 80386 (stripped to external PDB), for MS Windows", 
+            "sha256": "2180f4a13add5e346e8cf6994876a9d2f5eac3fcb695db8569537010d24cd6d5", 
+            "urls": [], 
+            "crc32": "6F030481", 
+            "path": "/home/tempuser/.cuckoo/storage/binaries/2180f4a13add5e346e8cf6994876a9d2f5eac3fcb695db8569537010d24cd6d5", 
+            "ssdeep": null, 
+            "size": 76800, 
+            "sha512": "4b6d56b81dd3cd42bb53fc8d68b5c8ef0d6c85ebcc503cd042ae5c19e8965e6477f259a02bafb9c5c66956ae1023fc30e3be5bbcd526eacc8480f93d74c1ab7c", 
+            "md5": "9159edb64c4a21d8888d088bf2db23f3"
+        }
+    }, 
+    "network": {
+        "tls": [
+            {
+                "server_random": "5977acc5a5f813f7698e9fa19d3acd21428622f65ed00e2bc00ab33d52e604c0", 
+                "session_id": "1b1cee25e275ec3820da478f4baa1583c6d7efd4def5ca563022db0b665e6c52"
+            }
+        ], 
+        "udp": [
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.255", 
+                "offset": 60787, 
+                "time": 8.16824984550476, 
+                "dport": 137, 
+                "sport": 137
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.255", 
+                "offset": 69427, 
+                "time": 14.16721487045288, 
+                "dport": 138, 
+                "sport": 138
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 84559, 
+                "time": 8.717022895812988, 
+                "dport": 5355, 
+                "sport": 50215
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 84919, 
+                "time": 8.405303955078125, 
+                "dport": 5355, 
+                "sport": 54646
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 85279, 
+                "time": 8.098277807235718, 
+                "dport": 5355, 
+                "sport": 55337
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 85639, 
+                "time": 104.38447999954224, 
+                "dport": 5355, 
+                "sport": 56762
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 85959, 
+                "time": 6.390363931655884, 
+                "dport": 5355, 
+                "sport": 56928
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 86287, 
+                "time": 6.101132869720459, 
+                "dport": 5355, 
+                "sport": 57887
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 86647, 
+                "time": 110.33316493034363, 
+                "dport": 5355, 
+                "sport": 58149
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 86967, 
+                "time": 7.1734299659729, 
+                "dport": 5355, 
+                "sport": 59155
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 87287, 
+                "time": 8.097733974456787, 
+                "dport": 5355, 
+                "sport": 61297
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 87615, 
+                "time": 107.74866986274719, 
+                "dport": 5355, 
+                "sport": 65495
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "239.255.255.250", 
+                "offset": 87935, 
+                "time": 103.73079895973206, 
+                "dport": 1900, 
+                "sport": 57114
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "51.141.32.51", 
+                "offset": 90227, 
+                "time": 8.177027940750122, 
+                "dport": 123, 
+                "sport": 123
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 90651, 
+                "time": 6.544569969177246, 
+                "dport": 53, 
+                "sport": 50023
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 90890, 
+                "time": 7.251013994216919, 
+                "dport": 53, 
+                "sport": 50761
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 91090, 
+                "time": 7.813365936279297, 
+                "dport": 53, 
+                "sport": 53182
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 91390, 
+                "time": 7.497222900390625, 
+                "dport": 53, 
+                "sport": 54166
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 91680, 
+                "time": 106.99707293510437, 
+                "dport": 53, 
+                "sport": 54183
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 91910, 
+                "time": 8.129700899124146, 
+                "dport": 53, 
+                "sport": 54614
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 92149, 
+                "time": 112.8883068561554, 
+                "dport": 53, 
+                "sport": 54946
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 92499, 
+                "time": 7.325026035308838, 
+                "dport": 53, 
+                "sport": 55392
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 92711, 
+                "time": 12.169289827346802, 
+                "dport": 53, 
+                "sport": 56391
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 92911, 
+                "time": 12.224946975708008, 
+                "dport": 53, 
+                "sport": 57111
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 93123, 
+                "time": 9.683321952819824, 
+                "dport": 53, 
+                "sport": 63406
+            }
+        ], 
+        "dns_servers": [
+            "8.8.8.8"
+        ], 
+        "http": [
+            {
+                "count": 1, 
+                "body": "", 
+                "uri": "http://www.msftncsi.com/ncsi.txt", 
+                "user-agent": "Microsoft NCSI", 
+                "method": "GET", 
+                "host": "www.msftncsi.com", 
+                "version": "1.1", 
+                "path": "/ncsi.txt", 
+                "data": "GET /ncsi.txt HTTP/1.1\r\nConnection: Close\r\nUser-Agent: Microsoft NCSI\r\nHost: www.msftncsi.com\r\n\r\n", 
+                "port": 80
+            }, 
+            {
+                "count": 1, 
+                "body": "", 
+                "uri": "http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "user-agent": "Microsoft-CryptoAPI/6.1", 
+                "method": "GET", 
+                "host": "www.download.windowsupdate.com", 
+                "version": "1.1", 
+                "path": "/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "data": "GET /msdownload/update/v3/static/trustedr/en/authrootstl.cab HTTP/1.1\r\nCache-Control: max-age = 86402\r\nConnection: Keep-Alive\r\nAccept: */*\r\nUser-Agent: Microsoft-CryptoAPI/6.1\r\nHost: www.download.windowsupdate.com\r\n\r\n", 
+                "port": 80
+            }
+        ], 
+        "icmp": [], 
+        "smtp": [], 
+        "tcp": [
+            {
+                "src": "192.168.56.101", 
+                "dst": "13.107.4.50", 
+                "offset": 2868, 
+                "time": 112.95938396453857, 
+                "dport": 80, 
+                "sport": 49163
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "216.58.204.46", 
+                "offset": 76745, 
+                "time": 107.23042583465576, 
+                "dport": 443, 
+                "sport": 49162
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "92.123.64.19", 
+                "offset": 93596, 
+                "time": 7.565758943557739, 
+                "dport": 80, 
+                "sport": 49160
+            }
+        ], 
+        "smtp_ex": [], 
+        "mitm": [], 
+        "hosts": [
+            "13.107.4.50", 
+            "216.58.204.46", 
+            "51.141.32.51", 
+            "8.8.8.8", 
+            "92.123.64.19"
+        ], 
+        "pcap_sha256": "46282156eefcb2e505baa60b3f0470557df75dcc67326debcdd7732704fb0fa9", 
+        "dns": [
+            {
+                "type": "A", 
+                "request": "time.windows.com", 
+                "answers": [
+                    {
+                        "data": "51.141.32.51", 
+                        "type": "A"
+                    }, 
+                    {
+                        "data": "time.microsoft.akadns.net", 
+                        "type": "CNAME"
+                    }
+                ]
+            }, 
+            {
+                "type": "A", 
+                "request": "dns.msftncsi.com", 
+                "answers": [
+                    {
+                        "data": "131.107.255.255", 
+                        "type": "A"
+                    }
+                ]
+            }, 
+            {
+                "type": "A", 
+                "request": "www.msftncsi.com", 
+                "answers": [
+                    {
+                        "data": "a1961.g2.akamai.net", 
+                        "type": "CNAME"
+                    }, 
+                    {
+                        "data": "92.123.64.19", 
+                        "type": "A"
+                    }, 
+                    {
+                        "data": "www.msftncsi.com.edgesuite.net", 
+                        "type": "CNAME"
+                    }, 
+                    {
+                        "data": "92.123.64.67", 
+                        "type": "A"
+                    }
+                ]
+            }, 
+            {
+                "type": "A", 
+                "request": "clients2.google.com", 
+                "answers": [
+                    {
+                        "data": "clients.l.google.com", 
+                        "type": "CNAME"
+                    }, 
+                    {
+                        "data": "216.58.204.46", 
+                        "type": "A"
+                    }
+                ]
+            }, 
+            {
+                "type": "A", 
+                "request": "www.download.windowsupdate.com", 
+                "answers": [
+                    {
+                        "data": "2-01-3cf7-0009.cdx.cedexis.net", 
+                        "type": "CNAME"
+                    }, 
+                    {
+                        "data": "b1ns.au-msedge.net", 
+                        "type": "CNAME"
+                    }, 
+                    {
+                        "data": "b1ns.c-0001.c-msedge.net", 
+                        "type": "CNAME"
+                    }, 
+                    {
+                        "data": "c-0001.c-msedge.net", 
+                        "type": "CNAME"
+                    }, 
+                    {
+                        "data": "13.107.4.50", 
+                        "type": "A"
+                    }
+                ]
+            }, 
+            {
+                "type": "AAAA", 
+                "request": "dns.msftncsi.com", 
+                "answers": [
+                    {
+                        "data": "fd3e:4f5a:5b81::1", 
+                        "type": "AAAA"
+                    }
+                ]
+            }, 
+            {
+                "type": "A", 
+                "request": "teredo.ipv6.microsoft.com", 
+                "answers": [
+                    {
+                        "data": "157.56.106.189", 
+                        "type": "A"
+                    }, 
+                    {
+                        "data": "onpremwindows.ipv6.microsoft.com.akadns.net", 
+                        "type": "CNAME"
+                    }, 
+                    {
+                        "data": "onprembn12.ipv6.microsoft.com.akadns.net", 
+                        "type": "CNAME"
+                    }
+                ]
+            }
+        ], 
+        "http_ex": [
+            {
+                "status": 200, 
+                "src": "192.168.56.101", 
+                "resp": {
+                    "path": "/home/tempuser/.cuckoo/storage/analyses/22/network/33bf88d5b82df3723d5863c7d23445e345828904", 
+                    "sha1": "33bf88d5b82df3723d5863c7d23445e345828904", 
+                    "md5": "cd5a4d3fdd5bffc16bf959ef75cf37bc"
+                }, 
+                "sha1": "33bf88d5b82df3723d5863c7d23445e345828904", 
+                "protocol": "http", 
+                "dst": "92.123.64.19", 
+                "req": {
+                    "path": "/home/tempuser/.cuckoo/storage/analyses/22/network/da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                    "md5": "d41d8cd98f00b204e9800998ecf8427e"
+                }, 
+                "request": "GET /ncsi.txt HTTP/1.1\r\nConnection: Close\r\nUser-Agent: Microsoft NCSI\r\nHost: www.msftncsi.com", 
+                "uri": "/ncsi.txt", 
+                "response": "HTTP/1.1 200 OK\r\nContent-Length: 14\r\nDate: Tue, 25 Jul 2017 20:38:57 GMT\r\nContent-Type: text/plain\r\nCache-Control: max-age=30, must-revalidate\r\nConnection: close", 
+                "host": "www.msftncsi.com", 
+                "dport": 80, 
+                "path": "/home/tempuser/.cuckoo/storage/analyses/22/network/33bf88d5b82df3723d5863c7d23445e345828904", 
+                "sport": 49160, 
+                "method": "GET", 
+                "md5": "cd5a4d3fdd5bffc16bf959ef75cf37bc"
+            }, 
+            {
+                "status": 200, 
+                "src": "192.168.56.101", 
+                "resp": {
+                    "path": "/home/tempuser/.cuckoo/storage/analyses/22/network/e1b8114caa3a6b173c2e04e356a5065e7b2ca968", 
+                    "sha1": "e1b8114caa3a6b173c2e04e356a5065e7b2ca968", 
+                    "md5": "26763abb95381e4931c194e34023c33a"
+                }, 
+                "sha1": "e1b8114caa3a6b173c2e04e356a5065e7b2ca968", 
+                "protocol": "http", 
+                "dst": "13.107.4.50", 
+                "req": {
+                    "path": "/home/tempuser/.cuckoo/storage/analyses/22/network/da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                    "md5": "d41d8cd98f00b204e9800998ecf8427e"
+                }, 
+                "request": "GET /msdownload/update/v3/static/trustedr/en/authrootstl.cab HTTP/1.1\r\nCache-Control: max-age = 86402\r\nConnection: Keep-Alive\r\nAccept: */*\r\nUser-Agent: Microsoft-CryptoAPI/6.1\r\nHost: www.download.windowsupdate.com", 
+                "uri": "/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "response": "HTTP/1.1 200 OK\r\nContent-Length: 52967\r\nContent-Type: application/vnd.ms-cab-compressed\r\nAccept-Ranges: bytes\r\nETag: \"80f83df077e4d21:0\"\r\nServer: Microsoft-IIS/8.5\r\nX-Powered-By: ASP.NET\r\nX-CID: 7\r\nX-CCC: GB\r\nX-MSEdge-Ref: Ref A: 4255FC8A14EB4140904108931927C284 Ref B: LTSSCHEDGE0313 Ref C: 2017-07-25T20:17:42Z\r\nAge: 1381\r\nDate: Tue, 25 Jul 2017 20:17:42 GMT\r\nLast-Modified: Tue, 13 Jun 2017 19:04:53 GMT\r\nCache-Control: max-age=604800\r\nConnection: keep-alive", 
+                "host": "www.download.windowsupdate.com", 
+                "dport": 80, 
+                "path": "/home/tempuser/.cuckoo/storage/analyses/22/network/e1b8114caa3a6b173c2e04e356a5065e7b2ca968", 
+                "sport": 49163, 
+                "method": "GET", 
+                "md5": "26763abb95381e4931c194e34023c33a"
+            }
+        ], 
+        "domains": [
+            {
+                "ip": "131.107.255.255", 
+                "domain": "dns.msftncsi.com"
+            }, 
+            {
+                "ip": "94.245.121.251", 
+                "domain": "teredo.ipv6.microsoft.com"
+            }, 
+            {
+                "ip": "", 
+                "domain": "www.msftncsi.com"
+            }, 
+            {
+                "ip": "", 
+                "domain": "clients2.google.com"
+            }, 
+            {
+                "ip": "67.24.141.254", 
+                "domain": "www.download.windowsupdate.com"
+            }
+        ], 
+        "dead_hosts": [], 
+        "sorted_pcap_sha256": "ba703d040d690d8a20d9aa58868ba0cd1c3d14a6524cee592bf309a215da3ea0", 
+        "irc": [], 
+        "https_ex": [
+            {
+                "status": 204, 
+                "src": "192.168.56.101", 
+                "resp": {
+                    "path": "/home/tempuser/.cuckoo/storage/analyses/22/network/da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                    "md5": "d41d8cd98f00b204e9800998ecf8427e"
+                }, 
+                "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                "protocol": "https", 
+                "dst": "216.58.204.46", 
+                "req": {
+                    "path": "/home/tempuser/.cuckoo/storage/analyses/22/network/da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                    "md5": "d41d8cd98f00b204e9800998ecf8427e"
+                }, 
+                "request": "GET /service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201 HTTP/1.1\r\nCache-Control: no-cache\r\nConnection: Keep-Alive\r\nPragma: no-cache\r\nUser-Agent: Google Update/1.3.28.15;winhttp\r\nX-Old-UID: cnt=0\r\nX-Last-HR: 0x0\r\nX-Last-HTTP-Status-Code: 0\r\nX-Retry-Count: 0\r\nX-HTTP-Attempts: 1\r\nX-GoogleUpdate-Interactivity: fg\r\nHost: clients2.google.com", 
+                "uri": "/service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201", 
+                "response": "HTTP/1.1 204 No Content\r\nDate: Tue, 25 Jul 2017 20:40:43 GMT\r\nServer: GSE\r\nAlt-Svc: quic=\":443\"; ma=2592000; v=\"39,38,37,36,35\"", 
+                "host": "clients2.google.com", 
+                "dport": 443, 
+                "path": "/home/tempuser/.cuckoo/storage/analyses/22/network/da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                "sport": 49162, 
+                "method": "GET", 
+                "md5": "d41d8cd98f00b204e9800998ecf8427e"
+            }
+        ]
+    }, 
+    "static": {
+        "pdb_path": null, 
+        "pe_imports": [
+            {
+                "imports": [
+                    {
+                        "name": "GetUserNameA", 
+                        "address": "0x40c2a8"
+                    }, 
+                    {
+                        "name": "RegCloseKey", 
+                        "address": "0x40c2ac"
+                    }, 
+                    {
+                        "name": "RegOpenKeyExA", 
+                        "address": "0x40c2b0"
+                    }, 
+                    {
+                        "name": "RegQueryValueExA", 
+                        "address": "0x40c2b4"
+                    }
+                ], 
+                "dll": "ADVAPI32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "GetAdaptersAddresses", 
+                        "address": "0x40c2bc"
+                    }
+                ], 
+                "dll": "IPHLPAPI.DLL"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "CloseHandle", 
+                        "address": "0x40c2c4"
+                    }, 
+                    {
+                        "name": "CreateFileA", 
+                        "address": "0x40c2c8"
+                    }, 
+                    {
+                        "name": "CreateProcessA", 
+                        "address": "0x40c2cc"
+                    }, 
+                    {
+                        "name": "CreateToolhelp32Snapshot", 
+                        "address": "0x40c2d0"
+                    }, 
+                    {
+                        "name": "DeleteCriticalSection", 
+                        "address": "0x40c2d4"
+                    }, 
+                    {
+                        "name": "DeleteFileW", 
+                        "address": "0x40c2d8"
+                    }, 
+                    {
+                        "name": "DeviceIoControl", 
+                        "address": "0x40c2dc"
+                    }, 
+                    {
+                        "name": "EnterCriticalSection", 
+                        "address": "0x40c2e0"
+                    }, 
+                    {
+                        "name": "GetConsoleScreenBufferInfo", 
+                        "address": "0x40c2e4"
+                    }, 
+                    {
+                        "name": "GetCurrentProcess", 
+                        "address": "0x40c2e8"
+                    }, 
+                    {
+                        "name": "GetCurrentProcessId", 
+                        "address": "0x40c2ec"
+                    }, 
+                    {
+                        "name": "GetCurrentThreadId", 
+                        "address": "0x40c2f0"
+                    }, 
+                    {
+                        "name": "GetDiskFreeSpaceExA", 
+                        "address": "0x40c2f4"
+                    }, 
+                    {
+                        "name": "GetDriveTypeA", 
+                        "address": "0x40c2f8"
+                    }, 
+                    {
+                        "name": "GetFileAttributesA", 
+                        "address": "0x40c2fc"
+                    }, 
+                    {
+                        "name": "GetLastError", 
+                        "address": "0x40c300"
+                    }, 
+                    {
+                        "name": "GetLogicalDriveStringsA", 
+                        "address": "0x40c304"
+                    }, 
+                    {
+                        "name": "GetModuleFileNameA", 
+                        "address": "0x40c308"
+                    }, 
+                    {
+                        "name": "GetModuleHandleA", 
+                        "address": "0x40c30c"
+                    }, 
+                    {
+                        "name": "GetProcAddress", 
+                        "address": "0x40c310"
+                    }, 
+                    {
+                        "name": "GetStartupInfoA", 
+                        "address": "0x40c314"
+                    }, 
+                    {
+                        "name": "GetStdHandle", 
+                        "address": "0x40c318"
+                    }, 
+                    {
+                        "name": "GetSystemInfo", 
+                        "address": "0x40c31c"
+                    }, 
+                    {
+                        "name": "GetSystemTimeAsFileTime", 
+                        "address": "0x40c320"
+                    }, 
+                    {
+                        "name": "GetTickCount", 
+                        "address": "0x40c324"
+                    }, 
+                    {
+                        "name": "GetVersionExA", 
+                        "address": "0x40c328"
+                    }, 
+                    {
+                        "name": "GlobalMemoryStatusEx", 
+                        "address": "0x40c32c"
+                    }, 
+                    {
+                        "name": "InitializeCriticalSection", 
+                        "address": "0x40c330"
+                    }, 
+                    {
+                        "name": "IsDebuggerPresent", 
+                        "address": "0x40c334"
+                    }, 
+                    {
+                        "name": "LeaveCriticalSection", 
+                        "address": "0x40c338"
+                    }, 
+                    {
+                        "name": "LocalAlloc", 
+                        "address": "0x40c33c"
+                    }, 
+                    {
+                        "name": "LocalFree", 
+                        "address": "0x40c340"
+                    }, 
+                    {
+                        "name": "OutputDebugStringA", 
+                        "address": "0x40c344"
+                    }, 
+                    {
+                        "name": "Process32First", 
+                        "address": "0x40c348"
+                    }, 
+                    {
+                        "name": "Process32Next", 
+                        "address": "0x40c34c"
+                    }, 
+                    {
+                        "name": "QueryPerformanceCounter", 
+                        "address": "0x40c350"
+                    }, 
+                    {
+                        "name": "SetConsoleTextAttribute", 
+                        "address": "0x40c354"
+                    }, 
+                    {
+                        "name": "SetLastError", 
+                        "address": "0x40c358"
+                    }, 
+                    {
+                        "name": "SetUnhandledExceptionFilter", 
+                        "address": "0x40c35c"
+                    }, 
+                    {
+                        "name": "Sleep", 
+                        "address": "0x40c360"
+                    }, 
+                    {
+                        "name": "TerminateProcess", 
+                        "address": "0x40c364"
+                    }, 
+                    {
+                        "name": "TlsGetValue", 
+                        "address": "0x40c368"
+                    }, 
+                    {
+                        "name": "UnhandledExceptionFilter", 
+                        "address": "0x40c36c"
+                    }, 
+                    {
+                        "name": "VirtualProtect", 
+                        "address": "0x40c370"
+                    }, 
+                    {
+                        "name": "VirtualQuery", 
+                        "address": "0x40c374"
+                    }, 
+                    {
+                        "name": "lstrcmpiA", 
+                        "address": "0x40c378"
+                    }
+                ], 
+                "dll": "KERNEL32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "WNetGetProviderNameA", 
+                        "address": "0x40c380"
+                    }
+                ], 
+                "dll": "MPR.DLL"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "__dllonexit", 
+                        "address": "0x40c388"
+                    }, 
+                    {
+                        "name": "__getmainargs", 
+                        "address": "0x40c38c"
+                    }, 
+                    {
+                        "name": "__initenv", 
+                        "address": "0x40c390"
+                    }, 
+                    {
+                        "name": "__lconv_init", 
+                        "address": "0x40c394"
+                    }, 
+                    {
+                        "name": "__set_app_type", 
+                        "address": "0x40c398"
+                    }, 
+                    {
+                        "name": "__setusermatherr", 
+                        "address": "0x40c39c"
+                    }, 
+                    {
+                        "name": "_acmdln", 
+                        "address": "0x40c3a0"
+                    }, 
+                    {
+                        "name": "_amsg_exit", 
+                        "address": "0x40c3a4"
+                    }, 
+                    {
+                        "name": "_cexit", 
+                        "address": "0x40c3a8"
+                    }, 
+                    {
+                        "name": "_fmode", 
+                        "address": "0x40c3ac"
+                    }, 
+                    {
+                        "name": "_initterm", 
+                        "address": "0x40c3b0"
+                    }, 
+                    {
+                        "name": "_iob", 
+                        "address": "0x40c3b4"
+                    }, 
+                    {
+                        "name": "_lock", 
+                        "address": "0x40c3b8"
+                    }, 
+                    {
+                        "name": "_onexit", 
+                        "address": "0x40c3bc"
+                    }, 
+                    {
+                        "name": "calloc", 
+                        "address": "0x40c3c0"
+                    }, 
+                    {
+                        "name": "exit", 
+                        "address": "0x40c3c4"
+                    }, 
+                    {
+                        "name": "fclose", 
+                        "address": "0x40c3c8"
+                    }, 
+                    {
+                        "name": "fopen", 
+                        "address": "0x40c3cc"
+                    }, 
+                    {
+                        "name": "fprintf", 
+                        "address": "0x40c3d0"
+                    }, 
+                    {
+                        "name": "fputs", 
+                        "address": "0x40c3d4"
+                    }, 
+                    {
+                        "name": "free", 
+                        "address": "0x40c3d8"
+                    }, 
+                    {
+                        "name": "fwrite", 
+                        "address": "0x40c3dc"
+                    }, 
+                    {
+                        "name": "getchar", 
+                        "address": "0x40c3e0"
+                    }, 
+                    {
+                        "name": "malloc", 
+                        "address": "0x40c3e4"
+                    }, 
+                    {
+                        "name": "mbstowcs", 
+                        "address": "0x40c3e8"
+                    }, 
+                    {
+                        "name": "memcmp", 
+                        "address": "0x40c3ec"
+                    }, 
+                    {
+                        "name": "memcpy", 
+                        "address": "0x40c3f0"
+                    }, 
+                    {
+                        "name": "printf", 
+                        "address": "0x40c3f4"
+                    }, 
+                    {
+                        "name": "puts", 
+                        "address": "0x40c3f8"
+                    }, 
+                    {
+                        "name": "signal", 
+                        "address": "0x40c3fc"
+                    }, 
+                    {
+                        "name": "sprintf", 
+                        "address": "0x40c400"
+                    }, 
+                    {
+                        "name": "strlen", 
+                        "address": "0x40c404"
+                    }, 
+                    {
+                        "name": "strncat", 
+                        "address": "0x40c408"
+                    }, 
+                    {
+                        "name": "strncmp", 
+                        "address": "0x40c40c"
+                    }, 
+                    {
+                        "name": "strncpy", 
+                        "address": "0x40c410"
+                    }, 
+                    {
+                        "name": "strstr", 
+                        "address": "0x40c414"
+                    }, 
+                    {
+                        "name": "_unlock", 
+                        "address": "0x40c418"
+                    }, 
+                    {
+                        "name": "abort", 
+                        "address": "0x40c41c"
+                    }, 
+                    {
+                        "name": "toupper", 
+                        "address": "0x40c420"
+                    }, 
+                    {
+                        "name": "vfprintf", 
+                        "address": "0x40c424"
+                    }, 
+                    {
+                        "name": "wcsstr", 
+                        "address": "0x40c428"
+                    }, 
+                    {
+                        "name": "_vsnprintf", 
+                        "address": "0x40c42c"
+                    }
+                ], 
+                "dll": "msvcrt.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "CoCreateInstance", 
+                        "address": "0x40c434"
+                    }, 
+                    {
+                        "name": "CoInitializeEx", 
+                        "address": "0x40c438"
+                    }, 
+                    {
+                        "name": "CoInitializeSecurity", 
+                        "address": "0x40c43c"
+                    }, 
+                    {
+                        "name": "CoUninitialize", 
+                        "address": "0x40c440"
+                    }
+                ], 
+                "dll": "ole32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "SysAllocString", 
+                        "address": "0x40c448"
+                    }, 
+                    {
+                        "name": "SysFreeString", 
+                        "address": "0x40c44c"
+                    }
+                ], 
+                "dll": "OLEAUT32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "ShellExecuteExW", 
+                        "address": "0x40c454"
+                    }
+                ], 
+                "dll": "SHELL32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "FindWindowA", 
+                        "address": "0x40c45c"
+                    }, 
+                    {
+                        "name": "GetCursorPos", 
+                        "address": "0x40c460"
+                    }
+                ], 
+                "dll": "USER32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "freeaddrinfo", 
+                        "address": "0x40c468"
+                    }, 
+                    {
+                        "name": "getaddrinfo", 
+                        "address": "0x40c46c"
+                    }
+                ], 
+                "dll": "WS2_32.dll"
+            }
+        ], 
+        "peid_signatures": null, 
+        "keys": [], 
+        "signature": [], 
+        "pe_timestamp": "2016-08-27 12:37:13", 
+        "pe_exports": [], 
+        "imported_dll_count": 10, 
+        "pe_imphash": "5fd4caa76ea3c961f2d530674634f64d", 
+        "pe_resources": [
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "PNG image data, 16 x 16, 8-bit/color RGBA, non-interlaced", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00017a10", 
+                "size": "0x000001f1"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "PNG image data, 16 x 16, 8-bit/color RGBA, non-interlaced", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00017a10", 
+                "size": "0x000001f1"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "PNG image data, 16 x 16, 8-bit/color RGBA, non-interlaced", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00017a10", 
+                "size": "0x000001f1"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "PNG image data, 16 x 16, 8-bit/color RGBA, non-interlaced", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00017a10", 
+                "size": "0x000001f1"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "PNG image data, 16 x 16, 8-bit/color RGBA, non-interlaced", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00017a10", 
+                "size": "0x000001f1"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "PNG image data, 16 x 16, 8-bit/color RGBA, non-interlaced", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00017a10", 
+                "size": "0x000001f1"
+            }, 
+            {
+                "name": "RT_GROUP_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "MS Windows icon resource - 6 icons, 256x256, 16 colors", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00017c08", 
+                "size": "0x0000005a"
+            }, 
+            {
+                "name": "RT_VERSION", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "data", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00017c68", 
+                "size": "0x00000288"
+            }
+        ], 
+        "pe_versioninfo": [
+            {
+                "name": "LegalCopyright", 
+                "value": ""
+            }, 
+            {
+                "name": "InternalName", 
+                "value": ""
+            }, 
+            {
+                "name": "FileVersion", 
+                "value": ""
+            }, 
+            {
+                "name": "CompanyName", 
+                "value": ""
+            }, 
+            {
+                "name": "LegalTrademarks", 
+                "value": ""
+            }, 
+            {
+                "name": "ProductName", 
+                "value": "Paranoid Fish"
+            }, 
+            {
+                "name": "ProductVersion", 
+                "value": ""
+            }, 
+            {
+                "name": "FileDescription", 
+                "value": "Paranoid Fish is paranoid"
+            }, 
+            {
+                "name": "OriginalFilename", 
+                "value": ""
+            }, 
+            {
+                "name": "Translation", 
+                "value": "0x0409 0x04e4"
+            }
+        ], 
+        "pe_sections": [
+            {
+                "size_of_data": "0x00005000", 
+                "virtual_address": "0x00001000", 
+                "entropy": 5.837356922279207, 
+                "name": ".text", 
+                "virtual_size": "0x00004f04"
+            }, 
+            {
+                "size_of_data": "0x00000200", 
+                "virtual_address": "0x00006000", 
+                "entropy": 0.5160853718179212, 
+                "name": ".data", 
+                "virtual_size": "0x00000030"
+            }, 
+            {
+                "size_of_data": "0x00003400", 
+                "virtual_address": "0x00007000", 
+                "entropy": 5.841272613826215, 
+                "name": ".rdata", 
+                "virtual_size": "0x000032b8"
+            }, 
+            {
+                "size_of_data": "0x00000000", 
+                "virtual_address": "0x0000b000", 
+                "entropy": 0.0, 
+                "name": ".bss", 
+                "virtual_size": "0x00000400"
+            }, 
+            {
+                "size_of_data": "0x00000e00", 
+                "virtual_address": "0x0000c000", 
+                "entropy": 4.764537139404206, 
+                "name": ".idata", 
+                "virtual_size": "0x00000d24"
+            }, 
+            {
+                "size_of_data": "0x00000200", 
+                "virtual_address": "0x0000d000", 
+                "entropy": 0.2672080280062829, 
+                "name": ".CRT", 
+                "virtual_size": "0x00000034"
+            }, 
+            {
+                "size_of_data": "0x00000200", 
+                "virtual_address": "0x0000e000", 
+                "entropy": 0.2044881574398449, 
+                "name": ".tls", 
+                "virtual_size": "0x00000020"
+            }, 
+            {
+                "size_of_data": "0x00009000", 
+                "virtual_address": "0x0000f000", 
+                "entropy": 7.854124193008595, 
+                "name": ".rsrc", 
+                "virtual_size": "0x00008ef0"
+            }
+        ]
+    }, 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": "C:\\Windows\\System32\\lsass.exe", 
+                "process_name": "lsass.exe", 
+                "pid": 460, 
+                "summary": {
+                    "tls_master": [
+                        [
+                            "5977acc558ca48f8403f70ef73a5ce5007bf1e77acf96fdd1ba921a0e97d9b67", 
+                            "5977acc5a5f813f7698e9fa19d3acd21428622f65ed00e2bc00ab33d52e604c0", 
+                            "825cb26b723f42e6f24dc13258eb5f3d4c63d62789331c37d157deba9e0640d4cd1882c768a1d170f6f37e67f32bc5e3"
+                        ]
+                    ]
+                }, 
+                "first_seen": 1501015125.546875, 
+                "ppid": 352
+            }
+        ], 
+        "apistats": {
+            "460": {
+                "PRF": 3
+            }
+        }, 
+        "processes": [
+            {
+                "process_path": "C:\\Windows\\System32\\lsass.exe", 
+                "calls": [
+                    {
+                        "category": "crypto", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "PRF", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "client_random": "5977acc558ca48f8403f70ef73a5ce5007bf1e77acf96fdd1ba921a0e97d9b67", 
+                            "server_random": "5977acc5a5f813f7698e9fa19d3acd21428622f65ed00e2bc00ab33d52e604c0", 
+                            "master_secret": "825cb26b723f42e6f24dc13258eb5f3d4c63d62789331c37d157deba9e0640d4cd1882c768a1d170f6f37e67f32bc5e3", 
+                            "type": "key expansion"
+                        }, 
+                        "time": 1501014796.550146, 
+                        "tid": 508, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "crypto", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "PRF", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "client_random": "", 
+                            "server_random": "", 
+                            "master_secret": "", 
+                            "type": "client finished"
+                        }, 
+                        "time": 1501014796.550146, 
+                        "tid": 508, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "crypto", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "PRF", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "client_random": "", 
+                            "server_random": "", 
+                            "master_secret": "", 
+                            "type": "server finished"
+                        }, 
+                        "time": 1501014796.582146, 
+                        "tid": 508, 
+                        "flags": {}
+                    }
+                ], 
+                "track": false, 
+                "pid": 460, 
+                "process_name": "lsass.exe", 
+                "command_line": "C:\\Windows\\system32\\lsass.exe", 
+                "modules": [
+                    {
+                        "basename": "lsass.exe", 
+                        "imgsize": 49152, 
+                        "baseaddr": "0x100000000", 
+                        "filepath": "C:\\Windows\\system32\\lsass.exe"
+                    }, 
+                    {
+                        "basename": "ntdll.dll", 
+                        "imgsize": 1740800, 
+                        "baseaddr": "0x78e50000", 
+                        "filepath": "C:\\Windows\\SYSTEM32\\ntdll.dll"
+                    }, 
+                    {
+                        "basename": "kernel32.dll", 
+                        "imgsize": 1175552, 
+                        "baseaddr": "0x78d20000", 
+                        "filepath": "C:\\Windows\\system32\\kernel32.dll"
+                    }, 
+                    {
+                        "basename": "KERNELBASE.dll", 
+                        "imgsize": 438272, 
+                        "baseaddr": "0x7ff38880000", 
+                        "filepath": "C:\\Windows\\system32\\KERNELBASE.dll"
+                    }, 
+                    {
+                        "basename": "msvcrt.dll", 
+                        "imgsize": 651264, 
+                        "baseaddr": "0x7ff756a0000", 
+                        "filepath": "C:\\Windows\\system32\\msvcrt.dll"
+                    }, 
+                    {
+                        "basename": "RPCRT4.dll", 
+                        "imgsize": 1232896, 
+                        "baseaddr": "0x7ff7fde0000", 
+                        "filepath": "C:\\Windows\\system32\\RPCRT4.dll"
+                    }, 
+                    {
+                        "basename": "SspiSrv.dll", 
+                        "imgsize": 45056, 
+                        "baseaddr": "0x7ff254b0000", 
+                        "filepath": "C:\\Windows\\system32\\SspiSrv.dll"
+                    }, 
+                    {
+                        "basename": "lsasrv.dll", 
+                        "imgsize": 1470464, 
+                        "baseaddr": "0x7ff7d000000", 
+                        "filepath": "C:\\Windows\\system32\\lsasrv.dll"
+                    }, 
+                    {
+                        "basename": "sechost.dll", 
+                        "imgsize": 126976, 
+                        "baseaddr": "0x7ff2d2e0000", 
+                        "filepath": "C:\\Windows\\SYSTEM32\\sechost.dll"
+                    }, 
+                    {
+                        "basename": "SspiCli.dll", 
+                        "imgsize": 151552, 
+                        "baseaddr": "0x7ff2c960000", 
+                        "filepath": "C:\\Windows\\system32\\SspiCli.dll"
+                    }, 
+                    {
+                        "basename": "ADVAPI32.dll", 
+                        "imgsize": 897024, 
+                        "baseaddr": "0x7ff7ff10000", 
+                        "filepath": "C:\\Windows\\system32\\ADVAPI32.dll"
+                    }, 
+                    {
+                        "basename": "USER32.dll", 
+                        "imgsize": 1024000, 
+                        "baseaddr": "0x78c20000", 
+                        "filepath": "C:\\Windows\\system32\\USER32.dll"
+                    }, 
+                    {
+                        "basename": "GDI32.dll", 
+                        "imgsize": 421888, 
+                        "baseaddr": "0x7ff7fd70000", 
+                        "filepath": "C:\\Windows\\system32\\GDI32.dll"
+                    }, 
+                    {
+                        "basename": "LPK.dll", 
+                        "imgsize": 57344, 
+                        "baseaddr": "0x7ff70410000", 
+                        "filepath": "C:\\Windows\\system32\\LPK.dll"
+                    }, 
+                    {
+                        "basename": "USP10.dll", 
+                        "imgsize": 823296, 
+                        "baseaddr": "0x7ff760c0000", 
+                        "filepath": "C:\\Windows\\system32\\USP10.dll"
+                    }, 
+                    {
+                        "basename": "SAMSRV.dll", 
+                        "imgsize": 774144, 
+                        "baseaddr": "0x7ff75b40000", 
+                        "filepath": "C:\\Windows\\system32\\SAMSRV.dll"
+                    }, 
+                    {
+                        "basename": "cryptdll.dll", 
+                        "imgsize": 81920, 
+                        "baseaddr": "0x7ff710b0000", 
+                        "filepath": "C:\\Windows\\system32\\cryptdll.dll"
+                    }, 
+                    {
+                        "basename": "MSASN1.dll", 
+                        "imgsize": 61440, 
+                        "baseaddr": "0x7ff70ca0000", 
+                        "filepath": "C:\\Windows\\system32\\MSASN1.dll"
+                    }, 
+                    {
+                        "basename": "wevtapi.dll", 
+                        "imgsize": 446464, 
+                        "baseaddr": "0x7ff739d0000", 
+                        "filepath": "C:\\Windows\\system32\\wevtapi.dll"
+                    }, 
+                    {
+                        "basename": "IMM32.DLL", 
+                        "imgsize": 188416, 
+                        "baseaddr": "0x7ff718f0000", 
+                        "filepath": "C:\\Windows\\system32\\IMM32.DLL"
+                    }, 
+                    {
+                        "basename": "MSCTF.dll", 
+                        "imgsize": 1085440, 
+                        "baseaddr": "0x7ff774b0000", 
+                        "filepath": "C:\\Windows\\system32\\MSCTF.dll"
+                    }, 
+                    {
+                        "basename": "cngaudit.dll", 
+                        "imgsize": 36864, 
+                        "baseaddr": "0x7ff268a0000", 
+                        "filepath": "C:\\Windows\\system32\\cngaudit.dll"
+                    }, 
+                    {
+                        "basename": "AUTHZ.dll", 
+                        "imgsize": 192512, 
+                        "baseaddr": "0x7ff73000000", 
+                        "filepath": "C:\\Windows\\system32\\AUTHZ.dll"
+                    }, 
+                    {
+                        "basename": "ncrypt.dll", 
+                        "imgsize": 319488, 
+                        "baseaddr": "0x7ff729d0000", 
+                        "filepath": "C:\\Windows\\system32\\ncrypt.dll"
+                    }, 
+                    {
+                        "basename": "bcrypt.dll", 
+                        "imgsize": 139264, 
+                        "baseaddr": "0x7ff71ad0000", 
+                        "filepath": "C:\\Windows\\system32\\bcrypt.dll"
+                    }, 
+                    {
+                        "basename": "msprivs.DLL", 
+                        "imgsize": 8192, 
+                        "baseaddr": "0x2a0000", 
+                        "filepath": "C:\\Windows\\system32\\msprivs.DLL"
+                    }, 
+                    {
+                        "basename": "netjoin.dll", 
+                        "imgsize": 204800, 
+                        "baseaddr": "0x7ff313c0000", 
+                        "filepath": "C:\\Windows\\system32\\netjoin.dll"
+                    }, 
+                    {
+                        "basename": "negoexts.DLL", 
+                        "imgsize": 147456, 
+                        "baseaddr": "0x7ff2da20000", 
+                        "filepath": "C:\\Windows\\system32\\negoexts.DLL"
+                    }, 
+                    {
+                        "basename": "Secur32.dll", 
+                        "imgsize": 45056, 
+                        "baseaddr": "0x7ff70200000", 
+                        "filepath": "C:\\Windows\\system32\\Secur32.dll"
+                    }, 
+                    {
+                        "basename": "cryptbase.dll", 
+                        "imgsize": 61440, 
+                        "baseaddr": "0x7ff2ade0000", 
+                        "filepath": "C:\\Windows\\system32\\cryptbase.dll"
+                    }, 
+                    {
+                        "basename": "kerberos.DLL", 
+                        "imgsize": 737280, 
+                        "baseaddr": "0x7ff75e80000", 
+                        "filepath": "C:\\Windows\\system32\\kerberos.DLL"
+                    }, 
+                    {
+                        "basename": "CRYPTSP.dll", 
+                        "imgsize": 94208, 
+                        "baseaddr": "0x7ff2ada0000", 
+                        "filepath": "C:\\Windows\\system32\\CRYPTSP.dll"
+                    }, 
+                    {
+                        "basename": "WS2_32.dll", 
+                        "imgsize": 315392, 
+                        "baseaddr": "0x7ff724e0000", 
+                        "filepath": "C:\\Windows\\system32\\WS2_32.dll"
+                    }, 
+                    {
+                        "basename": "NSI.dll", 
+                        "imgsize": 32768, 
+                        "baseaddr": "0x7ff70310000", 
+                        "filepath": "C:\\Windows\\system32\\NSI.dll"
+                    }, 
+                    {
+                        "basename": "mswsock.dll", 
+                        "imgsize": 348160, 
+                        "baseaddr": "0x7ff734a0000", 
+                        "filepath": "C:\\Windows\\system32\\mswsock.dll"
+                    }, 
+                    {
+                        "basename": "wship6.dll", 
+                        "imgsize": 28672, 
+                        "baseaddr": "0x7ff70060000", 
+                        "filepath": "C:\\Windows\\System32\\wship6.dll"
+                    }, 
+                    {
+                        "basename": "msv1_0.DLL", 
+                        "imgsize": 331776, 
+                        "baseaddr": "0x7ff73500000", 
+                        "filepath": "C:\\Windows\\system32\\msv1_0.DLL"
+                    }, 
+                    {
+                        "basename": "netlogon.DLL", 
+                        "imgsize": 712704, 
+                        "baseaddr": "0x7ff755f0000", 
+                        "filepath": "C:\\Windows\\system32\\netlogon.DLL"
+                    }, 
+                    {
+                        "basename": "DNSAPI.dll", 
+                        "imgsize": 372736, 
+                        "baseaddr": "0x7ff73740000", 
+                        "filepath": "C:\\Windows\\system32\\DNSAPI.dll"
+                    }, 
+                    {
+                        "basename": "logoncli.dll", 
+                        "imgsize": 196608, 
+                        "baseaddr": "0x7ff31ac0000", 
+                        "filepath": "C:\\Windows\\system32\\logoncli.dll"
+                    }, 
+                    {
+                        "basename": "schannel.DLL", 
+                        "imgsize": 356352, 
+                        "baseaddr": "0x7ff73160000", 
+                        "filepath": "C:\\Windows\\system32\\schannel.DLL"
+                    }, 
+                    {
+                        "basename": "CRYPT32.dll", 
+                        "imgsize": 1470464, 
+                        "baseaddr": "0x7ff7fc00000", 
+                        "filepath": "C:\\Windows\\system32\\CRYPT32.dll"
+                    }, 
+                    {
+                        "basename": "wdigest.DLL", 
+                        "imgsize": 221184, 
+                        "baseaddr": "0x7ff71d40000", 
+                        "filepath": "C:\\Windows\\system32\\wdigest.DLL"
+                    }, 
+                    {
+                        "basename": "rsaenh.dll", 
+                        "imgsize": 290816, 
+                        "baseaddr": "0x7ff330e0000", 
+                        "filepath": "C:\\Windows\\system32\\rsaenh.dll"
+                    }, 
+                    {
+                        "basename": "tspkg.DLL", 
+                        "imgsize": 98304, 
+                        "baseaddr": "0x7ff70780000", 
+                        "filepath": "C:\\Windows\\system32\\tspkg.DLL"
+                    }, 
+                    {
+                        "basename": "pku2u.DLL", 
+                        "imgsize": 282624, 
+                        "baseaddr": "0x7ff333b0000", 
+                        "filepath": "C:\\Windows\\system32\\pku2u.DLL"
+                    }, 
+                    {
+                        "basename": "bcryptprimitives.dll", 
+                        "imgsize": 311296, 
+                        "baseaddr": "0x7ff67c00000", 
+                        "filepath": "C:\\Windows\\system32\\bcryptprimitives.dll"
+                    }, 
+                    {
+                        "basename": "RpcRtRemote.dll", 
+                        "imgsize": 81920, 
+                        "baseaddr": "0x7ff285e0000", 
+                        "filepath": "C:\\Windows\\system32\\RpcRtRemote.dll"
+                    }, 
+                    {
+                        "basename": "efslsaext.dll", 
+                        "imgsize": 73728, 
+                        "baseaddr": "0x7ff2a940000", 
+                        "filepath": "C:\\Windows\\system32\\efslsaext.dll"
+                    }, 
+                    {
+                        "basename": "scecli.DLL", 
+                        "imgsize": 253952, 
+                        "baseaddr": "0x7ff71fc0000", 
+                        "filepath": "C:\\Windows\\system32\\scecli.DLL"
+                    }, 
+                    {
+                        "basename": "credssp.dll", 
+                        "imgsize": 40960, 
+                        "baseaddr": "0x7ff7a400000", 
+                        "filepath": "C:\\Windows\\system32\\credssp.dll"
+                    }, 
+                    {
+                        "basename": "WINSTA.dll", 
+                        "imgsize": 249856, 
+                        "baseaddr": "0x7ff71c00000", 
+                        "filepath": "C:\\Windows\\system32\\WINSTA.dll"
+                    }, 
+                    {
+                        "basename": "IPHLPAPI.DLL", 
+                        "imgsize": 159744, 
+                        "baseaddr": "0x7ff71890000", 
+                        "filepath": "C:\\Windows\\system32\\IPHLPAPI.DLL"
+                    }, 
+                    {
+                        "basename": "WINNSI.DLL", 
+                        "imgsize": 45056, 
+                        "baseaddr": "0x7ff700a0000", 
+                        "filepath": "C:\\Windows\\system32\\WINNSI.DLL"
+                    }, 
+                    {
+                        "basename": "netutils.dll", 
+                        "imgsize": 49152, 
+                        "baseaddr": "0x7ff25b00000", 
+                        "filepath": "C:\\Windows\\system32\\netutils.dll"
+                    }, 
+                    {
+                        "basename": "USERENV.dll", 
+                        "imgsize": 122880, 
+                        "baseaddr": "0x7ff70720000", 
+                        "filepath": "C:\\Windows\\system32\\USERENV.dll"
+                    }, 
+                    {
+                        "basename": "profapi.dll", 
+                        "imgsize": 61440, 
+                        "baseaddr": "0x7ff28800000", 
+                        "filepath": "C:\\Windows\\system32\\profapi.dll"
+                    }, 
+                    {
+                        "basename": "wshtcpip.dll", 
+                        "imgsize": 28672, 
+                        "baseaddr": "0x7ff70030000", 
+                        "filepath": "C:\\Windows\\System32\\wshtcpip.dll"
+                    }, 
+                    {
+                        "basename": "monitor-x64.dll", 
+                        "imgsize": 2224128, 
+                        "baseaddr": "0x65a80000", 
+                        "filepath": "C:\\tmpmedxdr\\bin\\monitor-x64.dll"
+                    }
+                ], 
+                "time": 0, 
+                "tid": 2372, 
+                "first_seen": 1501015125.546875, 
+                "ppid": 352, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": false, 
+                "pid": 460, 
+                "process_name": "lsass.exe", 
+                "command_line": "C:\\Windows\\system32\\lsass.exe", 
+                "first_seen": 1501015125.546875, 
+                "ppid": 352, 
+                "children": []
+            }
+        ], 
+        "summary": {
+            "tls_master": [
+                [
+                    "5977acc558ca48f8403f70ef73a5ce5007bf1e77acf96fdd1ba921a0e97d9b67", 
+                    "5977acc5a5f813f7698e9fa19d3acd21428622f65ed00e2bc00ab33d52e604c0", 
+                    "825cb26b723f42e6f24dc13258eb5f3d4c63d62789331c37d157deba9e0640d4cd1882c768a1d170f6f37e67f32bc5e3"
+                ]
+            ]
+        }
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2017-07-25 21:38:45,000 [analyzer] DEBUG: Starting analyzer from: C:\\tmpmedxdr\n", 
+            "2017-07-25 21:38:45,000 [analyzer] DEBUG: Pipe server name: \\??\\PIPE\\uGpJhAouaueRGKNDguCtmf\n", 
+            "2017-07-25 21:38:45,000 [analyzer] DEBUG: Log pipe server name: \\??\\PIPE\\pIsOMTLBIjLyRTsyeV\n", 
+            "2017-07-25 21:38:45,140 [analyzer] DEBUG: Started auxiliary module DbgView\n", 
+            "2017-07-25 21:38:45,390 [analyzer] DEBUG: Started auxiliary module Disguise\n", 
+            "2017-07-25 21:38:45,483 [analyzer] WARNING: Unable to find the correct offsets for functions of: 64-bit kernel32.dll (with timestamp 0x50b8479a)\n", 
+            "2017-07-25 21:38:45,483 [analyzer] WARNING: Unable to find the correct offsets for functions of: 64-bit kernel32.dll (with timestamp 0x50b8479a)\n", 
+            "2017-07-25 21:38:45,546 [analyzer] DEBUG: Loaded monitor into process with pid 460\n", 
+            "2017-07-25 21:38:45,546 [analyzer] DEBUG: Started auxiliary module DumpTLSMasterSecrets\n", 
+            "2017-07-25 21:38:45,546 [analyzer] DEBUG: Started auxiliary module Human\n", 
+            "2017-07-25 21:38:45,546 [analyzer] DEBUG: Started auxiliary module InstallCertificate\n", 
+            "2017-07-25 21:38:45,546 [analyzer] DEBUG: Started auxiliary module Reboot\n", 
+            "2017-07-25 21:38:45,592 [analyzer] DEBUG: Started auxiliary module RecentFiles\n", 
+            "2017-07-25 21:38:45,592 [analyzer] DEBUG: Started auxiliary module Screenshots\n", 
+            "2017-07-25 21:38:45,592 [analyzer] DEBUG: Started auxiliary module LoadZer0m0n\n", 
+            "2017-07-25 21:38:45,592 [analyzer] INFO: No process IDs returned by the package, running for the full timeout.\n", 
+            "2017-07-25 22:40:56,280 [analyzer] INFO: Analysis timeout hit, terminating analysis.\n", 
+            "2017-07-25 22:40:56,280 [analyzer] INFO: Analysis completed.\n"
+        ], 
+        "cuckoo": [
+            "2017-07-25 21:38:46,789 [cuckoo.core.scheduler] INFO: Task #22: acquired machine cuckoo1 (label=cuckoo1)\n", 
+            "2017-07-25 21:38:46,790 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Reboot\n", 
+            "2017-07-25 21:38:46,803 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 15277 (interface=vboxnet0, host=192.168.56.101)\n", 
+            "2017-07-25 21:38:46,804 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Sniffer\n", 
+            "2017-07-25 21:38:47,039 [cuckoo.machinery.virtualbox] DEBUG: Starting vm cuckoo1\n", 
+            "2017-07-25 21:38:47,230 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine cuckoo1 to its current snapshot\n", 
+            "2017-07-25 21:38:50,422 [cuckoo.core.guest] INFO: Starting analysis on guest (id=cuckoo1, ip=192.168.56.101)\n", 
+            "2017-07-25 21:38:51,429 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet\n", 
+            "2017-07-25 21:38:52,436 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet\n", 
+            "2017-07-25 21:38:53,429 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet\n", 
+            "2017-07-25 21:38:55,321 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.7 (id=cuckoo1, ip=192.168.56.101)\n", 
+            "2017-07-25 21:38:55,351 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=cuckoo1, ip=192.168.56.101, monitor=latest, size=3819773)\n", 
+            "2017-07-25 21:38:55,566 [cuckoo.auxiliary.reboot] INFO: Preparing task #22 for a reboot analysis..\n", 
+            "2017-07-25 21:38:56,579 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:38:56,708 [cuckoo.core.resultserver] DEBUG: LogHandler for live analysis.log initialized.\n", 
+            "2017-07-25 21:38:57,589 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:38:58,387 [cuckoo.core.resultserver] DEBUG: File upload request for shots/0001.jpg\n", 
+            "2017-07-25 21:38:58,403 [cuckoo.core.resultserver] DEBUG: Uploaded file length: 76163\n", 
+            "2017-07-25 21:38:58,598 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:38:59,605 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:00,615 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:01,621 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:02,632 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:03,642 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:04,650 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:05,660 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:06,670 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:07,679 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:08,689 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:09,699 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:10,709 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:11,719 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:12,730 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:13,739 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:14,750 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:15,764 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:16,778 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:17,786 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:18,797 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:19,811 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:20,820 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:21,829 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:22,837 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:23,848 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:24,856 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:25,867 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:26,880 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:27,893 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:28,905 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:29,917 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:30,929 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:31,941 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:32,954 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:33,965 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:34,973 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:35,980 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:36,992 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:38,004 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:39,016 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:40,026 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:41,036 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:42,046 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:43,057 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:44,069 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:45,080 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:46,090 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:47,100 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:48,110 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:49,125 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:50,139 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:51,152 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:52,163 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:53,176 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:54,186 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:55,199 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:56,210 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:57,219 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:58,229 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:39:59,239 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:00,250 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:01,262 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:02,275 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:03,287 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:04,300 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:05,312 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:06,323 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:07,335 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:08,345 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:09,357 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:10,368 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:11,376 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:12,383 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:13,394 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:14,405 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:15,416 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:16,427 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:17,438 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:18,451 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:19,463 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:20,475 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:21,485 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:22,494 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:23,501 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:24,514 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:25,523 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:26,533 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:27,543 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:28,552 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:29,561 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:30,570 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:31,580 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:32,590 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:33,600 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:34,613 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:35,623 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:36,634 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:37,645 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:38,655 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:39,662 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:40,677 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:41,684 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:42,694 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:43,702 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:44,716 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:45,728 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:46,741 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:47,753 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:48,766 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:49,778 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:50,791 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:51,802 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:52,814 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:53,826 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:54,838 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:55,851 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 21:40:56,858 [cuckoo.core.guest] INFO: cuckoo1: analysis completed successfully\n", 
+            "2017-07-25 21:40:57,009 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2017-07-25 21:41:13,032 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label cuckoo1 to path /home/tempuser/.cuckoo/storage/analyses/22/memory.dmp\n", 
+            "2017-07-25 21:41:14,676 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm cuckoo1\n", 
+            "2017-07-25 21:41:20,694 [cuckoo.core.scheduler] DEBUG: Released database task #22\n", 
+            "2017-07-25 21:41:20,740 [cuckoo.core.plugins] DEBUG: Executed processing module \"AnalysisInfo\" for task #22\n", 
+            "2017-07-25 21:41:20,746 [cuckoo.core.plugins] DEBUG: Executed processing module \"BehaviorAnalysis\" for task #22\n", 
+            "2017-07-25 21:41:20,746 [cuckoo.core.plugins] DEBUG: Executed processing module \"Dropped\" for task #22\n", 
+            "2017-07-25 21:41:20,747 [cuckoo.core.plugins] DEBUG: Executed processing module \"DroppedBuffer\" for task #22\n", 
+            "2017-07-25 21:41:20,747 [cuckoo.core.plugins] DEBUG: Executed processing module \"Extracted\" for task #22\n", 
+            "2017-07-25 21:41:20,751 [cuckoo.core.plugins] DEBUG: Executed processing module \"MetaInfo\" for task #22\n", 
+            "2017-07-25 21:41:20,751 [cuckoo.core.plugins] DEBUG: Executed processing module \"ProcessMemory\" for task #22\n", 
+            "2017-07-25 21:41:20,752 [cuckoo.core.plugins] DEBUG: Executed processing module \"Procmon\" for task #22\n", 
+            "2017-07-25 21:41:20,771 [cuckoo.core.plugins] DEBUG: Executed processing module \"Screenshots\" for task #22\n", 
+            "2017-07-25 21:41:21,261 [cuckoo.core.plugins] DEBUG: Executed processing module \"Static\" for task #22\n", 
+            "2017-07-25 21:41:21,268 [cuckoo.core.plugins] DEBUG: Executed processing module \"Strings\" for task #22\n", 
+            "2017-07-25 21:41:21,272 [cuckoo.core.plugins] DEBUG: Executed processing module \"TargetInfo\" for task #22\n", 
+            "2017-07-25 21:41:31,822 [cuckoo.core.plugins] DEBUG: Executed processing module \"NetworkAnalysis\" for task #22\n", 
+            "2017-07-25 21:41:31,823 [cuckoo.core.plugins] DEBUG: Executed processing module \"TLSMasterSecrets\" for task #22\n", 
+            "2017-07-25 21:41:31,826 [cuckoo.core.plugins] DEBUG: Executed processing module \"Debug\" for task #22\n", 
+            "2017-07-25 21:41:31,827 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=amsi_bypass minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 21:41:31,828 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=applocker_bypass minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 21:41:31,833 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=metasploit_shellcode minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 21:41:31,834 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powerfun minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 21:41:31,835 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_bitstransfer minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 21:41:31,835 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_c2dns minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 21:41:31,835 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_ddi_rc4 minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 21:41:31,835 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_dfsp minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 21:41:31,836 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_di minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 21:41:31,836 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_empire minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 21:41:31,836 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_meterpreter minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 21:41:31,837 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_reg_add minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 21:41:31,837 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_unicorn minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 21:41:31,837 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powerworm minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 21:41:31,841 [cuckoo.core.plugins] DEBUG: Running 425 signatures\n", 
+            "2017-07-25 21:41:32,009 [cuckoo.core.plugins] DEBUG: Analysis matched signature: network_http\n", 
+            "2017-07-25 21:41:32,010 [cuckoo.core.plugins] DEBUG: Analysis matched signature: packer_entropy\n"
+        ]
+    }, 
+    "screenshots": [
+        {
+            "path": "/home/tempuser/.cuckoo/storage/analyses/22/shots/0001.jpg", 
+            "ocr": ""
+        }
+    ], 
+    "strings": [
+        "!This program cannot be run in DOS mode.", 
+        "P`.data", 
+        ".rdata", 
+        "0@.bss", 
+        ".idata", 
+        "libgcj-16.dll", 
+        "_Jv_RegisterClasses", 
+        "analysis-start", 
+        "%lu.%lu build %lu", 
+        "[*] Windows version: %s", 
+        "[*] CPU: %s", 
+        "    Hypervisor: %s", 
+        "    CPU brand: %s", 
+        "Windows version: %s", 
+        "CPU: %s (HV: %s) %s", 
+        "CPU: %s %s", 
+        "Debuggers detection", 
+        "hi_debugger_isdebuggerpresent", 
+        "Debugger traced using IsDebuggerPresent()", 
+        "Using IsDebuggerPresent()", 
+        "hi_debugger_outputdebugstring", 
+        "Debugger traced using OutputDebugString()", 
+        "Using OutputDebugString()", 
+        "CPU information based detections", 
+        "hi_CPU_VM_rdtsc", 
+        "CPU VM traced by checking the difference between CPU timestamp counters (rdtsc)", 
+        "Checking the difference between CPU timestamp counters (rdtsc)", 
+        "hi_CPU_VM_rdtsc_force_vm_exit", 
+        "CPU VM traced by checking the difference between CPU timestamp counters (rdtsc) forcing VM exit", 
+        "Checking the difference between CPU timestamp counters (rdtsc) forcing VM exit", 
+        "hi_CPU_VM_hypervisor_bit", 
+        "CPU VM traced by checking hypervisor bit in cpuid feature bits", 
+        "Checking hypervisor bit in cpuid feature bits", 
+        "hi_CPU_VM_hv_vendor_name", 
+        "CPU VM traced by checking cpuid hypervisor vendor for known VM vendors", 
+        "Checking cpuid hypervisor vendor for known VM vendors", 
+        "Generic sandbox detection", 
+        "hi_sandbox_mouse_act", 
+        "Sandbox traced using mouse activity", 
+        "Using mouse activity", 
+        "hi_sandbox_username", 
+        "Sandbox traced by checking username", 
+        "Checking username", 
+        "hi_sandbox_path", 
+        "Sandbox traced by checking file path", 
+        "Checking file path", 
+        "hi_sandbox_common_names", 
+        "Sandbox traced by checking common sample names in drives root", 
+        "Checking common sample names in drives root", 
+        "hi_sandbox_drive_size", 
+        "Sandbox traced by checking disk size <= 60GB via DeviceIoControl()", 
+        "Checking if disk size <= 60GB via DeviceIoControl()", 
+        "hi_sandbox_drive_size2", 
+        "Sandbox traced by checking disk size <= 60GB via GetDiskFreeSpaceExA()", 
+        "Checking if disk size <= 60GB via GetDiskFreeSpaceExA()", 
+        "hi_sandbox_sleep_gettickcount", 
+        "Sandbox traced by checking if Sleep() was patched using GetTickCount()", 
+        "Checking if Sleep() is patched using GetTickCount()", 
+        "hi_sandbox_NumberOfProcessors_less_2_raw", 
+        "Sandbox traced by checking if NumberOfProcessors is less than 2 via raw access", 
+        "Checking if NumberOfProcessors is < 2 via raw access", 
+        "hi_sandbox_NumberOfProcessors_less_2_GetSystemInfo", 
+        "Sandbox traced by checking if NumberOfProcessors is less than 2 via GetSystemInfo()", 
+        "Checking if NumberOfProcessors is < 2 via GetSystemInfo()", 
+        "hi_sandbox_pysicalmemory_less_1Gb", 
+        "Sandbox traced by checking if pysical memory is less than 1Gb", 
+        "Checking if pysical memory is < 1Gb", 
+        "hi_sandbox_uptime", 
+        "Sandbox traced by checking operating system uptime using GetTickCount()", 
+        "Checking operating system uptime using GetTickCount()", 
+        "hi_sandbox_IsNativeVhdBoot", 
+        "Sandbox traced by checking IsNativeVhdBoot()", 
+        "Checking if operating system IsNativeVhdBoot()", 
+        "Hooks detection", 
+        "hi_hooks_shellexecuteexw_m1", 
+        "Hooks traced using ShellExecuteExW method 1", 
+        "Checking function ShellExecuteExW method 1", 
+        "hi_hooks_createprocessa_m1", 
+        "Hooks traced using CreateProcessA method 1", 
+        "Checking function CreateProcessA method 1", 
+        "Sandboxie detection", 
+        "hi_sandboxie", 
+        "Sandboxie traced using GetModuleHandle(sbiedll.dll)", 
+        "Using GetModuleHandle(sbiedll.dll)", 
+        "Wine detection", 
+        "hi_wine", 
+        "Wine traced using GetProcAddress(wine_get_unix_file_name) from kernel32.dll", 
+        "Using GetProcAddress(wine_get_unix_file_name) from kernel32.dll", 
+        "Wine traced using Reg key HKCU\\SOFTWARE\\Wine", 
+        "Reg key (HKCU\\SOFTWARE\\Wine)", 
+        "VirtualBox detection", 
+        "hi_virtualbox", 
+        "VirtualBox traced using Reg key HKLM\\HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 0\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0 \"Identifier\"", 
+        "Scsi port->bus->target id->logical unit id-> 0 identifier", 
+        "VirtualBox traced using Reg key HKLM\\HARDWARE\\Description\\System \"SystemBiosVersion\"", 
+        "Reg key (HKLM\\HARDWARE\\Description\\System \"SystemBiosVersion\")", 
+        "VirtualBox traced using Reg key HKLM\\SOFTWARE\\Oracle\\VirtualBox Guest Additions", 
+        "Reg key (HKLM\\SOFTWARE\\Oracle\\VirtualBox Guest Additions)", 
+        "VirtualBox traced using Reg key HKLM\\HARDWARE\\Description\\System \"VideoBiosVersion\"", 
+        "Reg key (HKLM\\HARDWARE\\Description\\System \"VideoBiosVersion\")", 
+        "VirtualBox traced using Reg key HKLM\\HARDWARE\\ACPI\\DSDT\\VBOX__", 
+        "Reg key (HKLM\\HARDWARE\\ACPI\\DSDT\\VBOX__)", 
+        "VirtualBox traced using Reg key HKLM\\HARDWARE\\ACPI\\FADT\\VBOX__", 
+        "Reg key (HKLM\\HARDWARE\\ACPI\\FADT\\VBOX__)", 
+        "VirtualBox traced using Reg key HKLM\\HARDWARE\\ACPI\\RSDT\\VBOX__", 
+        "Reg key (HKLM\\HARDWARE\\ACPI\\RSDT\\VBOX__)", 
+        "Reg key (HKLM\\SYSTEM\\ControlSet001\\Services\\VBox*)", 
+        "VirtualBox traced using Reg key HKLM\\HARDWARE\\DESCRIPTION\\System \"SystemBiosDate\"", 
+        "Reg key (HKLM\\HARDWARE\\DESCRIPTION\\System \"SystemBiosDate\")", 
+        "Driver files in C:\\WINDOWS\\system32\\drivers\\VBox*", 
+        "Additional system files", 
+        "VirtualBox traced using MAC address starting with 08:00:27", 
+        "Looking for a MAC address starting with 08:00:27", 
+        "Looking for pseudo devices", 
+        "VirtualBox traced using VBoxTray windows", 
+        "Looking for VBoxTray windows", 
+        "VirtualBox traced using its network share", 
+        "Looking for VBox network share", 
+        "Looking for VBox processes (vboxservice.exe, vboxtray.exe)", 
+        "VirtualBox device identifiers traced using WMI", 
+        "Looking for VBox devices using WMI", 
+        "VMware detection", 
+        "hi_vmware", 
+        "VMWare traced using Reg key HKLM\\HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 0,1,2\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0 \"Identifier\"", 
+        "Scsi port 0,1,2 ->bus->target id->logical unit id-> 0 identifier", 
+        "VMware traced using Reg key HKLM\\SOFTWARE\\VMware, Inc.\\VMware Tools", 
+        "Reg key (HKLM\\SOFTWARE\\VMware, Inc.\\VMware Tools)", 
+        "VMware traced using file C:\\WINDOWS\\system32\\drivers\\vmmouse.sys", 
+        "Looking for C:\\WINDOWS\\system32\\drivers\\vmmouse.sys", 
+        "VMware traced using file C:\\WINDOWS\\system32\\drivers\\vmhgfs.sys", 
+        "Looking for C:\\WINDOWS\\system32\\drivers\\vmhgfs.sys", 
+        "VMware traced using MAC address starting with 00:05:69, 00:0C:29, 00:1C:14 or 00:50:56", 
+        "Looking for a MAC address starting with 00:05:69, 00:0C:29, 00:1C:14 or 00:50:56", 
+        "VMware traced using network adapter name", 
+        "Looking for network adapter name", 
+        "VMware serial number traced using WMI", 
+        "Looking for VMware serial number", 
+        "Qemu detection", 
+        "hi_qemu", 
+        "Qemu traced using Reg key HKLM\\HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 0\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0 \"Identifier\"", 
+        "Qemu traced using Reg key HKLM\\HARDWARE\\Description\\System \"SystemBiosVersion\"", 
+        "Qemu traced using CPU brand string 'QEMU Virtual CPU'", 
+        "cpuid CPU brand string 'QEMU Virtual CPU'", 
+        "Bochs detection", 
+        "hi_bochs", 
+        "Bochs traced using Reg key HKLM\\HARDWARE\\Description\\System \"SystemBiosVersion\"", 
+        "Bochs traced using CPU AMD wrong value for processor name", 
+        "cpuid AMD wrong value for processor name", 
+        "Bochs traced using CPU Intel wrong value for processor name", 
+        "cpuid Intel wrong value for processor name", 
+        "Cuckoo detection", 
+        "hi_cuckoo", 
+        "Cuckoo hooks information structure traced in the TLS", 
+        "Looking in the TLS for the hooks information structure", 
+        "[-] Feel free to RE me, check log file for more information.", 
+        "analysis-end", 
+        "* Pafish (", 
+        "Paranoid fish", 
+        "Some anti(debugger/VM/sandbox) tricks", 
+        "used by malware for the general public.", 
+        "traced!", 
+        "[pafish] %s", 
+        "pafish.log", 
+        "[-] %s", 
+        "[*] %s ... ", 
+        "kernel32", 
+        "Wow64DisableWow64FsRedirection", 
+        "Wow64RevertWow64FsRedirection", 
+        "IsWow64Process", 
+        "useless", 
+        "sbiedll.dll", 
+        "Identifier", 
+        "HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 0\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0", 
+        "SystemBiosVersion", 
+        "HARDWARE\\Description\\System", 
+        "SOFTWARE\\Oracle\\VirtualBox Guest Additions", 
+        "VIRTUALBOX", 
+        "VideoBiosVersion", 
+        "HARDWARE\\ACPI\\DSDT\\VBOX__", 
+        "HARDWARE\\ACPI\\FADT\\VBOX__", 
+        "HARDWARE\\ACPI\\RSDT\\VBOX__", 
+        "SYSTEM\\ControlSet001\\Services\\VBoxGuest", 
+        "SYSTEM\\ControlSet001\\Services\\VBoxMouse", 
+        "SYSTEM\\ControlSet001\\Services\\VBoxService", 
+        "SYSTEM\\ControlSet001\\Services\\VBoxSF", 
+        "SYSTEM\\ControlSet001\\Services\\VBoxVideo", 
+        "VirtualBox traced using Reg key HKLM\\%s", 
+        "06/23/99", 
+        "SystemBiosDate", 
+        "HARDWARE\\DESCRIPTION\\System", 
+        "C:\\WINDOWS\\system32\\drivers\\VBoxMouse.sys", 
+        "C:\\WINDOWS\\system32\\drivers\\VBoxGuest.sys", 
+        "C:\\WINDOWS\\system32\\drivers\\VBoxSF.sys", 
+        "C:\\WINDOWS\\system32\\drivers\\VBoxVideo.sys", 
+        "VirtualBox traced using driver file %s", 
+        "C:\\WINDOWS\\system32\\vboxdisp.dll", 
+        "C:\\WINDOWS\\system32\\vboxhook.dll", 
+        "C:\\WINDOWS\\system32\\vboxmrxnp.dll", 
+        "C:\\WINDOWS\\system32\\vboxogl.dll", 
+        "C:\\WINDOWS\\system32\\vboxoglarrayspu.dll", 
+        "C:\\WINDOWS\\system32\\vboxoglcrutil.dll", 
+        "C:\\WINDOWS\\system32\\vboxoglerrorspu.dll", 
+        "C:\\WINDOWS\\system32\\vboxoglfeedbackspu.dll", 
+        "C:\\WINDOWS\\system32\\vboxoglpackspu.dll", 
+        "C:\\WINDOWS\\system32\\vboxoglpassthroughspu.dll", 
+        "C:\\WINDOWS\\system32\\vboxservice.exe", 
+        "C:\\WINDOWS\\system32\\vboxtray.exe", 
+        "C:\\WINDOWS\\system32\\VBoxControl.exe", 
+        "C:\\program files\\oracle\\virtualbox guest additions\\", 
+        "VirtualBox traced using system file %s", 
+        "\\\\.\\VBoxMiniRdrDN", 
+        "\\\\.\\pipe\\VBoxMiniRdDN", 
+        "\\\\.\\VBoxTrayIPC", 
+        "\\\\.\\pipe\\VBoxTrayIPC", 
+        "VirtualBox traced using device %s", 
+        "VBoxTrayToolWndClass", 
+        "VBoxTrayToolWnd", 
+        "VirtualBox Shared Folders", 
+        "vboxservice.exe", 
+        "VirtualBox traced using vboxservice.exe process", 
+        "vboxtray.exe", 
+        "VirtualBox traced using vboxtray.exe process", 
+        "SANDBOX", 
+        "MALWARE", 
+        "\\SAMPLE", 
+        "\\VIRUS", 
+        "%ssample.exe", 
+        "%smalware.exe", 
+        "\\\\.\\PhysicalDrive0", 
+        "kernel32", 
+        "IsNativeVhdBoot", 
+        "kernel32.dll", 
+        "wine_get_unix_file_name", 
+        "SOFTWARE\\Wine", 
+        "VMWARE", 
+        "Identifier", 
+        "HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 0\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0", 
+        "HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 1\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0", 
+        "HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 2\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0", 
+        "SOFTWARE\\VMware, Inc.\\VMware Tools", 
+        "C:\\WINDOWS\\system32\\drivers\\vmmouse.sys", 
+        "C:\\WINDOWS\\system32\\drivers\\vmhgfs.sys", 
+        "VMware", 
+        "\\\\.\\HGFS", 
+        "\\\\.\\vmci", 
+        "VMWare traced using device %s", 
+        "Identifier", 
+        "HARDWARE\\DEVICEMAP\\Scsi\\Scsi Port 0\\Scsi Bus 0\\Target Id 0\\Logical Unit Id 0", 
+        "SystemBiosVersion", 
+        "HARDWARE\\Description\\System", 
+        "QEMU Virtual CPU", 
+        "%c%c%c%c", 
+        "KVMKVMKVM", 
+        "Microsoft Hv", 
+        "VMwareVMware", 
+        "XenVMMXenVMM", 
+        "prl hyperv  ", 
+        "VBoxVBoxVBox", 
+        "SystemBiosVersion", 
+        "HARDWARE\\Description\\System", 
+        "AMD Athlon(tm) processor", 
+        "              Intel(R) Pentium(R) 4 CPU        ", 
+        "Unknown error", 
+        "_matherr(): %s in %s(%g, %g)  (retval=%g)", 
+        "Argument domain error (DOMAIN)", 
+        "Argument singularity (SIGN)", 
+        "Overflow range error (OVERFLOW)", 
+        "The result is too small to be represented (UNDERFLOW)", 
+        "Total loss of significance (TLOSS)", 
+        "Partial loss of significance (PLOSS)", 
+        "Mingw-w64 runtime failure:", 
+        "Address %p has no image-section", 
+        "  VirtualQuery failed for %d bytes at address %p", 
+        "  VirtualProtect failed with code 0x%x", 
+        "  Unknown pseudo relocation protocol version %d.", 
+        "  Unknown pseudo relocation bit size %d.", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 5.4.0 20160609", 
+        "GCC: (GNU) 6.1.1 20160815", 
+        "GetUserNameA", 
+        "RegCloseKey", 
+        "RegOpenKeyExA", 
+        "RegQueryValueExA", 
+        "GetAdaptersAddresses", 
+        "CloseHandle", 
+        "CreateFileA", 
+        "CreateProcessA", 
+        "CreateToolhelp32Snapshot", 
+        "DeleteCriticalSection", 
+        "DeleteFileW", 
+        "DeviceIoControl", 
+        "EnterCriticalSection", 
+        "GetConsoleScreenBufferInfo", 
+        "GetCurrentProcess", 
+        "GetCurrentProcessId", 
+        "GetCurrentThreadId", 
+        "GetDiskFreeSpaceExA", 
+        "GetDriveTypeA", 
+        "GetFileAttributesA", 
+        "GetLastError", 
+        "GetLogicalDriveStringsA", 
+        "GetModuleFileNameA", 
+        "GetModuleHandleA", 
+        "GetProcAddress", 
+        "GetStartupInfoA", 
+        "GetStdHandle", 
+        "GetSystemInfo", 
+        "GetSystemTimeAsFileTime", 
+        "GetTickCount", 
+        "GetVersionExA", 
+        "GlobalMemoryStatusEx", 
+        "InitializeCriticalSection", 
+        "IsDebuggerPresent", 
+        "LeaveCriticalSection", 
+        "LocalAlloc", 
+        "LocalFree", 
+        "OutputDebugStringA", 
+        "Process32First", 
+        "Process32Next", 
+        "QueryPerformanceCounter", 
+        "SetConsoleTextAttribute", 
+        "SetLastError", 
+        "SetUnhandledExceptionFilter", 
+        "TerminateProcess", 
+        "TlsGetValue", 
+        "UnhandledExceptionFilter", 
+        "VirtualProtect", 
+        "VirtualQuery", 
+        "lstrcmpiA", 
+        "WNetGetProviderNameA", 
+        "__dllonexit", 
+        "__getmainargs", 
+        "__initenv", 
+        "__lconv_init", 
+        "__set_app_type", 
+        "__setusermatherr", 
+        "_acmdln", 
+        "_amsg_exit", 
+        "_cexit", 
+        "_fmode", 
+        "_initterm", 
+        "_onexit", 
+        "calloc", 
+        "fclose", 
+        "fprintf", 
+        "fwrite", 
+        "getchar", 
+        "malloc", 
+        "mbstowcs", 
+        "memcmp", 
+        "memcpy", 
+        "printf", 
+        "signal", 
+        "sprintf", 
+        "strlen", 
+        "strncat", 
+        "strncmp", 
+        "strncpy", 
+        "strstr", 
+        "_unlock", 
+        "toupper", 
+        "vfprintf", 
+        "wcsstr", 
+        "_vsnprintf", 
+        "CoCreateInstance", 
+        "CoInitializeEx", 
+        "CoInitializeSecurity", 
+        "CoUninitialize", 
+        "SysAllocString", 
+        "SysFreeString", 
+        "ShellExecuteExW", 
+        "FindWindowA", 
+        "GetCursorPos", 
+        "freeaddrinfo", 
+        "getaddrinfo", 
+        "ADVAPI32.dll", 
+        "IPHLPAPI.DLL", 
+        "KERNEL32.dll", 
+        "MPR.DLL", 
+        "msvcrt.dll", 
+        "ole32.dll", 
+        "OLEAUT32.dll", 
+        "SHELL32.dll", 
+        "USER32.dll", 
+        "WS2_32.dll", 
+        "'R,4B:", 
+        "s)%0;7", 
+        " &0V/(z", 
+        "yn<^272S", 
+        "=BS{U\\", 
+        "Zz;7rv", 
+        "hAn`5u", 
+        "x&\u001f\u001f.^", 
+        "^RzDd!", 
+        "\\jab|,", 
+        "`(,?QZ", 
+        "<w~<O*f", 
+        "xT U9-^", 
+        "ZbeJK_", 
+        "9h'  a", 
+        "sySumI", 
+        "w05v4;", 
+        "{M=VYD", 
+        "\u001fXwyyd1S", 
+        "E>`b|,", 
+        "nmjN]~", 
+        "G`WcI=", 
+        ">tX~ /", 
+        "?^Gi[E", 
+        "xa2W DO", 
+        "cp(e|:", 
+        "/NdoCT)", 
+        "*J`,WF", 
+        "qAt/n-", 
+        "hkibXy7", 
+        "S&wv+b+", 
+        "eIDATh", 
+        "R^A)o/", 
+        "1=yDXG p", 
+        "sIDATX", 
+        "/ffclFae&", 
+        "gx|OP\u001fxFu", 
+        "!Eh,*d", 
+        "gq*Kb9", 
+        "JBG%`d", 
+        "DeviceId", 
+        "PCI\\VEN_80EE&DEV_CAFE", 
+        "root\\cimv2", 
+        "SELECT DeviceId FROM Win32_PnPEntity", 
+        "sSerialNumber", 
+        "VMware", 
+        "root\\cimv2", 
+        "SELECT SerialNumber FROM Win32_Bios", 
+        "VS_VERSION_INFO", 
+        "StringFileInfo", 
+        "040904E4", 
+        "CompanyName", 
+        "FileVersion", 
+        "FileDescription", 
+        "Paranoid Fish is paranoid", 
+        "InternalName", 
+        "LegalCopyright", 
+        "LegalTrademarks", 
+        "OriginalFilename", 
+        "ProductName", 
+        "Paranoid Fish", 
+        "ProductVersion", 
+        "VarFileInfo", 
+        "Translation"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "46282156eefcb2e505baa60b3f0470557df75dcc67326debcdd7732704fb0fa9", 
+                "dirname": ""
+            }
+        }
+    }
+}

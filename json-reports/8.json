@@ -1,0 +1,3713 @@
+{
+    "info": {
+        "added": 1501006299.140155, 
+        "started": 1501006998.51005, 
+        "duration": 162, 
+        "ended": 1501007160.897458, 
+        "owner": null, 
+        "score": 1.2, 
+        "id": 8, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": "2bd01ede5c5258d5fce2e38bc58348a62c11ce33", 
+        "package": "exe", 
+        "route": "tor", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "cuckoo1", 
+            "label": "cuckoo1", 
+            "manager": "VirtualBox", 
+            "started_on": "2017-07-25 18:23:19", 
+            "shutdown_on": "2017-07-25 18:26:00"
+        }, 
+        "platform": null, 
+        "version": "2.0.4a3", 
+        "options": "procmemdump=yes,route=tor"
+    }, 
+    "procmemory": [
+        {
+            "regions": [
+                {
+                    "protect": "rw", 
+                    "end": "0x00020000", 
+                    "addr": "0x00010000", 
+                    "offset": 24, 
+                    "type": 262144, 
+                    "size": 65536
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00030000", 
+                    "addr": "0x00020000", 
+                    "offset": 65584, 
+                    "type": 262144, 
+                    "size": 65536
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00031000", 
+                    "addr": "0x00030000", 
+                    "offset": 131144, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x00041000", 
+                    "addr": "0x00040000", 
+                    "offset": 135264, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00090000", 
+                    "addr": "0x0008c000", 
+                    "offset": 139384, 
+                    "type": 131072, 
+                    "size": 16384
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00290000", 
+                    "addr": "0x0028d000", 
+                    "offset": 155792, 
+                    "type": 131072, 
+                    "size": 12288
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x00294000", 
+                    "addr": "0x00290000", 
+                    "offset": 168104, 
+                    "type": 262144, 
+                    "size": 16384
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x002a1000", 
+                    "addr": "0x002a0000", 
+                    "offset": 184512, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rwx", 
+                    "end": "0x002b1000", 
+                    "addr": "0x002b0000", 
+                    "offset": 188632, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rwx", 
+                    "end": "0x002c1000", 
+                    "addr": "0x002c0000", 
+                    "offset": 192752, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rwx", 
+                    "end": "0x002d1000", 
+                    "addr": "0x002d0000", 
+                    "offset": 196872, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x00347000", 
+                    "addr": "0x002e0000", 
+                    "offset": 200992, 
+                    "type": 262144, 
+                    "size": 421888
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00351000", 
+                    "addr": "0x00350000", 
+                    "offset": 622904, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x00361000", 
+                    "addr": "0x00360000", 
+                    "offset": 627024, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00371000", 
+                    "addr": "0x00370000", 
+                    "offset": 631144, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00381000", 
+                    "addr": "0x00380000", 
+                    "offset": 635264, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00391000", 
+                    "addr": "0x00390000", 
+                    "offset": 639384, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x003a1000", 
+                    "addr": "0x003a0000", 
+                    "offset": 643504, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x003b4000", 
+                    "addr": "0x003b0000", 
+                    "offset": 647624, 
+                    "type": 131072, 
+                    "size": 16384
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x003c4000", 
+                    "addr": "0x003c0000", 
+                    "offset": 664032, 
+                    "type": 131072, 
+                    "size": 16384
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x003e0000", 
+                    "addr": "0x003d0000", 
+                    "offset": 680440, 
+                    "type": 131072, 
+                    "size": 65536
+                }, 
+                {
+                    "protect": "rwx", 
+                    "end": "0x003e2000", 
+                    "addr": "0x003e0000", 
+                    "offset": 746000, 
+                    "type": 131072, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x003f1000", 
+                    "addr": "0x003f0000", 
+                    "offset": 754216, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x00401000", 
+                    "addr": "0x00400000", 
+                    "offset": 758336, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x00403000", 
+                    "addr": "0x00401000", 
+                    "offset": 762456, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x00404000", 
+                    "addr": "0x00403000", 
+                    "offset": 770672, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x00405000", 
+                    "addr": "0x00404000", 
+                    "offset": 774792, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00407000", 
+                    "addr": "0x00405000", 
+                    "offset": 778912, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00411000", 
+                    "addr": "0x00410000", 
+                    "offset": 787128, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rwx", 
+                    "end": "0x00422000", 
+                    "addr": "0x00420000", 
+                    "offset": 791248, 
+                    "type": 131072, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00431000", 
+                    "addr": "0x00430000", 
+                    "offset": 799464, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00441000", 
+                    "addr": "0x00440000", 
+                    "offset": 803584, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00470000", 
+                    "addr": "0x00460000", 
+                    "offset": 807704, 
+                    "type": 131072, 
+                    "size": 65536
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00480000", 
+                    "addr": "0x00470000", 
+                    "offset": 873264, 
+                    "type": 131072, 
+                    "size": 65536
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00490000", 
+                    "addr": "0x00480000", 
+                    "offset": 938824, 
+                    "type": 131072, 
+                    "size": 65536
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00491000", 
+                    "addr": "0x00490000", 
+                    "offset": 1004384, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x004d1000", 
+                    "addr": "0x004d0000", 
+                    "offset": 1008504, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00517000", 
+                    "addr": "0x00500000", 
+                    "offset": 1012624, 
+                    "type": 131072, 
+                    "size": 94208
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x006b1000", 
+                    "addr": "0x00670000", 
+                    "offset": 1106856, 
+                    "type": 131072, 
+                    "size": 266240
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x00773000", 
+                    "addr": "0x00770000", 
+                    "offset": 1373120, 
+                    "type": 262144, 
+                    "size": 12288
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x008f3000", 
+                    "addr": "0x008f0000", 
+                    "offset": 1385432, 
+                    "type": 262144, 
+                    "size": 12288
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x00936000", 
+                    "addr": "0x00930000", 
+                    "offset": 1397744, 
+                    "type": 131072, 
+                    "size": 24576
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x00ac1000", 
+                    "addr": "0x00940000", 
+                    "offset": 1422344, 
+                    "type": 262144, 
+                    "size": 1576960
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x00aeb000", 
+                    "addr": "0x00ad0000", 
+                    "offset": 2999328, 
+                    "type": 262144, 
+                    "size": 110592
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x02b21000", 
+                    "addr": "0x02b20000", 
+                    "offset": 3109944, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x02b34000", 
+                    "addr": "0x02b21000", 
+                    "offset": 3114064, 
+                    "type": 16777216, 
+                    "size": 77824
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x02b35000", 
+                    "addr": "0x02b34000", 
+                    "offset": 3191912, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x02b37000", 
+                    "addr": "0x02b35000", 
+                    "offset": 3196032, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x02b39000", 
+                    "addr": "0x02b37000", 
+                    "offset": 3204248, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x10001000", 
+                    "addr": "0x10000000", 
+                    "offset": 3212464, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x10009000", 
+                    "addr": "0x10001000", 
+                    "offset": 3216584, 
+                    "type": 16777216, 
+                    "size": 32768
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x1000a000", 
+                    "addr": "0x10009000", 
+                    "offset": 3249376, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x1000c000", 
+                    "addr": "0x1000a000", 
+                    "offset": 3253496, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x40161000", 
+                    "addr": "0x40160000", 
+                    "offset": 3261712, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x40163000", 
+                    "addr": "0x40161000", 
+                    "offset": 3265832, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x40164000", 
+                    "addr": "0x40163000", 
+                    "offset": 3274048, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x40166000", 
+                    "addr": "0x40164000", 
+                    "offset": 3278168, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x41ac1000", 
+                    "addr": "0x41ac0000", 
+                    "offset": 3286384, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x41ae7000", 
+                    "addr": "0x41ac1000", 
+                    "offset": 3290504, 
+                    "type": 16777216, 
+                    "size": 155648
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x41ae8000", 
+                    "addr": "0x41ae7000", 
+                    "offset": 3446176, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x41af5000", 
+                    "addr": "0x41ae8000", 
+                    "offset": 3450296, 
+                    "type": 16777216, 
+                    "size": 53248
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x63bc1000", 
+                    "addr": "0x63bc0000", 
+                    "offset": 3503568, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x63bf8000", 
+                    "addr": "0x63bc1000", 
+                    "offset": 3507688, 
+                    "type": 16777216, 
+                    "size": 225280
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x63bf9000", 
+                    "addr": "0x63bf8000", 
+                    "offset": 3732992, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x63bff000", 
+                    "addr": "0x63bf9000", 
+                    "offset": 3737112, 
+                    "type": 16777216, 
+                    "size": 24576
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x63c06000", 
+                    "addr": "0x63bff000", 
+                    "offset": 3761712, 
+                    "type": 16777216, 
+                    "size": 28672
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x63c08000", 
+                    "addr": "0x63c06000", 
+                    "offset": 3790408, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x63c09000", 
+                    "addr": "0x63c08000", 
+                    "offset": 3798624, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x63c1d000", 
+                    "addr": "0x63c09000", 
+                    "offset": 3802744, 
+                    "type": 16777216, 
+                    "size": 81920
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x63c1e000", 
+                    "addr": "0x63c1d000", 
+                    "offset": 3884688, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x63c54000", 
+                    "addr": "0x63c1e000", 
+                    "offset": 3888808, 
+                    "type": 16777216, 
+                    "size": 221184
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x63c57000", 
+                    "addr": "0x63c54000", 
+                    "offset": 4110016, 
+                    "type": 16777216, 
+                    "size": 12288
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x63c65000", 
+                    "addr": "0x63c57000", 
+                    "offset": 4122328, 
+                    "type": 16777216, 
+                    "size": 57344
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x63c77000", 
+                    "addr": "0x63c65000", 
+                    "offset": 4179696, 
+                    "type": 16777216, 
+                    "size": 73728
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x63c86000", 
+                    "addr": "0x63c77000", 
+                    "offset": 4253448, 
+                    "type": 16777216, 
+                    "size": 61440
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x63cc9000", 
+                    "addr": "0x63c86000", 
+                    "offset": 4314912, 
+                    "type": 16777216, 
+                    "size": 274432
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x63dac000", 
+                    "addr": "0x63cc9000", 
+                    "offset": 4589368, 
+                    "type": 16777216, 
+                    "size": 929792
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x63dad000", 
+                    "addr": "0x63dac000", 
+                    "offset": 5519184, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x63db4000", 
+                    "addr": "0x63dad000", 
+                    "offset": 5523304, 
+                    "type": 16777216, 
+                    "size": 28672
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x63db5000", 
+                    "addr": "0x63db4000", 
+                    "offset": 5552000, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x63db7000", 
+                    "addr": "0x63db5000", 
+                    "offset": 5556120, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x63dbd000", 
+                    "addr": "0x63db7000", 
+                    "offset": 5564336, 
+                    "type": 16777216, 
+                    "size": 24576
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x6f8e1000", 
+                    "addr": "0x6f8e0000", 
+                    "offset": 5588936, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x6f93c000", 
+                    "addr": "0x6f8e1000", 
+                    "offset": 5593056, 
+                    "type": 16777216, 
+                    "size": 372736
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x6f93e000", 
+                    "addr": "0x6f93c000", 
+                    "offset": 5965816, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x6f97d000", 
+                    "addr": "0x6f93e000", 
+                    "offset": 5974032, 
+                    "type": 16777216, 
+                    "size": 258048
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x6ff51000", 
+                    "addr": "0x6ff50000", 
+                    "offset": 6232104, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x6fff0000", 
+                    "addr": "0x6ff51000", 
+                    "offset": 6236224, 
+                    "type": 16777216, 
+                    "size": 651264
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x6fff1000", 
+                    "addr": "0x6fff0000", 
+                    "offset": 6887512, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x6fff2000", 
+                    "addr": "0x6fff1000", 
+                    "offset": 6891632, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x6fff4000", 
+                    "addr": "0x6fff2000", 
+                    "offset": 6895752, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x6fff7000", 
+                    "addr": "0x6fff4000", 
+                    "offset": 6903968, 
+                    "type": 16777216, 
+                    "size": 12288
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x6fffc000", 
+                    "addr": "0x6fff7000", 
+                    "offset": 6916280, 
+                    "type": 16777216, 
+                    "size": 20480
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x70991000", 
+                    "addr": "0x70990000", 
+                    "offset": 6936784, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x70a14000", 
+                    "addr": "0x70991000", 
+                    "offset": 6940904, 
+                    "type": 16777216, 
+                    "size": 536576
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x70a15000", 
+                    "addr": "0x70a14000", 
+                    "offset": 7477504, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x70a16000", 
+                    "addr": "0x70a15000", 
+                    "offset": 7481624, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x70a5c000", 
+                    "addr": "0x70a16000", 
+                    "offset": 7485744, 
+                    "type": 16777216, 
+                    "size": 286720
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x77c61000", 
+                    "addr": "0x77c60000", 
+                    "offset": 7772488, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x77cd3000", 
+                    "addr": "0x77c61000", 
+                    "offset": 7776608, 
+                    "type": 16777216, 
+                    "size": 466944
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x77cd4000", 
+                    "addr": "0x77cd3000", 
+                    "offset": 8243576, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x77cd7000", 
+                    "addr": "0x77cd4000", 
+                    "offset": 8247696, 
+                    "type": 16777216, 
+                    "size": 12288
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x77d00000", 
+                    "addr": "0x77cd7000", 
+                    "offset": 8260008, 
+                    "type": 16777216, 
+                    "size": 167936
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x78b61000", 
+                    "addr": "0x78b60000", 
+                    "offset": 8427968, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x78b64000", 
+                    "addr": "0x78b61000", 
+                    "offset": 8432088, 
+                    "type": 16777216, 
+                    "size": 12288
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x78b65000", 
+                    "addr": "0x78b64000", 
+                    "offset": 8444400, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x78b68000", 
+                    "addr": "0x78b65000", 
+                    "offset": 8448520, 
+                    "type": 16777216, 
+                    "size": 12288
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x78b71000", 
+                    "addr": "0x78b70000", 
+                    "offset": 8460832, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x78bbe000", 
+                    "addr": "0x78b71000", 
+                    "offset": 8464952, 
+                    "type": 16777216, 
+                    "size": 315392
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x78bbf000", 
+                    "addr": "0x78bbe000", 
+                    "offset": 8780368, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x78bc2000", 
+                    "addr": "0x78bbf000", 
+                    "offset": 8784488, 
+                    "type": 16777216, 
+                    "size": 12288
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x78bc3000", 
+                    "addr": "0x78bc2000", 
+                    "offset": 8796800, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x78bcc000", 
+                    "addr": "0x78bc3000", 
+                    "offset": 8800920, 
+                    "type": 16777216, 
+                    "size": 36864
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x78bd1000", 
+                    "addr": "0x78bd0000", 
+                    "offset": 8837808, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x78c09000", 
+                    "addr": "0x78bd1000", 
+                    "offset": 8841928, 
+                    "type": 16777216, 
+                    "size": 229376
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x78c0b000", 
+                    "addr": "0x78c09000", 
+                    "offset": 9071328, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x78c0f000", 
+                    "addr": "0x78c0b000", 
+                    "offset": 9079544, 
+                    "type": 16777216, 
+                    "size": 16384
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x78e51000", 
+                    "addr": "0x78e50000", 
+                    "offset": 9095952, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x78f53000", 
+                    "addr": "0x78e51000", 
+                    "offset": 9100072, 
+                    "type": 16777216, 
+                    "size": 1056768
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x78f82000", 
+                    "addr": "0x78f53000", 
+                    "offset": 10156864, 
+                    "type": 16777216, 
+                    "size": 192512
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x78f83000", 
+                    "addr": "0x78f82000", 
+                    "offset": 10349400, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x78f84000", 
+                    "addr": "0x78f83000", 
+                    "offset": 10353520, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x78f85000", 
+                    "addr": "0x78f84000", 
+                    "offset": 10357640, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x78f87000", 
+                    "addr": "0x78f85000", 
+                    "offset": 10361760, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x78f88000", 
+                    "addr": "0x78f87000", 
+                    "offset": 10369976, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x78f89000", 
+                    "addr": "0x78f88000", 
+                    "offset": 10374096, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x78f8b000", 
+                    "addr": "0x78f89000", 
+                    "offset": 10378216, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x78f8e000", 
+                    "addr": "0x78f8b000", 
+                    "offset": 10386432, 
+                    "type": 16777216, 
+                    "size": 12288
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x78ff9000", 
+                    "addr": "0x78f8e000", 
+                    "offset": 10398744, 
+                    "type": 16777216, 
+                    "size": 438272
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7d621000", 
+                    "addr": "0x7d620000", 
+                    "offset": 10837040, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x7d627000", 
+                    "addr": "0x7d621000", 
+                    "offset": 10841160, 
+                    "type": 16777216, 
+                    "size": 24576
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x7d628000", 
+                    "addr": "0x7d627000", 
+                    "offset": 10865760, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7d62a000", 
+                    "addr": "0x7d628000", 
+                    "offset": 10869880, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7d851000", 
+                    "addr": "0x7d850000", 
+                    "offset": 10878096, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x7d891000", 
+                    "addr": "0x7d851000", 
+                    "offset": 10882216, 
+                    "type": 16777216, 
+                    "size": 262144
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x7d893000", 
+                    "addr": "0x7d891000", 
+                    "offset": 11144384, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7d897000", 
+                    "addr": "0x7d893000", 
+                    "offset": 11152600, 
+                    "type": 16777216, 
+                    "size": 16384
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7d8a1000", 
+                    "addr": "0x7d8a0000", 
+                    "offset": 11169008, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x7d8c6000", 
+                    "addr": "0x7d8b0000", 
+                    "offset": 11173128, 
+                    "type": 16777216, 
+                    "size": 90112
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x7d8d1000", 
+                    "addr": "0x7d8d0000", 
+                    "offset": 11263264, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7d8e1000", 
+                    "addr": "0x7d8e0000", 
+                    "offset": 11267384, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7d8f2000", 
+                    "addr": "0x7d8f0000", 
+                    "offset": 11271504, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7d911000", 
+                    "addr": "0x7d910000", 
+                    "offset": 11279720, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x7d937000", 
+                    "addr": "0x7d920000", 
+                    "offset": 11283840, 
+                    "type": 16777216, 
+                    "size": 94208
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x7d941000", 
+                    "addr": "0x7d940000", 
+                    "offset": 11378072, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7d955000", 
+                    "addr": "0x7d950000", 
+                    "offset": 11382192, 
+                    "type": 16777216, 
+                    "size": 20480
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7d961000", 
+                    "addr": "0x7d960000", 
+                    "offset": 11402696, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7dab1000", 
+                    "addr": "0x7dab0000", 
+                    "offset": 11406816, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x7db09000", 
+                    "addr": "0x7dac0000", 
+                    "offset": 11410936, 
+                    "type": 16777216, 
+                    "size": 299008
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x7db11000", 
+                    "addr": "0x7db10000", 
+                    "offset": 11709968, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7db21000", 
+                    "addr": "0x7db20000", 
+                    "offset": 11714088, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7db32000", 
+                    "addr": "0x7db30000", 
+                    "offset": 11718208, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7db51000", 
+                    "addr": "0x7db50000", 
+                    "offset": 11726424, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x7dbf6000", 
+                    "addr": "0x7db60000", 
+                    "offset": 11730544, 
+                    "type": 16777216, 
+                    "size": 614400
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x7dc03000", 
+                    "addr": "0x7dc00000", 
+                    "offset": 12344968, 
+                    "type": 16777216, 
+                    "size": 12288
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x7dc11000", 
+                    "addr": "0x7dc10000", 
+                    "offset": 12357280, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7dc24000", 
+                    "addr": "0x7dc20000", 
+                    "offset": 12361400, 
+                    "type": 16777216, 
+                    "size": 16384
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7dc35000", 
+                    "addr": "0x7dc30000", 
+                    "offset": 12377808, 
+                    "type": 16777216, 
+                    "size": 20480
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7dc51000", 
+                    "addr": "0x7dc50000", 
+                    "offset": 12398312, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x7dccd000", 
+                    "addr": "0x7dc60000", 
+                    "offset": 12402432, 
+                    "type": 16777216, 
+                    "size": 446464
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x7dcd1000", 
+                    "addr": "0x7dcd0000", 
+                    "offset": 12848920, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7dd3b000", 
+                    "addr": "0x7dce0000", 
+                    "offset": 12853040, 
+                    "type": 16777216, 
+                    "size": 372736
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7dd44000", 
+                    "addr": "0x7dd40000", 
+                    "offset": 13225800, 
+                    "type": 16777216, 
+                    "size": 16384
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7dd70000", 
+                    "addr": "0x7dd60000", 
+                    "offset": 13242208, 
+                    "type": 16777216, 
+                    "size": 65536
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x7de31000", 
+                    "addr": "0x7dd70000", 
+                    "offset": 13307768, 
+                    "type": 16777216, 
+                    "size": 790528
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x7de41000", 
+                    "addr": "0x7de40000", 
+                    "offset": 14098320, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x7de42000", 
+                    "addr": "0x7de41000", 
+                    "offset": 14102440, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7de51000", 
+                    "addr": "0x7de50000", 
+                    "offset": 14106560, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7de6b000", 
+                    "addr": "0x7de60000", 
+                    "offset": 14110680, 
+                    "type": 16777216, 
+                    "size": 45056
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7de71000", 
+                    "addr": "0x7de70000", 
+                    "offset": 14155760, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x7df56000", 
+                    "addr": "0x7de80000", 
+                    "offset": 14159880, 
+                    "type": 16777216, 
+                    "size": 876544
+                }, 
+                {
+                    "protect": "rx", 
+                    "end": "0x7df61000", 
+                    "addr": "0x7df60000", 
+                    "offset": 15036448, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x7df71000", 
+                    "addr": "0x7df70000", 
+                    "offset": 15040568, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7df72000", 
+                    "addr": "0x7df71000", 
+                    "offset": 15044688, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x7df73000", 
+                    "addr": "0x7df72000", 
+                    "offset": 15048808, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x7df74000", 
+                    "addr": "0x7df73000", 
+                    "offset": 15052928, 
+                    "type": 16777216, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x7df77000", 
+                    "addr": "0x7df74000", 
+                    "offset": 15057048, 
+                    "type": 16777216, 
+                    "size": 12288
+                }, 
+                {
+                    "protect": "rwc", 
+                    "end": "0x7df79000", 
+                    "addr": "0x7df77000", 
+                    "offset": 15069360, 
+                    "type": 16777216, 
+                    "size": 8192
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7dfd7000", 
+                    "addr": "0x7df80000", 
+                    "offset": 15077576, 
+                    "type": 16777216, 
+                    "size": 356352
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7dfe5000", 
+                    "addr": "0x7dfe0000", 
+                    "offset": 15433952, 
+                    "type": 16777216, 
+                    "size": 20480
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7efd3000", 
+                    "addr": "0x7efb0000", 
+                    "offset": 15454456, 
+                    "type": 262144, 
+                    "size": 143360
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x7efde000", 
+                    "addr": "0x7efdb000", 
+                    "offset": 15597840, 
+                    "type": 131072, 
+                    "size": 12288
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x7efdf000", 
+                    "addr": "0x7efde000", 
+                    "offset": 15610152, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "rw", 
+                    "end": "0x7efe0000", 
+                    "addr": "0x7efdf000", 
+                    "offset": 15614272, 
+                    "type": 131072, 
+                    "size": 4096
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7efe5000", 
+                    "addr": "0x7efe0000", 
+                    "offset": 15618392, 
+                    "type": 262144, 
+                    "size": 20480
+                }, 
+                {
+                    "protect": "r", 
+                    "end": "0x7ffe1000", 
+                    "addr": "0x7ffe0000", 
+                    "offset": 15638896, 
+                    "type": 131072, 
+                    "size": 4096
+                }
+            ], 
+            "yara": [], 
+            "num": 1, 
+            "file": "/home/tempuser/.cuckoo/storage/analyses/8/memory/2496-1.dmp", 
+            "urls": [], 
+            "extracted": [
+                {
+                    "yara": [], 
+                    "sha1": "b69f549b7ac9dfdc4c9bdc95717a77c17508dcf2", 
+                    "name": "2496-b69f549b7ac9dfdc.exe_", 
+                    "type": "PE32 executable (console) Intel 80386 (stripped to external PDB), for MS Windows", 
+                    "sha256": "1cac28fa9f68d2297b55e61ce79452cdd033a8b98825044e8ede0876111e90f0", 
+                    "urls": [], 
+                    "crc32": "1A5FA683", 
+                    "path": "/home/tempuser/.cuckoo/storage/analyses/8/memory/2496-b69f549b7ac9dfdc.exe_", 
+                    "ssdeep": null, 
+                    "size": 32768, 
+                    "sha512": "1fce6ce6c8cf1d3d30a43b261bc714b15c9962c7eaf28542242401b11c36e96fa0ad42eafb83bce40424bba1d6ea909be5f81ccb4decbdd49cacaaef018695f2", 
+                    "md5": "e8723c87b1f65a7b95ef6264d7752fe5"
+                }
+            ], 
+            "pid": 2496
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "yara": [], 
+            "sha1": "fac5b9e175205616b445e4cfa45286a83469d7b3", 
+            "name": "Lab_02-2.exe", 
+            "type": "PE32 executable (console) Intel 80386 (stripped to external PDB), for MS Windows", 
+            "sha256": "66ee51065c49d7462e2d3ae639d2eed3b36238a0d8b55d9e2b6acaf87ea4f9db", 
+            "urls": [], 
+            "crc32": "322374BD", 
+            "path": "/home/tempuser/.cuckoo/storage/binaries/66ee51065c49d7462e2d3ae639d2eed3b36238a0d8b55d9e2b6acaf87ea4f9db", 
+            "ssdeep": null, 
+            "size": 28598, 
+            "sha512": "39c0f81b85a9225787dcb6c0278407277f0b97b5e2d0c5e12274d56c774a4079ad8102f0b6e659b01f0a4c23a16a7dee124e237c391ec3ef6580d3ec7e013744", 
+            "md5": "e1250254abbbeee84e04d9adcee31e63"
+        }
+    }, 
+    "network": {
+        "tls": [
+            {
+                "server_random": "59777ef73277b216d9f038b401c80404a7525b46aa8083d017d013b8d29b17b3", 
+                "session_id": "5ca1a591643035b0937c8fb0d512ed8747e81a1fefd2883a1a960d98285aca8d"
+            }, 
+            {
+                "server_random": "59777f0a4e44d811b301b197cfc229f0bf20a07a7aaeb06cc317b68be44546d8", 
+                "session_id": "7791e705fb2402dfef46c1e0409026216df90102bb4d667472fa69499ca9c13b"
+            }
+        ], 
+        "udp": [
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.255", 
+                "offset": 20106, 
+                "time": 11.358093976974487, 
+                "dport": 137, 
+                "sport": 137
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.255", 
+                "offset": 29610, 
+                "time": 17.357571125030518, 
+                "dport": 138, 
+                "sport": 138
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 38794, 
+                "time": 14.707040071487427, 
+                "dport": 5355, 
+                "sport": 50215
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 39154, 
+                "time": 115.35082602500916, 
+                "dport": 5355, 
+                "sport": 51952
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 39474, 
+                "time": 11.288871049880981, 
+                "dport": 5355, 
+                "sport": 54166
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 39802, 
+                "time": 15.014392137527466, 
+                "dport": 5355, 
+                "sport": 56391
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 40162, 
+                "time": 9.942602157592773, 
+                "dport": 5355, 
+                "sport": 56928
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 40490, 
+                "time": 9.290893077850342, 
+                "dport": 5355, 
+                "sport": 57887
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 40850, 
+                "time": 14.399712085723877, 
+                "dport": 5355, 
+                "sport": 58050
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 41210, 
+                "time": 112.70492506027222, 
+                "dport": 5355, 
+                "sport": 58149
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 41530, 
+                "time": 128.95786213874817, 
+                "dport": 5355, 
+                "sport": 58980
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 41850, 
+                "time": 10.864866971969604, 
+                "dport": 5355, 
+                "sport": 62503
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 42170, 
+                "time": 108.9248731136322, 
+                "dport": 5355, 
+                "sport": 63005
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 42490, 
+                "time": 11.289482116699219, 
+                "dport": 5355, 
+                "sport": 64684
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 42850, 
+                "time": 132.38622617721558, 
+                "dport": 5355, 
+                "sport": 64769
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "239.255.255.250", 
+                "offset": 43170, 
+                "time": 108.16365218162537, 
+                "dport": 1900, 
+                "sport": 56765
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "51.141.32.51", 
+                "offset": 45462, 
+                "time": 16.34636116027832, 
+                "dport": 123, 
+                "sport": 123
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 45568, 
+                "time": 15.980901002883911, 
+                "dport": 53, 
+                "sport": 49429
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 45752, 
+                "time": 117.90480303764343, 
+                "dport": 53, 
+                "sport": 49964
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 45980, 
+                "time": 11.187559127807617, 
+                "dport": 53, 
+                "sport": 50761
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 46180, 
+                "time": 14.706785202026367, 
+                "dport": 53, 
+                "sport": 54646
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 46398, 
+                "time": 13.449831008911133, 
+                "dport": 53, 
+                "sport": 55337
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 46598, 
+                "time": 16.21729016304016, 
+                "dport": 53, 
+                "sport": 56762
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 46798, 
+                "time": 15.863363027572632, 
+                "dport": 53, 
+                "sport": 57111
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 46998, 
+                "time": 11.887787103652954, 
+                "dport": 53, 
+                "sport": 59155
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 47198, 
+                "time": 12.024864196777344, 
+                "dport": 53, 
+                "sport": 60283
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 47382, 
+                "time": 11.289890050888062, 
+                "dport": 53, 
+                "sport": 61297
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 47600, 
+                "time": 131.514986038208, 
+                "dport": 53, 
+                "sport": 62214
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 47800, 
+                "time": 111.61219596862793, 
+                "dport": 53, 
+                "sport": 65495
+            }
+        ], 
+        "dns_servers": [
+            "8.8.8.8"
+        ], 
+        "http": [
+            {
+                "count": 1, 
+                "body": "", 
+                "uri": "http://www.msftncsi.com/ncsi.txt", 
+                "user-agent": "Microsoft NCSI", 
+                "method": "GET", 
+                "host": "www.msftncsi.com", 
+                "version": "1.1", 
+                "path": "/ncsi.txt", 
+                "data": "GET /ncsi.txt HTTP/1.1\r\nConnection: Close\r\nUser-Agent: Microsoft NCSI\r\nHost: www.msftncsi.com\r\n\r\n", 
+                "port": 80
+            }, 
+            {
+                "count": 1, 
+                "body": "", 
+                "uri": "http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "user-agent": "Microsoft-CryptoAPI/6.1", 
+                "method": "GET", 
+                "host": "www.download.windowsupdate.com", 
+                "version": "1.1", 
+                "path": "/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "data": "GET /msdownload/update/v3/static/trustedr/en/authrootstl.cab HTTP/1.1\r\nCache-Control: max-age = 86402\r\nConnection: Keep-Alive\r\nAccept: */*\r\nUser-Agent: Microsoft-CryptoAPI/6.1\r\nHost: www.download.windowsupdate.com\r\n\r\n", 
+                "port": 80
+            }
+        ], 
+        "icmp": [
+            {
+                "src": "51.141.32.51", 
+                "dst": "192.168.56.101", 
+                "type": 3, 
+                "data": ""
+            }
+        ], 
+        "smtp": [], 
+        "tcp": [
+            {
+                "src": "192.168.56.101", 
+                "dst": "172.217.18.78", 
+                "offset": 2810, 
+                "time": 111.96343398094177, 
+                "dport": 443, 
+                "sport": 49164
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "172.217.22.206", 
+                "offset": 9248, 
+                "time": 131.65624904632568, 
+                "dport": 443, 
+                "sport": 49166
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "80.97.209.147", 
+                "offset": 48240, 
+                "time": 118.10529708862305, 
+                "dport": 80, 
+                "sport": 49165
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "80.97.209.187", 
+                "offset": 107333, 
+                "time": 11.89027714729309, 
+                "dport": 80, 
+                "sport": 49158
+            }
+        ], 
+        "smtp_ex": [], 
+        "mitm": [], 
+        "hosts": [
+            "172.217.18.78", 
+            "172.217.22.206", 
+            "51.141.32.51", 
+            "8.8.8.8", 
+            "80.97.209.147", 
+            "80.97.209.187"
+        ], 
+        "pcap_sha256": "5dfec601948d8ef2ac4968a59c6df35b48ef000053381864761193702d86adb3", 
+        "dns": [
+            {
+                "type": "A", 
+                "request": "time.windows.com", 
+                "answers": [
+                    {
+                        "data": "51.141.32.51", 
+                        "type": "A"
+                    }
+                ]
+            }, 
+            {
+                "type": "A", 
+                "request": "dns.msftncsi.com", 
+                "answers": [
+                    {
+                        "data": "131.107.255.255", 
+                        "type": "A"
+                    }
+                ]
+            }, 
+            {
+                "type": "A", 
+                "request": "www.msftncsi.com", 
+                "answers": [
+                    {
+                        "data": "80.97.209.187", 
+                        "type": "A"
+                    }
+                ]
+            }, 
+            {
+                "type": "A", 
+                "request": "clients2.google.com", 
+                "answers": [
+                    {
+                        "data": "172.217.18.78", 
+                        "type": "A"
+                    }
+                ]
+            }, 
+            {
+                "type": "A", 
+                "request": "tools.google.com", 
+                "answers": [
+                    {
+                        "data": "172.217.22.206", 
+                        "type": "A"
+                    }
+                ]
+            }, 
+            {
+                "type": "A", 
+                "request": "www.download.windowsupdate.com", 
+                "answers": [
+                    {
+                        "data": "80.97.209.147", 
+                        "type": "A"
+                    }
+                ]
+            }, 
+            {
+                "type": "AAAA", 
+                "request": "dns.msftncsi.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "teredo.ipv6.microsoft.com", 
+                "answers": [
+                    {
+                        "data": "157.56.106.189", 
+                        "type": "A"
+                    }
+                ]
+            }
+        ], 
+        "http_ex": [
+            {
+                "status": 200, 
+                "src": "192.168.56.101", 
+                "resp": {
+                    "path": "/home/tempuser/.cuckoo/storage/analyses/8/network/33bf88d5b82df3723d5863c7d23445e345828904", 
+                    "sha1": "33bf88d5b82df3723d5863c7d23445e345828904", 
+                    "md5": "cd5a4d3fdd5bffc16bf959ef75cf37bc"
+                }, 
+                "sha1": "33bf88d5b82df3723d5863c7d23445e345828904", 
+                "protocol": "http", 
+                "dst": "80.97.209.187", 
+                "req": {
+                    "path": "/home/tempuser/.cuckoo/storage/analyses/8/network/da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                    "md5": "d41d8cd98f00b204e9800998ecf8427e"
+                }, 
+                "request": "GET /ncsi.txt HTTP/1.1\r\nConnection: Close\r\nUser-Agent: Microsoft NCSI\r\nHost: www.msftncsi.com", 
+                "uri": "/ncsi.txt", 
+                "response": "HTTP/1.1 200 OK\r\nContent-Length: 14\r\nDate: Tue, 25 Jul 2017 17:23:31 GMT\r\nConnection: close\r\nContent-Type: text/plain\r\nCache-Control: max-age=30, must-revalidate", 
+                "host": "www.msftncsi.com", 
+                "dport": 80, 
+                "path": "/home/tempuser/.cuckoo/storage/analyses/8/network/33bf88d5b82df3723d5863c7d23445e345828904", 
+                "sport": 49158, 
+                "method": "GET", 
+                "md5": "cd5a4d3fdd5bffc16bf959ef75cf37bc"
+            }, 
+            {
+                "status": 200, 
+                "src": "192.168.56.101", 
+                "resp": {
+                    "path": "/home/tempuser/.cuckoo/storage/analyses/8/network/e1b8114caa3a6b173c2e04e356a5065e7b2ca968", 
+                    "sha1": "e1b8114caa3a6b173c2e04e356a5065e7b2ca968", 
+                    "md5": "26763abb95381e4931c194e34023c33a"
+                }, 
+                "sha1": "e1b8114caa3a6b173c2e04e356a5065e7b2ca968", 
+                "protocol": "http", 
+                "dst": "80.97.209.147", 
+                "req": {
+                    "path": "/home/tempuser/.cuckoo/storage/analyses/8/network/da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                    "md5": "d41d8cd98f00b204e9800998ecf8427e"
+                }, 
+                "request": "GET /msdownload/update/v3/static/trustedr/en/authrootstl.cab HTTP/1.1\r\nCache-Control: max-age = 86402\r\nConnection: Keep-Alive\r\nAccept: */*\r\nUser-Agent: Microsoft-CryptoAPI/6.1\r\nHost: www.download.windowsupdate.com", 
+                "uri": "/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "response": "HTTP/1.1 200 OK\r\nCache-Control: max-age=604800\r\nContent-Type: application/vnd.ms-cab-compressed\r\nLast-Modified: Tue, 13 Jun 2017 19:04:53 GMT\r\nAccept-Ranges: bytes\r\nETag: \"80f83df077e4d21:0\"\r\nServer: Microsoft-IIS/8.5\r\nX-Powered-By: ASP.NET\r\nContent-Length: 52967\r\nDate: Tue, 25 Jul 2017 17:25:17 GMT\r\nConnection: keep-alive\r\nX-CCC: RO\r\nX-CID: 2", 
+                "host": "www.download.windowsupdate.com", 
+                "dport": 80, 
+                "path": "/home/tempuser/.cuckoo/storage/analyses/8/network/e1b8114caa3a6b173c2e04e356a5065e7b2ca968", 
+                "sport": 49165, 
+                "method": "GET", 
+                "md5": "26763abb95381e4931c194e34023c33a"
+            }
+        ], 
+        "domains": [
+            {
+                "ip": "131.107.255.255", 
+                "domain": "dns.msftncsi.com"
+            }, 
+            {
+                "ip": "8.254.242.174", 
+                "domain": "www.download.windowsupdate.com"
+            }, 
+            {
+                "ip": "23.215.130.146", 
+                "domain": "www.msftncsi.com"
+            }, 
+            {
+                "ip": "94.245.121.251", 
+                "domain": "teredo.ipv6.microsoft.com"
+            }, 
+            {
+                "ip": "172.217.6.206", 
+                "domain": "tools.google.com"
+            }, 
+            {
+                "ip": "", 
+                "domain": "clients2.google.com"
+            }
+        ], 
+        "dead_hosts": [], 
+        "sorted_pcap_sha256": "658cc0468e033082c1095f8f4179d876ba05e3c8399268491c173de820622fd2", 
+        "irc": [], 
+        "https_ex": [
+            {
+                "status": 204, 
+                "src": "192.168.56.101", 
+                "resp": {
+                    "path": "/home/tempuser/.cuckoo/storage/analyses/8/network/da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                    "md5": "d41d8cd98f00b204e9800998ecf8427e"
+                }, 
+                "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                "protocol": "https", 
+                "dst": "172.217.18.78", 
+                "req": {
+                    "path": "/home/tempuser/.cuckoo/storage/analyses/8/network/da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                    "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                    "md5": "d41d8cd98f00b204e9800998ecf8427e"
+                }, 
+                "request": "GET /service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201 HTTP/1.1\r\nCache-Control: no-cache\r\nConnection: Keep-Alive\r\nPragma: no-cache\r\nUser-Agent: Google Update/1.3.28.15;winhttp\r\nX-Old-UID: cnt=0\r\nX-Last-HR: 0x0\r\nX-Last-HTTP-Status-Code: 0\r\nX-Retry-Count: 0\r\nX-HTTP-Attempts: 1\r\nX-GoogleUpdate-Interactivity: fg\r\nHost: clients2.google.com", 
+                "uri": "/service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201", 
+                "response": "HTTP/1.1 204 No Content\r\nDate: Tue, 25 Jul 2017 17:25:18 GMT\r\nServer: GSE\r\nAlt-Svc: quic=\":443\"; ma=2592000; v=\"39,38,37,36,35\"", 
+                "host": "clients2.google.com", 
+                "dport": 443, 
+                "path": "/home/tempuser/.cuckoo/storage/analyses/8/network/da39a3ee5e6b4b0d3255bfef95601890afd80709", 
+                "sport": 49164, 
+                "method": "GET", 
+                "md5": "d41d8cd98f00b204e9800998ecf8427e"
+            }, 
+            {
+                "status": 200, 
+                "src": "192.168.56.101", 
+                "resp": {
+                    "path": "/home/tempuser/.cuckoo/storage/analyses/8/network/ac08f131b23750720ced18f4ced97df1d9df0069", 
+                    "sha1": "ac08f131b23750720ced18f4ced97df1d9df0069", 
+                    "md5": "25f8ac523850b9dceb41d6bbb73f1d38"
+                }, 
+                "sha1": "ac08f131b23750720ced18f4ced97df1d9df0069", 
+                "protocol": "https", 
+                "dst": "172.217.22.206", 
+                "req": {
+                    "path": "/home/tempuser/.cuckoo/storage/analyses/8/network/1dd7406488cbb082aa0483da73cb5f414aef664a", 
+                    "sha1": "1dd7406488cbb082aa0483da73cb5f414aef664a", 
+                    "md5": "a5057ccb9f2641ea7637fc5be305a98e"
+                }, 
+                "request": "POST /service/update2?cup2key=5:3857380398&cup2hreq=0de73091f9c37f2dcfa85fa4ef6031740e104596e55f3112e11f951752841ec4 HTTP/1.1\r\nCache-Control: no-cache\r\nConnection: Keep-Alive\r\nPragma: no-cache\r\nUser-Agent: Google Update/1.3.28.15;winhttp;cup-ecdsa\r\nX-Old-UID: cnt=0\r\nX-Last-HR: 0x0\r\nX-Last-HTTP-Status-Code: 0\r\nX-Retry-Count: 0\r\nX-HTTP-Attempts: 1\r\nX-GoogleUpdate-Interactivity: fg\r\nContent-Length: 1214\r\nHost: tools.google.com", 
+                "uri": "/service/update2?cup2key=5:3857380398&cup2hreq=0de73091f9c37f2dcfa85fa4ef6031740e104596e55f3112e11f951752841ec4", 
+                "response": "HTTP/1.1 200 OK\r\nCache-Control: no-cache, no-store, max-age=0, must-revalidate\r\nPragma: no-cache\r\nExpires: Mon, 01 Jan 1990 00:00:00 GMT\r\nDate: Tue, 25 Jul 2017 17:25:31 GMT\r\nX-Cup-Server-Proof: 30450221008c6dbc6691510a61264fe841279d98c8f626ac89e12af06d2f644bada422243a02202195bd9603e47c61745a12875ca84e4e0973f4d8718a0bb77de531997169c110:0de73091f9c37f2dcfa85fa4ef6031740e104596e55f3112e11f951752841ec4\r\nETag: W/\"30450221008c6dbc6691510a61264fe841279d98c8f626ac89e12af06d2f644bada422243a02202195bd9603e47c61745a12875ca84e4e0973f4d8718a0bb77de531997169c110:0de73091f9c37f2dcfa85fa4ef6031740e104596e55f3112e11f951752841ec4\"\r\nContent-Type: text/xml; charset=UTF-8\r\nContent-Length: 2398\r\nX-Daynum: 3858\r\nX-Daystart: 37531\r\nX-Content-Type-Options: nosniff\r\nX-Frame-Options: SAMEORIGIN\r\nX-XSS-Protection: 1; mode=block\r\nServer: GSE\r\nAlt-Svc: quic=\":443\"; ma=2592000; v=\"39,38,37,36,35\"", 
+                "host": "tools.google.com", 
+                "dport": 443, 
+                "path": "/home/tempuser/.cuckoo/storage/analyses/8/network/ac08f131b23750720ced18f4ced97df1d9df0069", 
+                "sport": 49166, 
+                "method": "POST", 
+                "md5": "25f8ac523850b9dceb41d6bbb73f1d38"
+            }
+        ]
+    }, 
+    "signatures": [
+        {
+            "markcount": 4, 
+            "families": [], 
+            "description": "Performs some HTTP requests", 
+            "severity": 2, 
+            "marks": [
+                {
+                    "category": "request", 
+                    "ioc": "GET http://www.msftncsi.com/ncsi.txt", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "request", 
+                    "ioc": "GET http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "request", 
+                    "ioc": "GET https://clients2.google.com/service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "request", 
+                    "ioc": "POST https://tools.google.com/service/update2?cup2key=5:3857380398&cup2hreq=0de73091f9c37f2dcfa85fa4ef6031740e104596e55f3112e11f951752841ec4", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "references": [], 
+            "name": "network_http"
+        }, 
+        {
+            "markcount": 0, 
+            "families": [], 
+            "description": "Generates some ICMP traffic", 
+            "severity": 4, 
+            "marks": [], 
+            "references": [], 
+            "name": "network_icmp"
+        }
+    ], 
+    "static": {
+        "pdb_path": null, 
+        "pe_imports": [
+            {
+                "imports": [
+                    {
+                        "name": "AddAtomA", 
+                        "address": "0x406154"
+                    }, 
+                    {
+                        "name": "AllocConsole", 
+                        "address": "0x406158"
+                    }, 
+                    {
+                        "name": "ExitProcess", 
+                        "address": "0x40615c"
+                    }, 
+                    {
+                        "name": "FindAtomA", 
+                        "address": "0x406160"
+                    }, 
+                    {
+                        "name": "GetAtomNameA", 
+                        "address": "0x406164"
+                    }, 
+                    {
+                        "name": "SetUnhandledExceptionFilter", 
+                        "address": "0x406168"
+                    }, 
+                    {
+                        "name": "Sleep", 
+                        "address": "0x40616c"
+                    }
+                ], 
+                "dll": "KERNEL32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "__getmainargs", 
+                        "address": "0x406178"
+                    }, 
+                    {
+                        "name": "__p__environ", 
+                        "address": "0x40617c"
+                    }, 
+                    {
+                        "name": "__p__fmode", 
+                        "address": "0x406180"
+                    }, 
+                    {
+                        "name": "__set_app_type", 
+                        "address": "0x406184"
+                    }, 
+                    {
+                        "name": "_cexit", 
+                        "address": "0x406188"
+                    }, 
+                    {
+                        "name": "_iob", 
+                        "address": "0x40618c"
+                    }, 
+                    {
+                        "name": "_onexit", 
+                        "address": "0x406190"
+                    }, 
+                    {
+                        "name": "_setmode", 
+                        "address": "0x406194"
+                    }, 
+                    {
+                        "name": "abort", 
+                        "address": "0x406198"
+                    }, 
+                    {
+                        "name": "atexit", 
+                        "address": "0x40619c"
+                    }, 
+                    {
+                        "name": "ctime", 
+                        "address": "0x4061a0"
+                    }, 
+                    {
+                        "name": "exit", 
+                        "address": "0x4061a4"
+                    }, 
+                    {
+                        "name": "fclose", 
+                        "address": "0x4061a8"
+                    }, 
+                    {
+                        "name": "fflush", 
+                        "address": "0x4061ac"
+                    }, 
+                    {
+                        "name": "fopen", 
+                        "address": "0x4061b0"
+                    }, 
+                    {
+                        "name": "fprintf", 
+                        "address": "0x4061b4"
+                    }, 
+                    {
+                        "name": "fputc", 
+                        "address": "0x4061b8"
+                    }, 
+                    {
+                        "name": "fputs", 
+                        "address": "0x4061bc"
+                    }, 
+                    {
+                        "name": "fread", 
+                        "address": "0x4061c0"
+                    }, 
+                    {
+                        "name": "free", 
+                        "address": "0x4061c4"
+                    }, 
+                    {
+                        "name": "fseek", 
+                        "address": "0x4061c8"
+                    }, 
+                    {
+                        "name": "ftell", 
+                        "address": "0x4061cc"
+                    }, 
+                    {
+                        "name": "malloc", 
+                        "address": "0x4061d0"
+                    }, 
+                    {
+                        "name": "memcpy", 
+                        "address": "0x4061d4"
+                    }, 
+                    {
+                        "name": "memset", 
+                        "address": "0x4061d8"
+                    }, 
+                    {
+                        "name": "perror", 
+                        "address": "0x4061dc"
+                    }, 
+                    {
+                        "name": "signal", 
+                        "address": "0x4061e0"
+                    }, 
+                    {
+                        "name": "strcat", 
+                        "address": "0x4061e4"
+                    }, 
+                    {
+                        "name": "strcpy", 
+                        "address": "0x4061e8"
+                    }, 
+                    {
+                        "name": "strlen", 
+                        "address": "0x4061ec"
+                    }, 
+                    {
+                        "name": "strncat", 
+                        "address": "0x4061f0"
+                    }, 
+                    {
+                        "name": "time", 
+                        "address": "0x4061f4"
+                    }
+                ], 
+                "dll": "msvcrt.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "FindWindowA", 
+                        "address": "0x406200"
+                    }, 
+                    {
+                        "name": "GetAsyncKeyState", 
+                        "address": "0x406204"
+                    }, 
+                    {
+                        "name": "ShowWindow", 
+                        "address": "0x406208"
+                    }
+                ], 
+                "dll": "USER32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "WSACleanup", 
+                        "address": "0x406214"
+                    }, 
+                    {
+                        "name": "WSAStartup", 
+                        "address": "0x406218"
+                    }, 
+                    {
+                        "name": "closesocket", 
+                        "address": "0x40621c"
+                    }, 
+                    {
+                        "name": "connect", 
+                        "address": "0x406220"
+                    }, 
+                    {
+                        "name": "gethostbyname", 
+                        "address": "0x406224"
+                    }, 
+                    {
+                        "name": "htons", 
+                        "address": "0x406228"
+                    }, 
+                    {
+                        "name": "recv", 
+                        "address": "0x40622c"
+                    }, 
+                    {
+                        "name": "send", 
+                        "address": "0x406230"
+                    }, 
+                    {
+                        "name": "socket", 
+                        "address": "0x406234"
+                    }
+                ], 
+                "dll": "WS2_32.DLL"
+            }
+        ], 
+        "peid_signatures": [
+            "Dev-C++ 4.9.9.2 -> Bloodshed Software"
+        ], 
+        "keys": [], 
+        "signature": [], 
+        "pe_timestamp": "2008-07-13 19:47:12", 
+        "pe_exports": [], 
+        "imported_dll_count": 4, 
+        "pe_imphash": "e6d4d4d27f28e2d0f3d44f1a8257201c", 
+        "pe_resources": [], 
+        "pe_versioninfo": [], 
+        "pe_sections": [
+            {
+                "size_of_data": "0x00001a00", 
+                "virtual_address": "0x00001000", 
+                "entropy": 5.318231563292571, 
+                "name": ".text", 
+                "virtual_size": "0x000019a4"
+            }, 
+            {
+                "size_of_data": "0x00000200", 
+                "virtual_address": "0x00003000", 
+                "entropy": 0.23769351570206254, 
+                "name": ".data", 
+                "virtual_size": "0x00000040"
+            }, 
+            {
+                "size_of_data": "0x00000800", 
+                "virtual_address": "0x00004000", 
+                "entropy": 3.921009852371512, 
+                "name": ".rdata", 
+                "virtual_size": "0x00000610"
+            }, 
+            {
+                "size_of_data": "0x00000000", 
+                "virtual_address": "0x00005000", 
+                "entropy": 0.0, 
+                "name": ".bss", 
+                "virtual_size": "0x000000b0"
+            }, 
+            {
+                "size_of_data": "0x00000600", 
+                "virtual_address": "0x00006000", 
+                "entropy": 4.05411180422787, 
+                "name": ".idata", 
+                "virtual_size": "0x000005b4"
+            }
+        ]
+    }, 
+    "dropped": [
+        {
+            "yara": [], 
+            "sha1": "39753168c285b322668e3fe539b53f0eaa29af2c", 
+            "name": "d450dd441ceb0212_lzwindowlz.av", 
+            "filepath": "C:\\Windows\\lzwindowlz.av", 
+            "type": "ASCII text, with CRLF line terminators", 
+            "sha256": "d450dd441ceb02129c4d8c0b518e4ce5260c2911419a952a5499137e88885933", 
+            "urls": [], 
+            "crc32": "1668141B", 
+            "path": "/home/tempuser/.cuckoo/storage/analyses/8/files/d450dd441ceb0212_lzwindowlz.av", 
+            "ssdeep": null, 
+            "size": 45, 
+            "sha512": "424274a7a4a6e255c69d6e30ada44859a273262a72a17056bd380f4b7219c057d3cd54f83923114e8c8b2724296244d5599da1fe2434b5927666d0660105106d", 
+            "pids": [
+                2496
+            ], 
+            "md5": "6f30d6d4f125d6266002dfbfcdbcea65"
+        }
+    ], 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": "C:\\Windows\\System32\\lsass.exe", 
+                "process_name": "lsass.exe", 
+                "pid": 460, 
+                "summary": {
+                    "tls_master": [
+                        [
+                            "59776e3128429f1fbd9c8f9c2f6a8c62f15817a9b16be647ccc9ac479112774c", 
+                            "59777f0a4e44d811b301b197cfc229f0bf20a07a7aaeb06cc317b68be44546d8", 
+                            "aa8b35edab078bc866892f652757da0aff4f20f47259a23493cb3b6d3cbadf33a354252a7eb2f9650a7c6fe7de027b0c"
+                        ], 
+                        [
+                            "59776e1e7c2e60e0294ebdc153601508d200b3031d69196916141fb15182f8da", 
+                            "59777ef73277b216d9f038b401c80404a7525b46aa8083d017d013b8d29b17b3", 
+                            "615be563787d43e2ee39c1a4e4f8b97ce995ea4d622b15d03412286dcf39371c95a5560616ee6b346621592134d0763d"
+                        ]
+                    ]
+                }, 
+                "first_seen": 1501002699.625, 
+                "ppid": 352
+            }
+        ], 
+        "apistats": {
+            "460": {
+                "PRF": 6
+            }
+        }, 
+        "processes": [
+            {
+                "process_path": "C:\\Windows\\System32\\lsass.exe", 
+                "calls": [
+                    {
+                        "category": "crypto", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "PRF", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "client_random": "59776e1e7c2e60e0294ebdc153601508d200b3031d69196916141fb15182f8da", 
+                            "server_random": "59777ef73277b216d9f038b401c80404a7525b46aa8083d017d013b8d29b17b3", 
+                            "master_secret": "615be563787d43e2ee39c1a4e4f8b97ce995ea4d622b15d03412286dcf39371c95a5560616ee6b346621592134d0763d", 
+                            "type": "key expansion"
+                        }, 
+                        "time": 1501002368.940271, 
+                        "tid": 532, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "crypto", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "PRF", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "client_random": "", 
+                            "server_random": "", 
+                            "master_secret": "", 
+                            "type": "client finished"
+                        }, 
+                        "time": 1501002368.940271, 
+                        "tid": 532, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "crypto", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "PRF", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "client_random": "", 
+                            "server_random": "", 
+                            "master_secret": "", 
+                            "type": "server finished"
+                        }, 
+                        "time": 1501002369.081271, 
+                        "tid": 532, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "crypto", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "PRF", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "client_random": "59776e3128429f1fbd9c8f9c2f6a8c62f15817a9b16be647ccc9ac479112774c", 
+                            "server_random": "59777f0a4e44d811b301b197cfc229f0bf20a07a7aaeb06cc317b68be44546d8", 
+                            "master_secret": "aa8b35edab078bc866892f652757da0aff4f20f47259a23493cb3b6d3cbadf33a354252a7eb2f9650a7c6fe7de027b0c", 
+                            "type": "key expansion"
+                        }, 
+                        "time": 1501002388.503271, 
+                        "tid": 508, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "crypto", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "PRF", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "client_random": "", 
+                            "server_random": "", 
+                            "master_secret": "", 
+                            "type": "client finished"
+                        }, 
+                        "time": 1501002388.503271, 
+                        "tid": 508, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "crypto", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "PRF", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "client_random": "", 
+                            "server_random": "", 
+                            "master_secret": "", 
+                            "type": "server finished"
+                        }, 
+                        "time": 1501002388.612271, 
+                        "tid": 508, 
+                        "flags": {}
+                    }
+                ], 
+                "track": false, 
+                "pid": 460, 
+                "process_name": "lsass.exe", 
+                "command_line": "C:\\Windows\\system32\\lsass.exe", 
+                "modules": [
+                    {
+                        "basename": "lsass.exe", 
+                        "imgsize": 49152, 
+                        "baseaddr": "0x100000000", 
+                        "filepath": "C:\\Windows\\system32\\lsass.exe"
+                    }, 
+                    {
+                        "basename": "ntdll.dll", 
+                        "imgsize": 1740800, 
+                        "baseaddr": "0x78e50000", 
+                        "filepath": "C:\\Windows\\SYSTEM32\\ntdll.dll"
+                    }, 
+                    {
+                        "basename": "kernel32.dll", 
+                        "imgsize": 1175552, 
+                        "baseaddr": "0x78d20000", 
+                        "filepath": "C:\\Windows\\system32\\kernel32.dll"
+                    }, 
+                    {
+                        "basename": "KERNELBASE.dll", 
+                        "imgsize": 438272, 
+                        "baseaddr": "0x7ff38880000", 
+                        "filepath": "C:\\Windows\\system32\\KERNELBASE.dll"
+                    }, 
+                    {
+                        "basename": "msvcrt.dll", 
+                        "imgsize": 651264, 
+                        "baseaddr": "0x7ff756a0000", 
+                        "filepath": "C:\\Windows\\system32\\msvcrt.dll"
+                    }, 
+                    {
+                        "basename": "RPCRT4.dll", 
+                        "imgsize": 1232896, 
+                        "baseaddr": "0x7ff7fde0000", 
+                        "filepath": "C:\\Windows\\system32\\RPCRT4.dll"
+                    }, 
+                    {
+                        "basename": "SspiSrv.dll", 
+                        "imgsize": 45056, 
+                        "baseaddr": "0x7ff254b0000", 
+                        "filepath": "C:\\Windows\\system32\\SspiSrv.dll"
+                    }, 
+                    {
+                        "basename": "lsasrv.dll", 
+                        "imgsize": 1470464, 
+                        "baseaddr": "0x7ff7d000000", 
+                        "filepath": "C:\\Windows\\system32\\lsasrv.dll"
+                    }, 
+                    {
+                        "basename": "sechost.dll", 
+                        "imgsize": 126976, 
+                        "baseaddr": "0x7ff2d2e0000", 
+                        "filepath": "C:\\Windows\\SYSTEM32\\sechost.dll"
+                    }, 
+                    {
+                        "basename": "SspiCli.dll", 
+                        "imgsize": 151552, 
+                        "baseaddr": "0x7ff2c960000", 
+                        "filepath": "C:\\Windows\\system32\\SspiCli.dll"
+                    }, 
+                    {
+                        "basename": "ADVAPI32.dll", 
+                        "imgsize": 897024, 
+                        "baseaddr": "0x7ff7ff10000", 
+                        "filepath": "C:\\Windows\\system32\\ADVAPI32.dll"
+                    }, 
+                    {
+                        "basename": "USER32.dll", 
+                        "imgsize": 1024000, 
+                        "baseaddr": "0x78c20000", 
+                        "filepath": "C:\\Windows\\system32\\USER32.dll"
+                    }, 
+                    {
+                        "basename": "GDI32.dll", 
+                        "imgsize": 421888, 
+                        "baseaddr": "0x7ff7fd70000", 
+                        "filepath": "C:\\Windows\\system32\\GDI32.dll"
+                    }, 
+                    {
+                        "basename": "LPK.dll", 
+                        "imgsize": 57344, 
+                        "baseaddr": "0x7ff70410000", 
+                        "filepath": "C:\\Windows\\system32\\LPK.dll"
+                    }, 
+                    {
+                        "basename": "USP10.dll", 
+                        "imgsize": 823296, 
+                        "baseaddr": "0x7ff760c0000", 
+                        "filepath": "C:\\Windows\\system32\\USP10.dll"
+                    }, 
+                    {
+                        "basename": "SAMSRV.dll", 
+                        "imgsize": 774144, 
+                        "baseaddr": "0x7ff75b40000", 
+                        "filepath": "C:\\Windows\\system32\\SAMSRV.dll"
+                    }, 
+                    {
+                        "basename": "cryptdll.dll", 
+                        "imgsize": 81920, 
+                        "baseaddr": "0x7ff710b0000", 
+                        "filepath": "C:\\Windows\\system32\\cryptdll.dll"
+                    }, 
+                    {
+                        "basename": "MSASN1.dll", 
+                        "imgsize": 61440, 
+                        "baseaddr": "0x7ff70ca0000", 
+                        "filepath": "C:\\Windows\\system32\\MSASN1.dll"
+                    }, 
+                    {
+                        "basename": "wevtapi.dll", 
+                        "imgsize": 446464, 
+                        "baseaddr": "0x7ff739d0000", 
+                        "filepath": "C:\\Windows\\system32\\wevtapi.dll"
+                    }, 
+                    {
+                        "basename": "IMM32.DLL", 
+                        "imgsize": 188416, 
+                        "baseaddr": "0x7ff718f0000", 
+                        "filepath": "C:\\Windows\\system32\\IMM32.DLL"
+                    }, 
+                    {
+                        "basename": "MSCTF.dll", 
+                        "imgsize": 1085440, 
+                        "baseaddr": "0x7ff774b0000", 
+                        "filepath": "C:\\Windows\\system32\\MSCTF.dll"
+                    }, 
+                    {
+                        "basename": "cngaudit.dll", 
+                        "imgsize": 36864, 
+                        "baseaddr": "0x7ff268a0000", 
+                        "filepath": "C:\\Windows\\system32\\cngaudit.dll"
+                    }, 
+                    {
+                        "basename": "AUTHZ.dll", 
+                        "imgsize": 192512, 
+                        "baseaddr": "0x7ff73000000", 
+                        "filepath": "C:\\Windows\\system32\\AUTHZ.dll"
+                    }, 
+                    {
+                        "basename": "ncrypt.dll", 
+                        "imgsize": 319488, 
+                        "baseaddr": "0x7ff729d0000", 
+                        "filepath": "C:\\Windows\\system32\\ncrypt.dll"
+                    }, 
+                    {
+                        "basename": "bcrypt.dll", 
+                        "imgsize": 139264, 
+                        "baseaddr": "0x7ff71ad0000", 
+                        "filepath": "C:\\Windows\\system32\\bcrypt.dll"
+                    }, 
+                    {
+                        "basename": "msprivs.DLL", 
+                        "imgsize": 8192, 
+                        "baseaddr": "0x2a0000", 
+                        "filepath": "C:\\Windows\\system32\\msprivs.DLL"
+                    }, 
+                    {
+                        "basename": "netjoin.dll", 
+                        "imgsize": 204800, 
+                        "baseaddr": "0x7ff313c0000", 
+                        "filepath": "C:\\Windows\\system32\\netjoin.dll"
+                    }, 
+                    {
+                        "basename": "negoexts.DLL", 
+                        "imgsize": 147456, 
+                        "baseaddr": "0x7ff2da20000", 
+                        "filepath": "C:\\Windows\\system32\\negoexts.DLL"
+                    }, 
+                    {
+                        "basename": "Secur32.dll", 
+                        "imgsize": 45056, 
+                        "baseaddr": "0x7ff70200000", 
+                        "filepath": "C:\\Windows\\system32\\Secur32.dll"
+                    }, 
+                    {
+                        "basename": "cryptbase.dll", 
+                        "imgsize": 61440, 
+                        "baseaddr": "0x7ff2ade0000", 
+                        "filepath": "C:\\Windows\\system32\\cryptbase.dll"
+                    }, 
+                    {
+                        "basename": "kerberos.DLL", 
+                        "imgsize": 737280, 
+                        "baseaddr": "0x7ff75e80000", 
+                        "filepath": "C:\\Windows\\system32\\kerberos.DLL"
+                    }, 
+                    {
+                        "basename": "CRYPTSP.dll", 
+                        "imgsize": 94208, 
+                        "baseaddr": "0x7ff2ada0000", 
+                        "filepath": "C:\\Windows\\system32\\CRYPTSP.dll"
+                    }, 
+                    {
+                        "basename": "WS2_32.dll", 
+                        "imgsize": 315392, 
+                        "baseaddr": "0x7ff724e0000", 
+                        "filepath": "C:\\Windows\\system32\\WS2_32.dll"
+                    }, 
+                    {
+                        "basename": "NSI.dll", 
+                        "imgsize": 32768, 
+                        "baseaddr": "0x7ff70310000", 
+                        "filepath": "C:\\Windows\\system32\\NSI.dll"
+                    }, 
+                    {
+                        "basename": "mswsock.dll", 
+                        "imgsize": 348160, 
+                        "baseaddr": "0x7ff734a0000", 
+                        "filepath": "C:\\Windows\\system32\\mswsock.dll"
+                    }, 
+                    {
+                        "basename": "wship6.dll", 
+                        "imgsize": 28672, 
+                        "baseaddr": "0x7ff70060000", 
+                        "filepath": "C:\\Windows\\System32\\wship6.dll"
+                    }, 
+                    {
+                        "basename": "msv1_0.DLL", 
+                        "imgsize": 331776, 
+                        "baseaddr": "0x7ff73500000", 
+                        "filepath": "C:\\Windows\\system32\\msv1_0.DLL"
+                    }, 
+                    {
+                        "basename": "netlogon.DLL", 
+                        "imgsize": 712704, 
+                        "baseaddr": "0x7ff755f0000", 
+                        "filepath": "C:\\Windows\\system32\\netlogon.DLL"
+                    }, 
+                    {
+                        "basename": "DNSAPI.dll", 
+                        "imgsize": 372736, 
+                        "baseaddr": "0x7ff73740000", 
+                        "filepath": "C:\\Windows\\system32\\DNSAPI.dll"
+                    }, 
+                    {
+                        "basename": "logoncli.dll", 
+                        "imgsize": 196608, 
+                        "baseaddr": "0x7ff31ac0000", 
+                        "filepath": "C:\\Windows\\system32\\logoncli.dll"
+                    }, 
+                    {
+                        "basename": "schannel.DLL", 
+                        "imgsize": 356352, 
+                        "baseaddr": "0x7ff73160000", 
+                        "filepath": "C:\\Windows\\system32\\schannel.DLL"
+                    }, 
+                    {
+                        "basename": "CRYPT32.dll", 
+                        "imgsize": 1470464, 
+                        "baseaddr": "0x7ff7fc00000", 
+                        "filepath": "C:\\Windows\\system32\\CRYPT32.dll"
+                    }, 
+                    {
+                        "basename": "wdigest.DLL", 
+                        "imgsize": 221184, 
+                        "baseaddr": "0x7ff71d40000", 
+                        "filepath": "C:\\Windows\\system32\\wdigest.DLL"
+                    }, 
+                    {
+                        "basename": "rsaenh.dll", 
+                        "imgsize": 290816, 
+                        "baseaddr": "0x7ff330e0000", 
+                        "filepath": "C:\\Windows\\system32\\rsaenh.dll"
+                    }, 
+                    {
+                        "basename": "tspkg.DLL", 
+                        "imgsize": 98304, 
+                        "baseaddr": "0x7ff70780000", 
+                        "filepath": "C:\\Windows\\system32\\tspkg.DLL"
+                    }, 
+                    {
+                        "basename": "pku2u.DLL", 
+                        "imgsize": 282624, 
+                        "baseaddr": "0x7ff333b0000", 
+                        "filepath": "C:\\Windows\\system32\\pku2u.DLL"
+                    }, 
+                    {
+                        "basename": "bcryptprimitives.dll", 
+                        "imgsize": 311296, 
+                        "baseaddr": "0x7ff67c00000", 
+                        "filepath": "C:\\Windows\\system32\\bcryptprimitives.dll"
+                    }, 
+                    {
+                        "basename": "RpcRtRemote.dll", 
+                        "imgsize": 81920, 
+                        "baseaddr": "0x7ff285e0000", 
+                        "filepath": "C:\\Windows\\system32\\RpcRtRemote.dll"
+                    }, 
+                    {
+                        "basename": "efslsaext.dll", 
+                        "imgsize": 73728, 
+                        "baseaddr": "0x7ff2a940000", 
+                        "filepath": "C:\\Windows\\system32\\efslsaext.dll"
+                    }, 
+                    {
+                        "basename": "scecli.DLL", 
+                        "imgsize": 253952, 
+                        "baseaddr": "0x7ff71fc0000", 
+                        "filepath": "C:\\Windows\\system32\\scecli.DLL"
+                    }, 
+                    {
+                        "basename": "credssp.dll", 
+                        "imgsize": 40960, 
+                        "baseaddr": "0x7ff7a400000", 
+                        "filepath": "C:\\Windows\\system32\\credssp.dll"
+                    }, 
+                    {
+                        "basename": "WINSTA.dll", 
+                        "imgsize": 249856, 
+                        "baseaddr": "0x7ff71c00000", 
+                        "filepath": "C:\\Windows\\system32\\WINSTA.dll"
+                    }, 
+                    {
+                        "basename": "IPHLPAPI.DLL", 
+                        "imgsize": 159744, 
+                        "baseaddr": "0x7ff71890000", 
+                        "filepath": "C:\\Windows\\system32\\IPHLPAPI.DLL"
+                    }, 
+                    {
+                        "basename": "WINNSI.DLL", 
+                        "imgsize": 45056, 
+                        "baseaddr": "0x7ff700a0000", 
+                        "filepath": "C:\\Windows\\system32\\WINNSI.DLL"
+                    }, 
+                    {
+                        "basename": "netutils.dll", 
+                        "imgsize": 49152, 
+                        "baseaddr": "0x7ff25b00000", 
+                        "filepath": "C:\\Windows\\system32\\netutils.dll"
+                    }, 
+                    {
+                        "basename": "USERENV.dll", 
+                        "imgsize": 122880, 
+                        "baseaddr": "0x7ff70720000", 
+                        "filepath": "C:\\Windows\\system32\\USERENV.dll"
+                    }, 
+                    {
+                        "basename": "profapi.dll", 
+                        "imgsize": 61440, 
+                        "baseaddr": "0x7ff28800000", 
+                        "filepath": "C:\\Windows\\system32\\profapi.dll"
+                    }, 
+                    {
+                        "basename": "wshtcpip.dll", 
+                        "imgsize": 28672, 
+                        "baseaddr": "0x7ff70030000", 
+                        "filepath": "C:\\Windows\\System32\\wshtcpip.dll"
+                    }, 
+                    {
+                        "basename": "monitor-x64.dll", 
+                        "imgsize": 2224128, 
+                        "baseaddr": "0x65a80000", 
+                        "filepath": "C:\\tmpmedxdr\\bin\\monitor-x64.dll"
+                    }
+                ], 
+                "time": 0, 
+                "tid": 2408, 
+                "first_seen": 1501002699.625, 
+                "ppid": 352, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": false, 
+                "pid": 460, 
+                "process_name": "lsass.exe", 
+                "command_line": "C:\\Windows\\system32\\lsass.exe", 
+                "first_seen": 1501002699.625, 
+                "ppid": 352, 
+                "children": []
+            }
+        ], 
+        "summary": {
+            "tls_master": [
+                [
+                    "59776e3128429f1fbd9c8f9c2f6a8c62f15817a9b16be647ccc9ac479112774c", 
+                    "59777f0a4e44d811b301b197cfc229f0bf20a07a7aaeb06cc317b68be44546d8", 
+                    "aa8b35edab078bc866892f652757da0aff4f20f47259a23493cb3b6d3cbadf33a354252a7eb2f9650a7c6fe7de027b0c"
+                ], 
+                [
+                    "59776e1e7c2e60e0294ebdc153601508d200b3031d69196916141fb15182f8da", 
+                    "59777ef73277b216d9f038b401c80404a7525b46aa8083d017d013b8d29b17b3", 
+                    "615be563787d43e2ee39c1a4e4f8b97ce995ea4d622b15d03412286dcf39371c95a5560616ee6b346621592134d0763d"
+                ]
+            ]
+        }
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2017-07-25 18:11:39,015 [analyzer] DEBUG: Starting analyzer from: C:\\tmpmedxdr\n", 
+            "2017-07-25 18:11:39,015 [analyzer] DEBUG: Pipe server name: \\??\\PIPE\\ysLCPeQDeqZSnYbThHmgOkdHfpFPBL\n", 
+            "2017-07-25 18:11:39,030 [analyzer] DEBUG: Log pipe server name: \\??\\PIPE\\pipuLIPraoGhtPwxrflpm\n", 
+            "2017-07-25 18:11:39,155 [analyzer] DEBUG: Started auxiliary module DbgView\n", 
+            "2017-07-25 18:11:39,467 [analyzer] DEBUG: Started auxiliary module Disguise\n", 
+            "2017-07-25 18:11:39,562 [analyzer] WARNING: Unable to find the correct offsets for functions of: 64-bit kernel32.dll (with timestamp 0x50b8479a)\n", 
+            "2017-07-25 18:11:39,562 [analyzer] WARNING: Unable to find the correct offsets for functions of: 64-bit kernel32.dll (with timestamp 0x50b8479a)\n", 
+            "2017-07-25 18:11:39,625 [analyzer] DEBUG: Loaded monitor into process with pid 460\n", 
+            "2017-07-25 18:11:39,625 [analyzer] DEBUG: Started auxiliary module DumpTLSMasterSecrets\n", 
+            "2017-07-25 18:11:39,625 [analyzer] DEBUG: Started auxiliary module Human\n", 
+            "2017-07-25 18:11:39,625 [analyzer] DEBUG: Started auxiliary module InstallCertificate\n", 
+            "2017-07-25 18:11:39,625 [analyzer] DEBUG: Started auxiliary module Reboot\n", 
+            "2017-07-25 18:11:39,687 [analyzer] DEBUG: Started auxiliary module RecentFiles\n", 
+            "2017-07-25 18:11:39,687 [analyzer] DEBUG: Started auxiliary module Screenshots\n", 
+            "2017-07-25 18:11:39,687 [analyzer] DEBUG: Started auxiliary module LoadZer0m0n\n", 
+            "2017-07-25 18:11:39,733 [lib.api.process] INFO: Successfully executed process from path u'C:\\\\Users\\\\ADMINI~1\\\\AppData\\\\Local\\\\Temp\\\\Lab_02-2.exe' with arguments '' and pid 2496\n", 
+            "2017-07-25 18:11:39,828 [analyzer] WARNING: Unable to find the correct offsets for functions of: 32-bit kernel32.dll (with timestamp 0x50b83c89)\n", 
+            "2017-07-25 18:11:39,828 [analyzer] WARNING: Unable to find the correct offsets for functions of: 32-bit kernel32.dll (with timestamp 0x50b83c89)\n", 
+            "2017-07-25 18:11:39,921 [analyzer] DEBUG: Loaded monitor into process with pid 2496\n", 
+            "2017-07-25 18:11:39,921 [analyzer] INFO: Added new file to list with pid 2496 and path C:\\Windows\\lzwindowlz.av\n", 
+            "2017-07-25 18:13:38,733 [analyzer] INFO: Analysis timeout hit, terminating analysis.\n", 
+            "2017-07-25 18:13:39,250 [lib.api.process] INFO: Memory dump of process with pid 2496 completed\n", 
+            "2017-07-25 18:13:39,265 [analyzer] INFO: Analysis completed.\n"
+        ], 
+        "cuckoo": [
+            "2017-07-25 18:23:19,082 [cuckoo.core.scheduler] INFO: Task #8: acquired machine cuckoo1 (label=cuckoo1)\n", 
+            "2017-07-25 18:23:19,098 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 4882 (interface=vboxnet0, host=192.168.56.101)\n", 
+            "2017-07-25 18:23:19,100 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Sniffer\n", 
+            "2017-07-25 18:23:19,265 [cuckoo.machinery.virtualbox] DEBUG: Starting vm cuckoo1\n", 
+            "2017-07-25 18:23:19,480 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine cuckoo1 to its current snapshot\n", 
+            "2017-07-25 18:23:22,777 [cuckoo.core.guest] INFO: Starting analysis on guest (id=cuckoo1, ip=192.168.56.101)\n", 
+            "2017-07-25 18:23:23,782 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet\n", 
+            "2017-07-25 18:23:24,789 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet\n", 
+            "2017-07-25 18:23:25,780 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet\n", 
+            "2017-07-25 18:23:27,615 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.7 (id=cuckoo1, ip=192.168.56.101)\n", 
+            "2017-07-25 18:23:27,642 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=cuckoo1, ip=192.168.56.101, monitor=latest, size=3819773)\n", 
+            "2017-07-25 18:23:31,976 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:31,982 [cuckoo.core.resultserver] DEBUG: LogHandler for live analysis.log initialized.\n", 
+            "2017-07-25 18:23:32,878 [cuckoo.core.resultserver] DEBUG: New process (pid=2496, ppid=2468, name=Lab_02-2.exe)\n", 
+            "2017-07-25 18:23:32,983 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:33,993 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:34,014 [cuckoo.core.resultserver] DEBUG: File upload request for shots/0001.jpg\n", 
+            "2017-07-25 18:23:34,023 [cuckoo.core.resultserver] DEBUG: Uploaded file length: 67648\n", 
+            "2017-07-25 18:23:35,004 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:35,092 [cuckoo.core.resultserver] DEBUG: File upload request for shots/0002.jpg\n", 
+            "2017-07-25 18:23:35,101 [cuckoo.core.resultserver] DEBUG: Uploaded file length: 76864\n", 
+            "2017-07-25 18:23:36,013 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:37,032 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:38,041 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:39,050 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:40,060 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:41,071 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:42,079 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:43,090 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:44,101 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:45,111 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:46,119 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:47,128 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:48,135 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:49,144 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:50,154 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:51,167 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:52,179 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:53,188 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:54,195 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:55,204 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:56,213 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:57,221 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:58,230 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:23:59,239 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:00,247 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:01,258 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:02,267 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:03,275 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:04,284 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:05,292 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:06,301 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:07,309 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:08,318 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:09,327 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:10,335 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:11,345 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:12,356 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:13,366 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:14,374 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:16,099 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:17,117 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:18,129 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:19,137 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:20,149 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:21,157 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:22,167 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:23,175 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:24,183 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:25,195 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:26,210 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:27,222 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:28,234 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:29,249 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:30,261 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:31,270 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:32,279 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:33,288 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:34,295 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:35,303 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:36,316 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:37,329 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:38,338 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:39,346 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:40,353 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:41,361 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:42,369 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:43,381 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:44,401 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:45,411 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:46,419 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:47,433 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:48,442 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:49,452 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:50,460 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:51,468 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:52,478 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:53,486 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:54,499 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:55,512 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:56,522 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:57,531 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:58,539 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:24:59,549 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:00,557 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:01,568 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:02,576 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:03,585 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:04,594 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:05,603 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:06,612 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:07,620 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:08,627 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:09,634 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:10,642 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:11,650 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:12,661 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:13,675 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:14,683 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:15,692 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:16,708 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:17,717 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:18,727 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:19,736 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:20,749 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:21,759 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:22,768 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:23,779 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:24,788 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:25,805 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:26,821 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:27,836 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:28,850 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:29,860 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:30,874 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:31,884 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
+            "2017-07-25 18:25:32,216 [cuckoo.core.resultserver] DEBUG: File upload request for memory/2496-1.dmp\n", 
+            "2017-07-25 18:25:32,248 [cuckoo.core.resultserver] DEBUG: Uploaded file length: 15642992\n", 
+            "2017-07-25 18:25:32,255 [cuckoo.core.resultserver] DEBUG: File upload request for files/d450dd441ceb0212_lzwindowlz.av\n", 
+            "2017-07-25 18:25:32,256 [cuckoo.core.resultserver] DEBUG: Uploaded file length: 45\n", 
+            "2017-07-25 18:25:32,891 [cuckoo.core.guest] INFO: cuckoo1: analysis completed successfully\n", 
+            "2017-07-25 18:25:33,193 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2017-07-25 18:25:57,858 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label cuckoo1 to path /home/tempuser/.cuckoo/storage/analyses/8/memory.dmp\n", 
+            "2017-07-25 18:25:57,859 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm cuckoo1\n", 
+            "2017-07-25 18:26:00,973 [cuckoo.core.scheduler] DEBUG: Released database task #8\n", 
+            "2017-07-25 18:26:01,158 [cuckoo.core.plugins] DEBUG: Executed processing module \"AnalysisInfo\" for task #8\n", 
+            "2017-07-25 18:26:01,186 [cuckoo.processing.behavior] CRITICAL: Behavior log file '2496.bson' is too big, skipped.\n", 
+            "2017-07-25 18:26:01,190 [cuckoo.core.plugins] DEBUG: Executed processing module \"BehaviorAnalysis\" for task #8\n", 
+            "2017-07-25 18:26:01,514 [cuckoo.core.plugins] DEBUG: Executed processing module \"Dropped\" for task #8\n", 
+            "2017-07-25 18:26:01,518 [cuckoo.core.plugins] DEBUG: Executed processing module \"DroppedBuffer\" for task #8\n", 
+            "2017-07-25 18:26:01,518 [cuckoo.core.plugins] DEBUG: Executed processing module \"Extracted\" for task #8\n", 
+            "2017-07-25 18:26:01,773 [cuckoo.core.plugins] DEBUG: Executed processing module \"MetaInfo\" for task #8\n", 
+            "2017-07-25 18:26:01,895 [cuckoo.core.plugins] DEBUG: Executed processing module \"ProcessMemory\" for task #8\n", 
+            "2017-07-25 18:26:01,896 [cuckoo.core.plugins] DEBUG: Executed processing module \"Procmon\" for task #8\n", 
+            "2017-07-25 18:26:01,983 [cuckoo.core.plugins] DEBUG: Executed processing module \"Screenshots\" for task #8\n", 
+            "2017-07-25 18:26:02,387 [cuckoo.core.plugins] DEBUG: Executed processing module \"Static\" for task #8\n", 
+            "2017-07-25 18:26:02,390 [cuckoo.core.plugins] DEBUG: Executed processing module \"Strings\" for task #8\n", 
+            "2017-07-25 18:26:02,392 [cuckoo.core.plugins] DEBUG: Executed processing module \"TargetInfo\" for task #8\n", 
+            "2017-07-25 18:26:08,170 [cuckoo.core.plugins] DEBUG: Executed processing module \"NetworkAnalysis\" for task #8\n", 
+            "2017-07-25 18:26:08,171 [cuckoo.core.plugins] DEBUG: Executed processing module \"TLSMasterSecrets\" for task #8\n", 
+            "2017-07-25 18:26:08,174 [cuckoo.core.plugins] DEBUG: Executed processing module \"Debug\" for task #8\n", 
+            "2017-07-25 18:26:08,175 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=amsi_bypass minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 18:26:08,176 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=applocker_bypass minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 18:26:08,182 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=metasploit_shellcode minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 18:26:08,184 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powerfun minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 18:26:08,184 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_bitstransfer minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 18:26:08,184 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_c2dns minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 18:26:08,184 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_ddi_rc4 minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 18:26:08,185 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_dfsp minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 18:26:08,185 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_di minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 18:26:08,185 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_empire minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 18:26:08,185 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_meterpreter minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 18:26:08,186 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_reg_add minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 18:26:08,186 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powershell_unicorn minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 18:26:08,186 [cuckoo.core.plugins] DEBUG: You are running a version of Cuckoo that's not compatible with this signature (either it's too old or too new): cuckoo=2.0.4a3 signature=powerworm minversion=2.0.4 maxversion=None\n", 
+            "2017-07-25 18:26:08,193 [cuckoo.core.plugins] DEBUG: Running 425 signatures\n", 
+            "2017-07-25 18:26:08,377 [cuckoo.core.plugins] DEBUG: Analysis matched signature: network_http\n", 
+            "2017-07-25 18:26:08,378 [cuckoo.core.plugins] DEBUG: Analysis matched signature: network_icmp\n"
+        ]
+    }, 
+    "screenshots": [
+        {
+            "path": "/home/tempuser/.cuckoo/storage/analyses/8/shots/0001.jpg", 
+            "ocr": ""
+        }, 
+        {
+            "path": "/home/tempuser/.cuckoo/storage/analyses/8/shots/0002.jpg", 
+            "ocr": ""
+        }
+    ], 
+    "strings": [
+        "!This program cannot be run in DOS mode.", 
+        "`.data", 
+        ".rdata", 
+        ".idata", 
+        "ConsoleWindowClass", 
+        "\\WINDOWS\\lzwindowlz.av", 
+        "Started logging: ", 
+        "[SHIFT]", 
+        "[ENTER]", 
+        "[BACKSPACE]", 
+        "[CTRL]", 
+        "[ [{ ]", 
+        "[ ]} ]", 
+        "[CAPS LOCK]", 
+        "Logged", 
+        "unknown-g@hotmail.co.uk", 
+        "unknown-g@inbox.com", 
+        "my.inbox.com", 
+        "\\WINDOWS\\lzwz.av", 
+        "WSAStartup failed", 
+        "gethostbyname", 
+        "Connecting....", 
+        "connect", 
+        "helo typical-jam2.0catch.com", 
+        "MAIL FROM:<", 
+        "RCPT TO:<", 
+        "Subject:", 
+        "-LIBGCCW32-EH-2-SJLJ-GTHR-MINGW32", 
+        "w32_sharedptr->size == sizeof(W32_EH_SHARED)", 
+        "%s:%u: failed assertion `%s'", 
+        "../../gcc/gcc/config/i386/w32-shared-ptr.c", 
+        "GetAtomNameA (atom, s, sizeof(s)) != 0", 
+        "AddAtomA", 
+        "AllocConsole", 
+        "ExitProcess", 
+        "FindAtomA", 
+        "GetAtomNameA", 
+        "SetUnhandledExceptionFilter", 
+        "__getmainargs", 
+        "__p__environ", 
+        "__p__fmode", 
+        "__set_app_type", 
+        "_cexit", 
+        "_onexit", 
+        "_setmode", 
+        "atexit", 
+        "fclose", 
+        "fflush", 
+        "fprintf", 
+        "malloc", 
+        "memcpy", 
+        "memset", 
+        "perror", 
+        "signal", 
+        "strcat", 
+        "strcpy", 
+        "strlen", 
+        "strncat", 
+        "FindWindowA", 
+        "GetAsyncKeyState", 
+        "ShowWindow", 
+        "WSACleanup", 
+        "WSAStartup", 
+        "closesocket", 
+        "connect", 
+        "gethostbyname", 
+        "socket", 
+        "KERNEL32.dll", 
+        "msvcrt.dll", 
+        "USER32.dll", 
+        "WS2_32.DLL", 
+        "crt1.c", 
+        "_atexit", 
+        "__onexitp", 
+        "crtstuff.c", 
+        "main11.cpp", 
+        ".rdata", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4,", 
+        ".idata$6T", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4(", 
+        ".idata$6D", 
+        ".idata$7", 
+        ".idata$5$", 
+        ".idata$48", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5(", 
+        ".idata$4<", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$54", 
+        ".idata$4H", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5 ", 
+        ".idata$44", 
+        ".idata$6t", 
+        ".idata$7", 
+        ".idata$5,", 
+        ".idata$4@", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$50", 
+        ".idata$4D", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$40", 
+        ".idata$6d", 
+        "fthunk", 
+        ".idata$2<", 
+        ".idata$5", 
+        ".idata$4$", 
+        ".idata$4L", 
+        ".idata$58", 
+        ".idata$7", 
+        "CRTglob.c", 
+        "CRTfmode.c", 
+        "txtmode.c", 
+        "pseudo-reloc.c", 
+        "CRT_fp10.c", 
+        "_fpreset", 
+        "gccmain.c", 
+        "___main", 
+        ".rdata", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6$", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5|", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7H", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5x", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7L", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7X", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7T", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7P", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7<", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7@", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$68", 
+        ".idata$7D", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7(", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6|", 
+        ".idata$78", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$74", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$70", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7 ", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6l", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6@", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$60", 
+        ".idata$7$", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6t", 
+        ".idata$7\\", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6X", 
+        ".idata$7,", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6L", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6`", 
+        "fthunk", 
+        ".idata$2", 
+        ".idata$5t", 
+        ".idata$4", 
+        ".idata$4", 
+        ".idata$5", 
+        ".idata$7`", 
+        ".idata$7l", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7t", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$64", 
+        ".idata$7p", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6 ", 
+        "fthunk", 
+        ".idata$2(", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$4 ", 
+        ".idata$5", 
+        ".idata$7x", 
+        ".idata$7", 
+        ".idata$5h", 
+        ".idata$4|", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5\\", 
+        ".idata$4p", 
+        ".idata$6X", 
+        ".idata$7", 
+        ".idata$5X", 
+        ".idata$4l", 
+        ".idata$6H", 
+        ".idata$7", 
+        ".idata$5l", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5d", 
+        ".idata$4x", 
+        ".idata$6t", 
+        ".idata$7", 
+        ".idata$5`", 
+        ".idata$4t", 
+        ".idata$6h", 
+        ".idata$7", 
+        ".idata$5T", 
+        ".idata$4h", 
+        ".idata$6<", 
+        "fthunk", 
+        ".idata$2", 
+        ".idata$5P", 
+        ".idata$4d", 
+        ".idata$4", 
+        ".idata$5p", 
+        ".idata$7", 
+        "crtstuff.c", 
+        ".ctors", 
+        "__cexit", 
+        "_strcat", 
+        "_recv@16 ", 
+        "_strncat", 
+        "_fputc", 
+        "_fputs", 
+        "__dll__", 
+        "_memcpy", 
+        "_memset", 
+        "__argc", 
+        "_fflush", 
+        "_send@160", 
+        "_fprintf", 
+        "__alloca", 
+        "__argv", 
+        "_fread", 
+        "_fopen", 
+        "__fmode", 
+        "_ctime", 
+        "__end__", 
+        "_signal", 
+        "_malloc", 
+        "_fclose", 
+        "_strcpy", 
+        "_fseek", 
+        "_perror", 
+        "_abort", 
+        "_ftell", 
+        "_htons@4", 
+        "_strlen", 
+        "_Sleep@4@", 
+        "__gnu_exception_handler@4", 
+        "___mingw_CRTStartup", 
+        "_mainCRTStartup", 
+        "_WinMainCRTStartup", 
+        "___do_sjlj_init", 
+        "__Z6MailItPcS_S_S_S_", 
+        "__Z8get_keysv", 
+        "__pei386_runtime_relocator", 
+        "__fpreset", 
+        "_initialized", 
+        "___do_global_dtors", 
+        "___do_global_ctors", 
+        "pseudo-reloc-list.c", 
+        "_w32_atom_suffix", 
+        "___w32_sharedptr_default_unexpected", 
+        "___w32_sharedptr_get", 
+        "dw2_object_mutex.0", 
+        "dw2_once.1", 
+        "sjl_fc_key.2", 
+        "sjl_once.3", 
+        "___w32_sharedptr_initialize", 
+        "___eprintf", 
+        "___sjlj_init_ctor", 
+        "__imp__strncat", 
+        "_ShowWindow@8", 
+        "___RUNTIME_PSEUDO_RELOC_LIST__", 
+        "__imp___setmode", 
+        "__data_start__", 
+        "___DTOR_LIST__", 
+        "__imp__recv@16", 
+        "__imp___onexit", 
+        "___p__fmode", 
+        "_SetUnhandledExceptionFilter@4", 
+        "___w32_sharedptr_terminate", 
+        "___tls_start__", 
+        "__libmsvcrt_a_iname", 
+        "__imp__FindAtomA@4", 
+        "__imp__abort", 
+        "__size_of_stack_commit__", 
+        "__size_of_stack_reserve__", 
+        "__major_subsystem_version__", 
+        "__imp__GetAsyncKeyState@4", 
+        "___crt_xl_start__", 
+        "_AddAtomA@4", 
+        "___crt_xi_start__", 
+        "___chkstk", 
+        "___crt_xi_end__", 
+        "__imp__AllocConsole@0", 
+        "__imp____p__environ", 
+        "__head_libuser32_a", 
+        "__imp___iob", 
+        "__bss_start__", 
+        "__head_libws2_32_a", 
+        "__imp__fputc", 
+        "___RUNTIME_PSEUDO_RELOC_LIST_END__", 
+        "__size_of_heap_commit__", 
+        "___p__environ", 
+        "___crt_xp_start__", 
+        "___crt_xp_end__", 
+        "__imp__signal", 
+        "__minor_os_version__", 
+        "__imp__atexit", 
+        "__head_libmsvcrt_a", 
+        "__image_base__", 
+        "__imp__exit", 
+        "__section_alignment__", 
+        "_socket@12", 
+        "__imp__fseek", 
+        "__RUNTIME_PSEUDO_RELOC_LIST__", 
+        "__imp__htons@4", 
+        "__imp____p__fmode", 
+        "_ExitProcess@4", 
+        "_gethostbyname@4", 
+        "__data_end__", 
+        "___getmainargs", 
+        "___w32_sharedptr", 
+        "__CTOR_LIST__", 
+        "___set_app_type", 
+        "__imp__perror", 
+        "__bss_end__", 
+        "__CRT_fmode", 
+        "___crt_xc_end__", 
+        "___crt_xc_start__", 
+        "__imp__socket@12", 
+        "__imp__closesocket@4", 
+        "___CTOR_LIST__", 
+        "__imp__GetAtomNameA@12", 
+        "_FindWindowA@8", 
+        "_AllocConsole@0", 
+        "__imp__FindWindowA@8", 
+        "_WSAStartup@8", 
+        "__imp__fread", 
+        "__imp__memcpy", 
+        "__file_alignment__", 
+        "__imp__time", 
+        "__imp__malloc", 
+        "__major_os_version__", 
+        "__imp__ctime", 
+        "__imp__gethostbyname@4", 
+        "__DTOR_LIST__", 
+        "__imp__fprintf", 
+        "__imp__memset", 
+        "__imp__fclose", 
+        "__size_of_heap_reserve__", 
+        "___crt_xt_start__", 
+        "__subsystem__", 
+        "__imp__strlen", 
+        "__imp__fputs", 
+        "__imp__fflush", 
+        "__imp__strcpy", 
+        "___w32_sharedptr_unexpected", 
+        "__imp__fopen", 
+        "__imp____getmainargs", 
+        "___tls_end__", 
+        "__imp__ExitProcess@4", 
+        "__imp__WSACleanup@0", 
+        "__imp__send@16", 
+        "__imp__free", 
+        "__imp__SetUnhandledExceptionFilter@4", 
+        "__major_image_version__", 
+        "__loader_flags__", 
+        "__libuser32_a_iname", 
+        "__imp__ShowWindow@8", 
+        "__CRT_glob", 
+        "__setmode", 
+        "__imp__ftell", 
+        "__imp__AddAtomA@4", 
+        "__head_libkernel32_a", 
+        "__imp___cexit", 
+        "__minor_subsystem_version__", 
+        "__minor_image_version__", 
+        "__imp__Sleep@4", 
+        "_closesocket@4", 
+        "__imp____set_app_type", 
+        "_FindAtomA@4", 
+        "__imp__WSAStartup@8", 
+        "_WSACleanup@0", 
+        "_GetAtomNameA@12", 
+        "__RUNTIME_PSEUDO_RELOC_LIST_END__", 
+        "__libkernel32_a_iname", 
+        "_connect@12", 
+        "_GetAsyncKeyState@4", 
+        "__imp__connect@12", 
+        "___crt_xt_end__", 
+        "__libws2_32_a_iname", 
+        "__imp__strcat"
+    ], 
+    "metadata": {
+        "output": {
+            "memdumps": [
+                {
+                    "basename": "2496-1.dmp", 
+                    "sha256": "40ff9f3fa725974c10c894bf149dbfeec2cd8bc3cc8641ec499b47f95b417e08", 
+                    "dirname": "memory"
+                }
+            ], 
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "5dfec601948d8ef2ac4968a59c6df35b48ef000053381864761193702d86adb3", 
+                "dirname": ""
+            }, 
+            "dropped": [
+                {
+                    "basename": "d450dd441ceb0212_lzwindowlz.av", 
+                    "sha256": "d450dd441ceb02129c4d8c0b518e4ce5260c2911419a952a5499137e88885933", 
+                    "dirname": "files"
+                }
+            ]
+        }
+    }
+}
