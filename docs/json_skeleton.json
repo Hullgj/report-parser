@@ -1,0 +1,111 @@
+{
+  "stealth": {
+		"fingerprinting": {
+          "wmi_antivm": {
+            "api": "GetComputerNameW",
+			"called_first": 1501014000.063375,
+			"called_last": 1501014000.063375,
+            "category": "wmi",
+            "description": "Executes one or more WMI queries which could be used to identify virtual machines",
+			"detections": 2,
+			"indicators": {
+              "arguments": {
+                "function_address": "0x00409375"
+              },
+              "entropy": 0.4864864864864865,
+              "ioc": [
+                "SELECT SerialNumber FROM Win32_Bios",
+              ],
+              "timestamps": [
+                  1501014000.063375,
+                  1501014000.063376
+              ]
+			}
+          }
+		},
+		"propagation": {
+			"detections": 0,
+			"first_sign": 1501014000.063375,
+			"last_sign": 1501014000.063375,
+			"indicators": {
+				"GetComputerNameW": [
+					1501014000.063375,
+					1501014000.063376
+				]
+			}
+		},
+		"command_control": {
+			"detections": 0,
+			"first_sign": 1501014000.063375,
+			"last_sign": 1501014000.063375,
+			"indicators": {
+				"unknown_hosts": {
+					"65.202.184.40": {
+						"duration": 9.091065883636475,
+						"transport_protocol": "tcp",
+						"application_protocol": "http"
+					}
+				}
+			}
+		},
+		"mapping": {
+			"detections": 0,
+			"first_sign": 1501014000.063375,
+			"last_sign": 1501014000.063375,
+			"indicators": {
+				"GetComputerNameW": [
+					1501014000.063375,
+					1501014000.063376
+				]
+			}
+		}
+	},
+	"suspicious": {
+		"encryption": {
+			"detections": 0,
+			"first_sign": 1501014000.063375,
+			"last_sign": 1501014000.063375,
+			"indicators": {
+				"GetComputerNameW": [
+					1501014000.063375,
+					1501014000.063376
+				]
+			}
+		},
+		"locking": {
+			"detections": 0,
+			"first_sign": 1501014000.063375,
+			"last_sign": 1501014000.063375,
+			"indicators": {
+				"GetComputerNameW": [
+					1501014000.063375,
+					1501014000.063376
+				]
+			}
+		}
+	},
+	"obvious": {
+		"deletion": {
+			"detections": 0,
+			"first_sign": 1501014000.063375,
+			"last_sign": 1501014000.063375,
+			"indicators": {
+				"GetComputerNameW": [
+					1501014000.063375,
+					1501014000.063376
+				]
+			}
+		},
+		"threat": {
+			"detections": 0,
+			"first_sign": 1501014000.063375,
+			"last_sign": 1501014000.063375,
+			"indicators": {
+				"GetComputerNameW": [
+					1501014000.063375,
+					1501014000.063376
+				]
+			}
+		}
+	}
+}

@@ -18390,7 +18390,7 @@
             "2017-07-25 18:18:52,516 [cuckoo.core.guest] DEBUG: cuckoo1: analysis still processing\n", 
             "2017-07-25 18:18:53,127 [cuckoo.core.resultserver] DEBUG: File upload request for memory/2388-1.dmp\n", 
             "2017-07-25 18:18:53,205 [cuckoo.core.resultserver] DEBUG: Uploaded file length: 46097792\n", 
-            18:16:50,851"2017-07-25 18:18:53,521 [cuckoo.core.guest] INFO: cuckoo1: analysis completed successfully\n",
+            "2017-07-25 18:18:53,521 [cuckoo.core.guest] INFO: cuckoo1: analysis completed successfully\n",
             "2017-07-25 18:18:53,856 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
             "2017-07-25 18:19:13,351 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label cuckoo1 to path /home/tempuser/.cuckoo/storage/analyses/5/memory.dmp\n", 
             "2017-07-25 18:19:13,352 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm cuckoo1\n", 

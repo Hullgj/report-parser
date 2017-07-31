@@ -1,0 +1,2111 @@
+
+Analysis duration: 02:59.323596
+Binary injected: Lab_01-3.exe after 23:52:13.929501
+Detected signatures: {
+    "antisandbox_sleep": {
+        "description": "A process attempted to delay the analysis task.", 
+        "detections": 1, 
+        "indicators": {
+            "other": [
+                "Lab_01-3.exe tried to sleep 150 seconds, actually delayed analysis time by 150 seconds"
+            ]
+        }
+    }, 
+    "antivm_memory_available": {
+        "api": "GlobalMemoryStatusEx", 
+        "called_first": 1501002699.030875, 
+        "category": "system", 
+        "description": "Checks amount of memory in system, this can be used to detect virtual machines that have a low amount of memory available", 
+        "detections": 1, 
+        "indicators": {
+            "arguments": {}, 
+            "timestamps": [
+                1501002699.030875
+            ]
+        }
+    }, 
+    "antivm_network_adapters": {
+        "api": "GetAdaptersAddresses", 
+        "called_first": 1501002699.233875, 
+        "category": "network", 
+        "description": "Checks adapter addresses which can be used to detect virtual network interfaces", 
+        "detections": 1, 
+        "indicators": {
+            "arguments": {
+                "family": 0, 
+                "flags": 46
+            }, 
+            "timestamps": [
+                1501002699.233875
+            ]
+        }
+    }, 
+    "memdump_urls": {
+        "category": "url", 
+        "description": "Potentially malicious URLs were found in the process memory dump", 
+        "detections": 157, 
+        "indicators": {
+            "ioc": [
+                "http://crl.comodo.net/TrustedCertificateServices.crl0", 
+                "http://www.e-szigno.hu/RootCA.crt0", 
+                "http://crl.identrust.com/DSTROOTCAX3CRL.crl0", 
+                "https://www.practicalmalwareanalysis.com/V0RxdHNseElWRGRH/", 
+                "http://crl.ssc.lt/root-b/cacrl.crl0", 
+                "http://www.disig.sk/ca/crl/ca_disig.crl0", 
+                "http://crl.securetrust.com/SGCA.crl0", 
+                "http://acraiz.icpbrasil.gov.br/DPCacraiz.pdf0=", 
+                "http://www.ssc.lt/cps03", 
+                "http://www.informatik.admin.ch/PKI/links/CPS_2_16_756_1_17_3_1_0.pdf0", 
+                "http://users.ocsp.d-trust.net03", 
+                "http://ocsp.int-x3.letsencrypt.org0/", 
+                "http://www.digsigtrust.com/DST_TRUST_CPS_v990701.html0", 
+                "http://www.microsoft.com/pki/certs/TrustListPCA.crt0", 
+                "https://www.certification.tn/cgi-bin/pub/crl/cacrl.crl0", 
+                "http://www.pkioverheid.nl/policies/root-policy0", 
+                "http://cps.chambersign.org/cps/chambersroot.html0", 
+                "http://www.microsoft.com/pki/certs/MicCerLisCA2011_2011-03-29.crt0", 
+                "http://www.entrust.net/CRL/Client1.crl0", 
+                "http://crl.chambersign.org/publicnotaryroot.crl0", 
+                "http://crl.comodo.net/AAACertificateServices.crl0", 
+                "http://www.certplus.com/CRL/class3.crl0", 
+                "http://www.microsoft.com/windows0", 
+                "http://logo.verisign.com/vslogo.gif0", 
+                "http://www.sk.ee/cps/0", 
+                "http://www.crc.bg0", 
+                "http://www.acabogacia.org/doc0", 
+                "http://www.e-szigno.hu/SZSZ/0", 
+                "https://www.catcert.net/verarrel", 
+                "http://isrg.trustid.ocsp.identrust.com0", 
+                "http://www.quovadis.bm0", 
+                "http://crl.securetrust.com/STCA.crl0", 
+                "https://www.catcert.net/verarrel05", 
+                "http://www.certificadodigital.com.br/repositorio/serasaca/crl/SerasaCAI.crl0", 
+                "http://crl.chambersign.org/chambersroot.crl0", 
+                "http://www.certificadodigital.com.br/repositorio/serasaca/crl/SerasaCAIII.crl0", 
+                "http://crl.globalsign.net/root-r2.crl0", 
+                "http://certificates.starfieldtech.com/repository/1604", 
+                "http://www.d-trust.net0", 
+                "http://pki-root.ecertpki.cl/CertEnroll/E-CERT%20ROOT%20CA.crl0", 
+                "http://crl.ssc.lt/root-a/cacrl.crl0", 
+                "http://crl.usertrust.com/UTN-DATACorpSGC.crl0", 
+                "http://www.certicamara.com/certicamaraca.crl0", 
+                "http://www.d-trust.net/crl/d-trust_root_class_2_ca_2007.crl0", 
+                "http://crl.usertrust.com/UTN-USERFirst-Object.crl0)", 
+                "http://www.post.trust.ie/reposit/cps.html0", 
+                "http://www.d-trust.net/crl/d-trust_qualified_root_ca_1_2007_pn.crl0", 
+                "http://www2.public-trust.com/crl/ct/ctroot.crl0", 
+                "http://apps.identrust.com/roots/dstrootcax3.p7c0", 
+                "http://cert.int-x3.letsencrypt.org/0"
+            ]
+        }
+    }, 
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 10, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt", 
+                "GET http://www.practicalmalwareanalysis.com/V0RxdHNseElWRGRH/", 
+                "GET http://apps.identrust.com/roots/dstrootcax3.p7c", 
+                "GET http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "GET http://isrg.trustid.ocsp.identrust.com/MFEwTzBNMEswSTAJBgUrDgMCGgUABBRv9GhNQxLSSGKBnMArPUcsHYovpgQUxKexpHsscfrb4UuQdf%2FEFWCFiRACEAoBQUIAAAFThXNqC4Xspwg%3D", 
+                "GET http://ocsp.int-x3.letsencrypt.org/MFMwUTBPME0wSzAJBgUrDgMCGgUABBR%2B5mrncpqz%2FPiiIGRsFqEtYHEIXQQUqEpqYwR93brm0Tm3pkVl7%2FOo7KECEgOmpNPyv%2B2tLRJY5bS3gg0TsQ%3D%3D", 
+                "GET https://www.practicalmalwareanalysis.com/V0RxdHNseElWRGRH/", 
+                "GET https://practicalmalwareanalysis.com/V0RxdHNseElWRGRH/", 
+                "GET https://clients2.google.com/service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201", 
+                "POST https://tools.google.com/service/update2?cup2key=5:3575064182&cup2hreq=c949fad25d47d946795e1104734695f3062891a8622484f9650a202f93013825"
+            ]
+        }
+    }, 
+    "network_icmp": {
+        "description": "Generates some ICMP traffic", 
+        "detections": 0
+    }, 
+    "packer_entropy": {
+        "category": "cryptography", 
+        "description": "The binary likely contains encrypted or compressed data.", 
+        "detections": 2, 
+        "indicators": {
+            "description": [
+                "A section with a high entropy has been found", 
+                "Overall entropy of this PE file is high"
+            ], 
+            "entropy": [
+                7.815067221481212, 
+                0.9615384615384616
+            ]
+        }
+    }, 
+    "pe_features": {
+        "category": "section", 
+        "description": "The executable has PE anomalies (could be a false positive)", 
+        "detections": 2, 
+        "indicators": {
+            "ioc": [
+                "LOL0", 
+                "LOL1"
+            ]
+        }
+    }
+}
+Tracked processes: {
+    "CertOpenStore": 1501002701.843875, 
+    "CertOpenStore - p_end": 1501002701.858875, 
+    "CoCreateInstance": 1501002699.233875, 
+    "CoCreateInstance - p_end": 1501002708.421875, 
+    "CoInitializeEx": 1501002699.202875, 
+    "CoInitializeEx - p_end": 1501002708.421875, 
+    "CoUninitialize": 1501002699.311875, 
+    "CoUninitialize - p_end": 1501002715.858875, 
+    "CryptAcquireContextA": 1501002701.843875, 
+    "CryptCreateHash": 1501002705.905875, 
+    "CryptCreateHash - p_end": 1501002705.921875, 
+    "CryptDecodeObjectEx": 1501002701.843875, 
+    "CryptDecodeObjectEx - p_end": 1501002738.827875, 
+    "CryptHashData": 1501002705.921875, 
+    "CryptHashData - p_end": 1501002705.921875, 
+    "FindResourceA": 1501002698.936875, 
+    "FindResourceExW": 1501002700.999875, 
+    "GetAdaptersAddresses": 1501002699.233875, 
+    "GetAdaptersAddresses - p_end": 1501002707.030875, 
+    "GetAddrInfoW": 1501002701.218875, 
+    "GetAddrInfoW - p_end": 1501002708.421875, 
+    "GetBestInterfaceEx": 1501002699.140875, 
+    "GetBestInterfaceEx - p_end": 1501002707.030875, 
+    "GetFileAttributesW": 1501002701.015875, 
+    "GetFileAttributesW - p_end": 1501002708.015875, 
+    "GetFileSize": 1501002701.858875, 
+    "GetFileSize - p_end": 1501002701.890875, 
+    "GetFileType": 1501002698.936875, 
+    "GetFileType - p_end": 1501002698.936875, 
+    "GetNativeSystemInfo": 1501002705.858875, 
+    "GetShortPathNameW": 1501002705.858875, 
+    "GetShortPathNameW - p_end": 1501002705.858875, 
+    "GetSystemDirectoryW": 1501002705.858875, 
+    "GetSystemInfo": 1501002699.046875, 
+    "GetSystemInfo - p_end": 1501002700.999875, 
+    "GetSystemTimeAsFileTime": 1501002699.311875, 
+    "GetSystemTimeAsFileTime - p_end": 1501002762.030875, 
+    "GetSystemWindowsDirectoryW": 1501002701.015875, 
+    "GetSystemWindowsDirectoryW - p_end": 1501002705.858875, 
+    "GlobalMemoryStatusEx": 1501002699.030875, 
+    "InternetCloseHandle": 1501002708.061875, 
+    "InternetOpenA": 1501002699.124875, 
+    "InternetOpenA - p_end": 1501002807.265875, 
+    "InternetOpenUrlA": 1501002708.061875, 
+    "InternetOpenUrlA - p_end": 1501002777.249875, 
+    "InternetReadFile": 1501002743.405875, 
+    "InternetReadFile - p_end": 1501002777.249875, 
+    "LdrGetDllHandle": 1501002700.999875, 
+    "LdrGetDllHandle - p_end": 1501002707.030875, 
+    "LdrGetProcedureAddress": 1501002698.936875, 
+    "LdrGetProcedureAddress - p_end": 1501002776.905875, 
+    "LdrLoadDll": 1501002698.936875, 
+    "LdrLoadDll - p_end": 1501002707.030875, 
+    "LdrUnloadDll": 1501002700.999875, 
+    "LdrUnloadDll - p_end": 1501002806.905875, 
+    "LoadResource": 1501002698.936875, 
+    "LoadResource - p_end": 1501002700.999875, 
+    "LoadStringW": 1501002705.858875, 
+    "NtAllocateVirtualMemory": 1501002698.936875, 
+    "NtAllocateVirtualMemory - p_end": 1501002768.030875, 
+    "NtClose": 1501002699.030875, 
+    "NtClose - p_end": 1501002806.905875, 
+    "NtCreateFile": 1501002701.015875, 
+    "NtCreateFile - p_end": 1501002708.030875, 
+    "NtCreateMutant": 1501002705.858875, 
+    "NtCreateMutant - p_end": 1501002705.858875, 
+    "NtCreateThreadEx": 1501002699.030875, 
+    "NtDelayExecution": 1501002698.952875, 
+    "NtDelayExecution - p_end": 1501002807.265875, 
+    "NtDeviceIoControlFile": 1501002699.140875, 
+    "NtDeviceIoControlFile - p_end": 1501002776.905875, 
+    "NtDuplicateObject": 1501002699.030875, 
+    "NtDuplicateObject - p_end": 1501002819.030875, 
+    "NtFreeVirtualMemory": 1501002698.936875, 
+    "NtFreeVirtualMemory - p_end": 1501002708.030875, 
+    "NtOpenFile": 1501002701.015875, 
+    "NtOpenFile - p_end": 1501002708.030875, 
+    "NtOpenKey": 1501002699.030875, 
+    "NtOpenKey - p_end": 1501002700.905875, 
+    "NtOpenSection": 1501002701.015875, 
+    "NtOpenSection - p_end": 1501002706.999875, 
+    "NtProtectVirtualMemory": 1501002698.936875, 
+    "NtProtectVirtualMemory - p_end": 1501002698.936875, 
+    "NtQueryKey": 1501002699.265875, 
+    "NtQueryKey - p_end": 1501002708.421875, 
+    "NtQuerySystemInformation": 1501002699.030875, 
+    "NtQueryValueKey": 1501002699.030875, 
+    "NtQueryValueKey - p_end": 1501002700.905875, 
+    "NtReadFile": 1501002701.874875, 
+    "NtReadFile - p_end": 1501002705.874875, 
+    "NtResumeThread": 1501002699.030875, 
+    "NtSetInformationFile": 1501002701.218875, 
+    "NtSetInformationFile - p_end": 1501002707.233875, 
+    "NtWriteFile": 1501002701.858875, 
+    "NtWriteFile - p_end": 1501002708.030875, 
+    "RegCloseKey": 1501002699.030875, 
+    "RegCloseKey - p_end": 1501002807.265875, 
+    "RegCreateKeyExW": 1501002699.046875, 
+    "RegCreateKeyExW - p_end": 1501002807.265875, 
+    "RegDeleteValueW": 1501002701.843875, 
+    "RegDeleteValueW - p_end": 1501002708.436875, 
+    "RegEnumKeyExA": 1501002701.858875, 
+    "RegEnumKeyExA - p_end": 1501002705.936875, 
+    "RegEnumKeyExW": 1501002701.015875, 
+    "RegEnumKeyExW - p_end": 1501002708.436875, 
+    "RegEnumValueW": 1501002705.921875, 
+    "RegEnumValueW - p_end": 1501002705.921875, 
+    "RegOpenKeyExA": 1501002699.030875, 
+    "RegOpenKeyExA - p_end": 1501002707.030875, 
+    "RegOpenKeyExW": 1501002699.030875, 
+    "RegOpenKeyExW - p_end": 1501002807.265875, 
+    "RegQueryInfoKeyW": 1501002705.921875, 
+    "RegQueryInfoKeyW - p_end": 1501002705.921875, 
+    "RegQueryValueExA": 1501002699.030875, 
+    "RegQueryValueExA - p_end": 1501002707.030875, 
+    "RegQueryValueExW": 1501002699.046875, 
+    "RegQueryValueExW - p_end": 1501002807.265875, 
+    "RegSetValueExW": 1501002699.311875, 
+    "RegSetValueExW - p_end": 1501002708.436875, 
+    "SetEndOfFile": 1501002701.858875, 
+    "SetEndOfFile - p_end": 1501002708.030875, 
+    "SetFilePointer": 1501002705.858875, 
+    "SetFilePointer - p_end": 1501002705.874875, 
+    "SetFileTime": 1501002705.874875, 
+    "SizeofResource": 1501002698.936875, 
+    "WSARecv": 1501002701.218875, 
+    "WSARecv - p_end": 1501002708.015875, 
+    "WSASend": 1501002701.218875, 
+    "WSASend - p_end": 1501002707.233875, 
+    "WSASocketW": 1501002701.218875, 
+    "WSASocketW - p_end": 1501002707.218875, 
+    "WSAStartup": 1501002698.936875, 
+    "WSAStartup - p_end": 1501002708.421875, 
+    "bind": 1501002701.218875, 
+    "bind - p_end": 1501002707.218875, 
+    "closesocket": 1501002699.140875, 
+    "closesocket - p_end": 1501002768.030875, 
+    "getsockname": 1501002699.702875, 
+    "getsockname - p_end": 1501002776.718875, 
+    "ioctlsocket": 1501002702.358875, 
+    "ioctlsocket - p_end": 1501002702.358875, 
+    "recv": 1501002702.358875, 
+    "setsockopt": 1501002699.140875, 
+    "setsockopt - p_end": 1501002776.718875, 
+    "shutdown": 1501002702.358875, 
+    "socket": 1501002699.140875, 
+    "socket - p_end": 1501002708.421875
+}
+Analysis duration: 44.759064
+Binary injected: Lab15-01.exe after 00:00.343569
+Detected signatures: {
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt"
+            ]
+        }
+    }
+}
+Tracked processes: {
+    "LdrGetDllHandle": 1501002613.89, 
+    "LdrGetDllHandle - p_end": 1501002613.89, 
+    "NtTerminateProcess": 1501002613.89, 
+    "NtTerminateProcess - p_end": 1501002614.031, 
+    "WriteConsoleA": 1501002613.89
+}
+Analysis duration: 01:12.302217
+Binary injected: Lab15-03.exe after 23:59:09.794095
+Detected signatures: {
+    "antivm_network_adapters": {
+        "api": "GetAdaptersAddresses", 
+        "called_first": 1501002700.40625, 
+        "category": "network", 
+        "description": "Checks adapter addresses which can be used to detect virtual network interfaces", 
+        "detections": 1, 
+        "indicators": {
+            "arguments": {
+                "family": 0, 
+                "flags": 46
+            }, 
+            "timestamps": [
+                1501002700.40625
+            ]
+        }
+    }, 
+    "memdump_urls": {
+        "category": "url", 
+        "description": "Potentially malicious URLs were found in the process memory dump", 
+        "detections": 148, 
+        "indicators": {
+            "ioc": [
+                "http://crl.comodo.net/TrustedCertificateServices.crl0", 
+                "http://fedir.comsign.co.il/crl/ComSignAdvancedSecurityCA.crl0", 
+                "http://crl.identrust.com/DSTROOTCAX3CRL.crl0", 
+                "http://crl.ssc.lt/root-b/cacrl.crl0", 
+                "http://www.disig.sk/ca/crl/ca_disig.crl0", 
+                "http://crl.securetrust.com/SGCA.crl0", 
+                "http://acraiz.icpbrasil.gov.br/DPCacraiz.pdf0=", 
+                "http://www.ssc.lt/cps03", 
+                "http://www.informatik.admin.ch/PKI/links/CPS_2_16_756_1_17_3_1_0.pdf0", 
+                "http://users.ocsp.d-trust.net03", 
+                "http://ocsp.int-x3.letsencrypt.org0/", 
+                "http://www.digsigtrust.com/DST_TRUST_CPS_v990701.html0", 
+                "http://www.microsoft.com/pki/certs/TrustListPCA.crt0", 
+                "https://www.certification.tn/cgi-bin/pub/crl/cacrl.crl0", 
+                "http://www.pkioverheid.nl/policies/root-policy0", 
+                "http://cps.chambersign.org/cps/chambersroot.html0", 
+                "http://www.microsoft.com/pki/certs/MicCerLisCA2011_2011-03-29.crt0", 
+                "http://www.entrust.net/CRL/Client1.crl0", 
+                "http://crl.chambersign.org/publicnotaryroot.crl0", 
+                "http://www.practicalmalwareanalysis.com/tt.html", 
+                "http://www.certplus.com/CRL/class3.crl0", 
+                "http://www.microsoft.com/windows0", 
+                "http://logo.verisign.com/vslogo.gif0", 
+                "http://www.sk.ee/cps/0", 
+                "http://www.crc.bg0", 
+                "http://www.acabogacia.org/doc0", 
+                "http://www.e-szigno.hu/SZSZ/0", 
+                "https://www.catcert.net/verarrel", 
+                "http://isrg.trustid.ocsp.identrust.com0", 
+                "http://www.quovadis.bm0", 
+                "http://crl.securetrust.com/STCA.crl0", 
+                "https://www.catcert.net/verarrel05", 
+                "http://www.certificadodigital.com.br/repositorio/serasaca/crl/SerasaCAI.crl0", 
+                "http://crl.chambersign.org/chambersroot.crl0", 
+                "http://www.certificadodigital.com.br/repositorio/serasaca/crl/SerasaCAIII.crl0", 
+                "http://crl.globalsign.net/root-r2.crl0", 
+                "http://certificates.starfieldtech.com/repository/1604", 
+                "http://www.d-trust.net0", 
+                "http://crl.comodo.net/AAACertificateServices.crl0", 
+                "http://pki-root.ecertpki.cl/CertEnroll/E-CERT%20ROOT%20CA.crl0", 
+                "http://crl.ssc.lt/root-a/cacrl.crl0", 
+                "http://crl.usertrust.com/UTN-DATACorpSGC.crl0", 
+                "http://www.certicamara.com/certicamaraca.crl0", 
+                "http://www.d-trust.net/crl/d-trust_root_class_2_ca_2007.crl0", 
+                "http://crl.usertrust.com/UTN-USERFirst-Object.crl0)", 
+                "http://www.post.trust.ie/reposit/cps.html0", 
+                "http://www.d-trust.net/crl/d-trust_qualified_root_ca_1_2007_pn.crl0", 
+                "http://www2.public-trust.com/crl/ct/ctroot.crl0", 
+                "http://cert.int-x3.letsencrypt.org/0", 
+                "http://www.certicamara.com0"
+            ]
+        }
+    }, 
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 6, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt", 
+                "GET http://www.practicalmalwareanalysis.com/tt.html", 
+                "GET http://apps.identrust.com/roots/dstrootcax3.p7c", 
+                "GET http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "GET http://isrg.trustid.ocsp.identrust.com/MFEwTzBNMEswSTAJBgUrDgMCGgUABBRv9GhNQxLSSGKBnMArPUcsHYovpgQUxKexpHsscfrb4UuQdf%2FEFWCFiRACEAoBQUIAAAFThXNqC4Xspwg%3D", 
+                "GET http://ocsp.int-x3.letsencrypt.org/MFMwUTBPME0wSzAJBgUrDgMCGgUABBR%2B5mrncpqz%2FPiiIGRsFqEtYHEIXQQUqEpqYwR93brm0Tm3pkVl7%2FOo7KECEgOmpNPyv%2B2tLRJY5bS3gg0TsQ%3D%3D"
+            ]
+        }
+    }, 
+    "network_icmp": {
+        "description": "Generates some ICMP traffic", 
+        "detections": 0
+    }, 
+    "raises_exception": {
+        "api": "__exception__", 
+        "called_first": 1501002700.17225, 
+        "category": "__notification__", 
+        "description": "One or more processes crashed", 
+        "detections": 1, 
+        "indicators": {
+            "arguments": {
+                "exception": {
+                    "address": "0x4014ac", 
+                    "exception_code": "0xc0000094", 
+                    "instruction": "div ecx", 
+                    "instruction_r": "f7 f1 68 b4 33 40 00 e8 d6 00 00 00 83 c4 04 5f", 
+                    "module": "Lab15-03.exe", 
+                    "offset": 5292, 
+                    "symbol": "lab15-03+0x14ac"
+                }, 
+                "registers": {
+                    "eax": 0, 
+                    "ebp": 1638168, 
+                    "ebx": 2130567168, 
+                    "ecx": 0, 
+                    "edi": 0, 
+                    "edx": 2147483661, 
+                    "esi": 0, 
+                    "esp": 1638148
+                }, 
+                "stacktrace": "0x1\nBaseThreadInitThunk+0x12 VerifyConsoleIoHandle-0xb3 kernel32+0x133aa @ 0x7dd733aa\nRtlInitializeExceptionChain+0x63 RtlAllocateActivationContextStack-0xa5 ntdll+0x39f72 @ 0x7dea9f72\nRtlInitializeExceptionChain+0x36 RtlAllocateActivationContextStack-0xd2 ntdll+0x39f45 @ 0x7dea9f45"
+            }, 
+            "timestamps": [
+                1501002700.17225
+            ]
+        }
+    }
+}
+Tracked processes: {
+    "CertControlStore": 1501002706.95325, 
+    "CertControlStore - p_end": 1501002714.39025, 
+    "CertOpenStore": 1501002706.82825, 
+    "CertOpenStore - p_end": 1501002716.18725, 
+    "CoCreateInstance": 1501002700.39025, 
+    "CoCreateInstance - p_end": 1501002703.14025, 
+    "CoInitializeEx": 1501002700.32825, 
+    "CoInitializeEx - p_end": 1501002715.51525, 
+    "CoUninitialize": 1501002700.53125, 
+    "CoUninitialize - p_end": 1501002715.51525, 
+    "CreateActCtxW": 1501002706.17225, 
+    "CreateActCtxW - p_end": 1501002706.18725, 
+    "CreateProcessInternalW": 1501002716.21925, 
+    "CreateThread": 1501002710.23425, 
+    "CreateThread - p_end": 1501002715.50025, 
+    "CreateToolhelp32Snapshot": 1501002698.10925, 
+    "CreateToolhelp32Snapshot - p_end": 1501002700.17225, 
+    "CryptAcquireContextA": 1501002709.96925, 
+    "CryptAcquireContextA - p_end": 1501002711.73425, 
+    "CryptCreateHash": 1501002711.76525, 
+    "CryptCreateHash - p_end": 1501002715.46925, 
+    "CryptDecodeObjectEx": 1501002709.95325, 
+    "CryptDecodeObjectEx - p_end": 1501002716.18725, 
+    "CryptHashData": 1501002711.76525, 
+    "CryptHashData - p_end": 1501002715.46925, 
+    "DeleteFileW": 1501002714.12525, 
+    "DeleteFileW - p_end": 1501002714.12525, 
+    "EncryptMessage": 1501002716.21925, 
+    "FindFirstFileExW": 1501002714.43725, 
+    "FindFirstFileExW - p_end": 1501002714.43725, 
+    "FindResourceExW": 1501002710.23425, 
+    "GetAdaptersAddresses": 1501002700.40625, 
+    "GetAdaptersAddresses - p_end": 1501002715.51525, 
+    "GetAddrInfoW": 1501002702.96925, 
+    "GetAddrInfoW - p_end": 1501002715.64025, 
+    "GetBestInterfaceEx": 1501002700.32825, 
+    "GetBestInterfaceEx - p_end": 1501002715.51525, 
+    "GetFileAttributesW": 1501002706.75025, 
+    "GetFileAttributesW - p_end": 1501002716.17225, 
+    "GetFileSize": 1501002711.76525, 
+    "GetFileSize - p_end": 1501002716.17225, 
+    "GetNativeSystemInfo": 1501002714.00025, 
+    "GetShortPathNameW": 1501002714.09425, 
+    "GetShortPathNameW - p_end": 1501002714.09425, 
+    "GetSystemDirectoryA": 1501002706.17225, 
+    "GetSystemDirectoryW": 1501002709.96925, 
+    "GetSystemDirectoryW - p_end": 1501002714.00025, 
+    "GetSystemInfo": 1501002710.23425, 
+    "GetSystemTimeAsFileTime": 1501002700.53125, 
+    "GetSystemTimeAsFileTime - p_end": 1501002716.17225, 
+    "GetSystemWindowsDirectoryW": 1501002706.18725, 
+    "GetSystemWindowsDirectoryW - p_end": 1501002714.00025, 
+    "GetTempPathW": 1501002714.00025, 
+    "GetUserNameExW": 1501002700.53125, 
+    "GetUserNameExW - p_end": 1501002700.53125, 
+    "HttpQueryInfoA": 1501002706.75025, 
+    "HttpQueryInfoA - p_end": 1501002706.76525, 
+    "InternetCrackUrlW": 1501002706.75025, 
+    "InternetQueryOptionA": 1501002706.31225, 
+    "InternetQueryOptionA - p_end": 1501002716.21925, 
+    "InternetSetOptionA": 1501002706.76525, 
+    "LdrGetDllHandle": 1501002706.17225, 
+    "LdrGetDllHandle - p_end": 1501002715.51525, 
+    "LdrGetProcedureAddress": 1501002700.29725, 
+    "LdrGetProcedureAddress - p_end": 1501002716.21925, 
+    "LdrLoadDll": 1501002700.31225, 
+    "LdrLoadDll - p_end": 1501002715.51525, 
+    "LdrUnloadDll": 1501002700.31225, 
+    "LdrUnloadDll - p_end": 1501002716.21925, 
+    "LoadResource": 1501002710.23425, 
+    "LoadStringW": 1501002710.04725, 
+    "LoadStringW - p_end": 1501002714.00025, 
+    "Module32FirstW": 1501002698.10925, 
+    "Module32FirstW - p_end": 1501002700.06225, 
+    "Module32NextW": 1501002698.10925, 
+    "Module32NextW - p_end": 1501002700.15625, 
+    "NtAllocateVirtualMemory": 1501002700.29725, 
+    "NtAllocateVirtualMemory - p_end": 1501002716.15625, 
+    "NtClose": 1501002698.10925, 
+    "NtClose - p_end": 1501002716.21925, 
+    "NtCreateFile": 1501002698.10925, 
+    "NtCreateFile - p_end": 1501002716.17225, 
+    "NtCreateMutant": 1501002709.96925, 
+    "NtCreateMutant - p_end": 1501002714.00025, 
+    "NtCreateSection": 1501002698.10925, 
+    "NtCreateSection - p_end": 1501002706.31225, 
+    "NtDeviceIoControlFile": 1501002700.31225, 
+    "NtDeviceIoControlFile - p_end": 1501002716.21925, 
+    "NtDuplicateObject": 1501002700.31225, 
+    "NtDuplicateObject - p_end": 1501002715.50025, 
+    "NtEnumerateKey": 1501002698.10925, 
+    "NtEnumerateKey - p_end": 1501002698.10925, 
+    "NtEnumerateValueKey": 1501002698.10925, 
+    "NtFreeVirtualMemory": 1501002706.14025, 
+    "NtFreeVirtualMemory - p_end": 1501002716.21925, 
+    "NtMapViewOfSection": 1501002698.10925, 
+    "NtMapViewOfSection - p_end": 1501002706.31225, 
+    "NtOpenFile": 1501002709.93725, 
+    "NtOpenFile - p_end": 1501002716.17225, 
+    "NtOpenKey": 1501002698.10925, 
+    "NtOpenKey - p_end": 1501002716.21925, 
+    "NtOpenProcess": 1501002698.10925, 
+    "NtOpenProcess - p_end": 1501002700.15625, 
+    "NtOpenSection": 1501002710.21925, 
+    "NtOpenSection - p_end": 1501002715.50025, 
+    "NtQueryAttributesFile": 1501002706.20325, 
+    "NtQueryAttributesFile - p_end": 1501002706.31225, 
+    "NtQueryInformationFile": 1501002706.75025, 
+    "NtQueryKey": 1501002700.48425, 
+    "NtQueryKey - p_end": 1501002703.14025, 
+    "NtQueryValueKey": 1501002698.10925, 
+    "NtQueryValueKey - p_end": 1501002716.21925, 
+    "NtReadFile": 1501002711.76525, 
+    "NtReadFile - p_end": 1501002716.17225, 
+    "NtResumeThread": 1501002710.23425, 
+    "NtResumeThread - p_end": 1501002715.50025, 
+    "NtSetInformationFile": 1501002706.31225, 
+    "NtSetInformationFile - p_end": 1501002715.64025, 
+    "NtSetValueKey": 1501002710.04725, 
+    "NtSetValueKey - p_end": 1501002710.04725, 
+    "NtTerminateProcess": 1501002716.21925, 
+    "NtTerminateProcess - p_end": 1501002717.85925, 
+    "NtUnmapViewOfSection": 1501002706.31225, 
+    "NtUnmapViewOfSection - p_end": 1501002716.21925, 
+    "NtWriteFile": 1501002706.75025, 
+    "NtWriteFile - p_end": 1501002716.17225, 
+    "OpenSCManagerW": 1501002714.12525, 
+    "OpenServiceW": 1501002714.12525, 
+    "Process32FirstW": 1501002698.10925, 
+    "Process32NextW": 1501002698.32825, 
+    "Process32NextW - p_end": 1501002700.17225, 
+    "RegCloseKey": 1501002700.48425, 
+    "RegCloseKey - p_end": 1501002716.21925, 
+    "RegCreateKeyExW": 1501002700.53125, 
+    "RegCreateKeyExW - p_end": 1501002709.96925, 
+    "RegDeleteValueW": 1501002703.15625, 
+    "RegDeleteValueW - p_end": 1501002703.15625, 
+    "RegEnumKeyExA": 1501002710.04725, 
+    "RegEnumKeyExA - p_end": 1501002714.43725, 
+    "RegEnumKeyExW": 1501002703.15625, 
+    "RegEnumKeyExW - p_end": 1501002715.51525, 
+    "RegEnumValueW": 1501002706.84425, 
+    "RegEnumValueW - p_end": 1501002714.43725, 
+    "RegOpenKeyExA": 1501002706.79725, 
+    "RegOpenKeyExA - p_end": 1501002715.51525, 
+    "RegOpenKeyExW": 1501002700.32825, 
+    "RegOpenKeyExW - p_end": 1501002716.17225, 
+    "RegQueryInfoKeyW": 1501002710.04725, 
+    "RegQueryInfoKeyW - p_end": 1501002714.43725, 
+    "RegQueryValueExA": 1501002706.79725, 
+    "RegQueryValueExA - p_end": 1501002715.51525, 
+    "RegQueryValueExW": 1501002700.48425, 
+    "RegQueryValueExW - p_end": 1501002716.17225, 
+    "RegSetValueExW": 1501002700.53125, 
+    "RegSetValueExW - p_end": 1501002703.15625, 
+    "SetEndOfFile": 1501002711.75025, 
+    "SetEndOfFile - p_end": 1501002716.17225, 
+    "SetFilePointer": 1501002714.00025, 
+    "SetFilePointer - p_end": 1501002716.17225, 
+    "SetFileTime": 1501002714.10925, 
+    "Thread32First": 1501002698.31225, 
+    "Thread32First - p_end": 1501002700.17225, 
+    "Thread32Next": 1501002698.31225, 
+    "Thread32Next - p_end": 1501002700.17225, 
+    "WSARecv": 1501002706.32825, 
+    "WSARecv - p_end": 1501002716.21925, 
+    "WSASend": 1501002706.32825, 
+    "WSASend - p_end": 1501002716.21925, 
+    "WSASocketA": 1501002706.18725, 
+    "WSASocketA - p_end": 1501002706.82825, 
+    "WSASocketW": 1501002710.85925, 
+    "WSASocketW - p_end": 1501002715.64025, 
+    "WSAStartup": 1501002700.29725, 
+    "WSAStartup - p_end": 1501002715.50025, 
+    "WriteConsoleA": 1501002698.10925, 
+    "WriteConsoleA - p_end": 1501002700.17225, 
+    "__exception__": 1501002700.17225, 
+    "bind": 1501002706.31225, 
+    "bind - p_end": 1501002715.64025, 
+    "closesocket": 1501002700.31225, 
+    "closesocket - p_end": 1501002716.21925, 
+    "getsockname": 1501002706.31225, 
+    "getsockname - p_end": 1501002715.65625, 
+    "ioctlsocket": 1501002706.73425, 
+    "ioctlsocket - p_end": 1501002706.73425, 
+    "recv": 1501002706.73425, 
+    "setsockopt": 1501002700.31225, 
+    "setsockopt - p_end": 1501002716.18725, 
+    "shutdown": 1501002716.21925, 
+    "socket": 1501002700.31225, 
+    "socket - p_end": 1501002706.17225
+}
+Analysis duration: 02:34.336757
+Binary injected:  after 03:21:13.716842
+Detected signatures: {
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 3, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt", 
+                "GET http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "GET https://clients2.google.com/service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201"
+            ]
+        }
+    }, 
+    "packer_entropy": {
+        "category": "cryptography", 
+        "description": "The binary likely contains encrypted or compressed data.", 
+        "detections": 2, 
+        "indicators": {
+            "description": [
+                "A section with a high entropy has been found", 
+                "Overall entropy of this PE file is high"
+            ], 
+            "entropy": [
+                7.854124193008595, 
+                0.4864864864864865
+            ]
+        }
+    }
+}
+Tracked processes: {}
+Analysis duration: 01:04.398264
+Binary injected: Lab_06-1.exe after 23:38:28.122091
+Detected signatures: {
+    "dumped_buffer": {
+        "description": "One or more potentially interesting buffers were extracted, these generally contain injected code, configuration data, etc.", 
+        "detections": 0
+    }, 
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt"
+            ]
+        }
+    }, 
+    "network_icmp": {
+        "description": "Generates some ICMP traffic", 
+        "detections": 0
+    }
+}
+Tracked processes: {
+    "GetFileSizeEx": 1501002702.34375, 
+    "LdrGetDllHandle": 1501002702.34375, 
+    "LdrGetProcedureAddress": 1501002702.34375, 
+    "LdrGetProcedureAddress - p_end": 1501002702.34375, 
+    "LdrLoadDll": 1501002702.34375, 
+    "LdrLoadDll - p_end": 1501002702.34375, 
+    "NtAllocateVirtualMemory": 1501002702.34375, 
+    "NtAllocateVirtualMemory - p_end": 1501002702.34375, 
+    "NtClose": 1501002702.34375, 
+    "NtClose - p_end": 1501002702.37475, 
+    "NtCreateFile": 1501002702.34375, 
+    "NtReadFile": 1501002702.34375, 
+    "NtTerminateProcess": 1501002702.37475, 
+    "NtTerminateProcess - p_end": 1501002704.99975, 
+    "RtlDecompressBuffer": 1501002702.37475, 
+    "SetFilePointer": 1501002702.34375, 
+    "SetUnhandledExceptionFilter": 1501002702.34375
+}
+Analysis duration: 58.557136
+Binary injected:  after 06:28:33.754499
+Detected signatures: {
+    "has_pdb": {
+        "category": "pdb_path", 
+        "description": "This executable has a PDB path", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "C:\\Users\\IEUser\\Desktop\\malware\\Labs\\Lab_5\\lab_5_1\\Release\\launch.pdb"
+            ]
+        }
+    }, 
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt"
+            ]
+        }
+    }, 
+    "network_icmp": {
+        "description": "Generates some ICMP traffic", 
+        "detections": 0
+    }
+}
+Tracked processes: {}
+Analysis duration: 02:48.050166
+Binary injected: pafish.exe after 00:07.228284
+Detected signatures: {
+    "antiemu_wine": {
+        "api": "LdrGetProcedureAddress", 
+        "called_first": 1501013998.984375, 
+        "category": "registry", 
+        "description": "Detects the presence of Wine emulator", 
+        "detections": 2, 
+        "indicators": {
+            "ioc": [
+                "HKEY_CURRENT_USER\\SOFTWARE\\Wine"
+            ]
+        }
+    }, 
+    "antisandbox_file": {
+        "category": "file", 
+        "description": "Looks for known filepaths where sandboxes execute samples", 
+        "detections": 4, 
+        "indicators": {
+            "ioc": [
+                "C:\\sample.exe", 
+                "D:\\sample.exe", 
+                "C:\\malware.exe", 
+                "D:\\malware.exe"
+            ]
+        }
+    }, 
+    "antisandbox_joe_anubis_files": {
+        "category": "file", 
+        "description": "Detects Joe or Anubis Sandboxes through the presence of a file", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "C:\\sample.exe"
+            ]
+        }
+    }, 
+    "antivm_disk_size": {
+        "api": "GetDiskFreeSpaceExW", 
+        "called_first": 1501013998.453375, 
+        "category": "misc", 
+        "description": "Queries the disk size which could be used to detect virtual machine with small fixed size or dynamic allocation", 
+        "detections": 1, 
+        "indicators": {
+            "arguments": {
+                "free_bytes_available": 0, 
+                "root_path": "C:\\", 
+                "total_number_of_bytes": 274561232896, 
+                "total_number_of_free_bytes": 0
+            }, 
+            "timestamps": [
+                1501013998.453375
+            ]
+        }
+    }, 
+    "antivm_generic_bios": {
+        "category": "registry", 
+        "description": "Checks the version of Bios, possibly for anti-virtualization", 
+        "detections": 2, 
+        "indicators": {
+            "ioc": [
+                "HKEY_LOCAL_MACHINE\\HARDWARE\\DESCRIPTION\\System\\SystemBiosVersion", 
+                "HKEY_LOCAL_MACHINE\\HARDWARE\\DESCRIPTION\\System\\VideoBiosVersion"
+            ]
+        }
+    }, 
+    "antivm_memory_available": {
+        "api": "GlobalMemoryStatusEx", 
+        "called_first": 1501013998.953375, 
+        "category": "system", 
+        "description": "Checks amount of memory in system, this can be used to detect virtual machines that have a low amount of memory available", 
+        "detections": 1, 
+        "indicators": {
+            "arguments": {}, 
+            "timestamps": [
+                1501013998.953375
+            ]
+        }
+    }, 
+    "antivm_network_adapters": {
+        "api": "GetAdaptersAddresses", 
+        "called_first": 1501013999.031375, 
+        "category": "network", 
+        "description": "Checks adapter addresses which can be used to detect virtual network interfaces", 
+        "detections": 1, 
+        "indicators": {
+            "arguments": {
+                "family": 0, 
+                "flags": 0
+            }, 
+            "timestamps": [
+                1501013999.031375
+            ]
+        }
+    }, 
+    "antivm_queries_computername": {
+        "api": "GetComputerNameW", 
+        "called_first": 1501013999.453375, 
+        "called_last": 1501014000.063375, 
+        "category": "misc", 
+        "description": "Queries for the computername", 
+        "detections": 2, 
+        "indicators": {
+            "arguments": {
+                "computer_name": "WDQTSLXIVDDGAT"
+            }, 
+            "timestamps": [
+                1501013999.453375, 
+                1501014000.063375
+            ]
+        }
+    }, 
+    "antivm_shared_device": {
+        "api": "NtCreateFile", 
+        "called_first": 1501014000.047375, 
+        "called_last": 1501014000.047375, 
+        "category": "file", 
+        "description": "Attempts to detect a virtual machine by the use of a pseudo device", 
+        "detections": 2, 
+        "indicators": {
+            "arguments": {
+                "create_disposition": 1, 
+                "create_options": 96, 
+                "desired_access": "0x80100080", 
+                "file_attributes": 128, 
+                "file_handle": "0x00000000", 
+                "filepath": "\\??\\vmci", 
+                "filepath_r": "\\??\\vmci", 
+                "share_access": 1, 
+                "status_info": 4294967295
+            }, 
+            "timestamps": [
+                1501014000.047375, 
+                1501014000.047375
+            ]
+        }
+    }, 
+    "antivm_vbox_devices": {
+        "category": "file", 
+        "description": "Detects VirtualBox through the presence of a device", 
+        "detections": 4, 
+        "indicators": {
+            "ioc": [
+                "\\??\\VBoxMiniRdrDN", 
+                "\\\\?\\pipe\\VBoxMiniRdDN", 
+                "\\??\\VBoxTrayIPC", 
+                "\\\\?\\pipe\\VBoxTrayIPC"
+            ]
+        }
+    }, 
+    "antivm_vbox_files": {
+        "category": "file", 
+        "description": "Detects VirtualBox through the presence of a file", 
+        "detections": 16, 
+        "indicators": {
+            "ioc": [
+                "C:\\Windows\\System32\\vboxdisp.dll", 
+                "C:\\Windows\\System32\\vboxhook.dll", 
+                "C:\\Windows\\System32\\vboxmrxnp.dll", 
+                "C:\\Windows\\System32\\vboxogl.dll", 
+                "C:\\Windows\\System32\\vboxoglarrayspu.dll", 
+                "C:\\Windows\\System32\\vboxoglcrutil.dll", 
+                "C:\\Windows\\System32\\vboxoglerrorspu.dll", 
+                "C:\\Windows\\System32\\vboxoglfeedbackspu.dll", 
+                "C:\\Windows\\System32\\vboxoglpackspu.dll", 
+                "C:\\Windows\\System32\\drivers\\VBoxSF.sys", 
+                "C:\\Windows\\System32\\VBoxControl.exe", 
+                "C:\\Windows\\System32\\vboxservice.exe", 
+                "C:\\Windows\\System32\\vboxtray.exe", 
+                "C:\\Windows\\System32\\drivers\\VBoxGuest.sys", 
+                "C:\\Windows\\System32\\drivers\\VBoxMouse.sys", 
+                "C:\\Windows\\System32\\drivers\\VBoxVideo.sys"
+            ]
+        }
+    }, 
+    "antivm_vbox_keys": {
+        "category": "registry", 
+        "description": "Detects VirtualBox through the presence of a registry key", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "HKEY_LOCAL_MACHINE\\SOFTWARE\\Oracle\\VirtualBox Guest Additions"
+            ]
+        }
+    }, 
+    "antivm_vbox_provname": {
+        "api": "WNetGetProviderNameW", 
+        "called_first": 1501013999.156375, 
+        "category": "network", 
+        "description": "Detects VirtualBox using WNetGetProviderName trick", 
+        "detections": 1, 
+        "indicators": {
+            "arguments": {
+                "net_type": "0x00250000"
+            }, 
+            "timestamps": [
+                1501013999.156375
+            ]
+        }
+    }, 
+    "antivm_vbox_window": {
+        "api": "FindWindowA", 
+        "called_first": 1501013999.047375, 
+        "category": "ui", 
+        "description": "Detects VirtualBox through the presence of a window", 
+        "detections": 1, 
+        "indicators": {
+            "arguments": {
+                "class_name": "VBoxTrayToolWndClass", 
+                "window_name": ""
+            }, 
+            "timestamps": [
+                1501013999.047375
+            ]
+        }
+    }, 
+    "antivm_vmware_files": {
+        "category": "file", 
+        "description": "Detects VMWare through the presence of various files", 
+        "detections": 4, 
+        "indicators": {
+            "ioc": [
+                "C:\\Windows\\System32\\drivers\\vmmouse.sys", 
+                "C:\\Windows\\System32\\drivers\\vmhgfs.sys", 
+                "\\??\\HGFS", 
+                "\\??\\vmci"
+            ]
+        }
+    }, 
+    "antivm_vmware_keys": {
+        "category": "registry", 
+        "description": "Detects VMWare through the presence of a registry key", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "HKEY_LOCAL_MACHINE\\SOFTWARE\\VMware, Inc.\\VMware Tools"
+            ]
+        }
+    }, 
+    "has_wmi": {
+        "category": "wmi", 
+        "description": "Executes one or more WMI queries", 
+        "detections": 2, 
+        "indicators": {
+            "ioc": [
+                "SELECT DeviceId FROM Win32_PnPEntity", 
+                "SELECT SerialNumber FROM Win32_Bios"
+            ]
+        }
+    }, 
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 6, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt", 
+                "GET http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "HEAD http://redirector.gvt1.com/edgedl/release2/LJCVr0SsrEs/GoogleUpdateSetup.exe", 
+                "HEAD http://r6---sn-ab5l6nzd.gvt1.com/edgedl/release2/LJCVr0SsrEs/GoogleUpdateSetup.exe?cms_redirect=yes&expire=1501028514&ip=162.247.72.201&ipbits=0&mm=28&mn=sn-ab5l6nzd&ms=nvh&mt=1501013835&mv=u&pl=24&shardbypass=yes&sparams=expire,ip,ipbits,mm,mn,ms,mv,pl,shardbypass&signature=3D76D808545F0A35ED8BABE7FD754C76504E2059.236E1A5DC49A8C01424752DEFBBD4889B0349B58&key=cms1", 
+                "GET https://clients2.google.com/service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201", 
+                "POST https://tools.google.com/service/update2?cup2key=5:2401198445&cup2hreq=3fd1cdc8b21faa441dcc4824c07138c796a7a1ec41566db082b82bf00de08e12"
+            ]
+        }
+    }, 
+    "network_icmp": {
+        "description": "Generates some ICMP traffic", 
+        "detections": 0
+    }, 
+    "packer_entropy": {
+        "category": "cryptography", 
+        "description": "The binary likely contains encrypted or compressed data.", 
+        "detections": 2, 
+        "indicators": {
+            "description": [
+                "A section with a high entropy has been found", 
+                "Overall entropy of this PE file is high"
+            ], 
+            "entropy": [
+                7.854124193008595, 
+                0.4864864864864865
+            ]
+        }
+    }, 
+    "recon_fingerprint": {
+        "category": "registry", 
+        "description": "Collects information to fingerprint the system (MachineGuid, DigitalProductId, SystemBiosDate)", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "HKEY_LOCAL_MACHINE\\HARDWARE\\DESCRIPTION\\System\\SystemBiosDate"
+            ]
+        }
+    }, 
+    "wmi_antivm": {
+        "category": "wmi", 
+        "description": "Executes one or more WMI queries which could be used to identify virtual machines", 
+        "detections": 2, 
+        "indicators": {
+            "ioc": [
+                "SELECT SerialNumber FROM Win32_Bios", 
+                "SELECT DeviceId FROM Win32_PnPEntity"
+            ]
+        }
+    }
+}
+Tracked processes: {
+    "CoCreateInstance": 1501013999.313375, 
+    "CoCreateInstance - p_end": 1501014000.063375, 
+    "CoCreateInstanceEx": 1501013999.453375, 
+    "CoCreateInstanceEx - p_end": 1501014000.063375, 
+    "CoGetClassObject": 1501013999.453375, 
+    "CoGetClassObject - p_end": 1501014000.063375, 
+    "CoInitializeEx": 1501013999.172375, 
+    "CoInitializeEx - p_end": 1501014000.047375, 
+    "CoInitializeSecurity": 1501013999.172375, 
+    "CoInitializeSecurity - p_end": 1501014000.047375, 
+    "CoUninitialize": 1501014000.000375, 
+    "CoUninitialize - p_end": 1501014000.328375, 
+    "CreateToolhelp32Snapshot": 1501013999.172375, 
+    "DeviceIoControl": 1501013998.453375, 
+    "FindWindowA": 1501013999.047375, 
+    "FindWindowA - p_end": 1501013999.047375, 
+    "GetAdaptersAddresses": 1501013999.031375, 
+    "GetAdaptersAddresses - p_end": 1501014000.031375, 
+    "GetComputerNameW": 1501013999.453375, 
+    "GetComputerNameW - p_end": 1501014000.063375, 
+    "GetCursorPos": 1501013996.422375, 
+    "GetCursorPos - p_end": 1501013998.422375, 
+    "GetDiskFreeSpaceExW": 1501013998.453375, 
+    "GetFileAttributesW": 1501013998.422375, 
+    "GetFileAttributesW - p_end": 1501014000.016375, 
+    "GetFileType": 1501013984.484375, 
+    "GetFileType - p_end": 1501014000.344375, 
+    "GetSystemInfo": 1501013998.953375, 
+    "GetSystemTimeAsFileTime": 1501013984.484375, 
+    "GetSystemTimeAsFileTime - p_end": 1501014019.078375, 
+    "GetSystemWindowsDirectoryW": 1501013999.172375, 
+    "GetUserNameA": 1501013998.422375, 
+    "GlobalMemoryStatusEx": 1501013998.953375, 
+    "IWbemServices_ExecQuery": 1501013999.984375, 
+    "IWbemServices_ExecQuery - p_end": 1501014000.313375, 
+    "IsDebuggerPresent": 1501013986.422375, 
+    "LdrGetDllHandle": 1501013998.422375, 
+    "LdrGetDllHandle - p_end": 1501014000.344375, 
+    "LdrGetProcedureAddress": 1501013998.422375, 
+    "LdrGetProcedureAddress - p_end": 1501014000.344375, 
+    "LdrLoadDll": 1501013999.172375, 
+    "LdrUnloadDll": 1501014089.313375, 
+    "NtAllocateVirtualMemory": 1501013999.047375, 
+    "NtAllocateVirtualMemory - p_end": 1501014000.313375, 
+    "NtClose": 1501013986.094375, 
+    "NtClose - p_end": 1501014089.313375, 
+    "NtCreateFile": 1501013984.484375, 
+    "NtCreateFile - p_end": 1501014000.344375, 
+    "NtCreateSection": 1501013999.172375, 
+    "NtDelayExecution": 1501013986.922375, 
+    "NtDelayExecution - p_end": 1501014059.313375, 
+    "NtDuplicateObject": 1501013999.313375, 
+    "NtDuplicateObject - p_end": 1501013999.313375, 
+    "NtFreeVirtualMemory": 1501013999.031375, 
+    "NtFreeVirtualMemory - p_end": 1501013999.031375, 
+    "NtMapViewOfSection": 1501013999.172375, 
+    "NtOpenKey": 1501013999.172375, 
+    "NtOpenKey - p_end": 1501014000.313375, 
+    "NtQueryValueKey": 1501013999.172375, 
+    "NtQueryValueKey - p_end": 1501014000.063375, 
+    "NtWriteFile": 1501013984.484375, 
+    "NtWriteFile - p_end": 1501014000.344375, 
+    "Process32FirstW": 1501013999.172375, 
+    "Process32NextW": 1501013999.172375, 
+    "Process32NextW - p_end": 1501013999.172375, 
+    "RegCloseKey": 1501013999.000375, 
+    "RegCloseKey - p_end": 1501014000.344375, 
+    "RegOpenKeyExA": 1501013998.984375, 
+    "RegOpenKeyExA - p_end": 1501014000.344375, 
+    "RegOpenKeyExW": 1501013999.984375, 
+    "RegOpenKeyExW - p_end": 1501014000.313375, 
+    "RegQueryValueExA": 1501013999.000375, 
+    "RegQueryValueExA - p_end": 1501014000.344375, 
+    "RegQueryValueExW": 1501013999.984375, 
+    "RegQueryValueExW - p_end": 1501014000.313375, 
+    "SetFilePointer": 1501013984.484375, 
+    "SetFilePointer - p_end": 1501014000.344375, 
+    "SetUnhandledExceptionFilter": 1501013984.484375, 
+    "UuidCreate": 1501013999.984375, 
+    "UuidCreate - p_end": 1501014000.313375, 
+    "WNetGetProviderNameW": 1501013999.156375, 
+    "WriteConsoleA": 1501013986.266375, 
+    "WriteConsoleA - p_end": 1501014000.344375, 
+    "getaddrinfo": 1501013986.094375, 
+    "getaddrinfo - p_end": 1501014000.344375
+}
+Analysis duration: 02:41.113776
+Binary injected: Lab_09-2.exe after 23:33:53.957621
+Detected signatures: {
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 6, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt", 
+                "GET http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "HEAD http://redirector.gvt1.com/edgedl/release2/LJCVr0SsrEs/GoogleUpdateSetup.exe", 
+                "HEAD http://r3---sn-5hnednlr.gvt1.com/edgedl/release2/LJCVr0SsrEs/GoogleUpdateSetup.exe?cms_redirect=yes&expire=1501018795&ip=185.170.42.4&ipbits=0&mm=28&mn=sn-5hnednlr&ms=nvh&mt=1501003784&mv=u&pl=24&shardbypass=yes&sparams=expire,ip,ipbits,mm,mn,ms,mv,pl,shardbypass&signature=35BBABDD00B5C1E3B0FA8FF792844B1E4A89EF5A.7D34D3E228D7718089E7AE96EF1254981F850A49&key=cms1", 
+                "GET https://clients2.google.com/service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201", 
+                "POST https://tools.google.com/service/update2?cup2key=5:2103125778&cup2hreq=0f27e1a9193231d101f90a194c445296733b1bb57af26de008bfedea9bcb7dc3"
+            ]
+        }
+    }, 
+    "network_icmp": {
+        "description": "Generates some ICMP traffic", 
+        "detections": 0
+    }, 
+    "packer_entropy": {
+        "category": "cryptography", 
+        "description": "The binary likely contains encrypted or compressed data.", 
+        "detections": 2, 
+        "indicators": {
+            "description": [
+                "A section with a high entropy has been found", 
+                "Overall entropy of this PE file is high"
+            ], 
+            "entropy": [
+                7.953672921643973, 
+                0.7994448299791811
+            ]
+        }
+    }, 
+    "pe_features": {
+        "category": "section", 
+        "description": "The executable has PE anomalies (could be a false positive)", 
+        "detections": 2, 
+        "indicators": {
+            "ioc": [
+                ".petite", 
+                ""
+            ]
+        }
+    }, 
+    "raises_exception": {
+        "api": "__exception__", 
+        "called_first": 1501002702.360125, 
+        "category": "__notification__", 
+        "description": "One or more processes crashed", 
+        "detections": 1, 
+        "indicators": {
+            "arguments": {
+                "exception": {
+                    "address": "0x407137", 
+                    "exception_code": "0xc0000005", 
+                    "instruction": "movsb byte ptr es:[edi], byte ptr [esi]", 
+                    "instruction_r": "a4 30 5f ff 4b 7e a9 e8 b0 ff ff ff 73 f2 33 ed", 
+                    "module": "Lab_09-2.exe", 
+                    "offset": 28983, 
+                    "symbol": "lab_09-2+0x7137"
+                }, 
+                "registers": {
+                    "eax": 4194304, 
+                    "ebp": 5684600, 
+                    "ebx": 5893, 
+                    "ecx": 0, 
+                    "edi": 4194304, 
+                    "edx": 0, 
+                    "esi": 5684600, 
+                    "esp": 1638214
+                }, 
+                "stacktrace": ""
+            }, 
+            "timestamps": [
+                1501002702.360125
+            ]
+        }
+    }
+}
+Tracked processes: {
+    "DrawTextExW": 1501002708.516125, 
+    "DrawTextExW - p_end": 1501002769.141125, 
+    "FindResourceExW": 1501002702.360125, 
+    "FindResourceExW - p_end": 1501002703.031125, 
+    "GetFileType": 1501002702.360125, 
+    "GetFileType - p_end": 1501002702.360125, 
+    "GetSystemMetrics": 1501002702.969125, 
+    "GetSystemMetrics - p_end": 1501002769.141125, 
+    "IsDebuggerPresent": 1501002702.922125, 
+    "LdrGetDllHandle": 1501002702.360125, 
+    "LdrGetDllHandle - p_end": 1501002703.031125, 
+    "LdrGetProcedureAddress": 1501002702.360125, 
+    "LdrGetProcedureAddress - p_end": 1501002703.031125, 
+    "LdrLoadDll": 1501002702.922125, 
+    "LdrLoadDll - p_end": 1501002703.031125, 
+    "LoadResource": 1501002702.360125, 
+    "LoadResource - p_end": 1501002702.922125, 
+    "MessageBoxTimeoutA": 1501002708.500125, 
+    "NtAllocateVirtualMemory": 1501002702.360125, 
+    "NtAllocateVirtualMemory - p_end": 1501002703.031125, 
+    "NtClose": 1501002703.031125, 
+    "NtClose - p_end": 1501002703.031125, 
+    "NtFreeVirtualMemory": 1501002702.360125, 
+    "NtFreeVirtualMemory - p_end": 1501002702.922125, 
+    "NtMapViewOfSection": 1501002702.969125, 
+    "NtOpenKey": 1501002703.031125, 
+    "NtOpenKey - p_end": 1501002703.031125, 
+    "NtProtectVirtualMemory": 1501002702.360125, 
+    "NtProtectVirtualMemory - p_end": 1501002702.360125, 
+    "NtQueryValueKey": 1501002703.031125, 
+    "NtQueryValueKey - p_end": 1501002703.031125, 
+    "__exception__": 1501002702.360125, 
+    "__exception__ - p_end": 1501002702.360125
+}
+Analysis duration: 52.994344
+Binary injected:  after 06:37:35.281424
+Detected signatures: {
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt"
+            ]
+        }
+    }, 
+    "network_icmp": {
+        "description": "Generates some ICMP traffic", 
+        "detections": 0
+    }
+}
+Tracked processes: {}
+Analysis duration: 56.898838
+Binary injected:  after 06:33:58.946498
+Detected signatures: {
+    "has_pdb": {
+        "category": "pdb_path", 
+        "description": "This executable has a PDB path", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "C:\\Users\\IEUser\\Downloads\\BHOinCPP_src\\BHOinCPP\\Release\\launch.pdb"
+            ]
+        }
+    }, 
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt"
+            ]
+        }
+    }
+}
+Tracked processes: {}
+Analysis duration: 02:42.387408
+Binary injected:  after 06:36:41.489950
+Detected signatures: {
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 4, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt", 
+                "GET http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "GET https://clients2.google.com/service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201", 
+                "POST https://tools.google.com/service/update2?cup2key=5:3857380398&cup2hreq=0de73091f9c37f2dcfa85fa4ef6031740e104596e55f3112e11f951752841ec4"
+            ]
+        }
+    }, 
+    "network_icmp": {
+        "description": "Generates some ICMP traffic", 
+        "detections": 0
+    }
+}
+Tracked processes: {}
+Analysis duration: 45.868905
+Binary injected: Lab15-02.exe after 23:59:56.143829
+Detected signatures: {
+    "antivm_memory_available": {
+        "api": "GlobalMemoryStatusEx", 
+        "called_first": 1501002698.015375, 
+        "category": "system", 
+        "description": "Checks amount of memory in system, this can be used to detect virtual machines that have a low amount of memory available", 
+        "detections": 1, 
+        "indicators": {
+            "arguments": {}, 
+            "timestamps": [
+                1501002698.015375
+            ]
+        }
+    }, 
+    "memdump_urls": {
+        "category": "url", 
+        "description": "Potentially malicious URLs were found in the process memory dump", 
+        "detections": 4, 
+        "indicators": {
+            "ioc": [
+                "https://iecvlist.microsoft.com/IE11/1379465767093/iecompatviewlist.xml", 
+                "http://www.microsoft.com/isapi/redir.dll?prd=ie", 
+                "http://test.com", 
+                "http://www.passport.com"
+            ]
+        }
+    }, 
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt"
+            ]
+        }
+    }
+}
+Tracked processes: {
+    "GetSystemInfo": 1501002698.015375, 
+    "GlobalMemoryStatusEx": 1501002698.015375, 
+    "LdrGetDllHandle": 1501002698.062375, 
+    "LdrGetDllHandle - p_end": 1501002698.062375, 
+    "LdrGetProcedureAddress": 1501002698.000375, 
+    "LdrGetProcedureAddress - p_end": 1501002698.062375, 
+    "LdrLoadDll": 1501002698.000375, 
+    "LdrLoadDll - p_end": 1501002698.047375, 
+    "LdrUnloadDll": 1501002698.062375, 
+    "NtAllocateVirtualMemory": 1501002698.000375, 
+    "NtAllocateVirtualMemory - p_end": 1501002698.031375, 
+    "NtClose": 1501002698.015375, 
+    "NtClose - p_end": 1501002698.062375, 
+    "NtCreateThreadEx": 1501002698.015375, 
+    "NtDuplicateObject": 1501002698.015375, 
+    "NtDuplicateObject - p_end": 1501002698.015375, 
+    "NtFreeVirtualMemory": 1501002698.000375, 
+    "NtFreeVirtualMemory - p_end": 1501002698.031375, 
+    "NtOpenKey": 1501002698.000375, 
+    "NtOpenKey - p_end": 1501002698.062375, 
+    "NtQuerySystemInformation": 1501002698.000375, 
+    "NtQueryValueKey": 1501002698.015375, 
+    "NtQueryValueKey - p_end": 1501002698.062375, 
+    "NtResumeThread": 1501002698.015375, 
+    "NtTerminateProcess": 1501002698.062375, 
+    "NtTerminateProcess - p_end": 1501002699.734375, 
+    "RegCloseKey": 1501002698.000375, 
+    "RegCloseKey - p_end": 1501002698.047375, 
+    "RegCreateKeyExW": 1501002698.031375, 
+    "RegCreateKeyExW - p_end": 1501002698.047375, 
+    "RegOpenKeyExA": 1501002698.000375, 
+    "RegOpenKeyExW": 1501002698.015375, 
+    "RegOpenKeyExW - p_end": 1501002698.047375, 
+    "RegQueryValueExA": 1501002698.000375, 
+    "RegQueryValueExW": 1501002698.031375, 
+    "RegQueryValueExW - p_end": 1501002698.047375, 
+    "WSAStartup": 1501002698.000375, 
+    "WriteConsoleA": 1501002698.062375
+}
+Analysis duration: 02:45.259062
+Binary injected: Lab_01-1.exe after 23:57:56.601727
+Detected signatures: {
+    "antivm_queries_computername": {
+        "api": "GetComputerNameA", 
+        "called_first": 1501002697.90625, 
+        "category": "misc", 
+        "description": "Queries for the computername", 
+        "detections": 1, 
+        "indicators": {
+            "arguments": {
+                "computer_name": "WDQTSLXIVDDGAT"
+            }, 
+            "timestamps": [
+                1501002697.90625
+            ]
+        }
+    }, 
+    "memdump_urls": {
+        "category": "url", 
+        "description": "Potentially malicious URLs were found in the process memory dump", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "http://www.ueopen.com/test.html"
+            ]
+        }
+    }, 
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 3, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt", 
+                "GET http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "GET https://clients2.google.com/service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201"
+            ]
+        }
+    }, 
+    "network_icmp": {
+        "description": "Generates some ICMP traffic", 
+        "detections": 0
+    }
+}
+Tracked processes: {
+    "GetComputerNameA": 1501002697.90625, 
+    "LoadStringA": 1501002697.90625, 
+    "WSAStartup": 1501002697.90625, 
+    "connect": 1501002697.90625, 
+    "send": 1501002697.90625, 
+    "socket": 1501002697.90625
+}
+Analysis duration: 44.759064
+Binary injected: Lab15-01.exe after 00:00.343569
+Detected signatures: {
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt"
+            ]
+        }
+    }
+}
+Tracked processes: {
+    "LdrGetDllHandle": 1501002613.89, 
+    "LdrGetDllHandle - p_end": 1501002613.89, 
+    "NtTerminateProcess": 1501002613.89, 
+    "NtTerminateProcess - p_end": 1501002614.031, 
+    "WriteConsoleA": 1501002613.89
+}
+Analysis duration: 45.219753
+Binary injected:  after 06:29:19.885474
+Detected signatures: {
+    "has_pdb": {
+        "category": "pdb_path", 
+        "description": "This executable has a PDB path", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "C:\\Users\\aaron\\Documents\\Visual Studio 2015\\Projects\\lab4b\\Release\\lab4b.pdb"
+            ]
+        }
+    }
+}
+Tracked processes: {}
+Analysis duration: 48.239973
+Binary injected:  after 06:27:34.846867
+Detected signatures: {
+    "has_pdb": {
+        "category": "pdb_path", 
+        "description": "This executable has a PDB path", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "C:\\Users\\IEUser\\Desktop\\malware\\Labs\\Lab_5\\lab_5_2\\Release\\launch.pdb"
+            ]
+        }
+    }, 
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt"
+            ]
+        }
+    }
+}
+Tracked processes: {}
+Analysis duration: 02:57.561307
+Binary injected: Lab_01-2.exe after 23:55:12.412669
+Detected signatures: {
+    "antivm_network_adapters": {
+        "api": "GetAdaptersAddresses", 
+        "called_first": 1501002701.250125, 
+        "category": "network", 
+        "description": "Checks adapter addresses which can be used to detect virtual network interfaces", 
+        "detections": 1, 
+        "indicators": {
+            "arguments": {
+                "family": 0, 
+                "flags": 46
+            }, 
+            "timestamps": [
+                1501002701.250125
+            ]
+        }
+    }, 
+    "memdump_urls": {
+        "category": "url", 
+        "description": "Potentially malicious URLs were found in the process memory dump", 
+        "detections": 127, 
+        "indicators": {
+            "ioc": [
+                "http://crl.comodo.net/TrustedCertificateServices.crl0", 
+                "http://users.ocsp.d-trust.net03", 
+                "http://crl.ssc.lt/root-b/cacrl.crl0", 
+                "http://crl.securetrust.com/STCA.crl0", 
+                "http://crl.securetrust.com/SGCA.crl0", 
+                "http://acraiz.icpbrasil.gov.br/DPCacraiz.pdf0=", 
+                "http://www.ssc.lt/cps03", 
+                "http://www.informatik.admin.ch/PKI/links/CPS_2_16_756_1_17_3_1_0.pdf0", 
+                "http://www.certificadodigital.com.br/repositorio/serasaca/crl/SerasaCAII.crl0", 
+                "http://www.digsigtrust.com/DST_TRUST_CPS_v990701.html0", 
+                "http://www.microsoft.com/pki/certs/TrustListPCA.crt0", 
+                "https://www.certification.tn/cgi-bin/pub/crl/cacrl.crl0", 
+                "http://www.pkioverheid.nl/policies/root-policy0", 
+                "http://cps.chambersign.org/cps/chambersroot.html0", 
+                "http://www.e-szigno.hu/SZSZ/0", 
+                "http://www.entrust.net/CRL/Client1.crl0", 
+                "http://crl.chambersign.org/publicnotaryroot.crl0", 
+                "http://crl.comodo.net/AAACertificateServices.crl0", 
+                "http://www.certplus.com/CRL/class3.crl0", 
+                "http://logo.verisign.com/vslogo.gif0", 
+                "http://www.acabogacia.org/doc0", 
+                "http://www.disig.sk/ca/crl/ca_disig.crl0", 
+                "https://www.catcert.net/verarrel", 
+                "http://www.sk.ee/cps/0", 
+                "http://www.quovadis.bm0", 
+                "https://www.catcert.net/verarrel05", 
+                "http://www.certificadodigital.com.br/repositorio/serasaca/crl/SerasaCAI.crl0", 
+                "http://crl.chambersign.org/chambersroot.crl0", 
+                "http://www.certificadodigital.com.br/repositorio/serasaca/crl/SerasaCAIII.crl0", 
+                "http://crl.globalsign.net/root-r2.crl0", 
+                "http://certificates.starfieldtech.com/repository/1604", 
+                "http://www.d-trust.net0", 
+                "http://pki-root.ecertpki.cl/CertEnroll/E-CERT%20ROOT%20CA.crl0", 
+                "http://crl.ssc.lt/root-a/cacrl.crl0", 
+                "http://crl.usertrust.com/UTN-DATACorpSGC.crl0", 
+                "http://www.certicamara.com/certicamaraca.crl0", 
+                "http://www.d-trust.net/crl/d-trust_root_class_2_ca_2007.crl0", 
+                "http://crl.usertrust.com/UTN-USERFirst-Object.crl0)", 
+                "http://www.post.trust.ie/reposit/cps.html0", 
+                "http://www.d-trust.net/crl/d-trust_qualified_root_ca_1_2007_pn.crl0", 
+                "http://www2.public-trust.com/crl/ct/ctroot.crl0", 
+                "http://www.certicamara.com0", 
+                "http://www.pki.admin.ch/policy/CPS_2_16_756_1_17_3_21_1.pdf0", 
+                "http://fedir.comsign.co.il/cacert/ComSignAdvancedSecurityCA.crt0", 
+                "http://www.comsign.co.il/cps0", 
+                "http://crl.usertrust.com/UTN-USERFirst-NetworkApplications.crl0", 
+                "http://www.microsoft.com/pki/crl/products/TrustListPCA.crl", 
+                "http://acraiz.icpbrasil.gov.br/LCRacraiz.crl0", 
+                "http://www.signatur.rtr.at/de/directory/cps.html0", 
+                "http://www.globaltrust.info0"
+            ]
+        }
+    }, 
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 4, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt", 
+                "GET http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "POST https://tools.google.com/service/update2?cup2key=5:510750633&cup2hreq=dbabf9240086439eb99be9121331c85527a5012b19aa85168306b2d5122deeea", 
+                "GET https://clients2.google.com/service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201"
+            ]
+        }
+    }
+}
+Tracked processes: {
+    "CoCreateInstance": 1501002701.375125, 
+    "CoCreateInstance - p_end": 1501002708.625125, 
+    "CoInitializeEx": 1501002701.172125, 
+    "CoInitializeEx - p_end": 1501002708.625125, 
+    "CoUninitialize": 1501002701.562125, 
+    "CoUninitialize - p_end": 1501002716.062125, 
+    "GetAdaptersAddresses": 1501002701.250125, 
+    "GetAdaptersAddresses - p_end": 1501002706.062125, 
+    "GetAddrInfoW": 1501002703.953125, 
+    "GetAddrInfoW - p_end": 1501002708.625125, 
+    "GetBestInterfaceEx": 1501002699.844125, 
+    "GetBestInterfaceEx - p_end": 1501002706.062125, 
+    "GetSystemTimeAsFileTime": 1501002701.562125, 
+    "GetSystemTimeAsFileTime - p_end": 1501002716.469125, 
+    "HttpOpenRequestA": 1501002699.906125, 
+    "InternetConnectA": 1501002699.859125, 
+    "InternetOpenA": 1501002699.812125, 
+    "InternetQueryOptionA": 1501002699.906125, 
+    "InternetSetOptionA": 1501002699.906125, 
+    "InternetSetOptionA - p_end": 1501002699.906125, 
+    "LdrGetProcedureAddress": 1501002699.812125, 
+    "LdrGetProcedureAddress - p_end": 1501002705.719125, 
+    "LdrLoadDll": 1501002699.828125, 
+    "LdrLoadDll - p_end": 1501002705.719125, 
+    "LdrUnloadDll": 1501002791.390125, 
+    "NtAllocateVirtualMemory": 1501002699.828125, 
+    "NtAllocateVirtualMemory - p_end": 1501002703.078125, 
+    "NtClose": 1501002699.844125, 
+    "NtClose - p_end": 1501002791.390125, 
+    "NtDelayExecution": 1501002761.390125, 
+    "NtDeviceIoControlFile": 1501002699.828125, 
+    "NtDeviceIoControlFile - p_end": 1501002708.625125, 
+    "NtDuplicateObject": 1501002699.828125, 
+    "NtDuplicateObject - p_end": 1501002703.078125, 
+    "NtOpenKey": 1501002701.453125, 
+    "NtOpenKey - p_end": 1501002701.562125, 
+    "NtQueryKey": 1501002701.453125, 
+    "NtQueryKey - p_end": 1501002708.625125, 
+    "RegCloseKey": 1501002701.453125, 
+    "RegCloseKey - p_end": 1501002708.625125, 
+    "RegCreateKeyExW": 1501002701.562125, 
+    "RegCreateKeyExW - p_end": 1501002708.625125, 
+    "RegDeleteValueW": 1501002703.984125, 
+    "RegDeleteValueW - p_end": 1501002708.625125, 
+    "RegEnumKeyExW": 1501002703.984125, 
+    "RegEnumKeyExW - p_end": 1501002708.625125, 
+    "RegOpenKeyExW": 1501002701.172125, 
+    "RegOpenKeyExW - p_end": 1501002708.625125, 
+    "RegQueryValueExW": 1501002701.453125, 
+    "RegQueryValueExW - p_end": 1501002708.625125, 
+    "RegSetValueExW": 1501002701.562125, 
+    "RegSetValueExW - p_end": 1501002708.625125, 
+    "WSAStartup": 1501002699.812125, 
+    "WSAStartup - p_end": 1501002708.625125, 
+    "closesocket": 1501002699.828125, 
+    "closesocket - p_end": 1501002708.625125, 
+    "getsockname": 1501002701.781125, 
+    "setsockopt": 1501002699.828125, 
+    "setsockopt - p_end": 1501002708.625125, 
+    "socket": 1501002699.828125, 
+    "socket - p_end": 1501002708.625125
+}
+Analysis duration: 02:42.871082
+Binary injected: Lab_03-2.exe after 23:44:41.021795
+Detected signatures: {
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 3, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt", 
+                "GET http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "GET https://clients2.google.com/service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201"
+            ]
+        }
+    }
+}
+Tracked processes: {
+    "CopyFileA": 1501002699.968625, 
+    "GetFileType": 1501002699.968625, 
+    "GetFileType - p_end": 1501002699.968625, 
+    "GetSystemDirectoryA": 1501002699.968625, 
+    "GetSystemInfo": 1501002700.015625, 
+    "GetUserNameA": 1501002699.968625, 
+    "LdrGetProcedureAddress": 1501002699.968625, 
+    "LdrGetProcedureAddress - p_end": 1501002700.046625, 
+    "LdrLoadDll": 1501002699.968625, 
+    "LdrLoadDll - p_end": 1501002700.030625, 
+    "NtAllocateVirtualMemory": 1501002699.968625, 
+    "NtAllocateVirtualMemory - p_end": 1501002700.015625, 
+    "NtClose": 1501002699.968625, 
+    "NtClose - p_end": 1501002796.999625, 
+    "NtCreateFile": 1501002699.968625, 
+    "NtCreateThreadEx": 1501002699.999625, 
+    "NtDelayExecution": 1501002730.436625, 
+    "NtDelayExecution - p_end": 1501002799.593625, 
+    "NtDuplicateObject": 1501002699.999625, 
+    "NtDuplicateObject - p_end": 1501002759.999625, 
+    "NtFreeVirtualMemory": 1501002699.968625, 
+    "NtFreeVirtualMemory - p_end": 1501002700.015625, 
+    "NtReadFile": 1501002699.968625, 
+    "NtResumeThread": 1501002699.999625, 
+    "RegCloseKey": 1501002699.968625, 
+    "RegCloseKey - p_end": 1501002700.046625, 
+    "RegCreateKeyExW": 1501002700.015625, 
+    "RegCreateKeyExW - p_end": 1501002700.030625, 
+    "RegOpenKeyExA": 1501002699.968625, 
+    "RegOpenKeyExW": 1501002700.015625, 
+    "RegOpenKeyExW - p_end": 1501002700.030625, 
+    "RegQueryValueExW": 1501002700.015625, 
+    "RegQueryValueExW - p_end": 1501002700.046625, 
+    "RegSetValueExA": 1501002699.968625, 
+    "SetFilePointer": 1501002699.968625, 
+    "SetUnhandledExceptionFilter": 1501002699.968625, 
+    "WSAStartup": 1501002699.968625, 
+    "gethostbyname": 1501002700.077625, 
+    "gethostbyname - p_end": 1501002804.093625
+}
+Analysis duration: 57.015850
+Binary injected: Lab_04-1.exe after 23:42:00.618215
+Detected signatures: {
+    "allocates_rwx": {
+        "api": "NtAllocateVirtualMemory", 
+        "called_first": 1501002702.515, 
+        "category": "process", 
+        "description": "Allocates read-write-execute memory (usually to unpack itself)", 
+        "detections": 1, 
+        "indicators": {
+            "arguments": {
+                "allocation_type": 12288, 
+                "base_address": "0x0c000000", 
+                "process_handle": "0xffffffff", 
+                "process_identifier": 2528, 
+                "protection": 64, 
+                "region_size": 45056
+            }, 
+            "timestamps": [
+                1501002702.515
+            ]
+        }
+    }, 
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt"
+            ]
+        }
+    }, 
+    "network_icmp": {
+        "description": "Generates some ICMP traffic", 
+        "detections": 0
+    }
+}
+Tracked processes: {
+    "CopyFileA": 1501002702.515, 
+    "GetSystemDirectoryW": 1501002702.562, 
+    "GetSystemDirectoryW - p_end": 1501002702.562, 
+    "GetSystemInfo": 1501002702.547, 
+    "GetSystemTimeAsFileTime": 1501002702.547, 
+    "GetSystemTimeAsFileTime - p_end": 1501002702.562, 
+    "LdrGetDllHandle": 1501002702.562, 
+    "LdrGetDllHandle - p_end": 1501002702.562, 
+    "LdrGetProcedureAddress": 1501002702.515, 
+    "LdrGetProcedureAddress - p_end": 1501002702.562, 
+    "LdrLoadDll": 1501002702.547, 
+    "LdrLoadDll - p_end": 1501002702.562, 
+    "LdrUnloadDll": 1501002704.406, 
+    "LdrUnloadDll - p_end": 1501002704.406, 
+    "MessageBoxTimeoutA": 1501002704.406, 
+    "NtAllocateVirtualMemory": 1501002702.515, 
+    "NtClose": 1501002702.562, 
+    "NtClose - p_end": 1501002704.406, 
+    "NtCreateKey": 1501002702.547, 
+    "NtCreateMutant": 1501002702.547, 
+    "NtOpenKey": 1501002702.547, 
+    "NtOpenKey - p_end": 1501002704.406, 
+    "NtOpenKeyEx": 1501002702.547, 
+    "NtOpenKeyEx - p_end": 1501002702.562, 
+    "NtProtectVirtualMemory": 1501002702.562, 
+    "NtProtectVirtualMemory - p_end": 1501002702.562, 
+    "NtQuerySystemInformation": 1501002702.562, 
+    "NtQueryValueKey": 1501002702.515, 
+    "NtQueryValueKey - p_end": 1501002704.406, 
+    "NtSetValueKey": 1501002702.547, 
+    "NtTerminateProcess": 1501002704.406, 
+    "NtTerminateProcess - p_end": 1501002705.047, 
+    "NtUnmapViewOfSection": 1501002704.406, 
+    "RegCloseKey": 1501002702.547
+}
+Analysis duration: 02:34.336757
+Binary injected:  after 03:21:13.716842
+Detected signatures: {
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 3, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt", 
+                "GET http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "GET https://clients2.google.com/service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201"
+            ]
+        }
+    }, 
+    "packer_entropy": {
+        "category": "cryptography", 
+        "description": "The binary likely contains encrypted or compressed data.", 
+        "detections": 2, 
+        "indicators": {
+            "description": [
+                "A section with a high entropy has been found", 
+                "Overall entropy of this PE file is high"
+            ], 
+            "entropy": [
+                7.854124193008595, 
+                0.4864864864864865
+            ]
+        }
+    }
+}
+Tracked processes: {}
+Analysis duration: 02:34.157926
+Binary injected: Lab_09-1.exe after 23:36:29.073835
+Detected signatures: {
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 4, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt", 
+                "GET http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "GET https://clients2.google.com/service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201", 
+                "POST https://tools.google.com/service/update2?cup2key=5:1123431821&cup2hreq=0bfd1b8978318b9d50d87e996a8c7ff6aa4fda7328787c500339a60d5250baec"
+            ]
+        }
+    }, 
+    "packer_entropy": {
+        "category": "cryptography", 
+        "description": "The binary likely contains encrypted or compressed data.", 
+        "detections": 2, 
+        "indicators": {
+            "description": [
+                "A section with a high entropy has been found", 
+                "Overall entropy of this PE file is high"
+            ], 
+            "entropy": [
+                7.048797772467752, 
+                0.4444444444444444
+            ]
+        }
+    }, 
+    "packer_upx": {
+        "description": "The executable is compressed using UPX", 
+        "detections": 3, 
+        "indicators": {
+            "other": [
+                "Section name indicates UPX", 
+                "Section name indicates UPX", 
+                "Section name indicates UPX"
+            ]
+        }
+    }
+}
+Tracked processes: {
+    "CreateThread": 1501002701.84375, 
+    "LdrGetProcedureAddress": 1501002702.09375, 
+    "LdrGetProcedureAddress - p_end": 1501002702.09375, 
+    "LdrLoadDll": 1501002702.09375, 
+    "LdrLoadDll - p_end": 1501002702.09375, 
+    "NtDelayExecution": 1501002702.09375, 
+    "NtDelayExecution - p_end": 1501002821.71875, 
+    "NtProtectVirtualMemory": 1501002702.09375, 
+    "NtProtectVirtualMemory - p_end": 1501002702.09375, 
+    "WriteConsoleA": 1501002702.10875, 
+    "WriteConsoleA - p_end": 1501002702.10875
+}
+Analysis duration: 02:34.123936
+Binary injected: Lab_09-3.exe after 23:31:12.335521
+Detected signatures: {
+    "allocates_rwx": {
+        "api": "NtProtectVirtualMemory", 
+        "called_first": 1501002701.859375, 
+        "category": "process", 
+        "description": "Allocates read-write-execute memory (usually to unpack itself)", 
+        "detections": 1, 
+        "indicators": {
+            "arguments": {
+                "base_address": "0x00400000", 
+                "length": 4096, 
+                "process_handle": "0xffffffff", 
+                "process_identifier": 2380, 
+                "protection": 64
+            }, 
+            "timestamps": [
+                1501002701.859375
+            ]
+        }
+    }, 
+    "dead_host": {
+        "category": "dead_host", 
+        "description": "Connects to an IP address that is no longer responding to requests (legitimate services will remain up-and-running usually)", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "192.168.56.101:49172"
+            ]
+        }
+    }, 
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 3, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt", 
+                "GET http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
+                "GET https://clients2.google.com/service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201"
+            ]
+        }
+    }, 
+    "network_icmp": {
+        "description": "Generates some ICMP traffic", 
+        "detections": 0
+    }, 
+    "packer_entropy": {
+        "category": "cryptography", 
+        "description": "The binary likely contains encrypted or compressed data.", 
+        "detections": 2, 
+        "indicators": {
+            "description": [
+                "A section with a high entropy has been found", 
+                "Overall entropy of this PE file is high"
+            ], 
+            "entropy": [
+                7.899764308460372, 
+                0.8860759493670886
+            ]
+        }
+    }, 
+    "pe_features": {
+        "category": "section", 
+        "description": "The executable has PE anomalies (could be a false positive)", 
+        "detections": 3, 
+        "indicators": {
+            "ioc": [
+                ".%h Gnk", 
+                ".$@^HHHP", 
+                ".xxxxxxx"
+            ]
+        }
+    }
+}
+Tracked processes: {
+    "CoCreateInstance": 1501002701.906375, 
+    "CoInitializeEx": 1501002701.890375, 
+    "DrawTextExW": 1501002701.890375, 
+    "DrawTextExW - p_end": 1501002702.672375, 
+    "FindResourceExW": 1501002701.875375, 
+    "FindResourceExW - p_end": 1501002702.203375, 
+    "GetFileSizeEx": 1501002701.875375, 
+    "GetSystemDirectoryW": 1501002701.875375, 
+    "GetSystemDirectoryW - p_end": 1501002701.906375, 
+    "GetSystemInfo": 1501002701.875375, 
+    "GetSystemInfo - p_end": 1501002701.890375, 
+    "GetSystemMetrics": 1501002701.875375, 
+    "GetSystemMetrics - p_end": 1501002702.672375, 
+    "GetSystemTimeAsFileTime": 1501002701.875375, 
+    "GetSystemTimeAsFileTime - p_end": 1501002701.875375, 
+    "GetSystemWindowsDirectoryW": 1501002701.890375, 
+    "IsDebuggerPresent": 1501002701.875375, 
+    "LdrGetDllHandle": 1501002701.875375, 
+    "LdrGetDllHandle - p_end": 1501002701.906375, 
+    "LdrGetProcedureAddress": 1501002701.859375, 
+    "LdrGetProcedureAddress - p_end": 1501002702.062375, 
+    "LdrLoadDll": 1501002701.859375, 
+    "LdrLoadDll - p_end": 1501002702.062375, 
+    "LoadResource": 1501002701.890375, 
+    "LoadResource - p_end": 1501002702.203375, 
+    "LoadStringW": 1501002701.906375, 
+    "LoadStringW - p_end": 1501002702.062375, 
+    "NtAllocateVirtualMemory": 1501002701.859375, 
+    "NtAllocateVirtualMemory - p_end": 1501002701.890375, 
+    "NtClose": 1501002701.875375, 
+    "NtClose - p_end": 1501002702.203375, 
+    "NtCreateFile": 1501002701.875375, 
+    "NtCreateFile - p_end": 1501002701.890375, 
+    "NtCreateMutant": 1501002701.875375, 
+    "NtCreateSection": 1501002701.890375, 
+    "NtCreateSection - p_end": 1501002701.890375, 
+    "NtEnumerateKey": 1501002701.890375, 
+    "NtEnumerateKey - p_end": 1501002702.203375, 
+    "NtFreeVirtualMemory": 1501002701.859375, 
+    "NtFreeVirtualMemory - p_end": 1501002701.875375, 
+    "NtMapViewOfSection": 1501002701.875375, 
+    "NtMapViewOfSection - p_end": 1501002701.906375, 
+    "NtOpenDirectoryObject": 1501002701.890375, 
+    "NtOpenKey": 1501002701.875375, 
+    "NtOpenKey - p_end": 1501002702.203375, 
+    "NtOpenKeyEx": 1501002701.875375, 
+    "NtOpenKeyEx - p_end": 1501002702.203375, 
+    "NtOpenMutant": 1501002701.890375, 
+    "NtOpenSection": 1501002701.890375, 
+    "NtOpenSection - p_end": 1501002701.906375, 
+    "NtProtectVirtualMemory": 1501002701.859375, 
+    "NtProtectVirtualMemory - p_end": 1501002701.875375, 
+    "NtQuerySystemInformation": 1501002701.875375, 
+    "NtQueryValueKey": 1501002701.859375, 
+    "NtQueryValueKey - p_end": 1501002702.203375, 
+    "NtReadFile": 1501002701.875375, 
+    "NtUnmapViewOfSection": 1501002701.890375, 
+    "NtUnmapViewOfSection - p_end": 1501002701.906375, 
+    "RegCloseKey": 1501002701.875375, 
+    "RegCloseKey - p_end": 1501002701.890375, 
+    "RegEnumKeyExW": 1501002701.890375, 
+    "RegEnumKeyExW - p_end": 1501002701.890375, 
+    "RegOpenKeyExW": 1501002701.875375, 
+    "RegOpenKeyExW - p_end": 1501002701.890375, 
+    "RegQueryInfoKeyW": 1501002701.890375, 
+    "RegQueryValueExA": 1501002701.890375, 
+    "RegQueryValueExA - p_end": 1501002701.890375, 
+    "RegQueryValueExW": 1501002701.875375, 
+    "RegQueryValueExW - p_end": 1501002701.875375
+}
+Analysis duration: 53.098660
+Binary injected:  after 06:25:40.879352
+Detected signatures: {
+    "has_pdb": {
+        "category": "pdb_path", 
+        "description": "This executable has a PDB path", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "c:\\users\\alex\\documents\\visual studio 2013\\Projects\\Project2\\Debug\\Project2.pdb"
+            ]
+        }
+    }, 
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt"
+            ]
+        }
+    }, 
+    "pe_features": {
+        "category": "section", 
+        "description": "The executable has PE anomalies (could be a false positive)", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                ".textbss"
+            ]
+        }
+    }
+}
+Tracked processes: {}
+Analysis duration: 39.970884
+Binary injected:  after 06:16:55.781591
+Detected signatures: {
+    "has_pdb": {
+        "category": "pdb_path", 
+        "description": "This executable has a PDB path", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "C:\\Users\\alex\\Desktop\\Rootkits-Playground\\sources\\Marine\\OBJ\\x86\\marine.pdb"
+            ]
+        }
+    }, 
+    "network_http": {
+        "category": "request", 
+        "description": "Performs some HTTP requests", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "GET http://www.msftncsi.com/ncsi.txt"
+            ]
+        }
+    }, 
+    "pe_features": {
+        "category": "section", 
+        "description": "The executable has PE anomalies (could be a false positive)", 
+        "detections": 1, 
+        "indicators": {
+            "ioc": [
+                "INIT"
+            ]
+        }
+    }
+}
+Tracked processes: {}
