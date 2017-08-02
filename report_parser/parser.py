@@ -87,23 +87,30 @@ class Parse(object):
         process end flag 'p_end' appended and only the last one is stored in the dictionary. This then gives the start
         and end times of when the process was called. We sort the api_dict by value, which is time before storing in the
         process_list.
+        Returns a dictionary of all the processes and their first/last times, the first/last time of the sample, and the
+        name
         DEV: might need to count the number of times the process was called"""
         api_dict = {}
         process_name = ""
-        process_seen = 0
+        seen_first = 0
+        seen_last = 0
+
         for process in json_data['behavior']['processes']:
             if process['track'] == condition:
                 process_name = process['process_name']
-                process_seen = process['first_seen']
+                seen_first = process['first_seen']
                 for call in process['calls']:
                     if call['api'] not in api_dict:
                         api_dict[call['api']] = call['time']
                     else:
                         api_dict[call['api'] + ' - p_end'] = call['time']
 
+                    if seen_last < call['time']:
+                        seen_last = call['time']
+
                 # api_dict = sorted(api_dict.items(), key=operator.itemgetter(1))
 
-        return process_name, process_seen, api_dict
+        return process_name, seen_first, seen_last, api_dict
 
     def parse_data(self, j_data, output_file):
         self.printer.line_comment("General Information")
@@ -111,20 +118,21 @@ class Parse(object):
         j_analysis_started = j_data['info']['started']
         j_analysis_ended = j_data['info']['ended']
 
-        self.printer.write_file(output_file, "Analysis duration: %s" %
-                                self.tools.time_diff(j_analysis_started, j_analysis_ended))
-
         self.printer.line_comment("Process Behaviour")
 
-        j_generic = j_data['behavior']['generic']
-
-        # write_file(output_file, "Process loaded: %s after %s" % (j_generic[1]['process_name'],
-        #     time_diff(j_analysis_started, j_generic[1]['first_seen'])))
-
         signature_dict = self.map_signatures(j_data)
-        process_name, process_seen, tracked_dict = self.get_tracked_process(j_data, True)
-        self.printer.write_file(output_file, "Binary injected: %s after %s" % (
-            process_name, self.tools.time_diff(j_analysis_started, process_seen)))
+        process_name, seen_first, seen_last, tracked_dict = self.get_tracked_process(j_data, True)
+
+        self.printer.line_comment("Writing report for: " + process_name)
+
+        general_dict = {
+            "binary_name": process_name,
+            "date_time": j_analysis_started,
+            "duration_analysis": self.tools.time_diff(j_analysis_started, j_analysis_ended),
+            "duration_sample": self.tools.time_diff(seen_first, seen_last)
+        }
+
+        self.printer.write_file(output_file, "general: %s" % json.dumps(general_dict, sort_keys=True, indent=4))
         self.printer.write_file(output_file, "Detected signatures: %s" %
                                 json.dumps(signature_dict, sort_keys=True, indent=4))
         self.printer.write_file(output_file, "Tracked processes: %s" %

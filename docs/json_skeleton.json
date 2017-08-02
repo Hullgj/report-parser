@@ -1,4 +1,10 @@
 {
+  "general": {
+    "name": "",
+    "date_time": "",
+    "duration_analysis": 0,
+    "duration_active": 0
+  },
   "stealth": {
 		"fingerprinting": {
           "wmi_antivm": {

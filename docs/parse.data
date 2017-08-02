@@ -1,6 +1,10 @@
 
-Analysis duration: 02:59.323596
-Binary injected: Lab_01-3.exe after 23:52:13.929501
+general: {
+    "binary_name": "Lab_01-3.exe", 
+    "date_time": 1501006764.992374, 
+    "duration_analysis": "02:59.323596", 
+    "duration_sample": "02:00.109000"
+}
 Detected signatures: {
     "antisandbox_sleep": {
         "description": "A process attempted to delay the analysis task.", 
@@ -298,8 +302,12 @@ Tracked processes: {
     "socket": 1501002699.140875, 
     "socket - p_end": 1501002708.421875
 }
-Analysis duration: 44.759064
-Binary injected: Lab15-01.exe after 00:00.343569
+general: {
+    "binary_name": "Lab15-01.exe", 
+    "date_time": 1501006213.531431, 
+    "duration_analysis": "44.759064", 
+    "duration_sample": "00.156000"
+}
 Detected signatures: {
     "network_http": {
         "category": "request", 
@@ -319,8 +327,12 @@ Tracked processes: {
     "NtTerminateProcess - p_end": 1501002614.031, 
     "WriteConsoleA": 1501002613.89
 }
-Analysis duration: 01:12.302217
-Binary injected: Lab15-03.exe after 23:59:09.794095
+general: {
+    "binary_name": "Lab15-03.exe", 
+    "date_time": 1501006348.237155, 
+    "duration_analysis": "01:12.302217", 
+    "duration_sample": "19.828000"
+}
 Detected signatures: {
     "antivm_network_adapters": {
         "api": "GetAdaptersAddresses", 
@@ -644,8 +656,12 @@ Tracked processes: {
     "socket": 1501002700.31225, 
     "socket - p_end": 1501002706.17225
 }
-Analysis duration: 02:34.336757
-Binary injected:  after 03:21:13.716842
+general: {
+    "binary_name": "", 
+    "date_time": 1501018726.283158, 
+    "duration_analysis": "02:34.336757", 
+    "duration_sample": "00.000000"
+}
 Detected signatures: {
     "network_http": {
         "category": "request", 
@@ -676,8 +692,12 @@ Detected signatures: {
     }
 }
 Tracked processes: {}
-Analysis duration: 01:04.398264
-Binary injected: Lab_06-1.exe after 23:38:28.122091
+general: {
+    "binary_name": "Lab_06-1.exe", 
+    "date_time": 1501007593.971659, 
+    "duration_analysis": "01:04.398264", 
+    "duration_sample": "02.906000"
+}
 Detected signatures: {
     "dumped_buffer": {
         "description": "One or more potentially interesting buffers were extracted, these generally contain injected code, configuration data, etc.", 
@@ -717,8 +737,12 @@ Tracked processes: {
     "SetFilePointer": 1501002702.34375, 
     "SetUnhandledExceptionFilter": 1501002702.34375
 }
-Analysis duration: 58.557136
-Binary injected:  after 06:28:33.754499
+general: {
+    "binary_name": "", 
+    "date_time": 1501007486.245501, 
+    "duration_analysis": "58.557136", 
+    "duration_sample": "00.000000"
+}
 Detected signatures: {
     "has_pdb": {
         "category": "pdb_path", 
@@ -746,8 +770,12 @@ Detected signatures: {
     }
 }
 Tracked processes: {}
-Analysis duration: 02:48.050166
-Binary injected: pafish.exe after 00:07.228284
+general: {
+    "binary_name": "pafish.exe", 
+    "date_time": 1501017576.631091, 
+    "duration_analysis": "02:48.050166", 
+    "duration_sample": "01:45.454000"
+}
 Detected signatures: {
     "antiemu_wine": {
         "api": "LdrGetProcedureAddress", 
@@ -1140,8 +1168,12 @@ Tracked processes: {
     "getaddrinfo": 1501013986.094375, 
     "getaddrinfo - p_end": 1501014000.344375
 }
-Analysis duration: 02:41.113776
-Binary injected: Lab_09-2.exe after 23:33:53.957621
+general: {
+    "binary_name": "Lab_09-2.exe", 
+    "date_time": 1501007867.870504, 
+    "duration_analysis": "02:41.113776", 
+    "duration_sample": "01:07.313000"
+}
 Detected signatures: {
     "network_http": {
         "category": "request", 
@@ -1258,8 +1290,12 @@ Tracked processes: {
     "__exception__": 1501002702.360125, 
     "__exception__ - p_end": 1501002702.360125
 }
-Analysis duration: 52.994344
-Binary injected:  after 06:37:35.281424
+general: {
+    "binary_name": "", 
+    "date_time": 1501006944.718576, 
+    "duration_analysis": "52.994344", 
+    "duration_sample": "00.000000"
+}
 Detected signatures: {
     "network_http": {
         "category": "request", 
@@ -1277,8 +1313,12 @@ Detected signatures: {
     }
 }
 Tracked processes: {}
-Analysis duration: 56.898838
-Binary injected:  after 06:33:58.946498
+general: {
+    "binary_name": "", 
+    "date_time": 1501007161.053502, 
+    "duration_analysis": "56.898838", 
+    "duration_sample": "00.000000"
+}
 Detected signatures: {
     "has_pdb": {
         "category": "pdb_path", 
@@ -1302,8 +1342,12 @@ Detected signatures: {
     }
 }
 Tracked processes: {}
-Analysis duration: 02:42.387408
-Binary injected:  after 06:36:41.489950
+general: {
+    "binary_name": "", 
+    "date_time": 1501006998.51005, 
+    "duration_analysis": "02:42.387408", 
+    "duration_sample": "00.000000"
+}
 Detected signatures: {
     "network_http": {
         "category": "request", 
@@ -1324,8 +1368,12 @@ Detected signatures: {
     }
 }
 Tracked processes: {}
-Analysis duration: 45.868905
-Binary injected: Lab15-02.exe after 23:59:56.143829
+general: {
+    "binary_name": "Lab15-02.exe", 
+    "date_time": 1501006301.715546, 
+    "duration_analysis": "45.868905", 
+    "duration_sample": "01.875000"
+}
 Detected signatures: {
     "antivm_memory_available": {
         "api": "GlobalMemoryStatusEx", 
@@ -1404,8 +1452,12 @@ Tracked processes: {
     "WSAStartup": 1501002698.000375, 
     "WriteConsoleA": 1501002698.062375
 }
-Analysis duration: 02:45.259062
-Binary injected: Lab_01-1.exe after 23:57:56.601727
+general: {
+    "binary_name": "Lab_01-1.exe", 
+    "date_time": 1501006421.304523, 
+    "duration_analysis": "02:45.259062", 
+    "duration_sample": "00.000000"
+}
 Detected signatures: {
     "antivm_queries_computername": {
         "api": "GetComputerNameA", 
@@ -1457,8 +1509,12 @@ Tracked processes: {
     "send": 1501002697.90625, 
     "socket": 1501002697.90625
 }
-Analysis duration: 44.759064
-Binary injected: Lab15-01.exe after 00:00.343569
+general: {
+    "binary_name": "Lab15-01.exe", 
+    "date_time": 1501006213.531431, 
+    "duration_analysis": "44.759064", 
+    "duration_sample": "00.156000"
+}
 Detected signatures: {
     "network_http": {
         "category": "request", 
@@ -1478,8 +1534,12 @@ Tracked processes: {
     "NtTerminateProcess - p_end": 1501002614.031, 
     "WriteConsoleA": 1501002613.89
 }
-Analysis duration: 45.219753
-Binary injected:  after 06:29:19.885474
+general: {
+    "binary_name": "", 
+    "date_time": 1501007440.114526, 
+    "duration_analysis": "45.219753", 
+    "duration_sample": "00.000000"
+}
 Detected signatures: {
     "has_pdb": {
         "category": "pdb_path", 
@@ -1493,8 +1553,12 @@ Detected signatures: {
     }
 }
 Tracked processes: {}
-Analysis duration: 48.239973
-Binary injected:  after 06:27:34.846867
+general: {
+    "binary_name": "", 
+    "date_time": 1501007545.153133, 
+    "duration_analysis": "48.239973", 
+    "duration_sample": "00.000000"
+}
 Detected signatures: {
     "has_pdb": {
         "category": "pdb_path", 
@@ -1518,8 +1582,12 @@ Detected signatures: {
     }
 }
 Tracked processes: {}
-Analysis duration: 02:57.561307
-Binary injected: Lab_01-2.exe after 23:55:12.412669
+general: {
+    "binary_name": "Lab_01-2.exe", 
+    "date_time": 1501006587.040456, 
+    "duration_analysis": "02:57.561307", 
+    "duration_sample": "01:31.937000"
+}
 Detected signatures: {
     "antivm_network_adapters": {
         "api": "GetAdaptersAddresses", 
@@ -1673,8 +1741,12 @@ Tracked processes: {
     "socket": 1501002699.828125, 
     "socket - p_end": 1501002708.625125
 }
-Analysis duration: 02:42.871082
-Binary injected: Lab_03-2.exe after 23:44:41.021795
+general: {
+    "binary_name": "Lab_03-2.exe", 
+    "date_time": 1501007218.86883, 
+    "duration_analysis": "02:42.871082", 
+    "duration_sample": "01:44.203000"
+}
 Detected signatures: {
     "network_http": {
         "category": "request", 
@@ -1730,8 +1802,12 @@ Tracked processes: {
     "gethostbyname": 1501002700.077625, 
     "gethostbyname - p_end": 1501002804.093625
 }
-Analysis duration: 57.015850
-Binary injected: Lab_04-1.exe after 23:42:00.618215
+general: {
+    "binary_name": "Lab_04-1.exe", 
+    "date_time": 1501007381.881785, 
+    "duration_analysis": "57.015850", 
+    "duration_sample": "02.547000"
+}
 Detected signatures: {
     "allocates_rwx": {
         "api": "NtAllocateVirtualMemory", 
@@ -1804,8 +1880,12 @@ Tracked processes: {
     "NtUnmapViewOfSection": 1501002704.406, 
     "RegCloseKey": 1501002702.547
 }
-Analysis duration: 02:34.336757
-Binary injected:  after 03:21:13.716842
+general: {
+    "binary_name": "", 
+    "date_time": 1501018726.283158, 
+    "duration_analysis": "02:34.336757", 
+    "duration_sample": "00.000000"
+}
 Detected signatures: {
     "network_http": {
         "category": "request", 
@@ -1836,8 +1916,12 @@ Detected signatures: {
     }
 }
 Tracked processes: {}
-Analysis duration: 02:34.157926
-Binary injected: Lab_09-1.exe after 23:36:29.073835
+general: {
+    "binary_name": "Lab_09-1.exe", 
+    "date_time": 1501007712.769915, 
+    "duration_analysis": "02:34.157926", 
+    "duration_sample": "01:59.875000"
+}
 Detected signatures: {
     "network_http": {
         "category": "request", 
@@ -1892,8 +1976,12 @@ Tracked processes: {
     "WriteConsoleA": 1501002702.10875, 
     "WriteConsoleA - p_end": 1501002702.10875
 }
-Analysis duration: 02:34.123936
-Binary injected: Lab_09-3.exe after 23:31:12.335521
+general: {
+    "binary_name": "Lab_09-3.exe", 
+    "date_time": 1501008029.523854, 
+    "duration_analysis": "02:34.123936", 
+    "duration_sample": "00.813000"
+}
 Detected signatures: {
     "allocates_rwx": {
         "api": "NtProtectVirtualMemory", 
@@ -2039,8 +2127,12 @@ Tracked processes: {
     "RegQueryValueExW": 1501002701.875375, 
     "RegQueryValueExW - p_end": 1501002701.875375
 }
-Analysis duration: 53.098660
-Binary injected:  after 06:25:40.879352
+general: {
+    "binary_name": "", 
+    "date_time": 1501007659.120648, 
+    "duration_analysis": "53.098660", 
+    "duration_sample": "00.000000"
+}
 Detected signatures: {
     "has_pdb": {
         "category": "pdb_path", 
@@ -2074,8 +2166,12 @@ Detected signatures: {
     }
 }
 Tracked processes: {}
-Analysis duration: 39.970884
-Binary injected:  after 06:16:55.781591
+general: {
+    "binary_name": "", 
+    "date_time": 1501008184.218409, 
+    "duration_analysis": "39.970884", 
+    "duration_sample": "00.000000"
+}
 Detected signatures: {
     "has_pdb": {
         "category": "pdb_path", 
