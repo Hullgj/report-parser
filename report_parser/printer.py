@@ -1,5 +1,6 @@
 from __future__ import print_function
 
+
 class Print(object):
 
     def __init__(self, verbose):

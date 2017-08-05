@@ -19,20 +19,9 @@ class Parse(object):
             set_category = False
             set_entropy = False
             set_other = False
-            api_dict[ signature['name'] ] = {'description': signature['description']}  # initial assignment
-            this_api_dict = api_dict[ signature['name'] ]
+            api_dict[signature['name']] = {'description': signature['description']}  # initial assignment
+            this_api_dict = api_dict[signature['name']]
             this_api_dict['detections'] = signature['markcount']
-
-            # if len(signature['marks']) > 0:
-            #     if 'call' in signature['marks'][0]:
-            #         this_api_dict['indicators'] = {'timestamps': []}
-            #     if 'category' in signature['marks'][0]:
-            #         this_api_dict['indicators'] = {'ioc': []}
-            #     if 'entropy' in signature['marks'][0]:
-            #         this_api_dict['indicators'] = {'entropy': [], 'description': []}
-            #     else:
-            #         this_api_dict['indicators'] = {'other': []}
-            #         self.printer.line_comment("Either no marks in %s or mark is unregistered" % signature)
 
             for j, mark in enumerate(signature['marks']):
                 if 'call' in mark:
@@ -101,9 +90,12 @@ class Parse(object):
                 seen_first = process['first_seen']
                 for call in process['calls']:
                     if call['api'] not in api_dict:
-                        api_dict[call['api']] = call['time']
+                        api_dict[call['api']] = {'timestamps': [call['time']]}
+                        api_dict[call['api']]['count'] = 1
                     else:
-                        api_dict[call['api'] + ' - p_end'] = call['time']
+                        api_dict[call['api']]['timestamps'].append(call['time'])
+                        api_dict[call['api']]['count'] += 1
+
 
                     if seen_last < call['time']:
                         seen_last = call['time']
@@ -129,18 +121,17 @@ class Parse(object):
             "binary_name": process_name,
             "date_time": j_analysis_started,
             "duration_analysis": self.tools.time_diff(j_analysis_started, j_analysis_ended),
-            "duration_sample": self.tools.time_diff(seen_first, seen_last)
+            "duration_sample": self.tools.time_diff(seen_first, seen_last),
+            "signatures": signature_dict,
+            "tracked_processes": tracked_dict
         }
 
-        self.printer.write_file(output_file, "general: %s" % json.dumps(general_dict, sort_keys=True, indent=4))
-        self.printer.write_file(output_file, "Detected signatures: %s" %
-                                json.dumps(signature_dict, sort_keys=True, indent=4))
-        self.printer.write_file(output_file, "Tracked processes: %s" %
-                                json.dumps(tracked_dict, sort_keys=True, indent=4))
+        self.printer.write_file(output_file, '"%s": %s' % (process_name, json.dumps(general_dict, sort_keys=True, indent=4)))
 
     def parse_files(self, p_dir, output_file):
         # loop over files in a directory,
         # ref: https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory
+        self.printer.write_file(output_file, '"binaries": {\n')
         for (dir_path, dir_names, file_names) in walk(p_dir):
             for name in file_names:
                 j_comment = "Read and parse from json file: " + name
@@ -151,3 +142,5 @@ class Parse(object):
                     j_data = json.load(json_file)
 
                 self.parse_data(j_data, output_file)
+
+        self.printer.write_file(output_file, '\n}')
