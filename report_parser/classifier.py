@@ -23,10 +23,11 @@ class Classify(object):
          Since each search takes time, we limit each search to groups of 10 APIs in the list"""
         err_count = 0
         full_list = api_list
-        search_results = "{ "
+        search_results = ''
         if not api_list:
-            return ''
+            return err_count, search_results
         elif api_list > n:
+            search_results = "{ "
             api_list = [full_list[i:i + n] for i in range(0, len(full_list), n)]
             # api_list = api_list[:1]
 

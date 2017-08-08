@@ -87,7 +87,7 @@
         "NtQueryInformationFile": "Process and Thread Functions", 
         "NtQueryKey": "Registry Functions", 
         "NtQuerySystemInformation": "System Information Functions", 
-        "NtQueryValueKey": "Driver Support Routines",
+        "NtQueryValueKey": "Driver Support Routines", 
         "NtReadFile": "File Management Functions", 
         "NtResumeThread": "Process and Thread Functions", 
         "NtSetInformationFile": "File Management Reference", 
@@ -409,24 +409,24 @@
                     1501002706.999875
                 ]
             }, 
+            "NtQueryValueKey": {
+                "count": 5, 
+                "description": "The ZwQueryValueKey routine returns a value entry for a registry key. NtQueryValueKey and ZwQueryValueKey are two versions of the same Windows Native System Services routine. The NtQueryValueKey routine in the Windows kernel is not directly accessible to kernel-mode drivers. However, kernel-mode drivers can access this routine indirectly by calling the ZwQueryValueKey routine. For more information, see ZwQueryValueKey.", 
+                "link": "https://msdn.microsoft.com/en-us/library/windows/hardware/ff556701(v=vs.85).aspx", 
+                "timestamps": [
+                    1501002698.015375, 
+                    1501002698.015375, 
+                    1501002698.015375, 
+                    1501002698.015375, 
+                    1501002698.062375
+                ]
+            }, 
             "NtSetValueKey": {
                 "count": 1, 
                 "description": "The ZwSetValueKey routine creates or replaces a registry key's value entry. NtSetValueKey and ZwSetValueKey are two versions of the same Windows Native System Services routine. The NtSetValueKey routine in the Windows kernel is not directly accessible to kernel-mode drivers. However, kernel-mode drivers can access this routine indirectly by calling the ZwSetValueKey routine. For more information, see ZwSetValueKey.", 
                 "link": "https://msdn.microsoft.com/library/windows/hardware/ff567109", 
                 "timestamps": [
                     1501002702.547
-                ]
-            },
-            "NtQueryValueKey": {
-                "count": 5,
-                "description": "The ZwQueryValueKey routine returns a value entry for a registry key. NtQueryValueKey and ZwQueryValueKey are two versions of the same Windows Native System Services routine. The NtQueryValueKey routine in the Windows kernel is not directly accessible to kernel-mode drivers. However, kernel-mode drivers can access this routine indirectly by calling the ZwQueryValueKey routine. For more information, see ZwQueryValueKey.",
-                "link": "https://msdn.microsoft.com/en-us/library/windows/hardware/ff556701(v=vs.85).aspx",
-                "timestamps": [
-                    1501002698.015375,
-                    1501002698.015375,
-                    1501002698.015375,
-                    1501002698.015375,
-                    1501002698.062375
                 ]
             }
         }, 
