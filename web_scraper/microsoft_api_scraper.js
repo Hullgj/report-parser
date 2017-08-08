@@ -3,12 +3,13 @@
 
 var links = [],
     category = [],
+    description = [],
     apis = null,
     casper = require("casper").create({
         verbose: false,
         logLevel: "debug"
     }),
-    system = require('system');
+    fs = require('fs');
 
 if (casper.cli.args.length === 0 && Object.keys(casper.cli.options).length === 0) {
     casper.log("Enter the Microsoft API to search for\nUsing default settings", 'error');
@@ -49,6 +50,7 @@ casper.then(function () {
     // aggregate results for the initial search
     links = this.evaluate(getLinks);
     casper.each(apis, function (casper, api) {
+        api += " function";
         this.log(api, 'debug');
         casper.then(function () {
             this.fill('form[action="https://social.msdn.microsoft.com/search/windows"]', { query: api }, true);
@@ -63,18 +65,42 @@ casper.then(function () {
 casper.then(function () {
     casper.each(links, function (casper, url) {
         casper.thenOpen(url, function () {
-            this.log(this.getElementAttribute('div#breadcrumbs a#breadcrumbDropDownButton', 'title'), 'debug');
-            category.push(this.getElementAttribute('div#breadcrumbs a#breadcrumbDropDownButton', 'title'));
+            if(this.exists('div#breadcrumbs a#breadcrumbDropDownButton')) {
+                this.log(this.getElementAttribute('div#breadcrumbs a#breadcrumbDropDownButton', 'title'), 'debug');
+                category.push(this.getElementAttribute('div#breadcrumbs a#breadcrumbDropDownButton', 'title'));
+            } else {
+                category.push("cat_not_found");
+            }
+            if(this.exists('div#mainSection p:first-of-type'))
+                description.push(this.getElementInfo('div#mainSection p:first-of-type').text
+                    .replace(/(?:\t\r\n|\r|\n|\t)/g, ''));
+            else
+                description.push("cat_not_found");
         });
     });
 });
 
 casper.run(function () {
-    // echo results in some pretty fashion
-    this.echo(links.length + " links found:");
-    this.log(" - " + links.join("\n - "), 'debug');
-    category.forEach(function(element, index) {
-        casper.echo(index + '. ' + element + ' -> ' + apis[index] + ' @ ' + links[index]);
+    // echo and write the results in a JSON format
+    var comma = ',',
+        result = "";
+
+    // casper.echo('{ ');
+    fs.write('casperjs-results.txt', "{\n", 'w');
+
+    category.forEach(function(cat, index) {
+
+        if (index >= category.length - 1) {
+            comma = '';
+        }
+        result = '"' + apis[index] + '": { "' + cat + '": { "link": "' + links[index] + '",' +
+            '"description": "' + description[index] + '"' +
+            '}}' + comma;
+        casper.echo(result);
+        fs.write('casperjs-results.txt', result + '\n', 'a');
     });
+
+    // casper.echo(' }');
+    fs.write('casperjs-results.txt', "}", 'a');
     this.exit();
 });

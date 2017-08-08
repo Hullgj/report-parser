@@ -1,5 +1,6 @@
 
-Lab_01-3.exe: {
+{
+"Lab_01-3.exe": {
     "binary_name": "Lab_01-3.exe", 
     "date_time": 1501006764.992374, 
     "duration_analysis": "02:59.323596", 
@@ -3510,8 +3511,8 @@ Lab_01-3.exe: {
             ]
         }
     }
-}
-Lab15-01.exe: {
+},
+"Lab15-01.exe": {
     "binary_name": "Lab15-01.exe", 
     "date_time": 1501006213.531431, 
     "duration_analysis": "44.759064", 
@@ -3551,8 +3552,8 @@ Lab15-01.exe: {
             ]
         }
     }
-}
-Lab15-03.exe: {
+},
+"Lab15-03.exe": {
     "binary_name": "Lab15-03.exe", 
     "date_time": 1501006348.237155, 
     "duration_analysis": "01:12.302217", 
@@ -31543,9 +31544,9 @@ Lab15-03.exe: {
             ]
         }
     }
-}
-: {
-    "binary_name": "", 
+},
+"pafish.exe": {
+    "binary_name": "pafish.exe", 
     "date_time": 1501018726.283158, 
     "duration_analysis": "02:34.336757", 
     "duration_sample": "00.000000", 
@@ -31579,8 +31580,8 @@ Lab15-03.exe: {
         }
     }, 
     "tracked_processes": {}
-}
-Lab_06-1.exe: {
+},
+"Lab_06-1.exe": {
     "binary_name": "Lab_06-1.exe", 
     "date_time": 1501007593.971659, 
     "duration_analysis": "01:04.398264", 
@@ -31716,9 +31717,9 @@ Lab_06-1.exe: {
             ]
         }
     }
-}
-: {
-    "binary_name": "", 
+},
+"Lab_05-1.exe": {
+    "binary_name": "Lab_05-1.exe", 
     "date_time": 1501007486.245501, 
     "duration_analysis": "58.557136", 
     "duration_sample": "00.000000", 
@@ -31749,1237 +31750,8 @@ Lab_06-1.exe: {
         }
     }, 
     "tracked_processes": {}
-}
-pafish.exe: {
-    "binary_name": "pafish.exe", 
-    "date_time": 1501017576.631091, 
-    "duration_analysis": "02:48.050166", 
-    "duration_sample": "01:45.454000", 
-    "signatures": {
-        "antiemu_wine": {
-            "api": "LdrGetProcedureAddress", 
-            "called_first": 1501013998.984375, 
-            "category": "registry", 
-            "description": "Detects the presence of Wine emulator", 
-            "detections": 2, 
-            "indicators": {
-                "ioc": [
-                    "HKEY_CURRENT_USER\\SOFTWARE\\Wine"
-                ]
-            }
-        }, 
-        "antisandbox_file": {
-            "category": "file", 
-            "description": "Looks for known filepaths where sandboxes execute samples", 
-            "detections": 4, 
-            "indicators": {
-                "ioc": [
-                    "C:\\sample.exe", 
-                    "D:\\sample.exe", 
-                    "C:\\malware.exe", 
-                    "D:\\malware.exe"
-                ]
-            }
-        }, 
-        "antisandbox_joe_anubis_files": {
-            "category": "file", 
-            "description": "Detects Joe or Anubis Sandboxes through the presence of a file", 
-            "detections": 1, 
-            "indicators": {
-                "ioc": [
-                    "C:\\sample.exe"
-                ]
-            }
-        }, 
-        "antivm_disk_size": {
-            "api": "GetDiskFreeSpaceExW", 
-            "called_first": 1501013998.453375, 
-            "category": "misc", 
-            "description": "Queries the disk size which could be used to detect virtual machine with small fixed size or dynamic allocation", 
-            "detections": 1, 
-            "indicators": {
-                "arguments": {
-                    "free_bytes_available": 0, 
-                    "root_path": "C:\\", 
-                    "total_number_of_bytes": 274561232896, 
-                    "total_number_of_free_bytes": 0
-                }, 
-                "timestamps": [
-                    1501013998.453375
-                ]
-            }
-        }, 
-        "antivm_generic_bios": {
-            "category": "registry", 
-            "description": "Checks the version of Bios, possibly for anti-virtualization", 
-            "detections": 2, 
-            "indicators": {
-                "ioc": [
-                    "HKEY_LOCAL_MACHINE\\HARDWARE\\DESCRIPTION\\System\\SystemBiosVersion", 
-                    "HKEY_LOCAL_MACHINE\\HARDWARE\\DESCRIPTION\\System\\VideoBiosVersion"
-                ]
-            }
-        }, 
-        "antivm_memory_available": {
-            "api": "GlobalMemoryStatusEx", 
-            "called_first": 1501013998.953375, 
-            "category": "system", 
-            "description": "Checks amount of memory in system, this can be used to detect virtual machines that have a low amount of memory available", 
-            "detections": 1, 
-            "indicators": {
-                "arguments": {}, 
-                "timestamps": [
-                    1501013998.953375
-                ]
-            }
-        }, 
-        "antivm_network_adapters": {
-            "api": "GetAdaptersAddresses", 
-            "called_first": 1501013999.031375, 
-            "category": "network", 
-            "description": "Checks adapter addresses which can be used to detect virtual network interfaces", 
-            "detections": 1, 
-            "indicators": {
-                "arguments": {
-                    "family": 0, 
-                    "flags": 0
-                }, 
-                "timestamps": [
-                    1501013999.031375
-                ]
-            }
-        }, 
-        "antivm_queries_computername": {
-            "api": "GetComputerNameW", 
-            "called_first": 1501013999.453375, 
-            "called_last": 1501014000.063375, 
-            "category": "misc", 
-            "description": "Queries for the computername", 
-            "detections": 2, 
-            "indicators": {
-                "arguments": {
-                    "computer_name": "WDQTSLXIVDDGAT"
-                }, 
-                "timestamps": [
-                    1501013999.453375, 
-                    1501014000.063375
-                ]
-            }
-        }, 
-        "antivm_shared_device": {
-            "api": "NtCreateFile", 
-            "called_first": 1501014000.047375, 
-            "called_last": 1501014000.047375, 
-            "category": "file", 
-            "description": "Attempts to detect a virtual machine by the use of a pseudo device", 
-            "detections": 2, 
-            "indicators": {
-                "arguments": {
-                    "create_disposition": 1, 
-                    "create_options": 96, 
-                    "desired_access": "0x80100080", 
-                    "file_attributes": 128, 
-                    "file_handle": "0x00000000", 
-                    "filepath": "\\??\\vmci", 
-                    "filepath_r": "\\??\\vmci", 
-                    "share_access": 1, 
-                    "status_info": 4294967295
-                }, 
-                "timestamps": [
-                    1501014000.047375, 
-                    1501014000.047375
-                ]
-            }
-        }, 
-        "antivm_vbox_devices": {
-            "category": "file", 
-            "description": "Detects VirtualBox through the presence of a device", 
-            "detections": 4, 
-            "indicators": {
-                "ioc": [
-                    "\\??\\VBoxMiniRdrDN", 
-                    "\\\\?\\pipe\\VBoxMiniRdDN", 
-                    "\\??\\VBoxTrayIPC", 
-                    "\\\\?\\pipe\\VBoxTrayIPC"
-                ]
-            }
-        }, 
-        "antivm_vbox_files": {
-            "category": "file", 
-            "description": "Detects VirtualBox through the presence of a file", 
-            "detections": 16, 
-            "indicators": {
-                "ioc": [
-                    "C:\\Windows\\System32\\vboxdisp.dll", 
-                    "C:\\Windows\\System32\\vboxhook.dll", 
-                    "C:\\Windows\\System32\\vboxmrxnp.dll", 
-                    "C:\\Windows\\System32\\vboxogl.dll", 
-                    "C:\\Windows\\System32\\vboxoglarrayspu.dll", 
-                    "C:\\Windows\\System32\\vboxoglcrutil.dll", 
-                    "C:\\Windows\\System32\\vboxoglerrorspu.dll", 
-                    "C:\\Windows\\System32\\vboxoglfeedbackspu.dll", 
-                    "C:\\Windows\\System32\\vboxoglpackspu.dll", 
-                    "C:\\Windows\\System32\\drivers\\VBoxSF.sys", 
-                    "C:\\Windows\\System32\\VBoxControl.exe", 
-                    "C:\\Windows\\System32\\vboxservice.exe", 
-                    "C:\\Windows\\System32\\vboxtray.exe", 
-                    "C:\\Windows\\System32\\drivers\\VBoxGuest.sys", 
-                    "C:\\Windows\\System32\\drivers\\VBoxMouse.sys", 
-                    "C:\\Windows\\System32\\drivers\\VBoxVideo.sys"
-                ]
-            }
-        }, 
-        "antivm_vbox_keys": {
-            "category": "registry", 
-            "description": "Detects VirtualBox through the presence of a registry key", 
-            "detections": 1, 
-            "indicators": {
-                "ioc": [
-                    "HKEY_LOCAL_MACHINE\\SOFTWARE\\Oracle\\VirtualBox Guest Additions"
-                ]
-            }
-        }, 
-        "antivm_vbox_provname": {
-            "api": "WNetGetProviderNameW", 
-            "called_first": 1501013999.156375, 
-            "category": "network", 
-            "description": "Detects VirtualBox using WNetGetProviderName trick", 
-            "detections": 1, 
-            "indicators": {
-                "arguments": {
-                    "net_type": "0x00250000"
-                }, 
-                "timestamps": [
-                    1501013999.156375
-                ]
-            }
-        }, 
-        "antivm_vbox_window": {
-            "api": "FindWindowA", 
-            "called_first": 1501013999.047375, 
-            "category": "ui", 
-            "description": "Detects VirtualBox through the presence of a window", 
-            "detections": 1, 
-            "indicators": {
-                "arguments": {
-                    "class_name": "VBoxTrayToolWndClass", 
-                    "window_name": ""
-                }, 
-                "timestamps": [
-                    1501013999.047375
-                ]
-            }
-        }, 
-        "antivm_vmware_files": {
-            "category": "file", 
-            "description": "Detects VMWare through the presence of various files", 
-            "detections": 4, 
-            "indicators": {
-                "ioc": [
-                    "C:\\Windows\\System32\\drivers\\vmmouse.sys", 
-                    "C:\\Windows\\System32\\drivers\\vmhgfs.sys", 
-                    "\\??\\HGFS", 
-                    "\\??\\vmci"
-                ]
-            }
-        }, 
-        "antivm_vmware_keys": {
-            "category": "registry", 
-            "description": "Detects VMWare through the presence of a registry key", 
-            "detections": 1, 
-            "indicators": {
-                "ioc": [
-                    "HKEY_LOCAL_MACHINE\\SOFTWARE\\VMware, Inc.\\VMware Tools"
-                ]
-            }
-        }, 
-        "has_wmi": {
-            "category": "wmi", 
-            "description": "Executes one or more WMI queries", 
-            "detections": 2, 
-            "indicators": {
-                "ioc": [
-                    "SELECT DeviceId FROM Win32_PnPEntity", 
-                    "SELECT SerialNumber FROM Win32_Bios"
-                ]
-            }
-        }, 
-        "network_http": {
-            "category": "request", 
-            "description": "Performs some HTTP requests", 
-            "detections": 6, 
-            "indicators": {
-                "ioc": [
-                    "GET http://www.msftncsi.com/ncsi.txt", 
-                    "GET http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
-                    "HEAD http://redirector.gvt1.com/edgedl/release2/LJCVr0SsrEs/GoogleUpdateSetup.exe", 
-                    "HEAD http://r6---sn-ab5l6nzd.gvt1.com/edgedl/release2/LJCVr0SsrEs/GoogleUpdateSetup.exe?cms_redirect=yes&expire=1501028514&ip=162.247.72.201&ipbits=0&mm=28&mn=sn-ab5l6nzd&ms=nvh&mt=1501013835&mv=u&pl=24&shardbypass=yes&sparams=expire,ip,ipbits,mm,mn,ms,mv,pl,shardbypass&signature=3D76D808545F0A35ED8BABE7FD754C76504E2059.236E1A5DC49A8C01424752DEFBBD4889B0349B58&key=cms1", 
-                    "GET https://clients2.google.com/service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201", 
-                    "POST https://tools.google.com/service/update2?cup2key=5:2401198445&cup2hreq=3fd1cdc8b21faa441dcc4824c07138c796a7a1ec41566db082b82bf00de08e12"
-                ]
-            }
-        }, 
-        "network_icmp": {
-            "description": "Generates some ICMP traffic", 
-            "detections": 0
-        }, 
-        "packer_entropy": {
-            "category": "cryptography", 
-            "description": "The binary likely contains encrypted or compressed data.", 
-            "detections": 2, 
-            "indicators": {
-                "description": [
-                    "A section with a high entropy has been found", 
-                    "Overall entropy of this PE file is high"
-                ], 
-                "entropy": [
-                    7.854124193008595, 
-                    0.4864864864864865
-                ]
-            }
-        }, 
-        "recon_fingerprint": {
-            "category": "registry", 
-            "description": "Collects information to fingerprint the system (MachineGuid, DigitalProductId, SystemBiosDate)", 
-            "detections": 1, 
-            "indicators": {
-                "ioc": [
-                    "HKEY_LOCAL_MACHINE\\HARDWARE\\DESCRIPTION\\System\\SystemBiosDate"
-                ]
-            }
-        }, 
-        "wmi_antivm": {
-            "category": "wmi", 
-            "description": "Executes one or more WMI queries which could be used to identify virtual machines", 
-            "detections": 2, 
-            "indicators": {
-                "ioc": [
-                    "SELECT SerialNumber FROM Win32_Bios", 
-                    "SELECT DeviceId FROM Win32_PnPEntity"
-                ]
-            }
-        }
-    }, 
-    "tracked_processes": {
-        "CoCreateInstance": {
-            "count": 4, 
-            "timestamps": [
-                1501013999.313375, 
-                1501013999.453375, 
-                1501014000.047375, 
-                1501014000.063375
-            ]
-        }, 
-        "CoCreateInstanceEx": {
-            "count": 2, 
-            "timestamps": [
-                1501013999.453375, 
-                1501014000.063375
-            ]
-        }, 
-        "CoGetClassObject": {
-            "count": 2, 
-            "timestamps": [
-                1501013999.453375, 
-                1501014000.063375
-            ]
-        }, 
-        "CoInitializeEx": {
-            "count": 2, 
-            "timestamps": [
-                1501013999.172375, 
-                1501014000.047375
-            ]
-        }, 
-        "CoInitializeSecurity": {
-            "count": 2, 
-            "timestamps": [
-                1501013999.172375, 
-                1501014000.047375
-            ]
-        }, 
-        "CoUninitialize": {
-            "count": 2, 
-            "timestamps": [
-                1501014000.000375, 
-                1501014000.328375
-            ]
-        }, 
-        "CreateToolhelp32Snapshot": {
-            "count": 1, 
-            "timestamps": [
-                1501013999.172375
-            ]
-        }, 
-        "DeviceIoControl": {
-            "count": 1, 
-            "timestamps": [
-                1501013998.453375
-            ]
-        }, 
-        "FindWindowA": {
-            "count": 2, 
-            "timestamps": [
-                1501013999.047375, 
-                1501013999.047375
-            ]
-        }, 
-        "GetAdaptersAddresses": {
-            "count": 12, 
-            "timestamps": [
-                1501013999.031375, 
-                1501013999.031375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.031375, 
-                1501014000.031375, 
-                1501014000.031375, 
-                1501014000.031375, 
-                1501014000.031375, 
-                1501014000.031375
-            ]
-        }, 
-        "GetComputerNameW": {
-            "count": 2, 
-            "timestamps": [
-                1501013999.453375, 
-                1501014000.063375
-            ]
-        }, 
-        "GetCursorPos": {
-            "count": 2, 
-            "timestamps": [
-                1501013996.422375, 
-                1501013998.422375
-            ]
-        }, 
-        "GetDiskFreeSpaceExW": {
-            "count": 1, 
-            "timestamps": [
-                1501013998.453375
-            ]
-        }, 
-        "GetFileAttributesW": {
-            "count": 24, 
-            "timestamps": [
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.438375, 
-                1501013998.438375, 
-                1501013999.016375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501014000.016375, 
-                1501014000.016375
-            ]
-        }, 
-        "GetFileType": {
-            "count": 14, 
-            "timestamps": [
-                1501013984.484375, 
-                1501013986.313375, 
-                1501013986.391375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013998.969375, 
-                1501013998.969375, 
-                1501014000.000375, 
-                1501014000.000375, 
-                1501014000.344375
-            ]
-        }, 
-        "GetSystemInfo": {
-            "count": 1, 
-            "timestamps": [
-                1501013998.953375
-            ]
-        }, 
-        "GetSystemTimeAsFileTime": {
-            "count": 2, 
-            "timestamps": [
-                1501013984.484375, 
-                1501014019.078375
-            ]
-        }, 
-        "GetSystemWindowsDirectoryW": {
-            "count": 1, 
-            "timestamps": [
-                1501013999.172375
-            ]
-        }, 
-        "GetUserNameA": {
-            "count": 1, 
-            "timestamps": [
-                1501013998.422375
-            ]
-        }, 
-        "GlobalMemoryStatusEx": {
-            "count": 1, 
-            "timestamps": [
-                1501013998.953375
-            ]
-        }, 
-        "IWbemServices_ExecQuery": {
-            "count": 2, 
-            "timestamps": [
-                1501013999.984375, 
-                1501014000.313375
-            ]
-        }, 
-        "IsDebuggerPresent": {
-            "count": 1, 
-            "timestamps": [
-                1501013986.422375
-            ]
-        }, 
-        "LdrGetDllHandle": {
-            "count": 101, 
-            "timestamps": [
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.438375, 
-                1501013998.438375, 
-                1501013998.438375, 
-                1501013998.438375, 
-                1501013998.969375, 
-                1501013998.984375, 
-                1501013998.984375, 
-                1501013998.984375, 
-                1501013998.984375, 
-                1501013999.000375, 
-                1501013999.000375, 
-                1501013999.000375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.438375, 
-                1501013999.438375, 
-                1501014000.000375, 
-                1501014000.000375, 
-                1501014000.000375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.063375, 
-                1501014000.063375, 
-                1501014000.328375, 
-                1501014000.328375, 
-                1501014000.344375
-            ]
-        }, 
-        "LdrGetProcedureAddress": {
-            "count": 97, 
-            "timestamps": [
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.438375, 
-                1501013998.438375, 
-                1501013998.438375, 
-                1501013998.438375, 
-                1501013998.969375, 
-                1501013998.984375, 
-                1501013998.984375, 
-                1501013999.000375, 
-                1501013999.000375, 
-                1501013999.000375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501014000.000375, 
-                1501014000.000375, 
-                1501014000.000375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.328375, 
-                1501014000.328375, 
-                1501014000.344375
-            ]
-        }, 
-        "LdrLoadDll": {
-            "count": 1, 
-            "timestamps": [
-                1501013999.172375
-            ]
-        }, 
-        "LdrUnloadDll": {
-            "count": 1, 
-            "timestamps": [
-                1501014089.313375
-            ]
-        }, 
-        "NtAllocateVirtualMemory": {
-            "count": 5, 
-            "timestamps": [
-                1501013999.047375, 
-                1501013999.984375, 
-                1501013999.984375, 
-                1501013999.984375, 
-                1501014000.313375
-            ]
-        }, 
-        "NtClose": {
-            "count": 41, 
-            "timestamps": [
-                1501013986.094375, 
-                1501013986.391375, 
-                1501013986.406375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013998.453375, 
-                1501013998.969375, 
-                1501013998.969375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.438375, 
-                1501013999.438375, 
-                1501013999.438375, 
-                1501013999.438375, 
-                1501013999.984375, 
-                1501013999.984375, 
-                1501014000.000375, 
-                1501014000.000375, 
-                1501014000.063375, 
-                1501014000.063375, 
-                1501014000.063375, 
-                1501014000.063375, 
-                1501014000.313375, 
-                1501014000.313375, 
-                1501014000.344375, 
-                1501014019.078375, 
-                1501014059.031375, 
-                1501014059.031375, 
-                1501014059.031375, 
-                1501014066.313375, 
-                1501014066.313375, 
-                1501014089.313375, 
-                1501014089.313375, 
-                1501014089.313375
-            ]
-        }, 
-        "NtCreateFile": {
-            "count": 22, 
-            "timestamps": [
-                1501013984.484375, 
-                1501013986.313375, 
-                1501013986.391375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013998.453375, 
-                1501013998.969375, 
-                1501013998.969375, 
-                1501013999.031375, 
-                1501013999.047375, 
-                1501013999.047375, 
-                1501013999.047375, 
-                1501013999.172375, 
-                1501014000.000375, 
-                1501014000.000375, 
-                1501014000.047375, 
-                1501014000.047375, 
-                1501014000.344375
-            ]
-        }, 
-        "NtCreateSection": {
-            "count": 1, 
-            "timestamps": [
-                1501013999.172375
-            ]
-        }, 
-        "NtDelayExecution": {
-            "count": 23, 
-            "timestamps": [
-                1501013986.922375, 
-                1501013987.422375, 
-                1501013987.922375, 
-                1501013988.422375, 
-                1501013988.922375, 
-                1501013989.422375, 
-                1501013989.922375, 
-                1501013990.422375, 
-                1501013990.922375, 
-                1501013991.422375, 
-                1501013991.922375, 
-                1501013992.422375, 
-                1501013992.922375, 
-                1501013993.422375, 
-                1501013993.922375, 
-                1501013994.422375, 
-                1501013994.922375, 
-                1501013995.422375, 
-                1501013995.922375, 
-                1501013996.422375, 
-                1501013998.422375, 
-                1501013998.953375, 
-                1501014059.313375
-            ]
-        }, 
-        "NtDuplicateObject": {
-            "count": 2, 
-            "timestamps": [
-                1501013999.313375, 
-                1501013999.313375
-            ]
-        }, 
-        "NtFreeVirtualMemory": {
-            "count": 2, 
-            "timestamps": [
-                1501013999.031375, 
-                1501013999.031375
-            ]
-        }, 
-        "NtMapViewOfSection": {
-            "count": 1, 
-            "timestamps": [
-                1501013999.172375
-            ]
-        }, 
-        "NtOpenKey": {
-            "count": 18, 
-            "timestamps": [
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.438375, 
-                1501013999.438375, 
-                1501013999.438375, 
-                1501013999.438375, 
-                1501013999.438375, 
-                1501013999.438375, 
-                1501013999.984375, 
-                1501013999.984375, 
-                1501014000.063375, 
-                1501014000.063375, 
-                1501014000.063375, 
-                1501014000.063375, 
-                1501014000.063375, 
-                1501014000.063375, 
-                1501014000.313375, 
-                1501014000.313375
-            ]
-        }, 
-        "NtQueryValueKey": {
-            "count": 10, 
-            "timestamps": [
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.438375, 
-                1501013999.438375, 
-                1501013999.438375, 
-                1501013999.438375, 
-                1501014000.063375, 
-                1501014000.063375, 
-                1501014000.063375, 
-                1501014000.063375
-            ]
-        }, 
-        "NtWriteFile": {
-            "count": 9, 
-            "timestamps": [
-                1501013984.484375, 
-                1501013986.313375, 
-                1501013986.391375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013998.969375, 
-                1501014000.000375, 
-                1501014000.344375
-            ]
-        }, 
-        "Process32FirstW": {
-            "count": 1, 
-            "timestamps": [
-                1501013999.172375
-            ]
-        }, 
-        "Process32NextW": {
-            "count": 35, 
-            "timestamps": [
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501013999.172375
-            ]
-        }, 
-        "RegCloseKey": {
-            "count": 17, 
-            "timestamps": [
-                1501013999.000375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.984375, 
-                1501013999.984375, 
-                1501013999.984375, 
-                1501013999.984375, 
-                1501013999.984375, 
-                1501013999.984375, 
-                1501014000.313375, 
-                1501014000.313375, 
-                1501014000.313375, 
-                1501014000.313375, 
-                1501014000.313375, 
-                1501014000.313375, 
-                1501014000.328375, 
-                1501014000.344375
-            ]
-        }, 
-        "RegOpenKeyExA": {
-            "count": 21, 
-            "timestamps": [
-                1501013998.984375, 
-                1501013999.000375, 
-                1501013999.000375, 
-                1501013999.000375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501014000.000375, 
-                1501014000.000375, 
-                1501014000.000375, 
-                1501014000.016375, 
-                1501014000.328375, 
-                1501014000.328375, 
-                1501014000.344375
-            ]
-        }, 
-        "RegOpenKeyExW": {
-            "count": 8, 
-            "timestamps": [
-                1501013999.984375, 
-                1501013999.984375, 
-                1501013999.984375, 
-                1501013999.984375, 
-                1501014000.313375, 
-                1501014000.313375, 
-                1501014000.313375, 
-                1501014000.313375
-            ]
-        }, 
-        "RegQueryValueExA": {
-            "count": 5, 
-            "timestamps": [
-                1501013999.000375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501014000.328375, 
-                1501014000.344375
-            ]
-        }, 
-        "RegQueryValueExW": {
-            "count": 4, 
-            "timestamps": [
-                1501013999.984375, 
-                1501013999.984375, 
-                1501014000.313375, 
-                1501014000.313375
-            ]
-        }, 
-        "SetFilePointer": {
-            "count": 18, 
-            "timestamps": [
-                1501013984.484375, 
-                1501013984.484375, 
-                1501013986.313375, 
-                1501013986.313375, 
-                1501013986.391375, 
-                1501013986.391375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013998.969375, 
-                1501013998.969375, 
-                1501014000.000375, 
-                1501014000.000375, 
-                1501014000.344375, 
-                1501014000.344375
-            ]
-        }, 
-        "SetUnhandledExceptionFilter": {
-            "count": 1, 
-            "timestamps": [
-                1501013984.484375
-            ]
-        }, 
-        "UuidCreate": {
-            "count": 2, 
-            "timestamps": [
-                1501013999.984375, 
-                1501014000.313375
-            ]
-        }, 
-        "WNetGetProviderNameW": {
-            "count": 1, 
-            "timestamps": [
-                1501013999.156375
-            ]
-        }, 
-        "WriteConsoleA": {
-            "count": 130, 
-            "timestamps": [
-                1501013986.266375, 
-                1501013986.266375, 
-                1501013986.313375, 
-                1501013986.313375, 
-                1501013986.313375, 
-                1501013986.313375, 
-                1501013986.313375, 
-                1501013986.313375, 
-                1501013986.313375, 
-                1501013986.422375, 
-                1501013986.422375, 
-                1501013986.422375, 
-                1501013986.422375, 
-                1501013991.422375, 
-                1501013991.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.422375, 
-                1501013998.438375, 
-                1501013998.453375, 
-                1501013998.453375, 
-                1501013998.453375, 
-                1501013998.453375, 
-                1501013998.453375, 
-                1501013998.953375, 
-                1501013998.953375, 
-                1501013998.953375, 
-                1501013998.953375, 
-                1501013998.953375, 
-                1501013998.953375, 
-                1501013998.953375, 
-                1501013998.969375, 
-                1501013998.969375, 
-                1501013998.969375, 
-                1501013998.969375, 
-                1501013998.969375, 
-                1501013998.969375, 
-                1501013998.969375, 
-                1501013998.969375, 
-                1501013998.969375, 
-                1501013998.984375, 
-                1501013998.984375, 
-                1501013998.984375, 
-                1501013998.984375, 
-                1501013998.984375, 
-                1501013998.984375, 
-                1501013998.984375, 
-                1501013999.000375, 
-                1501013999.000375, 
-                1501013999.000375, 
-                1501013999.000375, 
-                1501013999.000375, 
-                1501013999.000375, 
-                1501013999.000375, 
-                1501013999.000375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.016375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.031375, 
-                1501013999.047375, 
-                1501013999.047375, 
-                1501013999.047375, 
-                1501013999.047375, 
-                1501013999.156375, 
-                1501013999.156375, 
-                1501013999.172375, 
-                1501013999.172375, 
-                1501014000.000375, 
-                1501014000.000375, 
-                1501014000.000375, 
-                1501014000.000375, 
-                1501014000.000375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.016375, 
-                1501014000.031375, 
-                1501014000.031375, 
-                1501014000.047375, 
-                1501014000.047375, 
-                1501014000.047375, 
-                1501014000.047375, 
-                1501014000.328375, 
-                1501014000.328375, 
-                1501014000.328375, 
-                1501014000.328375, 
-                1501014000.328375, 
-                1501014000.328375, 
-                1501014000.328375, 
-                1501014000.344375, 
-                1501014000.344375, 
-                1501014000.344375, 
-                1501014000.344375, 
-                1501014000.344375, 
-                1501014000.344375, 
-                1501014000.344375, 
-                1501014000.344375, 
-                1501014000.344375, 
-                1501014000.344375, 
-                1501014000.344375, 
-                1501014000.344375, 
-                1501014000.344375, 
-                1501014000.344375
-            ]
-        }, 
-        "getaddrinfo": {
-            "count": 7, 
-            "timestamps": [
-                1501013986.094375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013996.422375, 
-                1501013998.969375, 
-                1501014000.000375, 
-                1501014000.344375
-            ]
-        }
-    }
-}
-Lab_09-2.exe: {
+},
+"Lab_09-2.exe": {
     "binary_name": "Lab_09-2.exe", 
     "date_time": 1501007867.870504, 
     "duration_analysis": "02:41.113776", 
@@ -33347,9 +32119,9 @@ Lab_09-2.exe: {
             ]
         }
     }
-}
-: {
-    "binary_name": "", 
+},
+"Lab_02-1.exe": {
+    "binary_name": "Lab_02-1.exe", 
     "date_time": 1501006944.718576, 
     "duration_analysis": "52.994344", 
     "duration_sample": "00.000000", 
@@ -33370,9 +32142,9 @@ Lab_09-2.exe: {
         }
     }, 
     "tracked_processes": {}
-}
-: {
-    "binary_name": "", 
+},
+"Lab_03-1.exe": {
+    "binary_name": "Lab_03-1.exe", 
     "date_time": 1501007161.053502, 
     "duration_analysis": "56.898838", 
     "duration_sample": "00.000000", 
@@ -33399,9 +32171,9 @@ Lab_09-2.exe: {
         }
     }, 
     "tracked_processes": {}
-}
-: {
-    "binary_name": "", 
+},
+"Lab_02-2.exe": {
+    "binary_name": "Lab_02-2.exe", 
     "date_time": 1501006998.51005, 
     "duration_analysis": "02:42.387408", 
     "duration_sample": "00.000000", 
@@ -33425,8 +32197,8 @@ Lab_09-2.exe: {
         }
     }, 
     "tracked_processes": {}
-}
-Lab15-02.exe: {
+},
+"Lab15-02.exe": {
     "binary_name": "Lab15-02.exe", 
     "date_time": 1501006301.715546, 
     "duration_analysis": "45.868905", 
@@ -33724,8 +32496,8 @@ Lab15-02.exe: {
             ]
         }
     }
-}
-Lab_01-1.exe: {
+},
+"Lab_01-1.exe": {
     "binary_name": "Lab_01-1.exe", 
     "date_time": 1501006421.304523, 
     "duration_analysis": "02:45.259062", 
@@ -33811,50 +32583,9 @@ Lab_01-1.exe: {
             ]
         }
     }
-}
-Lab15-01.exe: {
-    "binary_name": "Lab15-01.exe", 
-    "date_time": 1501006213.531431, 
-    "duration_analysis": "44.759064", 
-    "duration_sample": "00.156000", 
-    "signatures": {
-        "network_http": {
-            "category": "request", 
-            "description": "Performs some HTTP requests", 
-            "detections": 1, 
-            "indicators": {
-                "ioc": [
-                    "GET http://www.msftncsi.com/ncsi.txt"
-                ]
-            }
-        }
-    }, 
-    "tracked_processes": {
-        "LdrGetDllHandle": {
-            "count": 2, 
-            "timestamps": [
-                1501002613.89, 
-                1501002613.89
-            ]
-        }, 
-        "NtTerminateProcess": {
-            "count": 3, 
-            "timestamps": [
-                1501002613.89, 
-                1501002613.89, 
-                1501002614.031
-            ]
-        }, 
-        "WriteConsoleA": {
-            "count": 1, 
-            "timestamps": [
-                1501002613.89
-            ]
-        }
-    }
-}
-: {
-    "binary_name": "", 
+},
+"Lab_04-2.exe": {
+    "binary_name": "Lab_04-2.exe", 
     "date_time": 1501007440.114526, 
     "duration_analysis": "45.219753", 
     "duration_sample": "00.000000", 
@@ -33871,9 +32602,9 @@ Lab15-01.exe: {
         }
     }, 
     "tracked_processes": {}
-}
-: {
-    "binary_name": "", 
+},
+"Lab_05-2.exe": {
+    "binary_name": "Lab_05-2.exe", 
     "date_time": 1501007545.153133, 
     "duration_analysis": "48.239973", 
     "duration_sample": "00.000000", 
@@ -33900,8 +32631,8 @@ Lab15-01.exe: {
         }
     }, 
     "tracked_processes": {}
-}
-Lab_01-2.exe: {
+},
+"Lab_01-2.exe": {
     "binary_name": "Lab_01-2.exe", 
     "date_time": 1501006587.040456, 
     "duration_analysis": "02:57.561307", 
@@ -34944,8 +33675,8 @@ Lab_01-2.exe: {
             ]
         }
     }
-}
-Lab_03-2.exe: {
+},
+"Lab_03-2.exe": {
     "binary_name": "Lab_03-2.exe", 
     "date_time": 1501007218.86883, 
     "duration_analysis": "02:42.871082", 
@@ -35202,8 +33933,8 @@ Lab_03-2.exe: {
             ]
         }
     }
-}
-Lab_04-1.exe: {
+},
+"Lab_04-1.exe": {
     "binary_name": "Lab_04-1.exe", 
     "date_time": 1501007381.881785, 
     "duration_analysis": "57.015850", 
@@ -35429,44 +34160,8 @@ Lab_04-1.exe: {
             ]
         }
     }
-}
-: {
-    "binary_name": "", 
-    "date_time": 1501018726.283158, 
-    "duration_analysis": "02:34.336757", 
-    "duration_sample": "00.000000", 
-    "signatures": {
-        "network_http": {
-            "category": "request", 
-            "description": "Performs some HTTP requests", 
-            "detections": 3, 
-            "indicators": {
-                "ioc": [
-                    "GET http://www.msftncsi.com/ncsi.txt", 
-                    "GET http://www.download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/authrootstl.cab", 
-                    "GET https://clients2.google.com/service/check2?appid=%7B430FD4D0-B729-4F61-AA34-91526481799D%7D&appversion=1.3.28.15&applang=&machine=1&version=1.3.28.15&userid=&osversion=6.1&servicepack=Service%20Pack%201"
-                ]
-            }
-        }, 
-        "packer_entropy": {
-            "category": "cryptography", 
-            "description": "The binary likely contains encrypted or compressed data.", 
-            "detections": 2, 
-            "indicators": {
-                "description": [
-                    "A section with a high entropy has been found", 
-                    "Overall entropy of this PE file is high"
-                ], 
-                "entropy": [
-                    7.854124193008595, 
-                    0.4864864864864865
-                ]
-            }
-        }
-    }, 
-    "tracked_processes": {}
-}
-Lab_09-1.exe: {
+},
+"Lab_09-1.exe": {
     "binary_name": "Lab_09-1.exe", 
     "date_time": 1501007712.769915, 
     "duration_analysis": "02:34.157926", 
@@ -43218,8 +41913,8 @@ Lab_09-1.exe: {
             ]
         }
     }
-}
-Lab_09-3.exe: {
+},
+"Lab_09-3.exe": {
     "binary_name": "Lab_09-3.exe", 
     "date_time": 1501008029.523854, 
     "duration_analysis": "02:34.123936", 
@@ -44519,9 +43214,9 @@ Lab_09-3.exe: {
             ]
         }
     }
-}
-: {
-    "binary_name": "", 
+},
+"Lab_08-1.exe": {
+    "binary_name": "Lab_08-1.exe", 
     "date_time": 1501007659.120648, 
     "duration_analysis": "53.098660", 
     "duration_sample": "00.000000", 
@@ -44558,9 +43253,9 @@ Lab_09-3.exe: {
         }
     }, 
     "tracked_processes": {}
-}
-: {
-    "binary_name": "", 
+},
+"Lab_10-2.exe": {
+    "binary_name": "Lab_10-2.exe", 
     "date_time": 1501008184.218409, 
     "duration_analysis": "39.970884", 
     "duration_sample": "00.000000", 
@@ -44597,4 +43292,5 @@ Lab_09-3.exe: {
         }
     }, 
     "tracked_processes": {}
+} 
 }

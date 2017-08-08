@@ -8,5 +8,5 @@ do
     CATEGORY=`curl -s $BING |
     pup 'div#breadcrumbs a#breadcrumbDropDownButton attr{title}'`
 
-    printf "$CATEGORY -> $API @ $BING\n\n"
+    printf '"%s": {"%s": {"link": "%s"}}' "$CATEGORY" "$API" "$BING"
 done

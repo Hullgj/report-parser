@@ -9,6 +9,7 @@ class Parse(object):
     def __init__(self, printer):
         self.printer = printer
         self.tools = Tools()
+        self.process_list = []
 
     def map_signatures(self, json_data):
         """Parse the signatures in the JSON file, mapping each to a state in the probabilistic model"""
@@ -77,16 +78,13 @@ class Parse(object):
         and end times of when the process was called. We sort the api_dict by value, which is time before storing in the
         process_list.
         Returns a dictionary of all the processes and their first/last times, the first/last time of the sample, and the
-        name
-        DEV: might need to count the number of times the process was called"""
+        name"""
         api_dict = {}
-        process_name = ""
         seen_first = 0
         seen_last = 0
 
         for process in json_data['behavior']['processes']:
             if process['track'] == condition:
-                process_name = process['process_name']
                 seen_first = process['first_seen']
                 for call in process['calls']:
                     if call['api'] not in api_dict:
@@ -96,51 +94,54 @@ class Parse(object):
                         api_dict[call['api']]['timestamps'].append(call['time'])
                         api_dict[call['api']]['count'] += 1
 
-
                     if seen_last < call['time']:
                         seen_last = call['time']
 
-                # api_dict = sorted(api_dict.items(), key=operator.itemgetter(1))
+        return seen_first, seen_last, api_dict
 
-        return process_name, seen_first, seen_last, api_dict
-
-    def parse_data(self, j_data, output_file):
+    def parse_data(self, j_data, output_file, last_file):
         self.printer.line_comment("General Information")
 
-        j_analysis_started = j_data['info']['started']
-        j_analysis_ended = j_data['info']['ended']
+        process_name = j_data['target']['file']['name']
+        if process_name not in self.process_list:
+            self.process_list.append(process_name)
+            j_analysis_started = j_data['info']['started']
+            j_analysis_ended = j_data['info']['ended']
 
-        self.printer.line_comment("Process Behaviour")
+            self.printer.line_comment("Process Behaviour")
 
-        signature_dict = self.map_signatures(j_data)
-        process_name, seen_first, seen_last, tracked_dict = self.get_tracked_process(j_data, True)
+            signature_dict = self.map_signatures(j_data)
+            seen_first, seen_last, tracked_dict = self.get_tracked_process(j_data, True)
 
-        self.printer.line_comment("Writing report for: " + process_name)
+            self.printer.line_comment("Writing report for: " + process_name)
 
-        general_dict = {
-            "binary_name": process_name,
-            "date_time": j_analysis_started,
-            "duration_analysis": self.tools.time_diff(j_analysis_started, j_analysis_ended),
-            "duration_sample": self.tools.time_diff(seen_first, seen_last),
-            "signatures": signature_dict,
-            "tracked_processes": tracked_dict
-        }
+            general_dict = {
+                "binary_name": process_name,
+                "date_time": j_analysis_started,
+                "duration_analysis": self.tools.time_diff(j_analysis_started, j_analysis_ended),
+                "duration_sample": self.tools.time_diff(seen_first, seen_last),
+                "signatures": signature_dict,
+                "tracked_processes": tracked_dict
+            }
 
-        self.printer.write_file(output_file, '"%s": %s' % (process_name, json.dumps(general_dict, sort_keys=True, indent=4)))
+            self.printer.write_file(output_file, '"%s": %s%c' %
+                                    (process_name,
+                                     json.dumps(general_dict, sort_keys=True, indent=4),
+                                     ',' if not last_file else ' '))
 
     def parse_files(self, p_dir, output_file):
         # loop over files in a directory,
         # ref: https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory
-        self.printer.write_file(output_file, '"binaries": {\n')
+        self.printer.write_file(output_file, '{')
         for (dir_path, dir_names, file_names) in walk(p_dir):
-            for name in file_names:
-                j_comment = "Read and parse from json file: " + name
-                self.printer.line_comment(j_comment)
-                # open json data and load it
-                self.printer.dev_comment("Might need to check if the file is type JSON")
-                with open(dir_path + name) as json_file:
-                    j_data = json.load(json_file)
+            for i, name in enumerate(file_names):
+                if name.endswith('.json'):
+                    j_comment = "Read and parse from json file: " + name
+                    self.printer.line_comment(j_comment)
+                    # open json data and load it
+                    with open(dir_path + name) as json_file:
+                        j_data = json.load(json_file)
+                    
+                    self.parse_data(j_data, output_file, False if i < len(file_names) - 1 else True)
 
-                self.parse_data(j_data, output_file)
-
-        self.printer.write_file(output_file, '\n}')
+        self.printer.write_file(output_file, '}')

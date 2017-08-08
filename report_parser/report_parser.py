@@ -2,6 +2,7 @@ from __future__ import print_function
 
 import sys
 import argparse
+from classifier import Classify
 from parser import Parse
 from printer import Print
 
@@ -29,6 +30,11 @@ def main():
 
     parser = Parse(printer)
     parser.parse_files(p_dir, output_file)
+
+    in_dir = "docs/"
+    in_file = "classify.json"
+    classifier = Classify(printer)
+    classifier.classify(output_file, in_dir, in_file)
 
 
 if __name__ == "__main__":

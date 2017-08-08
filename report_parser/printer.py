@@ -1,4 +1,6 @@
 from __future__ import print_function
+import os.path
+import json
 
 
 class Print(object):
@@ -14,12 +16,12 @@ class Print(object):
 
     def print_error(self, error_line):
         if self.verbose:
-            print(error_line)
+            print('[ERROR' + 5 * '!' + ']' + error_line)
 
     # make a comment that takes up a whole line
     def line_comment(self, msg):
         if self.verbose:
-            print(10 * '-' + 5 * '+' + ' ' + msg + ' ' + 5 * '+' + 10 * '-')
+            print(5 * '-' + 2 * '+' + ' ' + msg + ' ' + 2 * '+' + 5 * '-')
 
     @staticmethod
     def standard_output(msg):
@@ -37,3 +39,21 @@ class Print(object):
             if mode == 'w':
                 output_file.truncate()
             print(line, file=output_file)
+
+    def open_json(self, in_file, obj_list=''):
+        """Open a file and check it is a JSON file, returning the JSON data"""
+        if not os.path.isfile(in_file):
+            Print.write_file(in_file, '', 'w')
+
+        with open(in_file, 'r') as json_file:
+            if os.path.getsize(in_file) < 8:
+                obj_json = {}
+                for obj in obj_list:
+                    self.line_comment("Adding Object " + obj + " to " + in_file)
+                    obj_json[obj] = {}
+
+                Print.write_file(in_file, json.dumps(obj_json, sort_keys=True, indent=4))
+
+            json_data = json.load(json_file)
+
+        return json_data
