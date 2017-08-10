@@ -1,0 +1,32 @@
+"Activation Context Reference":   --
+"Authentication Functions":
+"Configuration Reference"      --
+"Console Functions"    --
+"Cryptography Functions"
+"Debugging Functions"
+"Driver Support Routines"   --
+"Dynamic-Link Library Functions"  --
+"File Management Functions"
+"File Management Reference"
+"Font and Text Functions"
+"Functions"
+"HTTP Server API Version 2.0 Functions"
+"Handle and Object Functions"
+"IMFSignedLibrary"    --
+"IP Helper Functions"
+"Memory Management Functions"
+"Process and Thread Functions"
+"Registry Functions"
+"Resource Functions"
+"Service Functions"
+"String Functions"
+"Structured Exception Handling Functions"
+"Synchronization Functions"
+"System Information Functions"
+"Time Functions"
+"Tool Help Functions"
+"Tools, Best Practices, and Guidance"
+"Using File Mapping"
+"WinINet Functions"
+"Windows Networking Functions"
+"Winsock Functions"
