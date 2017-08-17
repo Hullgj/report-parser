@@ -1,2 +1,3 @@
 {
+"InternetConnectW": { "WinINet Functions": { "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa384363(v=vs.85).aspx","description": "Opens an File Transfer Protocol (FTP) or HTTP session for a given site."}}
 }

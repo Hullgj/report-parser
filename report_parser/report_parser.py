@@ -26,10 +26,10 @@ def main():
     printer.standard_output('Chosen directory %s. Wait for file: %s to be generated' % (p_dir, output_file))
     printer.standard_output('verbose is set to: %r' % printer.get_verbose())
 
-    printer.write_file(output_file, '', 'w')
+    # printer.write_file(output_file, '', 'w')
 
     parser = Parse(printer)
-    parser.parse_files(p_dir, output_file)
+    # parser.parse_files(p_dir, output_file)
 
     in_dir = "docs/"
     in_file = "classify.json"
