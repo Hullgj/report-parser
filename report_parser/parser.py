@@ -59,8 +59,7 @@ class Parse(object):
                     else:
                         this_api_dict['indicators']['description'].append(mark['description'])
                         this_api_dict['indicators']['entropy'].append(mark['entropy'])
-                else:
-
+                elif 'description' in mark:
                     if not set_other:
                         this_api_dict['indicators'] = {'other': [mark['description']]}
                         set_other = True

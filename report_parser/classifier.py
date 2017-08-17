@@ -4,6 +4,7 @@ propagation, communication with C&C, mapping the user's files and folders, encry
 and producing a threatening message. This program reads data parsed from Cuckoo Sandbox reports, looks up names of APIs
 using Microsoft's online documentation, and writes each detection into one of the eight states in a JSON format"""
 
+from __future__ import division
 import subprocess
 import json
 
@@ -19,7 +20,7 @@ class Classify(object):
         self.classify_json = None
 
     def search_list(self, api_list, n):
-        """Use the webscraper script built using CasperJS to search and return the category of every API in the list.
+        """Use the web scraper script built using CasperJS to search and return the category of every API in the list.
          Since each search takes time, we limit each search to groups of 10 APIs in the list"""
         err_count = 0
         full_list = api_list
@@ -29,7 +30,7 @@ class Classify(object):
         elif api_list > n:
             search_results = "{ "
             api_list = [full_list[i:i + n] for i in range(0, len(full_list), n)]
-            # api_list = api_list[:1]
+            # api_list = api_list[:2]
 
         self.printer.line_comment("Search List has %d APIs to lookup in segments of %d"
                                   % (len(full_list), len(api_list)))
@@ -40,16 +41,16 @@ class Classify(object):
                                       % ((i + 1) * len(list_seg), len(full_list), join_seg))
             s_result_seg = subprocess.Popen("casperjs ~/kent-uni-project-code/web_scraper/microsoft_api_scraper.js "
                                             + join_seg, shell=True, stdout=subprocess.PIPE).stdout.read()
-            if 'Error' not in s_result_seg:
+            if 'Error:' not in s_result_seg:
                 search_results += s_result_seg + (',' if (i + 1) * n < len(full_list) else '}')
             else:
                 self.printer.print_error("Error for segment %s. Try running the program again to scrape those"
                                          " results.\n%s" % (join_seg, s_result_seg))
                 err_count += 1
 
-            if 'cat_not_found' in s_result_seg:
+            if any(['cat_not_found' in s_result_seg, s_result_seg == '']):
                 self.printer.dev_comment("The scraper didn't find the category, we could use the Bing or Google scraper"
-                                         " instead. However, this might need to get the category from the 'See also' "
+                                         " instead.\nHowever, this might need to get the category from the 'See also' "
                                          "section of the web page")
 
         search_results = search_results.replace("\n", "")
@@ -70,7 +71,7 @@ class Classify(object):
 
         err_search_list, api_cat_dic = self.search_list(api_lookup_list, n)
 
-        if err_search_list > (len(api_lookup_list) / n) - 1:
+        if err_search_list < (len(api_lookup_list) / n):
             for api in api_cat_dic:
                 # Add the api : cat to the classify_json dict. The api_lookup_list has the APIs and their properties
                 # from the cuckoo reports with key as the API. The api_cat_dic has the APIs and their categories from

@@ -1,5 +1,2 @@
 {
-"IsDebuggerPresent": { "Debugging Functions": { "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms680345(v=vs.85).aspx","description": "Determines whether the calling process is being debugged by a user-mode debugger."}},
-"NtQueryValueKey": { "cat_not_found": { "link": "https://github.com/Microsoft/diskspd/blob/master/XmlResultParser/xmlresultparser.cpp","description": "cat_not_found"}},
-"LdrLoadDll": { "Using File Mapping": { "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366543(v=vs.85).aspx","description": "The following example uses the CreateFileMapping function with the SEC_LARGE_PAGES flag to use large pages. It requires Windows Server 2003 with Service Pack 1 (SP1) or later."}}
 }
