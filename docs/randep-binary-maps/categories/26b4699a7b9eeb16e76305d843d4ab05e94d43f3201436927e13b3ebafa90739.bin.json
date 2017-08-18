@@ -1,0 +1,271 @@
+{
+    "stealth": {
+        "communicating": {
+            "categories": {
+                "Cryptography Functions": {
+                    "CryptAcquireContextA": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.046875, 
+                        "count": 4, 
+                        "description": "The CryptAcquireContext function is used to acquire a handle to a particular key container within a particular cryptographic service provider (CSP). This returned handle is used in calls to CryptoAPI functions that use the selected CSP.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379886(v=vs.85).aspx"
+                    }
+                }
+            }
+        }, 
+        "fingerprinting": {
+            "categories": {
+                "System Information Functions": {
+                    "GetSystemDirectoryA": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.030875, 
+                        "count": 2, 
+                        "description": "Retrieves the path of the system directory. The system directory contains system files such as dynamic-link libraries and drivers.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724373(v=vs.85).aspx"
+                    }
+                }, 
+                "Time Functions": {
+                    "GetSystemTimeAsFileTime": {
+                        "called_first": 1502827083.952875, 
+                        "called_last": 1502827083.952875, 
+                        "count": 1, 
+                        "description": "Retrieves the current system date and time. The information is in Coordinated Universal Time (UTC) format.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724397(v=vs.85).aspx"
+                    }
+                }
+            }
+        }, 
+        "mapping": {
+            "categories": {
+                "File Management Functions": {
+                    "NtCreateFile": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 76, 
+                        "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
+                    }, 
+                    "NtReadFile": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 36, 
+                        "description": "Reads data from the specified file or input/output (I/O) device. Reads occur at the position specified     by the file pointer if supported by the device.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365467(v=vs.85).aspx"
+                    }, 
+                    "NtWriteFile": {
+                        "called_first": 1502827086.108875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 38, 
+                        "description": "Writes data to the specified file or input/output (I/O) device.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365747(v=vs.85).aspx"
+                    }, 
+                    "SetFilePointer": {
+                        "called_first": 1502827086.139875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 1, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
+                    }, 
+                    "SetFilePointerEx": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 73, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
+                    }
+                }
+            }
+        }, 
+        "propagating": {
+            "categories": {
+                "Dynamic-Link Library Functions": {
+                    "LdrGetDllHandle": {
+                        "called_first": 1502827083.952875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 2, 
+                        "description": "Retrieves a module handle for the specified module. The module must have been loaded by the calling process.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms683199(v=vs.85).aspx"
+                    }
+                }
+            }
+        }
+    }, 
+    "suspicious": {
+        "encrypting": {
+            "categories": {
+                "Cryptography Functions": {
+                    "CryptAcquireContextA": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.046875, 
+                        "count": 4, 
+                        "description": "The CryptAcquireContext function is used to acquire a handle to a particular key container within a particular cryptographic service provider (CSP). This returned handle is used in calls to CryptoAPI functions that use the selected CSP.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379886(v=vs.85).aspx"
+                    }
+                }, 
+                "File Management Functions": {
+                    "NtCreateFile": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 76, 
+                        "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
+                    }, 
+                    "NtReadFile": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 36, 
+                        "description": "Reads data from the specified file or input/output (I/O) device. Reads occur at the position specified     by the file pointer if supported by the device.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365467(v=vs.85).aspx"
+                    }, 
+                    "NtWriteFile": {
+                        "called_first": 1502827086.108875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 38, 
+                        "description": "Writes data to the specified file or input/output (I/O) device.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365747(v=vs.85).aspx"
+                    }, 
+                    "SetFilePointer": {
+                        "called_first": 1502827086.139875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 1, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
+                    }, 
+                    "SetFilePointerEx": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 73, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
+                    }
+                }, 
+                "Memory Management Functions": {
+                    "NtAllocateVirtualMemory": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.030875, 
+                        "count": 1, 
+                        "description": "Reserves, commits, or changes the state  of a region of memory within the virtual address space of the specified process, and     specifies the NUMA node for the physical memory.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366891(v=vs.85).aspx"
+                    }, 
+                    "NtProtectVirtualMemory": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.030875, 
+                        "count": 1, 
+                        "description": "Provides an efficient mechanism to bring into memory potentially discontiguous virtual address ranges     in a process address space.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/hh780543(v=vs.85).aspx"
+                    }
+                }
+            }
+        }, 
+        "locking": {}
+    }, 
+    "termination": {
+        "deleting": {
+            "categories": {
+                "File Management Functions": {
+                    "NtCreateFile": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 76, 
+                        "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
+                    }, 
+                    "NtReadFile": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 36, 
+                        "description": "Reads data from the specified file or input/output (I/O) device. Reads occur at the position specified     by the file pointer if supported by the device.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365467(v=vs.85).aspx"
+                    }, 
+                    "NtWriteFile": {
+                        "called_first": 1502827086.108875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 38, 
+                        "description": "Writes data to the specified file or input/output (I/O) device.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365747(v=vs.85).aspx"
+                    }, 
+                    "SetFilePointer": {
+                        "called_first": 1502827086.139875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 1, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
+                    }, 
+                    "SetFilePointerEx": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 73, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
+                    }
+                }, 
+                "Memory Management Functions": {
+                    "NtAllocateVirtualMemory": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.030875, 
+                        "count": 1, 
+                        "description": "Reserves, commits, or changes the state  of a region of memory within the virtual address space of the specified process, and     specifies the NUMA node for the physical memory.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366891(v=vs.85).aspx"
+                    }, 
+                    "NtProtectVirtualMemory": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.030875, 
+                        "count": 1, 
+                        "description": "Provides an efficient mechanism to bring into memory potentially discontiguous virtual address ranges     in a process address space.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/hh780543(v=vs.85).aspx"
+                    }
+                }
+            }
+        }, 
+        "threatening": {
+            "categories": {
+                "Cryptography Functions": {
+                    "CryptAcquireContextA": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.046875, 
+                        "count": 4, 
+                        "description": "The CryptAcquireContext function is used to acquire a handle to a particular key container within a particular cryptographic service provider (CSP). This returned handle is used in calls to CryptoAPI functions that use the selected CSP.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379886(v=vs.85).aspx"
+                    }
+                }, 
+                "File Management Functions": {
+                    "NtCreateFile": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 76, 
+                        "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
+                    }, 
+                    "NtReadFile": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 36, 
+                        "description": "Reads data from the specified file or input/output (I/O) device. Reads occur at the position specified     by the file pointer if supported by the device.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365467(v=vs.85).aspx"
+                    }, 
+                    "NtWriteFile": {
+                        "called_first": 1502827086.108875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 38, 
+                        "description": "Writes data to the specified file or input/output (I/O) device.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365747(v=vs.85).aspx"
+                    }, 
+                    "SetFilePointer": {
+                        "called_first": 1502827086.139875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 1, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
+                    }, 
+                    "SetFilePointerEx": {
+                        "called_first": 1502827086.030875, 
+                        "called_last": 1502827086.139875, 
+                        "count": 73, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,1027 @@
+{
+    "stealth": {
+        "communicating": {
+            "categories": {
+                "Cryptography Functions": {
+                    "CryptAcquireContextW": {
+                        "called_first": 1502808241.84425, 
+                        "called_last": 1502808241.84425, 
+                        "count": 2, 
+                        "description": "The CryptAcquireContext function is used to acquire a handle to a particular key container within a particular cryptographic service provider (CSP). This returned handle is used in calls to CryptoAPI functions that use the selected CSP.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379886(v=vs.85).aspx"
+                    }
+                }, 
+                "HTTP Server API Version 2.0 Functions": {
+                    "NtDeviceIoControlFile": {
+                        "called_first": 1502808243.03125, 
+                        "called_last": 1502808392.09425, 
+                        "count": 73, 
+                        "description": "The HttpCreateUrlGroup function creates a URL Group  under the specified  server session.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364485(v=vs.85).aspx"
+                    }
+                }, 
+                "IP Helper Functions": {
+                    "GetAdaptersAddresses": {
+                        "called_first": 1502808246.64125, 
+                        "called_last": 1502808389.53125, 
+                        "count": 4, 
+                        "description": "The GetAdaptersAddresses function retrieves the addresses associated with the adapters on the local computer.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365915(v=vs.85).aspx"
+                    }, 
+                    "GetBestInterfaceEx": {
+                        "called_first": 1502808245.75025, 
+                        "called_last": 1502808245.75025, 
+                        "count": 2, 
+                        "description": "The GetBestInterfaceEx function retrieves the index of the interface that has the best route to the specified IPv4 or IPv6 address.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365922(v=vs.85).aspx"
+                    }
+                }, 
+                "WinINet Functions": {
+                    "HttpOpenRequestA": {
+                        "called_first": 1502808257.43725, 
+                        "called_last": 1502808389.53125, 
+                        "count": 8, 
+                        "description": "Creates an HTTP request handle.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa384233(v=vs.85).aspx"
+                    }, 
+                    "HttpSendRequestA": {
+                        "called_first": 1502808269.43725, 
+                        "called_last": 1502808401.53125, 
+                        "count": 8, 
+                        "description": "Sends the specified request to the HTTP server, allowing callers to send extra data beyond what is normally passed to HttpSendRequestEx.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa384247(v=vs.85).aspx"
+                    }, 
+                    "InternetCloseHandle": {
+                        "called_first": 1502808257.43725, 
+                        "called_last": 1502808401.53125, 
+                        "count": 20, 
+                        "description": "Closes a single Internet handle.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa384350(v=vs.85).aspx"
+                    }, 
+                    "InternetConnectA": {
+                        "called_first": 1502808257.43725, 
+                        "called_last": 1502808389.53125, 
+                        "count": 8, 
+                        "description": "Opens an File Transfer Protocol (FTP) or HTTP session for a given site.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa384363(v=vs.85).aspx"
+                    }, 
+                    "InternetOpenA": {
+                        "called_first": 1502808257.43725, 
+                        "called_last": 1502808353.53125, 
+                        "count": 2, 
+                        "description": "Initializes an application's use of the WinINet functions.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa385096(v=vs.85).aspx"
+                    }, 
+                    "InternetOpenUrlW": {
+                        "called_first": 1502808257.43725, 
+                        "called_last": 1502808353.53125, 
+                        "count": 2, 
+                        "description": "Opens a resource specified by a complete FTP or HTTP URL.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa385098(v=vs.85).aspx"
+                    }, 
+                    "InternetOpenW": {
+                        "called_first": 1502808243.03125, 
+                        "called_last": 1502808339.28125, 
+                        "count": 2, 
+                        "description": "Initializes an application's use of the WinINet functions.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa385096(v=vs.85).aspx"
+                    }, 
+                    "__exception__": {
+                        "called_first": 1502808337.46925, 
+                        "called_last": 1502808337.46925, 
+                        "count": 1, 
+                        "description": "Creates an HTTP request handle.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa384233(v=vs.85).aspx"
+                    }
+                }, 
+                "Windows Networking Functions": {
+                    "NtUnmapViewOfSection": {
+                        "called_first": 1502807859.269396, 
+                        "called_last": 1502808444.51625, 
+                        "count": 373, 
+                        "description": "TheWNetAddConnection2 function makes a connection to a network resource and can redirect a local device to the network resource.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa385413(v=vs.85).aspx"
+                    }
+                }, 
+                "Winsock Functions": {
+                    "GetAddrInfoW": {
+                        "called_first": 1502808248.03125, 
+                        "called_last": 1502808392.09425, 
+                        "count": 4, 
+                        "description": "The GetAddrInfoW function provides protocol-independent translation from a Unicode host name to an address.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms738519(v=vs.85).aspx"
+                    }, 
+                    "NtQueryAttributesFile": {
+                        "called_first": 1502807912.253146, 
+                        "called_last": 1502808337.07825, 
+                        "count": 12, 
+                        "description": "The GetAddrInfoW function provides protocol-independent translation from a Unicode host name to an address.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms738519(v=vs.85).aspx"
+                    }, 
+                    "WSAStartup": {
+                        "called_first": 1502808243.03125, 
+                        "called_last": 1502808392.09425, 
+                        "count": 13, 
+                        "description": "The WSAStartup function initiates use of the Winsock DLL by a process.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms742213(v=vs.85).aspx"
+                    }, 
+                    "closesocket": {
+                        "called_first": 1502808243.03125, 
+                        "called_last": 1502808392.09425, 
+                        "count": 9, 
+                        "description": "The closesocket function closes an existing socket.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms737582(v=vs.85).aspx"
+                    }, 
+                    "setsockopt": {
+                        "called_first": 1502808243.03125, 
+                        "called_last": 1502808392.09425, 
+                        "count": 9, 
+                        "description": "The setsockopt function sets a socket option.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms740476(v=vs.85).aspx"
+                    }, 
+                    "socket": {
+                        "called_first": 1502808243.03125, 
+                        "called_last": 1502808392.09425, 
+                        "count": 9, 
+                        "description": "The socket function creates a socket that is bound to a specific transport service provider.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms740506(v=vs.85).aspx"
+                    }
+                }
+            }
+        }, 
+        "fingerprinting": {
+            "categories": {
+                "Debugging Functions": {
+                    "NtGetContextThread": {
+                        "called_first": 1502808240.061625, 
+                        "called_last": 1502808241.406, 
+                        "count": 2, 
+                        "description": "Retrieves the context of the specified thread.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms679362(v=vs.85).aspx"
+                    }, 
+                    "NtReadVirtualMemory": {
+                        "called_first": 1502807929.456146, 
+                        "called_last": 1502807929.456146, 
+                        "count": 3, 
+                        "description": "Reads data from an area of memory in a specified process. The entire area to be read must be accessible or the operation fails.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms680553(v=vs.85).aspx"
+                    }, 
+                    "SearchPathW": {
+                        "called_first": 1502807912.253146, 
+                        "called_last": 1502808337.29725, 
+                        "count": 6, 
+                        "description": "Reads data from an area of memory in a specified process. The entire area to be read must be accessible or the operation fails.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms680553(v=vs.85).aspx"
+                    }, 
+                    "WriteProcessMemory": {
+                        "called_first": 1502808240.046625, 
+                        "called_last": 1502808241.406, 
+                        "count": 12, 
+                        "description": "Writes data to an area of memory in a specified process. The entire area to be written to must be accessible or the operation fails.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms681674(v=vs.85).aspx"
+                    }
+                }, 
+                "Synchronization Functions": {
+                    "NtCreateMutant": {
+                        "called_first": 1502807911.300146, 
+                        "called_last": 1502808246.67225, 
+                        "count": 15, 
+                        "description": "Creates or opens a named or unnamed event object.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms682396(v=vs.85).aspx"
+                    }, 
+                    "NtOpenMutant": {
+                        "called_first": 1502808333.64125, 
+                        "called_last": 1502808333.64125, 
+                        "count": 1, 
+                        "description": "Opens an existing named mutex object.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms684315(v=vs.85).aspx"
+                    }
+                }, 
+                "System Information Functions": {
+                    "GetComputerNameW": {
+                        "called_first": 1502808337.14125, 
+                        "called_last": 1502808337.14125, 
+                        "count": 1, 
+                        "description": "Retrieves the NetBIOS name of the local computer. This name is established at system startup, when the system reads it from the registry.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724295(v=vs.85).aspx"
+                    }, 
+                    "GetNativeSystemInfo": {
+                        "called_first": 1502808241.124625, 
+                        "called_last": 1502808246.67225, 
+                        "count": 2, 
+                        "description": "Retrieves information about the current system to an application running under WOW64. If the function is called from a 64-bit application, it is equivalent to the GetSystemInfo function.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724340(v=vs.85).aspx"
+                    }, 
+                    "GetSystemDirectoryW": {
+                        "called_first": 1502807966.894146, 
+                        "called_last": 1502808338.48425, 
+                        "count": 9, 
+                        "description": "Retrieves the path of the system directory. The system directory contains system files such as dynamic-link libraries and drivers.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724373(v=vs.85).aspx"
+                    }, 
+                    "GetSystemInfo": {
+                        "called_first": 1502807916.315146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 43, 
+                        "description": "Retrieves information about the current system.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724381(v=vs.85).aspx"
+                    }, 
+                    "GetSystemWindowsDirectoryW": {
+                        "called_first": 1502808240.015625, 
+                        "called_last": 1502808337.23425, 
+                        "count": 18, 
+                        "description": "Retrieves the path of the shared Windows directory on a multi-user system.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724403(v=vs.85).aspx"
+                    }, 
+                    "GetUserNameExW": {
+                        "called_first": 1502807913.315146, 
+                        "called_last": 1502808248.04725, 
+                        "count": 2, 
+                        "description": "Retrieves the name of the user or other security principal associated with the calling thread. You can specify the format of the returned name.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724435(v=vs.85).aspx"
+                    }, 
+                    "NtQuerySystemInformation": {
+                        "called_first": 1502808242.32825, 
+                        "called_last": 1502808445.39125, 
+                        "count": 1934, 
+                        "description": "[NtQuerySystemInformation may be altered or unavailable in future versions of Windows. Applications should use the alternate functions listed in this topic.]", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724509(v=vs.85).aspx"
+                    }
+                }, 
+                "Time Functions": {
+                    "GetSystemTimeAsFileTime": {
+                        "called_first": 1502807819.565396, 
+                        "called_last": 1502808444.82825, 
+                        "count": 1149, 
+                        "description": "Retrieves the current system date and time. The information is in Coordinated Universal Time (UTC) format.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724397(v=vs.85).aspx"
+                    }
+                }
+            }
+        }, 
+        "mapping": {
+            "categories": {
+                "File Management Functions": {
+                    "CopyFileW": {
+                        "called_first": 1502808241.077625, 
+                        "called_last": 1502808241.077625, 
+                        "count": 1, 
+                        "description": "Copies an existing file to a new file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363851(v=vs.85).aspx"
+                    }, 
+                    "DeleteFileW": {
+                        "called_first": 1502808240.968625, 
+                        "called_last": 1502808241.71925, 
+                        "count": 4, 
+                        "description": "Deletes an existing file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363915(v=vs.85).aspx"
+                    }, 
+                    "FindFirstFileExW": {
+                        "called_first": 1502808239.905625, 
+                        "called_last": 1502808336.90625, 
+                        "count": 630, 
+                        "description": "Searches a directory for a file or subdirectory with a name and attributes that match those     specified.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364419(v=vs.85).aspx"
+                    }, 
+                    "GetFileAttributesExW": {
+                        "called_first": 1502807911.253146, 
+                        "called_last": 1502808336.68725, 
+                        "count": 27, 
+                        "description": "Retrieves attributes for a specified file or directory.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364946(v=vs.85).aspx"
+                    }, 
+                    "GetFileAttributesW": {
+                        "called_first": 1502807908.534146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 142, 
+                        "description": "Retrieves file system attributes for a specified file or directory.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364944(v=vs.85).aspx"
+                    }, 
+                    "GetFileInformationByHandle": {
+                        "called_first": 1502808337.14125, 
+                        "called_last": 1502808337.14125, 
+                        "count": 1, 
+                        "description": "Retrieves file information for the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364952(v=vs.85).aspx"
+                    }, 
+                    "GetFileInformationByHandleEx": {
+                        "called_first": 1502807908.722146, 
+                        "called_last": 1502808336.68725, 
+                        "count": 24, 
+                        "description": "Retrieves file information for the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364953(v=vs.85).aspx"
+                    }, 
+                    "GetFileSize": {
+                        "called_first": 1502807911.300146, 
+                        "called_last": 1502808337.31225, 
+                        "count": 2310, 
+                        "description": "Retrieves the size of the specified file, in bytes.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364955(v=vs.85).aspx"
+                    }, 
+                    "GetFileSizeEx": {
+                        "called_first": 1502807908.722146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 51, 
+                        "description": "Retrieves the size of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364957(v=vs.85).aspx"
+                    }, 
+                    "GetFileType": {
+                        "called_first": 1502807819.628396, 
+                        "called_last": 1502808339.28125, 
+                        "count": 620, 
+                        "description": "Retrieves the file type of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364960(v=vs.85).aspx"
+                    }, 
+                    "GetShortPathNameW": {
+                        "called_first": 1502808241.108625, 
+                        "called_last": 1502808241.108625, 
+                        "count": 1, 
+                        "description": "Retrieves the short path form of the specified path.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364989(v=vs.85).aspx"
+                    }, 
+                    "MoveFileWithProgressW": {
+                        "called_first": 1502808242.34425, 
+                        "called_last": 1502808333.60925, 
+                        "count": 2291, 
+                        "description": "Moves a file or directory, including its children. You can provide a callback function that receives     progress notifications.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365242(v=vs.85).aspx"
+                    }, 
+                    "NtCreateFile": {
+                        "called_first": 1502807908.659146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 3972, 
+                        "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
+                    }, 
+                    "NtMapViewOfSection": {
+                        "called_first": 1502807912.378146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 376, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
+                    }, 
+                    "NtOpenFile": {
+                        "called_first": 1502807909.362146, 
+                        "called_last": 1502808342.12525, 
+                        "count": 42, 
+                        "description": "Creates, opens, reopens, or deletes a file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365430(v=vs.85).aspx"
+                    }, 
+                    "NtReadFile": {
+                        "called_first": 1502807908.722146, 
+                        "called_last": 1502808337.14125, 
+                        "count": 2334, 
+                        "description": "Reads data from the specified file or input/output (I/O) device. Reads occur at the position specified     by the file pointer if supported by the device.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365467(v=vs.85).aspx"
+                    }, 
+                    "NtWriteFile": {
+                        "called_first": 1502808241.468875, 
+                        "called_last": 1502808337.25025, 
+                        "count": 8439, 
+                        "description": "Writes data to the specified file or input/output (I/O) device.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365747(v=vs.85).aspx"
+                    }, 
+                    "SetFilePointer": {
+                        "called_first": 1502808240.968625, 
+                        "called_last": 1502808337.07825, 
+                        "count": 2975, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
+                    }, 
+                    "SetFilePointerEx": {
+                        "called_first": 1502808337.07825, 
+                        "called_last": 1502808337.07825, 
+                        "count": 1, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
+                    }
+                }, 
+                "Font and Text Functions": {
+                    "DrawTextExW": {
+                        "called_first": 1502807908.440146, 
+                        "called_last": 1502808445.53125, 
+                        "count": 694, 
+                        "description": "The DrawTextEx function draws formatted text in the specified rectangle.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/dd162499(v=vs.85).aspx"
+                    }
+                }
+            }
+        }, 
+        "propagating": {
+            "categories": {
+                "Dynamic-Link Library Functions": {
+                    "LdrGetDllHandle": {
+                        "called_first": 1502807859.269396, 
+                        "called_last": 1502808353.53125, 
+                        "count": 126, 
+                        "description": "Retrieves a module handle for the specified module. The module must have been loaded by the calling process.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms683199(v=vs.85).aspx"
+                    }
+                }, 
+                "IP Helper Functions": {
+                    "GetAdaptersAddresses": {
+                        "called_first": 1502808246.64125, 
+                        "called_last": 1502808389.53125, 
+                        "count": 4, 
+                        "description": "The GetAdaptersAddresses function retrieves the addresses associated with the adapters on the local computer.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365915(v=vs.85).aspx"
+                    }, 
+                    "GetBestInterfaceEx": {
+                        "called_first": 1502808245.75025, 
+                        "called_last": 1502808245.75025, 
+                        "count": 2, 
+                        "description": "The GetBestInterfaceEx function retrieves the index of the interface that has the best route to the specified IPv4 or IPv6 address.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365922(v=vs.85).aspx"
+                    }
+                }, 
+                "Service Functions": {
+                    "OpenSCManagerW": {
+                        "called_first": 1502807912.862146, 
+                        "called_last": 1502807912.862146, 
+                        "count": 1, 
+                        "description": "Establishes a connection to the service control manager on the specified computer and opens the specified service control manager database.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms684323(v=vs.85).aspx"
+                    }, 
+                    "OpenServiceW": {
+                        "called_first": 1502807912.894146, 
+                        "called_last": 1502807912.894146, 
+                        "count": 1, 
+                        "description": "Opens an existing service.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms684330(v=vs.85).aspx"
+                    }
+                }, 
+                "Windows Networking Functions": {
+                    "NtUnmapViewOfSection": {
+                        "called_first": 1502807859.269396, 
+                        "called_last": 1502808444.51625, 
+                        "count": 373, 
+                        "description": "TheWNetAddConnection2 function makes a connection to a network resource and can redirect a local device to the network resource.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa385413(v=vs.85).aspx"
+                    }
+                }, 
+                "Winsock Functions": {
+                    "GetAddrInfoW": {
+                        "called_first": 1502808248.03125, 
+                        "called_last": 1502808392.09425, 
+                        "count": 4, 
+                        "description": "The GetAddrInfoW function provides protocol-independent translation from a Unicode host name to an address.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms738519(v=vs.85).aspx"
+                    }, 
+                    "NtQueryAttributesFile": {
+                        "called_first": 1502807912.253146, 
+                        "called_last": 1502808337.07825, 
+                        "count": 12, 
+                        "description": "The GetAddrInfoW function provides protocol-independent translation from a Unicode host name to an address.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms738519(v=vs.85).aspx"
+                    }, 
+                    "WSAStartup": {
+                        "called_first": 1502808243.03125, 
+                        "called_last": 1502808392.09425, 
+                        "count": 13, 
+                        "description": "The WSAStartup function initiates use of the Winsock DLL by a process.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms742213(v=vs.85).aspx"
+                    }, 
+                    "closesocket": {
+                        "called_first": 1502808243.03125, 
+                        "called_last": 1502808392.09425, 
+                        "count": 9, 
+                        "description": "The closesocket function closes an existing socket.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms737582(v=vs.85).aspx"
+                    }, 
+                    "setsockopt": {
+                        "called_first": 1502808243.03125, 
+                        "called_last": 1502808392.09425, 
+                        "count": 9, 
+                        "description": "The setsockopt function sets a socket option.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms740476(v=vs.85).aspx"
+                    }, 
+                    "socket": {
+                        "called_first": 1502808243.03125, 
+                        "called_last": 1502808392.09425, 
+                        "count": 9, 
+                        "description": "The socket function creates a socket that is bound to a specific transport service provider.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms740506(v=vs.85).aspx"
+                    }
+                }
+            }
+        }
+    }, 
+    "suspicious": {
+        "encrypting": {
+            "categories": {
+                "Cryptography Functions": {
+                    "CryptAcquireContextW": {
+                        "called_first": 1502808241.84425, 
+                        "called_last": 1502808241.84425, 
+                        "count": 2, 
+                        "description": "The CryptAcquireContext function is used to acquire a handle to a particular key container within a particular cryptographic service provider (CSP). This returned handle is used in calls to CryptoAPI functions that use the selected CSP.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379886(v=vs.85).aspx"
+                    }
+                }, 
+                "File Management Functions": {
+                    "CopyFileW": {
+                        "called_first": 1502808241.077625, 
+                        "called_last": 1502808241.077625, 
+                        "count": 1, 
+                        "description": "Copies an existing file to a new file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363851(v=vs.85).aspx"
+                    }, 
+                    "DeleteFileW": {
+                        "called_first": 1502808240.968625, 
+                        "called_last": 1502808241.71925, 
+                        "count": 4, 
+                        "description": "Deletes an existing file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363915(v=vs.85).aspx"
+                    }, 
+                    "FindFirstFileExW": {
+                        "called_first": 1502808239.905625, 
+                        "called_last": 1502808336.90625, 
+                        "count": 630, 
+                        "description": "Searches a directory for a file or subdirectory with a name and attributes that match those     specified.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364419(v=vs.85).aspx"
+                    }, 
+                    "GetFileAttributesExW": {
+                        "called_first": 1502807911.253146, 
+                        "called_last": 1502808336.68725, 
+                        "count": 27, 
+                        "description": "Retrieves attributes for a specified file or directory.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364946(v=vs.85).aspx"
+                    }, 
+                    "GetFileAttributesW": {
+                        "called_first": 1502807908.534146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 142, 
+                        "description": "Retrieves file system attributes for a specified file or directory.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364944(v=vs.85).aspx"
+                    }, 
+                    "GetFileInformationByHandle": {
+                        "called_first": 1502808337.14125, 
+                        "called_last": 1502808337.14125, 
+                        "count": 1, 
+                        "description": "Retrieves file information for the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364952(v=vs.85).aspx"
+                    }, 
+                    "GetFileInformationByHandleEx": {
+                        "called_first": 1502807908.722146, 
+                        "called_last": 1502808336.68725, 
+                        "count": 24, 
+                        "description": "Retrieves file information for the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364953(v=vs.85).aspx"
+                    }, 
+                    "GetFileSize": {
+                        "called_first": 1502807911.300146, 
+                        "called_last": 1502808337.31225, 
+                        "count": 2310, 
+                        "description": "Retrieves the size of the specified file, in bytes.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364955(v=vs.85).aspx"
+                    }, 
+                    "GetFileSizeEx": {
+                        "called_first": 1502807908.722146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 51, 
+                        "description": "Retrieves the size of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364957(v=vs.85).aspx"
+                    }, 
+                    "GetFileType": {
+                        "called_first": 1502807819.628396, 
+                        "called_last": 1502808339.28125, 
+                        "count": 620, 
+                        "description": "Retrieves the file type of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364960(v=vs.85).aspx"
+                    }, 
+                    "GetShortPathNameW": {
+                        "called_first": 1502808241.108625, 
+                        "called_last": 1502808241.108625, 
+                        "count": 1, 
+                        "description": "Retrieves the short path form of the specified path.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364989(v=vs.85).aspx"
+                    }, 
+                    "MoveFileWithProgressW": {
+                        "called_first": 1502808242.34425, 
+                        "called_last": 1502808333.60925, 
+                        "count": 2291, 
+                        "description": "Moves a file or directory, including its children. You can provide a callback function that receives     progress notifications.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365242(v=vs.85).aspx"
+                    }, 
+                    "NtCreateFile": {
+                        "called_first": 1502807908.659146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 3972, 
+                        "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
+                    }, 
+                    "NtMapViewOfSection": {
+                        "called_first": 1502807912.378146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 376, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
+                    }, 
+                    "NtOpenFile": {
+                        "called_first": 1502807909.362146, 
+                        "called_last": 1502808342.12525, 
+                        "count": 42, 
+                        "description": "Creates, opens, reopens, or deletes a file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365430(v=vs.85).aspx"
+                    }, 
+                    "NtReadFile": {
+                        "called_first": 1502807908.722146, 
+                        "called_last": 1502808337.14125, 
+                        "count": 2334, 
+                        "description": "Reads data from the specified file or input/output (I/O) device. Reads occur at the position specified     by the file pointer if supported by the device.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365467(v=vs.85).aspx"
+                    }, 
+                    "NtWriteFile": {
+                        "called_first": 1502808241.468875, 
+                        "called_last": 1502808337.25025, 
+                        "count": 8439, 
+                        "description": "Writes data to the specified file or input/output (I/O) device.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365747(v=vs.85).aspx"
+                    }, 
+                    "SetFilePointer": {
+                        "called_first": 1502808240.968625, 
+                        "called_last": 1502808337.07825, 
+                        "count": 2975, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
+                    }, 
+                    "SetFilePointerEx": {
+                        "called_first": 1502808337.07825, 
+                        "called_last": 1502808337.07825, 
+                        "count": 1, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
+                    }
+                }, 
+                "Memory Management Functions": {
+                    "GlobalMemoryStatus": {
+                        "called_first": 1502808242.31225, 
+                        "called_last": 1502808242.31225, 
+                        "count": 1, 
+                        "description": "[GlobalMemoryStatus can return incorrect information. Use the GlobalMemoryStatusEx function instead.]", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366586(v=vs.85).aspx"
+                    }, 
+                    "NtAllocateVirtualMemory": {
+                        "called_first": 1502807819.706396, 
+                        "called_last": 1502808390.34425, 
+                        "count": 2728, 
+                        "description": "Reserves, commits, or changes the state  of a region of memory within the virtual address space of the specified process, and     specifies the NUMA node for the physical memory.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366891(v=vs.85).aspx"
+                    }, 
+                    "NtCreateSection": {
+                        "called_first": 1502807912.362146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 389, 
+                        "description": "Creates or opens a named or unnamed file mapping object for a specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366537(v=vs.85).aspx"
+                    }, 
+                    "NtProtectVirtualMemory": {
+                        "called_first": 1502807916.315146, 
+                        "called_last": 1502807916.315146, 
+                        "count": 1, 
+                        "description": "Provides an efficient mechanism to bring into memory potentially discontiguous virtual address ranges     in a process address space.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/hh780543(v=vs.85).aspx"
+                    }
+                }
+            }
+        }, 
+        "locking": {}
+    }, 
+    "termination": {
+        "deleting": {
+            "categories": {
+                "File Management Functions": {
+                    "CopyFileW": {
+                        "called_first": 1502808241.077625, 
+                        "called_last": 1502808241.077625, 
+                        "count": 1, 
+                        "description": "Copies an existing file to a new file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363851(v=vs.85).aspx"
+                    }, 
+                    "DeleteFileW": {
+                        "called_first": 1502808240.968625, 
+                        "called_last": 1502808241.71925, 
+                        "count": 4, 
+                        "description": "Deletes an existing file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363915(v=vs.85).aspx"
+                    }, 
+                    "FindFirstFileExW": {
+                        "called_first": 1502808239.905625, 
+                        "called_last": 1502808336.90625, 
+                        "count": 630, 
+                        "description": "Searches a directory for a file or subdirectory with a name and attributes that match those     specified.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364419(v=vs.85).aspx"
+                    }, 
+                    "GetFileAttributesExW": {
+                        "called_first": 1502807911.253146, 
+                        "called_last": 1502808336.68725, 
+                        "count": 27, 
+                        "description": "Retrieves attributes for a specified file or directory.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364946(v=vs.85).aspx"
+                    }, 
+                    "GetFileAttributesW": {
+                        "called_first": 1502807908.534146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 142, 
+                        "description": "Retrieves file system attributes for a specified file or directory.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364944(v=vs.85).aspx"
+                    }, 
+                    "GetFileInformationByHandle": {
+                        "called_first": 1502808337.14125, 
+                        "called_last": 1502808337.14125, 
+                        "count": 1, 
+                        "description": "Retrieves file information for the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364952(v=vs.85).aspx"
+                    }, 
+                    "GetFileInformationByHandleEx": {
+                        "called_first": 1502807908.722146, 
+                        "called_last": 1502808336.68725, 
+                        "count": 24, 
+                        "description": "Retrieves file information for the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364953(v=vs.85).aspx"
+                    }, 
+                    "GetFileSize": {
+                        "called_first": 1502807911.300146, 
+                        "called_last": 1502808337.31225, 
+                        "count": 2310, 
+                        "description": "Retrieves the size of the specified file, in bytes.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364955(v=vs.85).aspx"
+                    }, 
+                    "GetFileSizeEx": {
+                        "called_first": 1502807908.722146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 51, 
+                        "description": "Retrieves the size of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364957(v=vs.85).aspx"
+                    }, 
+                    "GetFileType": {
+                        "called_first": 1502807819.628396, 
+                        "called_last": 1502808339.28125, 
+                        "count": 620, 
+                        "description": "Retrieves the file type of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364960(v=vs.85).aspx"
+                    }, 
+                    "GetShortPathNameW": {
+                        "called_first": 1502808241.108625, 
+                        "called_last": 1502808241.108625, 
+                        "count": 1, 
+                        "description": "Retrieves the short path form of the specified path.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364989(v=vs.85).aspx"
+                    }, 
+                    "MoveFileWithProgressW": {
+                        "called_first": 1502808242.34425, 
+                        "called_last": 1502808333.60925, 
+                        "count": 2291, 
+                        "description": "Moves a file or directory, including its children. You can provide a callback function that receives     progress notifications.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365242(v=vs.85).aspx"
+                    }, 
+                    "NtCreateFile": {
+                        "called_first": 1502807908.659146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 3972, 
+                        "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
+                    }, 
+                    "NtMapViewOfSection": {
+                        "called_first": 1502807912.378146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 376, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
+                    }, 
+                    "NtOpenFile": {
+                        "called_first": 1502807909.362146, 
+                        "called_last": 1502808342.12525, 
+                        "count": 42, 
+                        "description": "Creates, opens, reopens, or deletes a file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365430(v=vs.85).aspx"
+                    }, 
+                    "NtReadFile": {
+                        "called_first": 1502807908.722146, 
+                        "called_last": 1502808337.14125, 
+                        "count": 2334, 
+                        "description": "Reads data from the specified file or input/output (I/O) device. Reads occur at the position specified     by the file pointer if supported by the device.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365467(v=vs.85).aspx"
+                    }, 
+                    "NtWriteFile": {
+                        "called_first": 1502808241.468875, 
+                        "called_last": 1502808337.25025, 
+                        "count": 8439, 
+                        "description": "Writes data to the specified file or input/output (I/O) device.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365747(v=vs.85).aspx"
+                    }, 
+                    "SetFilePointer": {
+                        "called_first": 1502808240.968625, 
+                        "called_last": 1502808337.07825, 
+                        "count": 2975, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
+                    }, 
+                    "SetFilePointerEx": {
+                        "called_first": 1502808337.07825, 
+                        "called_last": 1502808337.07825, 
+                        "count": 1, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
+                    }
+                }, 
+                "Memory Management Functions": {
+                    "GlobalMemoryStatus": {
+                        "called_first": 1502808242.31225, 
+                        "called_last": 1502808242.31225, 
+                        "count": 1, 
+                        "description": "[GlobalMemoryStatus can return incorrect information. Use the GlobalMemoryStatusEx function instead.]", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366586(v=vs.85).aspx"
+                    }, 
+                    "NtAllocateVirtualMemory": {
+                        "called_first": 1502807819.706396, 
+                        "called_last": 1502808390.34425, 
+                        "count": 2728, 
+                        "description": "Reserves, commits, or changes the state  of a region of memory within the virtual address space of the specified process, and     specifies the NUMA node for the physical memory.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366891(v=vs.85).aspx"
+                    }, 
+                    "NtCreateSection": {
+                        "called_first": 1502807912.362146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 389, 
+                        "description": "Creates or opens a named or unnamed file mapping object for a specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366537(v=vs.85).aspx"
+                    }, 
+                    "NtProtectVirtualMemory": {
+                        "called_first": 1502807916.315146, 
+                        "called_last": 1502807916.315146, 
+                        "count": 1, 
+                        "description": "Provides an efficient mechanism to bring into memory potentially discontiguous virtual address ranges     in a process address space.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/hh780543(v=vs.85).aspx"
+                    }
+                }
+            }
+        }, 
+        "threatening": {
+            "categories": {
+                "Cryptography Functions": {
+                    "CryptAcquireContextW": {
+                        "called_first": 1502808241.84425, 
+                        "called_last": 1502808241.84425, 
+                        "count": 2, 
+                        "description": "The CryptAcquireContext function is used to acquire a handle to a particular key container within a particular cryptographic service provider (CSP). This returned handle is used in calls to CryptoAPI functions that use the selected CSP.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379886(v=vs.85).aspx"
+                    }
+                }, 
+                "File Management Functions": {
+                    "CopyFileW": {
+                        "called_first": 1502808241.077625, 
+                        "called_last": 1502808241.077625, 
+                        "count": 1, 
+                        "description": "Copies an existing file to a new file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363851(v=vs.85).aspx"
+                    }, 
+                    "DeleteFileW": {
+                        "called_first": 1502808240.968625, 
+                        "called_last": 1502808241.71925, 
+                        "count": 4, 
+                        "description": "Deletes an existing file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363915(v=vs.85).aspx"
+                    }, 
+                    "FindFirstFileExW": {
+                        "called_first": 1502808239.905625, 
+                        "called_last": 1502808336.90625, 
+                        "count": 630, 
+                        "description": "Searches a directory for a file or subdirectory with a name and attributes that match those     specified.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364419(v=vs.85).aspx"
+                    }, 
+                    "GetFileAttributesExW": {
+                        "called_first": 1502807911.253146, 
+                        "called_last": 1502808336.68725, 
+                        "count": 27, 
+                        "description": "Retrieves attributes for a specified file or directory.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364946(v=vs.85).aspx"
+                    }, 
+                    "GetFileAttributesW": {
+                        "called_first": 1502807908.534146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 142, 
+                        "description": "Retrieves file system attributes for a specified file or directory.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364944(v=vs.85).aspx"
+                    }, 
+                    "GetFileInformationByHandle": {
+                        "called_first": 1502808337.14125, 
+                        "called_last": 1502808337.14125, 
+                        "count": 1, 
+                        "description": "Retrieves file information for the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364952(v=vs.85).aspx"
+                    }, 
+                    "GetFileInformationByHandleEx": {
+                        "called_first": 1502807908.722146, 
+                        "called_last": 1502808336.68725, 
+                        "count": 24, 
+                        "description": "Retrieves file information for the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364953(v=vs.85).aspx"
+                    }, 
+                    "GetFileSize": {
+                        "called_first": 1502807911.300146, 
+                        "called_last": 1502808337.31225, 
+                        "count": 2310, 
+                        "description": "Retrieves the size of the specified file, in bytes.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364955(v=vs.85).aspx"
+                    }, 
+                    "GetFileSizeEx": {
+                        "called_first": 1502807908.722146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 51, 
+                        "description": "Retrieves the size of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364957(v=vs.85).aspx"
+                    }, 
+                    "GetFileType": {
+                        "called_first": 1502807819.628396, 
+                        "called_last": 1502808339.28125, 
+                        "count": 620, 
+                        "description": "Retrieves the file type of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364960(v=vs.85).aspx"
+                    }, 
+                    "GetShortPathNameW": {
+                        "called_first": 1502808241.108625, 
+                        "called_last": 1502808241.108625, 
+                        "count": 1, 
+                        "description": "Retrieves the short path form of the specified path.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364989(v=vs.85).aspx"
+                    }, 
+                    "MoveFileWithProgressW": {
+                        "called_first": 1502808242.34425, 
+                        "called_last": 1502808333.60925, 
+                        "count": 2291, 
+                        "description": "Moves a file or directory, including its children. You can provide a callback function that receives     progress notifications.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365242(v=vs.85).aspx"
+                    }, 
+                    "NtCreateFile": {
+                        "called_first": 1502807908.659146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 3972, 
+                        "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
+                    }, 
+                    "NtMapViewOfSection": {
+                        "called_first": 1502807912.378146, 
+                        "called_last": 1502808444.51625, 
+                        "count": 376, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
+                    }, 
+                    "NtOpenFile": {
+                        "called_first": 1502807909.362146, 
+                        "called_last": 1502808342.12525, 
+                        "count": 42, 
+                        "description": "Creates, opens, reopens, or deletes a file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365430(v=vs.85).aspx"
+                    }, 
+                    "NtReadFile": {
+                        "called_first": 1502807908.722146, 
+                        "called_last": 1502808337.14125, 
+                        "count": 2334, 
+                        "description": "Reads data from the specified file or input/output (I/O) device. Reads occur at the position specified     by the file pointer if supported by the device.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365467(v=vs.85).aspx"
+                    }, 
+                    "NtWriteFile": {
+                        "called_first": 1502808241.468875, 
+                        "called_last": 1502808337.25025, 
+                        "count": 8439, 
+                        "description": "Writes data to the specified file or input/output (I/O) device.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365747(v=vs.85).aspx"
+                    }, 
+                    "SetFilePointer": {
+                        "called_first": 1502808240.968625, 
+                        "called_last": 1502808337.07825, 
+                        "count": 2975, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
+                    }, 
+                    "SetFilePointerEx": {
+                        "called_first": 1502808337.07825, 
+                        "called_last": 1502808337.07825, 
+                        "count": 1, 
+                        "description": "Moves the file pointer of the specified file.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
+                    }
+                }, 
+                "Font and Text Functions": {
+                    "DrawTextExW": {
+                        "called_first": 1502807908.440146, 
+                        "called_last": 1502808445.53125, 
+                        "count": 694, 
+                        "description": "The DrawTextEx function draws formatted text in the specified rectangle.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/dd162499(v=vs.85).aspx"
+                    }
+                }, 
+                "String Functions": {
+                    "LoadStringW": {
+                        "called_first": 1502807908.487146, 
+                        "called_last": 1502808443.48425, 
+                        "count": 108, 
+                        "description": "Loads a string resource from the executable file associated with a specified module, copies the string into a buffer, and appends a terminating null character.", 
+                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms647486(v=vs.85).aspx"
+                    }
+                }
+            }
+        }
+    }
+}

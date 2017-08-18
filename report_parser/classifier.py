@@ -106,39 +106,70 @@ class Classify(object):
             err, category = self.get_api_class(api_list, n)
             n = (n / 2 if err > 1 else 0)
 
-    def set_category(self, c_data, c_group, r_group):
+    def set_category(self, classify_d, group, type):
         """Map the categories to the classes of the RanDep model, eliminating any categories
         that do not fit, such as Tool Helper Functions. Input the dictionary of classify_json['categories'], and add
         each one that matches a category in the randep dictionary under the matched category's parent"""
-        r_data = self.printer.open_json('docs/randep-skeleton.json')
+        binary_cats = self.categories
+        binary_cats = {
+            "stealth": {"fingerprinting": {}, "propagating": {}, "communicating": {}, "mapping": {}},
+            "suspicious": {"encrypting": {}, "locking": {}},
+            "termination": {"deleting": {}, "threatening": {}}
+        }
+        randep_d = self.printer.open_json('docs/randep-skeleton.json')
         # print [(r_cat, r_class, c_cat) for c_cat in c_dict[r_group] for r_class in r_dict for r_cat in r_dict[r_class]
         # if c_cat in r_dict[r_class][r_cat][r_group]]
-        for c_cat in c_data[c_group]:
-            for r_class in r_data:
-                for r_cat in r_data[r_class]:
-                    if c_cat in r_data[r_class][r_cat][r_group]:
-                        if r_group not in self.categories[r_class][r_cat]:
-                            self.categories[r_class][r_cat][r_group] = {c_cat: c_data[c_group][c_cat]}
+        for classify_c in classify_d[group]:
+            for randep_c in randep_d:
+                for category in randep_d[randep_c]:
+                    if classify_c in randep_d[randep_c][category][type]:
+                        if type not in binary_cats[randep_c][category]:
+                            binary_cats[randep_c][category][type] = {classify_c: classify_d[group][classify_c]}
                         else:
-                            self.categories[r_class][r_cat][r_group][c_cat] = c_data[c_group][c_cat]
+                            binary_cats[randep_c][category][type][classify_c] = classify_d[group][classify_c]
 
         # write the file with the c_group as the name, which should be the name_of_the_binary.json
-        self.printer.write_file('docs/randep-binary-maps' + c_group.replace("\.","-") + '.json',
-                                json.dumps(self.categories, sort_keys=True, indent=4),
+        self.printer.write_file('docs/randep-binary-maps/' + type + '/' + group.replace("\.", "-") + '.json',
+                                json.dumps(binary_cats, sort_keys=True, indent=4),
                                 'w')
 
     def map_binaries(self, parser_d, class_d):
-        mapped_d = {}
+        mapped_cats = {}
         for binary in parser_d:
-            mapped_d[binary] = {}
+            mapped_cats[binary] = {}
             for api in parser_d[binary]['tracked_processes']:
                 if api in class_d['apis']:
                     category = class_d['apis'][api]
-                    if category not in mapped_d[binary]:
-                        mapped_d[binary][category] = {api: parser_d[binary]['tracked_processes'][api]}
+                    if category not in mapped_cats[binary]:
+                        mapped_cats[binary][category] = {api: class_d['categories'][category][api]}
                     else:
-                        mapped_d[binary][category][api] = parser_d[binary]['tracked_processes'][api]
-            self.set_category(mapped_d, binary, 'categories')
+                        mapped_cats[binary][category][api] = class_d['categories'][category][api]
+
+                    timestamps = parser_d[binary]['tracked_processes'][api]['timestamps']
+                    mapped_cats[binary][category][api]['timestamps'] = timestamps
+                    mapped_cats[binary][category][api].pop('timestamps', None)
+                    mapped_cats[binary][category][api]['count'] = parser_d[binary]['tracked_processes'][api]['count']
+                    mapped_cats[binary][category][api]['called_first'] = min(timestamps)
+                    mapped_cats[binary][category][api]['called_last'] = max(timestamps)
+            self.set_category(mapped_cats, binary, 'categories')
+
+    def get_api_data(self, _filename):
+        """Return as lists the API names, start times, end times. This is built for RanDep classified JSON files"""
+        api_data = self.printer.open_json(_filename)
+
+        api_names, class_names, start_times, end_times = \
+            zip(*[[api,
+                   next(iter(api_data[_class])),
+                   api_data[_class][cat]['categories'][group][api]['called_first'],
+                   api_data[_class][cat]['categories'][group][api]['called_last']]
+                  for _class in api_data
+                  for cat in api_data[_class]
+                  if 'categories' in api_data[_class][cat]
+                  for group in api_data[_class][cat]['categories']
+                  for api in api_data[_class][cat]['categories'][group]])
+
+        return api_names, class_names, start_times, end_times
+
 
     def classify(self, input_file, out_dir, out_file):
         """Read the parse data file and pass each api call to get its category. Then from the parse data copy each api
