@@ -129,7 +129,7 @@ class Classify(object):
                             binary_cats[randep_c][category][type][classify_c] = classify_d[group][classify_c]
 
         # write the file with the c_group as the name, which should be the name_of_the_binary.json
-        self.printer.write_file('docs/randep-binary-maps/' + type + '/' + group.replace("\.", "-") + '.json',
+        self.printer.write_file('docs/randep-binary-maps/' + type + '/' + group.replace(".", "-") + '.json',
                                 json.dumps(binary_cats, sort_keys=True, indent=4),
                                 'w')
 
@@ -184,7 +184,7 @@ class Classify(object):
         # self.set_category(api, category)
         self.printer.write_file(out_dir + out_file, json.dumps(self.classify_d, sort_keys=True, indent=4), 'w')
 
-        self.set_category(self.classify_d, 'categories', 'categories')
+        # self.set_category(self.classify_d, 'categories', 'categories')
 
         # per binary, loop through signatures, and APIs.
         self.map_binaries(parse_d, self.classify_d)

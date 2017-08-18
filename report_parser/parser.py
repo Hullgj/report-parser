@@ -135,8 +135,7 @@ class Parse(object):
         for (dir_path, dir_names, file_names) in walk(p_dir):
             for i, name in enumerate(file_names):
                 if name.endswith('.json'):
-                    j_comment = "Read and parse from json file: " + name
-                    self.printer.line_comment(j_comment)
+                    self.printer.line_comment("Read and parse from json file: " + name)
                     # open json data and load it
                     with open(dir_path + name) as json_file:
                         j_data = json.load(json_file)

@@ -6,6 +6,7 @@ from classifier import Classify
 from parser import Parse
 from printer import Print
 from graphs.plotter import Plot
+from os import walk
 
 
 def main():
@@ -37,15 +38,16 @@ def main():
     classifier = Classify(printer)
     classifier.classify(output_file, in_dir, in_file)
 
-    api_names, class_names, start_times, end_times = \
-        classifier.get_api_data('docs/randep-binary-maps/categories/jigsaw.json')
-
+    cat_dir = 'docs/randep-binary-maps/categories/'
+    grap_dir = 'docs/randep-binary-maps/graphs/'
     plotter = Plot()
-    # start_times = [0, 1, 2, 3]
-    # end_times = [.5, 1.5, 2.5, 3.5]
-    # apis = ['CreateFile', 'DeleteFile', 'AppendFile', 'ReadFile']
-    _filename = 'graphs/output/binary_name'
-    plotter.plots(_filename, api_names, start_times, end_times)
+    for (dir_path, dir_names, file_names) in walk(cat_dir):
+        for i, name in enumerate(file_names):
+            if name.endswith('.json'):
+                printer.line_comment("Generate graph from json file: " + name)
+                api_names, class_names, start_times, end_times = \
+                    classifier.get_api_data(dir_path + name)
+                plotter.plots(grap_dir + name, api_names, start_times, end_times)
 
 
 if __name__ == "__main__":

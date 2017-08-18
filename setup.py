@@ -15,4 +15,4 @@ config = [
     'name': 'report_parser'
 ]
 
-setup(**config)
+setup(**config, install_requires=['plotly'])
