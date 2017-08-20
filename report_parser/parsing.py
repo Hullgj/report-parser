@@ -4,7 +4,7 @@ from os import walk
 from tools import Tools
 
 
-class Parse(object):
+class Parser(object):
 
     def __init__(self, printer):
         self.printer = printer

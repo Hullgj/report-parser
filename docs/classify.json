@@ -27,7 +27,6 @@
         "CryptHashData": "Cryptography Functions", 
         "DeleteFileW": "File Management Functions", 
         "DeviceIoControl": "Device Management Functions", 
-        "DrawTextExA": "cat_not_found", 
         "DrawTextExW": "Font and Text Functions", 
         "EncryptMessage": "Authentication Functions", 
         "EnumWindows": "Authorization Functions", 
@@ -205,7 +204,6 @@
         "WSASocketW": "Winsock Functions", 
         "WSAStartup": "Winsock Functions", 
         "WriteConsoleA": "Console Functions", 
-        "WriteConsoleW": "cat_not_found", 
         "WriteProcessMemory": "Debugging Functions", 
         "__exception__": "WinINet Functions", 
         "accept": "Winsock Functions", 
@@ -32115,27 +32113,6 @@
                     1501002705.640125, 
                     1501002706.062125, 
                     1501002708.625125
-                ]
-            }
-        }, 
-        "cat_not_found": {
-            "DrawTextExA": {
-                "count": 2, 
-                "description": "The DrawTextEx function draws formatted text in the specified rectangle.", 
-                "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/dd162499(v=vs.85).aspx", 
-                "timestamps": [
-                    1502808322.406125, 
-                    1502808322.421125
-                ]
-            }, 
-            "WriteConsoleW": {
-                "count": 3, 
-                "description": "cat_not_found", 
-                "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms687401(v=vs.85).aspx", 
-                "timestamps": [
-                    1502808239.6565, 
-                    1502808239.812875, 
-                    1502808240.218875
                 ]
             }
         }

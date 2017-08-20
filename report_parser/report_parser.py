@@ -3,7 +3,7 @@ from __future__ import print_function
 import sys
 import argparse
 from classifier import Classify
-from parser import Parse
+from parsing import Parser
 from printer import Print
 from graphs.plotter import Plot
 from os import walk
@@ -28,10 +28,10 @@ def main():
     printer.standard_output('Chosen directory %s. Wait for file: %s to be generated' % (p_dir, output_file))
     printer.standard_output('verbose is set to: %r' % printer.get_verbose())
 
-    # printer.write_file(output_file, '', 'w')
+    printer.write_file(output_file, '', 'w')
 
-    parser = Parse(printer)
-    # parser.parse_files(p_dir, output_file)
+    parsing = Parser(printer)
+    parsing.parse_files(p_dir, output_file)
 
     in_dir = "docs/"
     in_file = "classify.json"
