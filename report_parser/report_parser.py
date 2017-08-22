@@ -1,12 +1,20 @@
+"""
+* author: Gavin Hull
+* version: 2017.08.22
+* description: This is the main function that instantiates and calls methods for printing, parsing, and classifying. It
+ends by generating graphs of all JSON files in the specified directory.
+"""
+
 from __future__ import print_function
 
-import sys
 import argparse
-from classifier import Classify
-from parsing import Parser
-from printer import Print
-from graphs.plotter import Plot
+import sys
 from os import walk
+
+from classifier import Classify
+from graphs.plotter import Plot
+from parsing import Parser
+from tools.printer import Printer
 
 
 def main():
@@ -18,9 +26,9 @@ def main():
     args = parser.parse_args()
 
     if args.verbose:
-        printer = Print(True)
+        printer = Printer(True)
     else:
-        printer = Print(False)
+        printer = Printer(False)
 
     p_dir = args.parse_dir
     output_file = args.output_file
@@ -38,7 +46,8 @@ def main():
     classifier = Classify(printer)
     classifier.classify(output_file, in_dir, in_file)
 
-    cat_dir = 'docs/randep-binary-maps/categories/'
+    type = 'apis'
+    cat_dir = 'docs/randep-binary-maps/%s/' % type
     grap_dir = 'docs/randep-binary-maps/graphs/'
     plotter = Plot()
     for (dir_path, dir_names, file_names) in walk(cat_dir):
@@ -46,7 +55,7 @@ def main():
             if name.endswith('.json'):
                 printer.line_comment("Generate graph from json file: " + name)
                 api_names, class_names, start_times, end_times = \
-                    classifier.get_api_data(dir_path + name)
+                    classifier.get_api_data(dir_path + name, type)
                 plotter.plots(grap_dir + name, api_names, start_times, end_times)
 
 

@@ -1,8 +1,13 @@
-"""Classifier identifies detected signatures and properties of an analysed sample and groups each per sample into
+"""
+* author: Gavin Hull
+* version: 2017.08.22
+* short description: Taking a JSON/dictionary of binaries from Parse() class, classify each API into the RanDep model
+* description: Classifier identifies detected signatures and properties of an analysed sample and groups each per sample into
 defined categories. The categories are based on the RanDep model, consisting of eight states: fingerprinting,
 propagation, communication with C&C, mapping the user's files and folders, encryption, locking the OS, deleting files,
 and producing a threatening message. This program reads data parsed from Cuckoo Sandbox reports, looks up names of APIs
-using Microsoft's online documentation, and writes each detection into one of the eight states in a JSON format"""
+using Microsoft's online documentation, and writes each detection into one of the eight states in a JSON format
+"""
 
 from __future__ import division
 import subprocess
@@ -11,17 +16,28 @@ import json
 
 class Classify(object):
     def __init__(self, printer):
+        """
+        On initialisation of the Classify class we get the handle of the printer class from the instantiating function
+        and store it, then we make the categories bare bone, which is a RanDep skeleton
+        :param printer: the handle of the Printer class
+        """
         self.printer = printer
         self.categories = {
             "stealth": {"fingerprinting": {}, "propagating": {}, "communicating": {}, "mapping": {}},
             "suspicious": {"encrypting": {}, "locking": {}},
             "termination": {"deleting": {}, "threatening": {}}
         }
-        self.classify_d = None
+        # self.classify_d = None
 
     def search_list(self, api_list, n):
-        """Use the web scraper script built using CasperJS to search and return the category of every API in the list.
-         Since each search takes time, we limit each search to groups of 10 APIs in the list"""
+        """
+        Use the web scraper script built using CasperJS to search and return the category of every API in the list.
+         Since each search takes time, we limit each search to groups of 5 APIs in the list, but this can be set as
+         wished.
+        :param api_list: the list of APIs to search and index
+        :param n: the size of the group to search using the web scraper
+        :return: the number of errors per API counted from the web scraper, and the search results as a JSON object
+        """
         err_count = 0
         full_list = api_list
         search_results = ''
@@ -56,17 +72,25 @@ class Classify(object):
         search_results = search_results.replace("\n", "")
         return err_count, json.loads(search_results)
 
-    def get_api_class(self, api_list, n):
-        """Check if the api already has a class, if not, search online and put it in an appropriate one. We map all
+    def get_api_class(self, classify_d, api_list, n):
+        """
+        Check if the API already has a class, if not, search online and put it in an appropriate one. We map all
         detected APIs with their Microsoft category and call the categories with their found APIs along with any data
         in the parse data JSON file, such as timestamps and count. api_lookup_list makes sure only non categorised
-        APIs are searched for online. The results are combined based on the category as the key. """
+        APIs are searched for online. The results are combined based on the category as the key.
+        :param classify_d: the JSON data / dictionary for reading and writing classification data
+        :param api_list: the list of APIs to lookup and then add to the classify_d dictionary
+        :param n: the size of the group of APIs to search for in the web scraper
+        :return: the number of errors from searching, the JSON object of the search results, and the classify data that
+        has been populated with the new and original data of the API:Categories, and Categories:{API:{info}}
+        """
         api_lookup_list = []
+        classify = classify_d
         for api_name in api_list:
-            if all([api_name not in self.classify_d['apis'], api_name not in api_lookup_list]):
+            if all([api_name not in classify['apis'], api_name not in api_lookup_list]):
                 api_lookup_list.append(api_name)
             else:
-                api_cat_dic = self.classify_d['apis'][api_name]
+                api_cat_dic = classify['apis'][api_name]
                 self.printer.line_comment("API " + api_name + " already indexed and classified as " + api_cat_dic)
 
         err_search_list, api_cat_dic = self.search_list(api_lookup_list, n)
@@ -76,26 +100,32 @@ class Classify(object):
                 # Add the api : cat to the classify_json dict. The api_lookup_list has the APIs and their properties
                 # from the cuckoo reports with key as the API. The api_cat_dic has the APIs and their categories from
                 #  the web scraper.
-                self.classify_d['apis'][api] = next(iter(api_cat_dic[api]))
+                classify['apis'][api] = next(iter(api_cat_dic[api]))
                 # Add the cat : { api : { api_prop } to the classify_json dict. The api_cat_dict has the cat,
                 # where keys are APIs; so loop through api_cat_dict adding each api with the category as the
                 # resultant key, and the api as the value, along with the additional properties of the search result.
                 cat_name = next(iter(api_cat_dic[api]))
-                if cat_name not in self.classify_d['categories']:
-                    self.classify_d['categories'][cat_name] = {api: api_cat_dic[api][cat_name]}
+                if cat_name not in classify['categories']:
+                    classify['categories'][cat_name] = {api: api_cat_dic[api][cat_name]}
                 else:
-                    self.classify_d['categories'][cat_name][api] = api_cat_dic[api][cat_name]
+                    classify['categories'][cat_name][api] = api_cat_dic[api][cat_name]
                 # Add the properties from api_cat_dic and api_list
                 for api_prop in api_list[api]:
-                    self.classify_d['categories'][cat_name][api][api_prop] = api_list[api][api_prop]
+                    classify['categories'][cat_name][api][api_prop] = api_list[api][api_prop]
 
         self.printer.standard_output(api_cat_dic)
 
-        return err_search_list, api_cat_dic
+        return err_search_list, api_cat_dic, classify
 
-    def process_apis(self, parser_d):
-        """Get a list of all APIs in all binaries and get their category from Microsoft using the web scraper."""
+    def process_apis(self, parser_d, classify_d):
+        """
+        Get a list of all APIs in all binaries and get their category from Microsoft using the web scraper.
+        :param parser_d: the dictionary that has the processed data from the Parser class of all the binaries
+        :param classify_d: the dictionary that holds the information about known APIs and their categories
+        :return: the classify data dictionary after getting information from get_api_class() function
+        """
         api_list = {}
+        classify = classify_d
         for binary in parser_d:
             for api in parser_d[binary]['tracked_processes']:
                 api_list[api] = parser_d[binary]['tracked_processes'][api]
@@ -103,88 +133,131 @@ class Classify(object):
         # Look up the APIs in groups of n, if there is an error, n will be decreased by a factor of 2
         n = 5
         while n:
-            err, category = self.get_api_class(api_list, n)
+            err, category, classify = self.get_api_class(classify_d, api_list, n)
             n = (n / 2 if err > 1 else 0)
 
-    def set_category(self, classify_d, group, type):
-        """Map the categories to the classes of the RanDep model, eliminating any categories
+        return classify
+
+    def map_randep(self, mapped_cats, binary, info_type, _filename):
+        """
+        Map the categories to the classes of the RanDep model, eliminating any categories
         that do not fit, such as Tool Helper Functions. Input the dictionary of classify_json['categories'], and add
-        each one that matches a category in the randep dictionary under the matched category's parent"""
-        binary_cats = self.categories
-        binary_cats = {
+        each one that matches a category in the randep dictionary under the matched category's parent
+        This function loads the RanDep model from the file docs/randep-model/team_classify.json, which holds a JSON
+        dictionary of the states and classes of the predicted behaviour of ransomware.
+        :param mapped_cats contains the data to be classified with the RanDep model
+        :param binary name of the binary sample
+        :param info_type the type of information being added for classification
+        :param _filename the name of the file where the RanDep model is stored
+        """
+        randep_model = {
             "stealth": {"fingerprinting": {}, "propagating": {}, "communicating": {}, "mapping": {}},
             "suspicious": {"encrypting": {}, "locking": {}},
             "termination": {"deleting": {}, "threatening": {}}
         }
-        randep_d = self.printer.open_json('docs/randep-skeleton.json')
+        randep_data = self.printer.open_json('%s' % _filename)
         # print [(r_cat, r_class, c_cat) for c_cat in c_dict[r_group] for r_class in r_dict for r_cat in r_dict[r_class]
         # if c_cat in r_dict[r_class][r_cat][r_group]]
-        for classify_c in classify_d[group]:
-            for randep_c in randep_d:
-                for category in randep_d[randep_c]:
-                    if classify_c in randep_d[randep_c][category][type]:
-                        if type not in binary_cats[randep_c][category]:
-                            binary_cats[randep_c][category][type] = {classify_c: classify_d[group][classify_c]}
-                        else:
-                            binary_cats[randep_c][category][type][classify_c] = classify_d[group][classify_c]
+        for category in mapped_cats[binary]:
+            for _class in randep_data:
+                for state in randep_data[_class]:
+                    if info_type is 'categories':
+                        # if the binary's category is in the RanDep model
+                        if category in randep_data[_class][state][info_type]:
+                            if info_type not in randep_model[_class][state]:
+                                randep_model[_class][state][info_type] = {category: mapped_cats[binary][category]}
+                            else:
+                                randep_model[_class][state][info_type][category] = mapped_cats[binary][category]
+                    elif info_type is 'apis':
+                        for api in mapped_cats[binary][category]:
+                            # if the binary's api is in the RanDep model
+                            if api in randep_data[_class][state][info_type]:
+                                if info_type not in randep_model[_class][state]:
+                                    randep_model[_class][state][info_type] = {api: mapped_cats[binary][category][api]}
+                                else:
+                                    randep_model[_class][state][info_type][api] = mapped_cats[binary][category][api]
 
-        # write the file with the c_group as the name, which should be the name_of_the_binary.json
-        self.printer.write_file('docs/randep-binary-maps/' + type + '/' + group.replace(".", "-") + '.json',
-                                json.dumps(binary_cats, sort_keys=True, indent=4),
+        # write the file with the binary as the name, which should be the name_of_the_binary.json
+        self.printer.write_file('docs/randep-binary-maps/' + info_type + '/' + binary.replace(".", "-") + '.json',
+                                json.dumps(randep_model, sort_keys=True, indent=4),
                                 'w')
 
     def map_binaries(self, parser_d, class_d):
+        """
+        Map for each binary in the parser data file, with the category from the classify data file.
+        Then send the mapped categories to be mapped against the RanDep model.
+        :param parser_d: the parse data from the Parse class, this has the information for each sample/binary analysed
+        in Cuckoo Sandbox
+        :param class_d: the classify data that has been classified in this class, Classify, containing the categories
+        :return:
+        """
         mapped_cats = {}
-        for binary in parser_d:
+        parsed = parser_d
+        classify = class_d
+        for binary in parsed:
             mapped_cats[binary] = {}
-            for api in parser_d[binary]['tracked_processes']:
-                if api in class_d['apis']:
-                    category = class_d['apis'][api]
+            for api in parsed[binary]['tracked_processes']:
+                # if the API has a Microsoft category stored in classify
+                if api in classify['apis']:
+                    # get the category name
+                    category = classify['apis'][api]
+                    # if that category is not already stored in mapped_cats then make a new dict then add it
                     if category not in mapped_cats[binary]:
-                        mapped_cats[binary][category] = {api: class_d['categories'][category][api]}
+                        mapped_cats[binary][category] = {api: classify['categories'][category][api]}
                     else:
-                        mapped_cats[binary][category][api] = class_d['categories'][category][api]
+                        mapped_cats[binary][category][api] = classify['categories'][category][api]
 
-                    timestamps = parser_d[binary]['tracked_processes'][api]['timestamps']
+                    timestamps = parsed[binary]['tracked_processes'][api]['timestamps']
                     mapped_cats[binary][category][api]['timestamps'] = timestamps
                     mapped_cats[binary][category][api].pop('timestamps', None)
-                    mapped_cats[binary][category][api]['count'] = parser_d[binary]['tracked_processes'][api]['count']
+                    mapped_cats[binary][category][api]['count'] = parsed[binary]['tracked_processes'][api]['count']
                     mapped_cats[binary][category][api]['called_first'] = min(timestamps)
                     mapped_cats[binary][category][api]['called_last'] = max(timestamps)
-            self.set_category(mapped_cats, binary, 'categories')
+            self.map_randep(mapped_cats, binary, 'categories', 'docs/randep-model/randep-skeleton.json')
 
-    def get_api_data(self, _filename):
-        """Return as lists the API names, start times, end times. This is built for RanDep classified JSON files"""
+            self.map_randep(mapped_cats, binary, 'apis', 'docs/randep-model/team_classify.json')
+
+    def get_api_data(self, _filename, type):
+        """
+        Open the file as JSON data and get useful information, usually for generating and graph. This is built for
+        RanDep classified JSON files
+        :param _filename: the filename to get the data from
+        :return: as lists the API names, start times, end times. This is built for RanDep classified JSON files
+        """
         api_data = self.printer.open_json(_filename)
 
         api_names, class_names, start_times, end_times = \
             zip(*[[api,
                    next(iter(api_data[_class])),
-                   api_data[_class][cat]['categories'][group][api]['called_first'],
-                   api_data[_class][cat]['categories'][group][api]['called_last']]
+                   api_data[_class][cat][type][api]['called_first'],
+                   api_data[_class][cat][type][api]['called_last']]
                   for _class in api_data
                   for cat in api_data[_class]
-                  if 'categories' in api_data[_class][cat]
-                  for group in api_data[_class][cat]['categories']
-                  for api in api_data[_class][cat]['categories'][group]])
+                  if type in api_data[_class][cat]
+                  for api in api_data[_class][cat][type]])
 
         return api_names, class_names, start_times, end_times
 
-
     def classify(self, input_file, out_dir, out_file):
-        """Read the parse data file and pass each api call to get its category. Then from the parse data copy each api
-        and its values into its relevant category"""
+        """
+        Read the parse data file and pass each api call to get its category. Then from the parse data copy each api
+        and its values into its relevant category
+        :param input_file: the file containing the parse data from the Parse class
+        :param out_dir: the directory to write the classified data to
+        :param out_file: the filename to write the classified data to
+        :return:
+        """
 
         parse_d = self.printer.open_json(input_file)
 
-        self.classify_d = self.printer.open_json(out_dir + out_file, obj_list=['apis', 'categories'])
+        classify_d = self.printer.open_json(out_dir + out_file, obj_list=['apis', 'categories'])
 
-        self.process_apis(parse_d)
+        classify_d = self.process_apis(parse_d, classify_d)
 
-        # self.set_category(api, category)
-        self.printer.write_file(out_dir + out_file, json.dumps(self.classify_d, sort_keys=True, indent=4), 'w')
+        self.printer.write_file(out_dir + out_file, json.dumps(classify_d, sort_keys=True, indent=4), 'w')
 
-        # self.set_category(self.classify_d, 'categories', 'categories')
+        # for all binaries, map the categories to the RanDep model
+        # self.map_randep(classify_d, 'categories', 'categories', 'docs/randep-model/randep-skeleton.json')
 
         # per binary, loop through signatures, and APIs.
-        self.map_binaries(parse_d, self.classify_d)
+        self.map_binaries(parse_d, classify_d)

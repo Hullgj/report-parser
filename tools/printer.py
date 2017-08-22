@@ -1,9 +1,16 @@
+"""
+* author: Gavin Hull
+* version: 2017.08.22
+* description: This class contains print functions that outputs information to the command prompt, writes data to files, and opens
+files as a JSON object
+"""
+
 from __future__ import print_function
 import os.path
 import json
 
 
-class Print(object):
+class Printer(object):
 
     def __init__(self, verbose):
         self.verbose = verbose

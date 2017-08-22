@@ -1,6 +1,6 @@
 {
-"DrawTextExW": { "null": { "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/dd162499(v=vs.85).aspx","description": "The DrawTextEx function draws formatted text in the specified rectangle."}},
-"GetSystemMetrics": { "Configuration Reference": { "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724385(v=vs.85).aspx","description": "Retrieves the specified     system metric or system configuration setting."}},
-"LdrUnloadDll": { "Tools, Best Practices, and Guidance": { "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/dd744765(v=vs.85).aspx","description": ""}},
-"NtSetInformationFile": { "File Management Reference": { "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364232(v=vs.85).aspx","description": "The following functions are used to manage files."}}
+"WriteConsoleW": { "cat_not_found": { "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms687401(v=vs.85).aspx","description": "cat_not_found"}},
+"IWbemServices_ExecQuery": { "cat_not_found": { "link": "http://blank.org/","description": "the link and hence the category was not found, try using the bing or google scrapers"}},
+"CryptExportKey": { "Cryptography Functions": { "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379931(v=vs.85).aspx","description": "The CryptExportKey function exports a cryptographic key or a key pair from a cryptographic service provider (CSP) in a secure manner."}},
+"DrawTextExA": { "cat_not_found": { "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/dd162499(v=vs.85).aspx","description": "The DrawTextEx function draws formatted text in the specified rectangle."}}
 }

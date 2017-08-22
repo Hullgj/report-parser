@@ -1,6 +1,14 @@
 /*eslint strict:0*/
 /*global CasperError, console, phantom, require*/
 
+// we need to define the startsWith() prototype function as it is not yet supported by PhantomJS
+if (!String.prototype.startsWith) {
+    String.prototype.startsWith = function(searchString, position) {
+        position = position || 0;
+        return this.indexOf(searchString, position) === position;
+    };
+}
+
 var links = [],
     category = [],
     description = [],
@@ -57,25 +65,42 @@ casper.then(function () {
         });
         casper.then(function () {
             // aggregate results for the search
-            links = links.concat(casper.evaluate(getLinks));
+            var link = casper.evaluate(getLinks);
+            var link_str = "" + link;
+            if (link_str.startsWith('http')) {
+                casper.log("Concatenated: " + link, 'debug');
+                links = links.concat(link);
+            }
+            else {
+                casper.log("Link not found " + link, 'debug');
+                links = links.concat("http://blank.org/");
+            }
         })
     });
 });
 
 casper.then(function () {
     casper.each(links, function (casper, url) {
+        casper.log("Links to parse: " + links, 'debug');
         casper.thenOpen(url, function () {
-            if(this.exists('div#breadcrumbs a#breadcrumbDropDownButton')) {
-                this.log(this.getElementAttribute('div#breadcrumbs a#breadcrumbDropDownButton', 'title'), 'debug');
-                category.push(this.getElementAttribute('div#breadcrumbs a#breadcrumbDropDownButton', 'title'));
-            } else {
-                category.push("cat_not_found");
+            casper.log("Opening url: " + url, 'debug');
+            if(url.startsWith("https://msdn")) {
+                if (this.exists('div#breadcrumbs a#breadcrumbDropDownButton')) {
+                    this.log(this.getElementAttribute('div#breadcrumbs a#breadcrumbDropDownButton', 'title'), 'debug');
+                    category.push(this.getElementAttribute('div#breadcrumbs a#breadcrumbDropDownButton', 'title'));
+                } else {
+                    category.push("cat_not_found");
+                }
+                if (this.exists('div#mainSection p:first-of-type'))
+                    description.push(this.getElementInfo('div#mainSection p:first-of-type').text
+                        .replace(/(?:\t\r\n|\r|\n|\t)/g, ''));
+                else
+                    description.push("the category was not found, try using the bing or google scrapers");
             }
-            if(this.exists('div#mainSection p:first-of-type'))
-                description.push(this.getElementInfo('div#mainSection p:first-of-type').text
-                    .replace(/(?:\t\r\n|\r|\n|\t)/g, ''));
-            else
-                description.push("cat_not_found");
+            else {
+                category.push("cat_not_found");
+                description.push("the link and hence the category was not found, try using the bing or google scrapers");
+            }
         });
     });
 });

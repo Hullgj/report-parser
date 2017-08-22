@@ -2,15 +2,6 @@
     "stealth": {
         "communicating": {
             "categories": {
-                "Cryptography Functions": {
-                    "CryptAcquireContextW": {
-                        "called_first": 1502808239.656375, 
-                        "called_last": 1502808239.656375, 
-                        "count": 2, 
-                        "description": "The CryptAcquireContext function is used to acquire a handle to a particular key container within a particular cryptographic service provider (CSP). This returned handle is used in calls to CryptoAPI functions that use the selected CSP.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379886(v=vs.85).aspx"
-                    }
-                }, 
                 "HTTP Server API Version 2.0 Functions": {
                     "NtDeviceIoControlFile": {
                         "called_first": 1502808240.078375, 

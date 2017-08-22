@@ -2,36 +2,6 @@
     "stealth": {
         "communicating": {
             "categories": {
-                "Cryptography Functions": {
-                    "CryptAcquireContextA": {
-                        "called_first": 1502971669.718625, 
-                        "called_last": 1502971669.718625, 
-                        "count": 1, 
-                        "description": "The CryptAcquireContext function is used to acquire a handle to a particular key container within a particular cryptographic service provider (CSP). This returned handle is used in calls to CryptoAPI functions that use the selected CSP.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379886(v=vs.85).aspx"
-                    }, 
-                    "CryptAcquireContextW": {
-                        "called_first": 1502971669.218875, 
-                        "called_last": 1502971669.702625, 
-                        "count": 4, 
-                        "description": "The CryptAcquireContext function is used to acquire a handle to a particular key container within a particular cryptographic service provider (CSP). This returned handle is used in calls to CryptoAPI functions that use the selected CSP.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379886(v=vs.85).aspx"
-                    }, 
-                    "CryptDecrypt": {
-                        "called_first": 1502971669.249875, 
-                        "called_last": 1502971684.734625, 
-                        "count": 2, 
-                        "description": "The CryptDecrypt function decrypts data previously encrypted by using the CryptEncrypt function.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379913(v=vs.85).aspx"
-                    }, 
-                    "CryptEncrypt": {
-                        "called_first": 1502971669.218875, 
-                        "called_last": 1502971742.531625, 
-                        "count": 12, 
-                        "description": "The CryptEncrypt function encrypts data. The algorithm used to encrypt the data is designated by the key held by the CSP module and is referenced by the hKey parameter.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379924(v=vs.85).aspx"
-                    }
-                }, 
                 "HTTP Server API Version 2.0 Functions": {
                     "NtDeviceIoControlFile": {
                         "called_first": 1502971684.874625, 
@@ -113,13 +83,6 @@
                         "count": 26, 
                         "description": "Sets an Internet option.", 
                         "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa385114(v=vs.85).aspx"
-                    }, 
-                    "__exception__": {
-                        "called_first": 1502971669.218875, 
-                        "called_last": 1502971669.702625, 
-                        "count": 2, 
-                        "description": "Creates an HTTP request handle.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa384233(v=vs.85).aspx"
                     }
                 }, 
                 "Windows Networking Functions": {
@@ -345,13 +308,6 @@
                         "count": 7, 
                         "description": "Moves the file pointer of the specified file.", 
                         "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
-                    }, 
-                    "NtOpenDirectoryObject": {
-                        "called_first": 1502971669.202875, 
-                        "called_last": 1502971669.202875, 
-                        "count": 1, 
-                        "description": "Sets the physical file size for the specified file to the current position of the file pointer.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365531(v=vs.85).aspx"
                     }, 
                     "NtOpenFile": {
                         "called_first": 1502971684.921625, 
@@ -594,13 +550,6 @@
                         "description": "Moves the file pointer of the specified file.", 
                         "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
                     }, 
-                    "NtOpenDirectoryObject": {
-                        "called_first": 1502971669.202875, 
-                        "called_last": 1502971669.202875, 
-                        "count": 1, 
-                        "description": "Sets the physical file size for the specified file to the current position of the file pointer.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365531(v=vs.85).aspx"
-                    }, 
                     "NtOpenFile": {
                         "called_first": 1502971684.921625, 
                         "called_last": 1502971787.234625, 
@@ -737,13 +686,6 @@
                         "count": 7, 
                         "description": "Moves the file pointer of the specified file.", 
                         "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
-                    }, 
-                    "NtOpenDirectoryObject": {
-                        "called_first": 1502971669.202875, 
-                        "called_last": 1502971669.202875, 
-                        "count": 1, 
-                        "description": "Sets the physical file size for the specified file to the current position of the file pointer.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365531(v=vs.85).aspx"
                     }, 
                     "NtOpenFile": {
                         "called_first": 1502971684.921625, 
@@ -908,13 +850,6 @@
                         "count": 7, 
                         "description": "Moves the file pointer of the specified file.", 
                         "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
-                    }, 
-                    "NtOpenDirectoryObject": {
-                        "called_first": 1502971669.202875, 
-                        "called_last": 1502971669.202875, 
-                        "count": 1, 
-                        "description": "Sets the physical file size for the specified file to the current position of the file pointer.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365531(v=vs.85).aspx"
                     }, 
                     "NtOpenFile": {
                         "called_first": 1502971684.921625, 

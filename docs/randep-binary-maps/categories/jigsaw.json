@@ -2,38 +2,6 @@
     "stealth": {
         "communicating": {
             "categories": {
-                "Cryptography Functions": {
-                    "CryptAcquireContextW": {
-                        "called_first": 1502878671.019146, 
-                        "called_last": 1502878767.081146, 
-                        "count": 138, 
-                        "description": "The CryptAcquireContext function is used to acquire a handle to a particular key container within a particular cryptographic service provider (CSP). This returned handle is used in calls to CryptoAPI functions that use the selected CSP.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379886(v=vs.85).aspx"
-                    }, 
-                    "CryptEncrypt": {
-                        "called_first": 1502878671.112146, 
-                        "called_last": 1502878773.190146, 
-                        "count": 3984, 
-                        "description": "The CryptEncrypt function encrypts data. The algorithm used to encrypt the data is designated by the key held by the CSP module and is referenced by the hKey parameter.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379924(v=vs.85).aspx"
-                    }, 
-                    "MessageBoxTimeoutW": {
-                        "called_first": 1502878662.175146, 
-                        "called_last": 1502878662.175146, 
-                        "count": 1, 
-                        "description": "The CryptEncrypt function encrypts data. The algorithm used to encrypt the data is designated by the key held by the CSP module and is referenced by the hKey parameter.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379924(v=vs.85).aspx"
-                    }
-                }, 
-                "WinINet Functions": {
-                    "RtlAddVectoredContinueHandler": {
-                        "called_first": 1502878659.081146, 
-                        "called_last": 1502879076.37475, 
-                        "count": 2, 
-                        "description": "Opens an File Transfer Protocol (FTP) or HTTP session for a given site.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa384363(v=vs.85).aspx"
-                    }
-                }, 
                 "Windows Networking Functions": {
                     "NtUnmapViewOfSection": {
                         "called_first": 1502878658.722146, 
@@ -209,13 +177,6 @@
                         "description": "Moves the file pointer of the specified file.", 
                         "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
                     }, 
-                    "NtOpenDirectoryObject": {
-                        "called_first": 1502878658.847146, 
-                        "called_last": 1502879076.23375, 
-                        "count": 2, 
-                        "description": "Sets the physical file size for the specified file to the current position of the file pointer.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365531(v=vs.85).aspx"
-                    }, 
                     "NtOpenFile": {
                         "called_first": 1502878658.612146, 
                         "called_last": 1502879077.71875, 
@@ -362,13 +323,6 @@
                         "description": "Moves the file pointer of the specified file.", 
                         "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
                     }, 
-                    "NtOpenDirectoryObject": {
-                        "called_first": 1502878658.847146, 
-                        "called_last": 1502879076.23375, 
-                        "count": 2, 
-                        "description": "Sets the physical file size for the specified file to the current position of the file pointer.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365531(v=vs.85).aspx"
-                    }, 
                     "NtOpenFile": {
                         "called_first": 1502878658.612146, 
                         "called_last": 1502879077.71875, 
@@ -491,13 +445,6 @@
                         "count": 32, 
                         "description": "Moves the file pointer of the specified file.", 
                         "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
-                    }, 
-                    "NtOpenDirectoryObject": {
-                        "called_first": 1502878658.847146, 
-                        "called_last": 1502879076.23375, 
-                        "count": 2, 
-                        "description": "Sets the physical file size for the specified file to the current position of the file pointer.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365531(v=vs.85).aspx"
                     }, 
                     "NtOpenFile": {
                         "called_first": 1502878658.612146, 
@@ -641,13 +588,6 @@
                         "count": 32, 
                         "description": "Moves the file pointer of the specified file.", 
                         "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
-                    }, 
-                    "NtOpenDirectoryObject": {
-                        "called_first": 1502878658.847146, 
-                        "called_last": 1502879076.23375, 
-                        "count": 2, 
-                        "description": "Sets the physical file size for the specified file to the current position of the file pointer.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365531(v=vs.85).aspx"
                     }, 
                     "NtOpenFile": {
                         "called_first": 1502878658.612146, 

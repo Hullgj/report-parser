@@ -1,3 +1,9 @@
+"""
+* author: Gavin Hull
+* version: 2017.08.22
+* description: Tools to manipulate data from JSON reports
+"""
+
 from __future__ import print_function
 import datetime
 

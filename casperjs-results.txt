@@ -1,3 +1,4 @@
 {
-"InternetConnectW": { "WinINet Functions": { "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa384363(v=vs.85).aspx","description": "Opens an File Transfer Protocol (FTP) or HTTP session for a given site."}}
+"NtOpenDirectoryObject": { "cat_not_found": { "link": "http://blank.org/","description": "the link and hence the category was not found, try using the bing or google scrapers"}},
+"RtlAddVectoredContinueHandler": { "cat_not_found": { "link": "http://blank.org/","description": "the link and hence the category was not found, try using the bing or google scrapers"}}
 }

@@ -1,7 +1,15 @@
+"""
+* author: Gavin Hull
+* version: 2017.08.22
+* description: This reads JSON data from all files in a given directory, where the files are Cuckoo Sandbox reports.
+The data is then parsed to get the tracked data, including API calls, signatures and their relevant data. This
+effectively collects data and hence reduces the search space for every Cuckoo report.
+"""
+
 import json
 from os import walk
 
-from tools import Tools
+from tools.tools import Tools
 
 
 class Parser(object):

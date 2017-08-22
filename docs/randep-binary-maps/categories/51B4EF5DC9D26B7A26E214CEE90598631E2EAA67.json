@@ -2,15 +2,6 @@
     "stealth": {
         "communicating": {
             "categories": {
-                "Cryptography Functions": {
-                    "CryptAcquireContextW": {
-                        "called_first": 1502808240.671875, 
-                        "called_last": 1502808240.671875, 
-                        "count": 2, 
-                        "description": "The CryptAcquireContext function is used to acquire a handle to a particular key container within a particular cryptographic service provider (CSP). This returned handle is used in calls to CryptoAPI functions that use the selected CSP.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379886(v=vs.85).aspx"
-                    }
-                }, 
                 "HTTP Server API Version 2.0 Functions": {
                     "NtDeviceIoControlFile": {
                         "called_first": 1502808242.546875, 
@@ -85,13 +76,6 @@
                         "count": 2, 
                         "description": "Initializes an application's use of the WinINet functions.", 
                         "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa385096(v=vs.85).aspx"
-                    }, 
-                    "__exception__": {
-                        "called_first": 1502808345.265875, 
-                        "called_last": 1502808345.265875, 
-                        "count": 1, 
-                        "description": "Creates an HTTP request handle.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa384233(v=vs.85).aspx"
                     }
                 }, 
                 "Windows Networking Functions": {
@@ -353,13 +337,6 @@
                         "description": "Moves the file pointer of the specified file.", 
                         "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
                     }, 
-                    "NtOpenDirectoryObject": {
-                        "called_first": 1502808238.98475, 
-                        "called_last": 1502808239.687875, 
-                        "count": 2, 
-                        "description": "Sets the physical file size for the specified file to the current position of the file pointer.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365531(v=vs.85).aspx"
-                    }, 
                     "NtOpenFile": {
                         "called_first": 1502807917.581021, 
                         "called_last": 1502808349.624875, 
@@ -601,13 +578,6 @@
                         "description": "Moves the file pointer of the specified file.", 
                         "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
                     }, 
-                    "NtOpenDirectoryObject": {
-                        "called_first": 1502808238.98475, 
-                        "called_last": 1502808239.687875, 
-                        "count": 2, 
-                        "description": "Sets the physical file size for the specified file to the current position of the file pointer.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365531(v=vs.85).aspx"
-                    }, 
                     "NtOpenFile": {
                         "called_first": 1502807917.581021, 
                         "called_last": 1502808349.624875, 
@@ -772,13 +742,6 @@
                         "count": 363, 
                         "description": "Moves the file pointer of the specified file.", 
                         "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
-                    }, 
-                    "NtOpenDirectoryObject": {
-                        "called_first": 1502808238.98475, 
-                        "called_last": 1502808239.687875, 
-                        "count": 2, 
-                        "description": "Sets the physical file size for the specified file to the current position of the file pointer.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365531(v=vs.85).aspx"
                     }, 
                     "NtOpenFile": {
                         "called_first": 1502807917.581021, 
@@ -950,13 +913,6 @@
                         "count": 363, 
                         "description": "Moves the file pointer of the specified file.", 
                         "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
-                    }, 
-                    "NtOpenDirectoryObject": {
-                        "called_first": 1502808238.98475, 
-                        "called_last": 1502808239.687875, 
-                        "count": 2, 
-                        "description": "Sets the physical file size for the specified file to the current position of the file pointer.", 
-                        "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365531(v=vs.85).aspx"
                     }, 
                     "NtOpenFile": {
                         "called_first": 1502807917.581021, 

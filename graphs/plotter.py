@@ -1,9 +1,13 @@
-"""Here we are plotting a graph of its calls to APIs for each binary. We also process the calls to APIs per category,
-as defined in the randep model, and plot their start and end times. This gives a graphical representation of how the
+"""
+* author: Gavin Hull
+* version: 2017.08.22
+* short description: Plot graphs of API calls with points for their start and end times.
+* description: Here we are plotting a graph of its calls to APIs for each binary. We also process the calls to APIs per category,
+as defined in the RanDep model, and plot their start and end times. This gives a graphical representation of how the
 sample behaves according to the model.
 Since the data has been processed by the report parser, we need to read the start and end time of each API per binary.
 The axis are trace_start: x = start_times, y = apis; trace_end: x = end_times, y = apis;
-Perhaps we could group the APIs into categories by using colour of the keys in the legend of the graph"""
+"""
 
 from plotly.offline import plot
 import plotly.graph_objs as go

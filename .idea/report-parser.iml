@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/docs/randep-binary-maps" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/randep-model" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/signatures" />
+      <excludeFolder url="file://$MODULE_DIR$/graphs/output" />
+      <excludeFolder url="file://$MODULE_DIR$/json-ransomware-reports" />
+      <excludeFolder url="file://$MODULE_DIR$/json-reports" />
+    </content>
     <orderEntry type="jdk" jdkName="Python 2.7.12 (C:\Python27\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
