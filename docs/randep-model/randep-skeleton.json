@@ -1,7 +1,7 @@
 {
     "stealth": {
       "fingerprinting": {
-        "apis": ["IsDebuggerPresent", "MessageBoxTimeoutA", "NtDelayExecution", "NtResumeThread", "FindResourceA", "HttpQueryInfoA", "NtCreateMutant", "GetComputerNameA", "GetNativeSystemInfo", "GetSystemDirectoryA", "GetSystemDirectoryW", "GetSystemInfo", "GetSystemWindowsDirectoryW", "GetUserNameA", "GetUserNameExW", "NtQuerySystemInformation", "GetSystemTimeAsFileTime"],
+        "apis": ["GlobalMemoryStatusEx", "IsDebuggerPresent", "MessageBoxTimeoutA", "NtDelayExecution", "NtResumeThread", "FindResourceA", "HttpQueryInfoA", "NtCreateMutant", "GetComputerNameA", "GetNativeSystemInfo", "GetSystemDirectoryA", "GetSystemDirectoryW", "GetSystemInfo", "GetSystemWindowsDirectoryW", "GetUserNameA", "GetUserNameExW", "NtQuerySystemInformation", "GetSystemTimeAsFileTime"],
         "categories": ["Debugging Functions", "Time Functions", "Synchronization Functions", "System Information Functions"],
         "signatures": ["antisandbox_sleep", "antivm_memory_available", "antivm_network_adapters", "pe_features", "antivm_queries_computername"]
       },
@@ -11,19 +11,19 @@
         "signatures": ["allocates_rwx", "packer_upx"]
       },
       "communicating": {
-        "apis": ["NtDeviceIoControlFile", "GetAdaptersAddresses", "HttpOpenRequestA", "InternetConnectA", "InternetCloseHandle", "InternetCrackUrlW", "InternetOpenA", "InternetOpenUrlA", "InternetQueryOptionA", "InternetReadFile", "InternetSetOptionA", "NtUnmapViewOfSection", "GetAddrInfoW", "WSARecv", "WSASend", "WSASocketA", "WSASocketW", "WSAStartup", "bind", "closesocket", "connect", "gethostbyname", "getsockname", "ioctlsocket", "recv", "send", "setsockopt", "shutdown", "socket"],
+        "apis": ["NtDeviceIoControlFile", "GetAdaptersAddresses", "HttpOpenRequestA", "InternetConnectA", "InternetCloseHandle", "InternetCrackUrlW", "InternetOpenA", "InternetOpenUrlA", "InternetQueryOptionA", "InternetReadFile", "InternetSetOptionA", "GetAddrInfoW", "WSARecv", "WSASend", "WSASocketA", "WSASocketW", "WSAStartup", "bind", "closesocket", "connect", "gethostbyname", "getsockname", "ioctlsocket", "recv", "send", "setsockopt", "shutdown", "socket"],
         "categories": ["HTTP Server API Version 2.0 Functions", "IP Helper Functions", "WinINet Functions", "Windows Networking Functions", "Winsock Functions"],
         "signatures": ["memdump_urls", "network_http", "network_icmp", "dead_host"]
       },
       "mapping": {
-        "apis": ["CopyFileA", "FindFirstFileExW", "GetFileAttributesW", "GetFileSize", "GetFileType", "GetShortPathNameW", "NtOpenFile", "NtReadFile", "NtCreateSection", "NtQueryInformationFile"],
+        "apis": ["CopyFileA", "FindFirstFileExW", "GetFileAttributesW", "GetFileSize", "GetFileType", "GetShortPathNameW", "NtOpenFile", "NtReadFile", "NtCreateFile", "NtCreateSection", "NtQueryInformationFile"],
         "categories": ["File Management Functions", "Font and Text Functions"],
         "signatures": ["allocates_rwx"]
       }
     },
     "suspicious": {
       "encrypting": {
-        "apis": ["EncryptMessage", "CryptCreateHash", "CryptHashData", "GetTempPathW", "NtCreateFile", "NtMapViewOfSection", "GlobalMemoryStatusEx", "NtAllocateVirtualMemory", "NtProtectVirtualMemory", "SetFileTime"],
+        "apis": ["EncryptMessage", "CryptCreateHash", "CryptHashData", "GetTempPathW", "NtAllocateVirtualMemory", "NtProtectVirtualMemory", "SetFileTime"],
         "categories": ["Authentication Functions", "File Management Functions", "Cryptography Functions", "Memory Management Functions"],
         "signatures": ["packer_entropy"]
       },
