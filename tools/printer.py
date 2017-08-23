@@ -1,7 +1,8 @@
 """
 * author: Gavin Hull
 * version: 2017.08.22
-* description: This class contains print functions that outputs information to the command prompt, writes data to files, and opens
+* description: This class contains print functions that outputs information to the command prompt, writes data to files,
+ and opens
 files as a JSON object
 """
 
@@ -50,7 +51,7 @@ class Printer(object):
     def open_json(self, in_file, obj_list=''):
         """Open a file and check it is a JSON file, returning the JSON data"""
         if not os.path.isfile(in_file):
-            Print.write_file(in_file, '', 'w')
+            self.write_file(in_file, '', 'w')
 
         with open(in_file, 'r') as json_file:
             if os.path.getsize(in_file) < 8:
@@ -59,7 +60,7 @@ class Printer(object):
                     self.line_comment("Adding Object " + obj + " to " + in_file)
                     obj_json[obj] = {}
 
-                Print.write_file(in_file, json.dumps(obj_json, sort_keys=True, indent=4))
+                self.write_file(in_file, json.dumps(obj_json, sort_keys=True, indent=4))
 
             json_data = json.load(json_file)
 

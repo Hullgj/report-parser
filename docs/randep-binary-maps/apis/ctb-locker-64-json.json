@@ -1,0 +1,368 @@
+{
+    "general": {
+        "binary_name": "e26bd11c525dfca4152ed74b2fb97e5c30a091239c2dbe877a312a1cfcf34004.bin", 
+        "date_time_analysis": 1502972286.060902, 
+        "duration_analysis": "43.711162", 
+        "duration_sample": "42.859750", 
+        "file_name": "ctb-locker-64.json", 
+        "seen_first": 1502968685.84375, 
+        "seen_last": 1502968788.7035
+    }, 
+    "stealth": {
+        "communicating": {
+            "apis": {
+                "CoCreateInstance": {
+                    "called_first": 1502968691.7345, 
+                    "called_last": 1502968691.7345, 
+                    "count": 1, 
+                    "description": "Creates a single uninitialized object of the class associated with a specified CLSID.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms686615(v=vs.85).aspx"
+                }, 
+                "CoInitializeEx": {
+                    "called_first": 1502968687.14075, 
+                    "called_last": 1502968691.5625, 
+                    "count": 3, 
+                    "description": "Initializes the COM library for use by the calling thread, sets the thread's concurrency model, and creates a new apartment for the thread if one is required.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms695279(v=vs.85).aspx"
+                }, 
+                "CoInitializeSecurity": {
+                    "called_first": 1502968691.7035, 
+                    "called_last": 1502968691.7035, 
+                    "count": 1, 
+                    "description": "Registers security and sets the default security values for the process.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms693736(v=vs.85).aspx"
+                }, 
+                "CoUninitialize": {
+                    "called_first": 1502968692.9845, 
+                    "called_last": 1502968692.9845, 
+                    "count": 1, 
+                    "description": "Closes the COM library on the current thread, unloads all DLLs loaded by the thread, frees any other resources that the thread maintains, and forces all RPC connections on the thread to close.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms688715(v=vs.85).aspx"
+                }, 
+                "CreateActCtxW": {
+                    "called_first": 1502968686.15575, 
+                    "called_last": 1502968690.09375, 
+                    "count": 3, 
+                    "description": "The CreateActCtx function creates an activation context. ", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa375125(v=vs.85).aspx"
+                }
+            }
+        }, 
+        "fingerprinting": {
+            "apis": {
+                "CreateToolhelp32Snapshot": {
+                    "called_first": 1502968691.5625, 
+                    "called_last": 1502968691.5625, 
+                    "count": 1, 
+                    "description": "Takes a snapshot of the specified processes, as well as the heaps, modules, and threads used by these processes.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms682489(v=vs.85).aspx"
+                }, 
+                "GetNativeSystemInfo": {
+                    "called_first": 1502968691.5165, 
+                    "called_last": 1502968691.5165, 
+                    "count": 1, 
+                    "description": "Retrieves information about the current system to an application running under WOW64. If the function is called from a 64-bit application, it is equivalent to the GetSystemInfo function.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724340(v=vs.85).aspx"
+                }, 
+                "GetSystemDirectoryW": {
+                    "called_first": 1502968686.06175, 
+                    "called_last": 1502968691.4375, 
+                    "count": 8, 
+                    "description": "Retrieves the path of the system directory. The system directory contains system files such as dynamic-link libraries and drivers.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724373(v=vs.85).aspx"
+                }, 
+                "GetSystemInfo": {
+                    "called_first": 1502968685.95275, 
+                    "called_last": 1502968691.4375, 
+                    "count": 79, 
+                    "description": "Retrieves information about the current system.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724381(v=vs.85).aspx"
+                }, 
+                "GetSystemMetrics": {
+                    "called_first": 1502968690.67175, 
+                    "called_last": 1502968691.4535, 
+                    "count": 22, 
+                    "description": "Retrieves the specified     system metric or system configuration setting.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724385(v=vs.85).aspx"
+                }, 
+                "GetSystemTimeAsFileTime": {
+                    "called_first": 1502968685.95275, 
+                    "called_last": 1502968691.5165, 
+                    "count": 10, 
+                    "description": "Retrieves the current system date and time. The information is in Coordinated Universal Time (UTC) format.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724397(v=vs.85).aspx"
+                }, 
+                "GetSystemWindowsDirectoryW": {
+                    "called_first": 1502968686.17175, 
+                    "called_last": 1502968686.53075, 
+                    "count": 2, 
+                    "description": "Retrieves the path of the shared Windows directory on a multi-user system.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724403(v=vs.85).aspx"
+                }, 
+                "IsDebuggerPresent": {
+                    "called_first": 1502968686.54675, 
+                    "called_last": 1502968686.54675, 
+                    "count": 1, 
+                    "description": "Determines whether the calling process is being debugged by a user-mode debugger.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms680345(v=vs.85).aspx"
+                }, 
+                "NtClose": {
+                    "called_first": 1502968685.84375, 
+                    "called_last": 1502968788.7035, 
+                    "count": 148, 
+                    "description": "Closes an open object handle.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724211(v=vs.85).aspx"
+                }, 
+                "NtCreateMutant": {
+                    "called_first": 1502968685.95275, 
+                    "called_last": 1502968691.5165, 
+                    "count": 5, 
+                    "description": "Creates or opens a named or unnamed event object.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms682396(v=vs.85).aspx"
+                }, 
+                "NtQuerySystemInformation": {
+                    "called_first": 1502968686.06175, 
+                    "called_last": 1502968691.4225, 
+                    "count": 2, 
+                    "description": "[NtQuerySystemInformation may be altered or unavailable in future versions of Windows. Applications should use the alternate functions listed in this topic.]", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724509(v=vs.85).aspx"
+                }, 
+                "NtResumeThread": {
+                    "called_first": 1502968686.54675, 
+                    "called_last": 1502968691.17175, 
+                    "count": 3, 
+                    "description": "Decrements a thread's suspend count. When the suspend count is decremented to zero, the execution of the thread is resumed.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms685086(v=vs.85).aspx"
+                }, 
+                "Process32FirstW": {
+                    "called_first": 1502968691.5625, 
+                    "called_last": 1502968691.5625, 
+                    "count": 1, 
+                    "description": "Retrieves information about the first process encountered in a system snapshot.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms684834(v=vs.85).aspx"
+                }, 
+                "Process32NextW": {
+                    "called_first": 1502968691.5625, 
+                    "called_last": 1502968691.5625, 
+                    "count": 41, 
+                    "description": "Retrieves information about the next process recorded in a system snapshot.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms684836(v=vs.85).aspx"
+                }, 
+                "RegQueryInfoKeyW": {
+                    "called_first": 1502968685.95275, 
+                    "called_last": 1502968686.54675, 
+                    "count": 3, 
+                    "description": "Retrieves information about the specified registry key.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724902(v=vs.85).aspx"
+                }, 
+                "RtlDecompressBuffer": {
+                    "called_first": 1502968691.09375, 
+                    "called_last": 1502968691.09375, 
+                    "count": 1, 
+                    "description": "[NtQuerySystemInformation may be altered or unavailable in future versions of Windows. Applications should use the alternate functions listed in this topic.]", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724509(v=vs.85).aspx"
+                }, 
+                "SetErrorMode": {
+                    "called_first": 1502968685.85875, 
+                    "called_last": 1502968690.65575, 
+                    "count": 46, 
+                    "description": "Controls whether the system will handle the specified types of serious errors or whether the process will handle them.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms680621(v=vs.85).aspx"
+                }
+            }
+        }, 
+        "mapping": {
+            "apis": {
+                "FindFirstFileExW": {
+                    "called_first": 1502968685.85875, 
+                    "called_last": 1502968691.5315, 
+                    "count": 27, 
+                    "description": "Searches a directory for a file or subdirectory with a name and attributes that match those     specified.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364419(v=vs.85).aspx"
+                }, 
+                "GetFileAttributesExW": {
+                    "called_first": 1502968686.34375, 
+                    "called_last": 1502968690.01575, 
+                    "count": 6, 
+                    "description": "Retrieves attributes for a specified file or directory.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364946(v=vs.85).aspx"
+                }, 
+                "GetFileAttributesW": {
+                    "called_first": 1502968685.85875, 
+                    "called_last": 1502968690.14075, 
+                    "count": 18, 
+                    "description": "Retrieves file system attributes for a specified file or directory.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364944(v=vs.85).aspx"
+                }, 
+                "GetFileSize": {
+                    "called_first": 1502968686.06175, 
+                    "called_last": 1502968691.5625, 
+                    "count": 7, 
+                    "description": "Retrieves the size of the specified file, in bytes.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364955(v=vs.85).aspx"
+                }, 
+                "GetShortPathNameW": {
+                    "called_first": 1502968686.70275, 
+                    "called_last": 1502968686.70275, 
+                    "count": 1, 
+                    "description": "Retrieves the short path form of the specified path.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364989(v=vs.85).aspx"
+                }, 
+                "NtCreateSection": {
+                    "called_first": 1502968685.85875, 
+                    "called_last": 1502968691.03075, 
+                    "count": 12, 
+                    "description": "Creates or opens a named or unnamed file mapping object for a specified file.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366537(v=vs.85).aspx"
+                }, 
+                "NtDuplicateObject": {
+                    "called_first": 1502968686.54675, 
+                    "called_last": 1502968751.7035, 
+                    "count": 3, 
+                    "description": "Duplicates an object handle.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724251(v=vs.85).aspx"
+                }, 
+                "NtOpenFile": {
+                    "called_first": 1502968685.84375, 
+                    "called_last": 1502968686.17175, 
+                    "count": 6, 
+                    "description": "Creates, opens, reopens, or deletes a file.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365430(v=vs.85).aspx"
+                }, 
+                "NtQueryDirectoryFile": {
+                    "called_first": 1502968685.85875, 
+                    "called_last": 1502968691.5625, 
+                    "count": 153, 
+                    "description": "The ZwQueryDirectoryFile routine returns various kinds of information about files in the directory specified by a given file handle.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/dn384112(v=vs.85).aspx"
+                }, 
+                "NtQueryInformationFile": {
+                    "called_first": 1502968685.85875, 
+                    "called_last": 1502968686.17175, 
+                    "count": 6, 
+                    "description": "[NtQueryInformationProcess may be altered or unavailable in future versions of Windows. Applications should use the alternate functions listed in this topic.]", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms684280(v=vs.85).aspx"
+                }, 
+                "NtReadFile": {
+                    "called_first": 1502968685.89075, 
+                    "called_last": 1502968691.5625, 
+                    "count": 15, 
+                    "description": "Reads data from the specified file or input/output (I/O) device. Reads occur at the position specified     by the file pointer if supported by the device.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365467(v=vs.85).aspx"
+                }, 
+                "SHGetFolderPathW": {
+                    "called_first": 1502968686.56175, 
+                    "called_last": 1502968691.5165, 
+                    "count": 4, 
+                    "description": "Deprecated. Gets the path of a folder identified by a CSIDL value.                        ", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/bb762181(v=vs.85).aspx"
+                }, 
+                "WriteProcessMemory": {
+                    "called_first": 1502968691.12475, 
+                    "called_last": 1502968691.14075, 
+                    "count": 4, 
+                    "description": "Writes data to an area of memory in a specified process. The entire area to be written to must be accessible or the operation fails.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms681674(v=vs.85).aspx"
+                }
+            }
+        }, 
+        "propagating": {}
+    }, 
+    "suspicious": {
+        "encrypting": {
+            "apis": {
+                "GetTempPathW": {
+                    "called_first": 1502968691.5625, 
+                    "called_last": 1502968691.5625, 
+                    "count": 1, 
+                    "description": "Retrieves the path of the directory designated for temporary files.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364992(v=vs.85).aspx"
+                }, 
+                "NtCreateFile": {
+                    "called_first": 1502968685.85875, 
+                    "called_last": 1502968691.5625, 
+                    "count": 39, 
+                    "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
+                }, 
+                "NtMapViewOfSection": {
+                    "called_first": 1502968685.85875, 
+                    "called_last": 1502968691.03075, 
+                    "count": 12, 
+                    "description": "Moves the file pointer of the specified file.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
+                }, 
+                "NtProtectVirtualMemory": {
+                    "called_first": 1502968686.06175, 
+                    "called_last": 1502968691.5165, 
+                    "count": 19, 
+                    "description": "Provides an efficient mechanism to bring into memory potentially discontiguous virtual address ranges     in a process address space.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/hh780543(v=vs.85).aspx"
+                }, 
+                "SetFilePointer": {
+                    "called_first": 1502968685.89075, 
+                    "called_last": 1502968686.23375, 
+                    "count": 3, 
+                    "description": "Moves the file pointer of the specified file.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
+                }
+            }
+        }, 
+        "locking": {
+            "apis": {
+                "NtTerminateProcess": {
+                    "called_first": 1502968691.17175, 
+                    "called_last": 1502968693.85875, 
+                    "count": 3, 
+                    "description": "Terminates the specified process and all of its threads.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms686714(v=vs.85).aspx"
+                }
+            }
+        }
+    }, 
+    "termination": {
+        "deleting": {
+            "apis": {
+                "DeleteFileW": {
+                    "called_first": 1502968691.20275, 
+                    "called_last": 1502968691.20275, 
+                    "count": 3, 
+                    "description": "Deletes an existing file.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363915(v=vs.85).aspx"
+                }, 
+                "SetFilePointerEx": {
+                    "called_first": 1502968685.89075, 
+                    "called_last": 1502968686.23375, 
+                    "count": 3, 
+                    "description": "Moves the file pointer of the specified file.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
+                }
+            }
+        }, 
+        "threatening": {
+            "apis": {
+                "EnumWindows": {
+                    "called_first": 1502968691.07775, 
+                    "called_last": 1502968691.07775, 
+                    "count": 1, 
+                    "description": "The LookupPrivilegeValue function retrieves the locally unique identifier (LUID) used on a specified system to locally represent the specified privilege name.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379180(v=vs.85).aspx"
+                }, 
+                "LoadStringW": {
+                    "called_first": 1502968690.12475, 
+                    "called_last": 1502968690.12475, 
+                    "count": 4, 
+                    "description": "Loads a string resource from the executable file associated with a specified module, copies the string into a buffer, and appends a terminating null character.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms647486(v=vs.85).aspx"
+                }, 
+                "NtWriteFile": {
+                    "called_first": 1502968691.5625, 
+                    "called_last": 1502968691.5625, 
+                    "count": 1, 
+                    "description": "Writes data to the specified file or input/output (I/O) device.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365747(v=vs.85).aspx"
+                }
+            }
+        }
+    }
+}

@@ -12,6 +12,7 @@ using Microsoft's online documentation, and writes each detection into one of th
 from __future__ import division
 import subprocess
 import json
+from tools.tools import Tools
 
 
 class Classify(object):
@@ -22,6 +23,7 @@ class Classify(object):
         :param printer: the handle of the Printer class
         """
         self.printer = printer
+        self.tools = Tools()
         self.categories = {
             "stealth": {"fingerprinting": {}, "propagating": {}, "communicating": {}, "mapping": {}},
             "suspicious": {"encrypting": {}, "locking": {}},
@@ -156,8 +158,9 @@ class Classify(object):
             "termination": {"deleting": {}, "threatening": {}}
         }
         randep_data = self.printer.open_json('%s' % _filename)
-        # print [(r_cat, r_class, c_cat) for c_cat in c_dict[r_group] for r_class in r_dict for r_cat in r_dict[r_class]
-        # if c_cat in r_dict[r_class][r_cat][r_group]]
+        # add general information to the RanDep model
+        randep_model['general'] = mapped_cats[binary]['general']
+
         for category in mapped_cats[binary]:
             for _class in randep_data:
                 for state in randep_data[_class]:
@@ -178,7 +181,8 @@ class Classify(object):
                                     randep_model[_class][state][info_type][api] = mapped_cats[binary][category][api]
 
         # write the file with the binary as the name, which should be the name_of_the_binary.json
-        self.printer.write_file('docs/randep-binary-maps/' + info_type + '/' + binary.replace(".", "-") + '.json',
+        self.printer.write_file('docs/randep-binary-maps/' + info_type + '/' +
+                                mapped_cats[binary]['general']['file_name'].replace(".", "-") + '.json',
                                 json.dumps(randep_model, sort_keys=True, indent=4),
                                 'w')
 
@@ -196,6 +200,16 @@ class Classify(object):
         classify = class_d
         for binary in parsed:
             mapped_cats[binary] = {}
+            # add the general information to mapped_cats
+            mapped_cats[binary]['general'] = {
+                "file_name": parsed[binary]["file_name"],
+                "binary_name": parsed[binary]["binary_name"],
+                "date_time_analysis": parsed[binary]["date_time_analysis"],
+                "duration_analysis": parsed[binary]["duration_analysis"],
+                "duration_sample": parsed[binary]["duration_sample"],
+                "seen_first": parsed[binary]["seen_first"],
+                "seen_last": parsed[binary]["seen_last"]
+            }
             for api in parsed[binary]['tracked_processes']:
                 # if the API has a Microsoft category stored in classify
                 if api in classify['apis']:
@@ -213,8 +227,9 @@ class Classify(object):
                     mapped_cats[binary][category][api]['count'] = parsed[binary]['tracked_processes'][api]['count']
                     mapped_cats[binary][category][api]['called_first'] = min(timestamps)
                     mapped_cats[binary][category][api]['called_last'] = max(timestamps)
+            # map the categories of the binary, which is now stored in mapped_cats, with those of the RanDep model
             self.map_randep(mapped_cats, binary, 'categories', 'docs/randep-model/randep-skeleton.json')
-
+            # map the APIs of the binary, which is now stored in mapped_cats, with those of the RanDep model
             self.map_randep(mapped_cats, binary, 'apis', 'docs/randep-model/team_classify.json')
 
     def get_api_data(self, _filename, type):
@@ -226,17 +241,76 @@ class Classify(object):
         """
         api_data = self.printer.open_json(_filename)
 
-        api_names, class_names, start_times, end_times = \
-            zip(*[[api,
-                   next(iter(api_data[_class])),
-                   api_data[_class][cat][type][api]['called_first'],
-                   api_data[_class][cat][type][api]['called_last']]
-                  for _class in api_data
-                  for cat in api_data[_class]
-                  if type in api_data[_class][cat]
-                  for api in api_data[_class][cat][type]])
+        # api_names, class_names, state_names, start_times, end_times = \
+        #     zip(*[[api,
+        #            next(iter(api_data[_class])),
+        #            state,
+        #            api_data[_class][state][type][api]['called_first'],
+        #            api_data[_class][state][type][api]['called_last']]
+        #           for _class, state in api_data.iteritems()
+        #           # for state in api_data[_class]
+        #           if type in api_data[_class][state]
+        #           for api in api_data[_class][state][type]])
 
-        return api_names, class_names, start_times, end_times
+        api_names = []
+        class_names = []
+        state_names = []
+        start_times = []
+        end_times = []
+        class_starts = []
+        class_ends = []
+        state_starts = []
+        state_ends = []
+        for _class in api_data:
+            if _class != 'general':
+                start_temp_class = []
+                end_temp_class = []
+                class_start_tmp = 0
+                class_end_tmp = 0
+                for state in api_data[_class]:
+                    if type in api_data[_class][state]:
+                        start_temp = []
+                        end_temp = []
+                        state_start_tmp = 0
+                        state_end_tmp = 0
+                        # get the API data for this state
+                        for api in api_data[_class][state][type]:
+                            called_first = self.tools.time_diff_s(
+                                api_data['general']['seen_first'],
+                                api_data[_class][state][type][api]['called_first']
+                            )
+                            called_last = self.tools.time_diff_s(
+                                api_data['general']['seen_first'],
+                                api_data[_class][state][type][api]['called_last']
+                            )
+                            if called_last < called_first:
+                                self.printer.print_error("Called first is earlier that called last. "
+                                                         "API: %s, state: %s, called_first: %s, called_last: %s" %
+                                                         (api, state, called_first, called_last))
+                            start_temp.append(called_first)
+                            end_temp.append(called_last)
+                            state_start_tmp = min(start_temp)
+                            state_end_tmp = max(end_temp)
+                            # set the API data for this API
+                            api_names.append(api)
+                            start_times.append(called_first)
+                            end_times.append(called_last)
+
+                        start_temp_class.extend(start_times)
+                        end_temp_class.extend(end_times)
+                        class_start_tmp = min(start_temp_class)
+                        class_end_tmp = max(end_temp_class)
+                        # set the state data for this class
+                        state_names.append(state)
+                        state_starts.append(state_start_tmp)
+                        state_ends.append(state_end_tmp)
+
+                # set the class data for this api
+                class_names.append(_class)
+                class_starts.append(class_start_tmp)
+                class_ends.append(class_end_tmp)
+
+        return api_names, start_times, end_times, state_names, state_starts, state_ends, class_names, class_starts, class_ends
 
     def classify(self, input_file, out_dir, out_file):
         """

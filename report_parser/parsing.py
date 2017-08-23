@@ -91,8 +91,13 @@ class Parser(object):
         seen_last = 0
 
         for process in json_data['behavior']['processes']:
+            # if json_data['target']['file']['name'] == process['process_name']:
             if process['track'] == condition:
-                seen_first = process['first_seen']
+                seen_first_tmp = process['first_seen']
+                if seen_first == 0:
+                    seen_first = seen_first_tmp
+                elif seen_first > seen_first_tmp:
+                    seen_first = seen_first_tmp
                 for call in process['calls']:
                     if call['api'] not in api_dict:
                         api_dict[call['api']] = {'timestamps': [call['time']]}
@@ -103,10 +108,12 @@ class Parser(object):
 
                     if seen_last < call['time']:
                         seen_last = call['time']
+                    if seen_first > call['time']:
+                        seen_first = call['time']
 
         return seen_first, seen_last, api_dict
 
-    def parse_data(self, j_data, output_file, last_file):
+    def parse_data(self, name, j_data, output_file, last_file):
         self.printer.line_comment("General Information")
 
         process_name = j_data['target']['file']['name']
@@ -123,10 +130,13 @@ class Parser(object):
             self.printer.line_comment("Writing report for: " + process_name)
 
             general_dict = {
+                "file_name": name,
                 "binary_name": process_name,
-                "date_time": j_analysis_started,
+                "date_time_analysis": j_analysis_started,
                 "duration_analysis": self.tools.time_diff(j_analysis_started, j_analysis_ended),
                 "duration_sample": self.tools.time_diff(seen_first, seen_last),
+                "seen_first": seen_first,
+                "seen_last": seen_last,
                 "signatures": signature_dict,
                 "tracked_processes": tracked_dict
             }
@@ -148,6 +158,6 @@ class Parser(object):
                     with open(dir_path + name) as json_file:
                         j_data = json.load(json_file)
                     
-                    self.parse_data(j_data, output_file, False if i < len(file_names) - 1 else True)
+                    self.parse_data(name, j_data, output_file, False if i < len(file_names) - 1 else True)
 
         self.printer.write_file(output_file, '}')
