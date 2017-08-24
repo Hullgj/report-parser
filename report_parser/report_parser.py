@@ -3,6 +3,9 @@
 * version: 2017.08.22
 * description: This is the main function that instantiates and calls methods for printing, parsing, and classifying. It
 ends by generating graphs of all JSON files in the specified directory.
+
+Example Run:
+python report_parser.py -v path/to/your/cuckoo/sandbox/json/reports/ path/to/output/file/output_file.json
 """
 
 from __future__ import print_function
