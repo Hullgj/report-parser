@@ -2,8 +2,8 @@
     "general": {
         "binary_name": "cerber.exe", 
         "date_time_analysis": 1502814331.502085, 
-        "duration_analysis": "15.282531", 
-        "duration_sample": "54.778104", 
+        "duration_analysis": "04:15.282531", 
+        "duration_sample": "07:54.778104", 
         "file_name": "cerber-27.json", 
         "seen_first": 1502807913.659271, 
         "seen_last": 1502808388.437375
@@ -225,6 +225,13 @@
                     "description": "Retrieves the name of the user or other security principal associated with the calling thread. You can specify the format of the returned name.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724435(v=vs.85).aspx"
                 }, 
+                "GlobalMemoryStatusEx": {
+                    "called_first": 1502808250.031125, 
+                    "called_last": 1502808348.015625, 
+                    "count": 2, 
+                    "description": "Retrieves information about the system's current usage of both physical and virtual memory.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366589(v=vs.85).aspx"
+                }, 
                 "LookupAccountSidW": {
                     "called_first": 1502808244.5155, 
                     "called_last": 1502808329.437125, 
@@ -376,6 +383,13 @@
                     "description": "Retrieves a handle that can be used to obtain a pointer to the first byte of the specified resource in memory.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms648046(v=vs.85).aspx"
                 }, 
+                "NtCreateFile": {
+                    "called_first": 1502807915.315271, 
+                    "called_last": 1502808348.375125, 
+                    "count": 327, 
+                    "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
+                }, 
                 "NtCreateSection": {
                     "called_first": 1502808243.093125, 
                     "called_last": 1502808343.703125, 
@@ -505,40 +519,12 @@
                     "description": "Retrieves the path of the directory designated for temporary files.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364992(v=vs.85).aspx"
                 }, 
-                "GlobalMemoryStatusEx": {
-                    "called_first": 1502808250.031125, 
-                    "called_last": 1502808348.015625, 
-                    "count": 2, 
-                    "description": "Retrieves information about the system's current usage of both physical and virtual memory.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366589(v=vs.85).aspx"
-                }, 
                 "MoveFileWithProgressW": {
                     "called_first": 1502808257.328125, 
                     "called_last": 1502808341.625125, 
                     "count": 87, 
                     "description": "Moves a file or directory, including its children. You can provide a callback function that receives     progress notifications.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365242(v=vs.85).aspx"
-                }, 
-                "NtCreateFile": {
-                    "called_first": 1502807915.315271, 
-                    "called_last": 1502808348.375125, 
-                    "count": 327, 
-                    "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
-                }, 
-                "NtMapViewOfSection": {
-                    "called_first": 1502808243.093125, 
-                    "called_last": 1502808343.703125, 
-                    "count": 36, 
-                    "description": "Moves the file pointer of the specified file.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
-                }, 
-                "NtProtectVirtualMemory": {
-                    "called_first": 1502807916.237271, 
-                    "called_last": 1502807916.237271, 
-                    "count": 1, 
-                    "description": "Provides an efficient mechanism to bring into memory potentially discontiguous virtual address ranges     in a process address space.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/hh780543(v=vs.85).aspx"
                 }, 
                 "NtSetInformationFile": {
                     "called_first": 1502808329.453125, 
@@ -553,13 +539,6 @@
                     "count": 302, 
                     "description": "Sets the attributes for a file or directory.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365535(v=vs.85).aspx"
-                }, 
-                "SetFilePointer": {
-                    "called_first": 1502808343.031125, 
-                    "called_last": 1502808343.046125, 
-                    "count": 140, 
-                    "description": "Moves the file pointer of the specified file.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
                 }
             }
         }, 
@@ -585,6 +564,13 @@
                     "description": "Deletes an existing file.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363915(v=vs.85).aspx"
                 }, 
+                "SetFilePointer": {
+                    "called_first": 1502808343.031125, 
+                    "called_last": 1502808343.046125, 
+                    "count": 140, 
+                    "description": "Moves the file pointer of the specified file.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
+                }, 
                 "SetFilePointerEx": {
                     "called_first": 1502808257.328125, 
                     "called_last": 1502808321.859125, 
@@ -602,13 +588,6 @@
                     "count": 53, 
                     "description": "The DrawTextEx function draws formatted text in the specified rectangle.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/dd162499(v=vs.85).aspx"
-                }, 
-                "EnumWindows": {
-                    "called_first": 1502807919.831271, 
-                    "called_last": 1502808343.843125, 
-                    "count": 3, 
-                    "description": "The LookupPrivilegeValue function retrieves the locally unique identifier (LUID) used on a specified system to locally represent the specified privilege name.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379180(v=vs.85).aspx"
                 }, 
                 "LoadStringW": {
                     "called_first": 1502807915.815271, 

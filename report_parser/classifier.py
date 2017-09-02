@@ -261,6 +261,7 @@ class Classify(object):
         class_ends = []
         state_starts = []
         state_ends = []
+        state_dict = {}
         for _class in api_data:
             if _class != 'general':
                 start_temp_class = []
@@ -273,6 +274,7 @@ class Classify(object):
                         end_temp = []
                         state_start_tmp = 0
                         state_end_tmp = 0
+                        state_dict[state] = {'apis': [], 'starts': [], 'ends': []}
                         # get the API data for this state
                         for api in api_data[_class][state][type]:
                             called_first = self.tools.time_diff_s(
@@ -295,6 +297,11 @@ class Classify(object):
                             api_names.append(api)
                             start_times.append(called_first)
                             end_times.append(called_last)
+                            #set the API data for this state
+                            state_dict[state]['apis'].append(api)
+                            state_dict[state]['starts'].append(called_first)
+                            state_dict[state]['ends'].append(called_last)
+
 
                         start_temp_class.extend(start_times)
                         end_temp_class.extend(end_times)
@@ -310,7 +317,8 @@ class Classify(object):
                 class_starts.append(class_start_tmp)
                 class_ends.append(class_end_tmp)
 
-        return api_names, start_times, end_times, state_names, state_starts, state_ends, class_names, class_starts, class_ends
+        return api_names, start_times, end_times, state_names, state_starts, state_ends, class_names, class_starts, \
+               class_ends, state_dict
 
     def classify(self, input_file, out_dir, out_file):
         """

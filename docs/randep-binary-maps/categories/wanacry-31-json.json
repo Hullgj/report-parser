@@ -2,8 +2,8 @@
     "general": {
         "binary_name": "ed01ebfbc9eb5bbea545af4d01bf5f1071661840480439c6e5babe8e080e41aa.exe", 
         "date_time_analysis": 1502823992.021163, 
-        "duration_analysis": "35.778203", 
-        "duration_sample": "21.387979", 
+        "duration_analysis": "04:35.778203", 
+        "duration_sample": "10:21.387979", 
         "file_name": "wanacry-31.json", 
         "seen_first": 1502819969.518396, 
         "seen_last": 1502820590.906375

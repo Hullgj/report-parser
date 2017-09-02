@@ -2,8 +2,8 @@
     "general": {
         "binary_name": "209b606203e60b9c3abdbb27d7f93a2d8a60a87c4ab2e7749a9522c17f4511f2.bin", 
         "date_time_analysis": 1502971116.856857, 
-        "duration_analysis": "59.788696", 
-        "duration_sample": "03.062250", 
+        "duration_analysis": "02:59.788696", 
+        "duration_sample": "02:03.062250", 
         "file_name": "reveton-63.json", 
         "seen_first": 1502967516.859375, 
         "seen_last": 1502967639.921625

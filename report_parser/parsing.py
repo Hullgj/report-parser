@@ -142,7 +142,7 @@ class Parser(object):
             }
 
             self.printer.write_file(output_file, '"%s": %s%c' %
-                                    (process_name,
+                                    (name,
                                      json.dumps(general_dict, sort_keys=True, indent=4),
                                      ',' if not last_file else ' '))
 

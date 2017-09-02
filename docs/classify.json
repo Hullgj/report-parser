@@ -25,6 +25,8 @@
         "CryptExportKey": "Cryptography Functions", 
         "CryptGenKey": "Cryptography Functions", 
         "CryptHashData": "Cryptography Functions", 
+        "CryptProtectData": "Cryptography Functions", 
+        "CryptUnprotectData": "Cryptography Functions", 
         "DeleteFileW": "File Management Functions", 
         "DeviceIoControl": "Device Management Functions", 
         "DrawTextExA": "cat_not_found", 
@@ -59,6 +61,7 @@
         "GetFileVersionInfoW": "Version Information Functions", 
         "GetForegroundWindow": "Window Functions", 
         "GetKeyState": "Keyboard Input Functions", 
+        "GetKeyboardState": "Keyboard Input Functions", 
         "GetNativeSystemInfo": "System Information Functions", 
         "GetShortPathNameW": "File Management Functions", 
         "GetSystemDirectoryA": "System Information Functions", 
@@ -70,6 +73,7 @@
         "GetTempPathW": "File Management Functions", 
         "GetTimeZoneInformation": "Time Functions", 
         "GetUserNameA": "System Information Functions", 
+        "GetUserNameExA": "System Information Functions", 
         "GetUserNameExW": "System Information Functions", 
         "GetUserNameW": "System Information Functions", 
         "GetVolumeNameForVolumeMountPointW": "Volume Management Functions", 
@@ -82,10 +86,12 @@
         "HttpQueryInfoA": "Synchronization Functions", 
         "HttpSendRequestA": "WinINet Functions", 
         "HttpSendRequestW": "WinINet Functions", 
+        "IWbemServices_ExecMethod": "cat_not_found", 
         "IWbemServices_ExecQuery": "cat_not_found", 
         "InternetCloseHandle": "WinINet Functions", 
         "InternetConnectA": "WinINet Functions", 
         "InternetConnectW": "WinINet Functions", 
+        "InternetCrackUrlA": "WinINet Functions", 
         "InternetCrackUrlW": "WinINet Functions", 
         "InternetOpenA": "WinINet Functions", 
         "InternetOpenUrlA": "WinINet Functions", 
@@ -150,6 +156,7 @@
         "NtTerminateProcess": "Process and Thread Functions", 
         "NtUnmapViewOfSection": "Windows Networking Functions", 
         "NtWriteFile": "File Management Functions", 
+        "ObtainUserAgentString": "API index", 
         "OleInitialize": "Functions", 
         "OpenSCManagerA": "Service Functions", 
         "OpenSCManagerW": "Service Functions", 
@@ -162,6 +169,7 @@
         "RegCloseKey": "Registry Functions", 
         "RegCreateKeyExA": "Version Information Functions", 
         "RegCreateKeyExW": "Registry Functions", 
+        "RegDeleteKeyW": "Registry Functions", 
         "RegDeleteValueW": "Registry Functions", 
         "RegEnumKeyExA": "Registry Functions", 
         "RegEnumKeyExW": "Registry Functions", 
@@ -179,10 +187,13 @@
         "RtlAddVectoredContinueHandler": "cat_not_found", 
         "RtlAddVectoredExceptionHandler": "Structured Exception Handling Functions", 
         "RtlDecompressBuffer": "System Information Functions", 
+        "RtlRemoveVectoredExceptionHandler": "cat_not_found", 
         "SHGetFolderPathW": "Deprecated API", 
         "SHGetSpecialFolderLocation": "Deprecated API", 
         "SearchPathW": "Debugging Functions", 
+        "SendNotifyMessageA": "Message Functions", 
         "SendNotifyMessageW": "Message Functions", 
+        "SetEndOfFile": "File Management Functions", 
         "SetErrorMode": "Error Handling Functions", 
         "SetFileAttributesW": "File Management Functions", 
         "SetFileInformationByHandle": "File Management Functions", 
@@ -225,6 +236,16 @@
         "socket": "Winsock Functions"
     }, 
     "categories": {
+        "API index": {
+            "ObtainUserAgentString": {
+                "count": 1, 
+                "description": "", 
+                "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ff818516(v=vs.85).aspx", 
+                "timestamps": [
+                    1504016185.734875
+                ]
+            }
+        }, 
         "Activation Context Reference": {
             "CreateActCtxW": {
                 "count": 2, 
@@ -1188,6 +1209,33 @@
                     1501002705.921875, 
                     1501002705.921875, 
                     1501002705.921875
+                ]
+            }, 
+            "CryptProtectData": {
+                "count": 9, 
+                "description": "The CryptProtectData function performs encryption on the data in a DATA_BLOB structure. Typically, only a user with the same logon credential as the user who encrypted the data can decrypt the data. In addition, the encryption and decryption usually must be done on the same computer. For information about exceptions, see  Remarks.", 
+                "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa380261(v=vs.85).aspx", 
+                "timestamps": [
+                    1504347480.12475, 
+                    1504347490.63975, 
+                    1504347490.63975, 
+                    1504347490.82775, 
+                    1504347490.82775, 
+                    1504347490.82775, 
+                    1504347503.96875, 
+                    1504347504.32775, 
+                    1504347506.98375
+                ]
+            }, 
+            "CryptUnprotectData": {
+                "count": 4, 
+                "description": "The CryptUnprotectData function decrypts and does an integrity check of the data in a DATA_BLOB structure. Usually, the only user who can decrypt the data is a user with the same logon credentials as the user who encrypted the data. In addition, the encryption and decryption must be done on the same computer. For information about exceptions, see the Remarks section of CryptProtectData.", 
+                "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa380882(v=vs.85).aspx", 
+                "timestamps": [
+                    1504347490.63975, 
+                    1504347490.84375, 
+                    1504347490.84375, 
+                    1504347504.34375
                 ]
             }, 
             "MessageBoxTimeoutW": {
@@ -2825,6 +2873,19 @@
                     1501002708.030875, 
                     1501002708.030875, 
                     1501002708.030875
+                ]
+            }, 
+            "SetEndOfFile": {
+                "count": 6, 
+                "description": "Sets the physical file size for the specified file to the current position of the file pointer.", 
+                "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365531(v=vs.85).aspx", 
+                "timestamps": [
+                    1504348073.78075, 
+                    1504348073.78075, 
+                    1504348083.60975, 
+                    1504348083.60975, 
+                    1504348084.26575, 
+                    1504348084.26575
                 ]
             }, 
             "SetFileAttributesW": {
@@ -4957,6 +5018,14 @@
                     1502807959.003271, 
                     1502807959.003271
                 ]
+            }, 
+            "GetKeyboardState": {
+                "count": 1, 
+                "description": "Copies the status of the 256 virtual keys to the specified buffer. ", 
+                "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms646299(v=vs.85).aspx", 
+                "timestamps": [
+                    1504345340.452375
+                ]
             }
         }, 
         "Memory Management Functions": {
@@ -5018,6 +5087,14 @@
             }
         }, 
         "Message Functions": {
+            "SendNotifyMessageA": {
+                "count": 1, 
+                "description": "Sends the specified message to a window or windows. If the window was created by the calling thread, SendNotifyMessage calls the window procedure for the window and does not return until the window procedure has processed the message. If the window was created by a different thread, SendNotifyMessage passes the message to the window procedure and returns immediately; it does not wait for the window procedure to finish processing the message.", 
+                "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms644953(v=vs.85).aspx", 
+                "timestamps": [
+                    1504016200.719
+                ]
+            }, 
             "SendNotifyMessageW": {
                 "count": 5, 
                 "description": "Sends the specified message to a window or windows. If the window was created by the calling thread, SendNotifyMessage calls the window procedure for the window and does not return until the window procedure has processed the message. If the window was created by a different thread, SendNotifyMessage passes the message to the window procedure and returns immediately; it does not wait for the window procedure to finish processing the message.", 
@@ -5256,6 +5333,14 @@
                     1501002698.031375, 
                     1501002698.031375, 
                     1501002698.047375
+                ]
+            }, 
+            "RegDeleteKeyW": {
+                "count": 1, 
+                "description": "Deletes a subkey and its values. Note that key names are not case sensitive.", 
+                "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724845(v=vs.85).aspx", 
+                "timestamps": [
+                    1504346560.625375
                 ]
             }, 
             "RegDeleteValueW": {
@@ -6700,6 +6785,15 @@
                 "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724432(v=vs.85).aspx", 
                 "timestamps": [
                     1501002699.968625
+                ]
+            }, 
+            "GetUserNameExA": {
+                "count": 2, 
+                "description": "Retrieves the name of the user or other security principal associated with the calling thread. You can specify the format of the returned name.", 
+                "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724435(v=vs.85).aspx", 
+                "timestamps": [
+                    1504015749.018896, 
+                    1504015749.534896
                 ]
             }, 
             "GetUserNameExW": {
@@ -27471,6 +27565,17 @@
                     1502971780.781625
                 ]
             }, 
+            "InternetCrackUrlA": {
+                "count": 4, 
+                "description": "Cracks a URL into its component parts.", 
+                "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa384376(v=vs.85).aspx", 
+                "timestamps": [
+                    1504016242.562875, 
+                    1504016256.828875, 
+                    1504016271.078875, 
+                    1504016283.078875
+                ]
+            }, 
             "InternetCrackUrlW": {
                 "count": 1, 
                 "description": "Cracks a URL into its component parts.", 
@@ -32221,6 +32326,14 @@
                     1502967639.921625
                 ]
             }, 
+            "IWbemServices_ExecMethod": {
+                "count": 1, 
+                "description": "the link and hence the category was not found, try using the bing or google scrapers", 
+                "link": "http://blank.org/", 
+                "timestamps": [
+                    1504016220.562
+                ]
+            }, 
             "IWbemServices_ExecQuery": {
                 "count": 6, 
                 "description": "the link and hence the category was not found, try using the bing or google scrapers", 
@@ -32248,6 +32361,15 @@
                 "link": "http://blank.org/", 
                 "timestamps": [
                     1502965053.640625
+                ]
+            }, 
+            "RtlRemoveVectoredExceptionHandler": {
+                "count": 2, 
+                "description": "the link and hence the category was not found, try using the bing or google scrapers", 
+                "link": "http://blank.org/", 
+                "timestamps": [
+                    1504016194.344, 
+                    1504016194.936875
                 ]
             }, 
             "WriteConsoleW": {

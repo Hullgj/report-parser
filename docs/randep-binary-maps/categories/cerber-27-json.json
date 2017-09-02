@@ -2,8 +2,8 @@
     "general": {
         "binary_name": "cerber.exe", 
         "date_time_analysis": 1502814331.502085, 
-        "duration_analysis": "15.282531", 
-        "duration_sample": "54.778104", 
+        "duration_analysis": "04:15.282531", 
+        "duration_sample": "07:54.778104", 
         "file_name": "cerber-27.json", 
         "seen_first": 1502807913.659271, 
         "seen_last": 1502808388.437375

@@ -2,8 +2,8 @@
     "general": {
         "binary_name": "730fe55c9cecdae09b8f44bfcd6ddc8735f157ad5d4ea748e02e2f4a740619f8.bin", 
         "date_time_analysis": 1502970430.11269, 
-        "duration_analysis": "51.677357", 
-        "duration_sample": "09.921875", 
+        "duration_analysis": "02:51.677357", 
+        "duration_sample": "02:09.921875", 
         "file_name": "chimera-62.json", 
         "seen_first": 1502966829.84375, 
         "seen_last": 1502966959.765625

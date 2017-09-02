@@ -2,7 +2,7 @@
     "general": {
         "binary_name": "26b4699a7b9eeb16e76305d843d4ab05e94d43f3201436927e13b3ebafa90739.bin", 
         "date_time_analysis": 1502830684.304558, 
-        "duration_analysis": "44.108576", 
+        "duration_analysis": "03:44.108576", 
         "duration_sample": "02.218000", 
         "file_name": "petya-36.json", 
         "seen_first": 1502827083.921875, 
@@ -51,6 +51,13 @@
                     "description": "Sends a control code directly to a specified device driver, causing the corresponding device to     perform the corresponding operation.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363216(v=vs.85).aspx"
                 }, 
+                "NtCreateFile": {
+                    "called_first": 1502827086.030875, 
+                    "called_last": 1502827086.139875, 
+                    "count": 76, 
+                    "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
+                }, 
                 "NtReadFile": {
                     "called_first": 1502827086.030875, 
                     "called_last": 1502827086.139875, 
@@ -71,27 +78,6 @@
                     "count": 4, 
                     "description": "The CryptAcquireContext function is used to acquire a handle to a particular key container within a particular cryptographic service provider (CSP). This returned handle is used in calls to CryptoAPI functions that use the selected CSP.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379886(v=vs.85).aspx"
-                }, 
-                "NtCreateFile": {
-                    "called_first": 1502827086.030875, 
-                    "called_last": 1502827086.139875, 
-                    "count": 76, 
-                    "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
-                }, 
-                "NtProtectVirtualMemory": {
-                    "called_first": 1502827086.030875, 
-                    "called_last": 1502827086.030875, 
-                    "count": 1, 
-                    "description": "Provides an efficient mechanism to bring into memory potentially discontiguous virtual address ranges     in a process address space.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/hh780543(v=vs.85).aspx"
-                }, 
-                "SetFilePointer": {
-                    "called_first": 1502827086.139875, 
-                    "called_last": 1502827086.139875, 
-                    "count": 1, 
-                    "description": "Moves the file pointer of the specified file.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
                 }
             }
         }, 
@@ -100,6 +86,13 @@
     "termination": {
         "deleting": {
             "apis": {
+                "SetFilePointer": {
+                    "called_first": 1502827086.139875, 
+                    "called_last": 1502827086.139875, 
+                    "count": 1, 
+                    "description": "Moves the file pointer of the specified file.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
+                }, 
                 "SetFilePointerEx": {
                     "called_first": 1502827086.030875, 
                     "called_last": 1502827086.139875, 

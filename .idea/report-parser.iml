@@ -7,9 +7,10 @@
       <excludeFolder url="file://$MODULE_DIR$/docs/signatures" />
       <excludeFolder url="file://$MODULE_DIR$/graphs/output" />
       <excludeFolder url="file://$MODULE_DIR$/json-ransomware-reports" />
+      <excludeFolder url="file://$MODULE_DIR$/json-ransomware-reports-2" />
       <excludeFolder url="file://$MODULE_DIR$/json-reports" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 2.7.12 (C:\Python27\python.exe)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 2.7.12+ (/usr/bin/python2.7)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">

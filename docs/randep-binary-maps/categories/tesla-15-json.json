@@ -2,8 +2,8 @@
     "general": {
         "binary_name": "3372c1edab46837f1e973164fa2d726c5c5e17bcb888828ccd7c4dfcc234a370", 
         "date_time_analysis": 1502812696.306188, 
-        "duration_analysis": "02.505120", 
-        "duration_sample": "45.968250", 
+        "duration_analysis": "04:02.505120", 
+        "duration_sample": "02:45.968250", 
         "file_name": "tesla-15.json", 
         "seen_first": 1502808239.078125, 
         "seen_last": 1502808405.046375

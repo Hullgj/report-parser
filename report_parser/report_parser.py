@@ -18,6 +18,7 @@ from classifier import Classify
 from graphs.plotter import Plot
 from parsing import Parser
 from tools.printer import Printer
+import re
 
 
 def main():
@@ -55,15 +56,23 @@ def main():
     cat_dir = 'docs/randep-binary-maps/%s/' % type
     grap_dir = 'docs/randep-binary-maps/graphs/'
     plotter = Plot()
+    regex = re.compile(r'^(.*?)[-|\.]json')
+
     for (dir_path, dir_names, file_names) in walk(cat_dir):
         for i, name in enumerate(file_names):
             if name.endswith('.json'):
+                # only get the proper name of the file
+                file_name = re.match(regex, name).group(1)
                 printer.line_comment("Generate graph from json file: " + name)
-                api_names, start_times, end_times, state_names, state_starts, state_ends, class_names, class_starts, class_ends = \
+                api_names, start_times, end_times, state_names, state_starts, state_ends, class_names, class_starts, \
+                class_ends, state_dict = \
                     classifier.get_api_data(dir_path + name, type)
-                plotter.plots(grap_dir + 'apis/' + name, api_names, start_times, end_times)
-                plotter.plots(grap_dir + 'states/' + name, state_names, state_starts, state_ends)
-                plotter.plots(grap_dir + 'classes/' + name, class_names, class_starts, class_ends)
+                plotter.plots(grap_dir + 'apis/' + file_name, api_names, start_times, end_times)
+                plotter.plots(grap_dir + 'states/' + file_name, state_names, state_starts, state_ends)
+                plotter.plots(grap_dir + 'classes/' + file_name, class_names, class_starts, class_ends)
+                for state in state_dict:
+                    plotter.plots(grap_dir + 'states/api_per_state/' + file_name + '-' + state,
+                                  state_dict[state]['apis'], state_dict[state]['starts'], state_dict[state]['ends'])
 
 
 if __name__ == "__main__":

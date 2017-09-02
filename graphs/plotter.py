@@ -11,6 +11,7 @@ The axis are trace_start: x = start_times, y = apis; trace_end: x = end_times, y
 
 from plotly.offline import plot
 import plotly.graph_objs as go
+import re
 
 
 class Plot(object):
@@ -23,12 +24,33 @@ class Plot(object):
         fed into this function to make two traces for start and end, where the x-axis is the list of times, and
         y-axis is the list of APIs"""
 
+        # set the height of the graph based on the number of APIs
+        api_len = len(apis) * 22
+        g_height = api_len if api_len > 300 else 300
+        # set the left margin based on the longest word
+        l_margin = len(max(apis, key=len)) * 8
+
+        if 'json' in _filename:
+            regex = re.compile(r'^.*/(.*?)[\.|-]json')
+            file_name = re.match(regex, _filename).group(1)
+        elif '/' in _filename:
+            regex = re.compile(r'^.*/(.*)$')
+            file_name = re.match(regex, _filename).group(1)
+        else:
+            file_name = _filename
+
+        dark_color = 'rgb(68,68,68)'
+        light_color = 'rgb(255,255,255)'
+        dark_color_trans = 'rgba(68,68,68,0.75)'
+        light_color_trans = 'rgba(255,255,255,0.75)'
+        trans = 'rgba(255,255,255,0.1)'
+
         trace0 = go.Scatter(
             x=start_times,
             y=apis,
-            marker=dict(color='rgba(156, 165, 196, 0.95)',
+            marker=dict(color=dark_color_trans,
                         line=dict(width=1,
-                                  color='rgba(156, 165, 196, 1.0)'),
+                                  color=dark_color),
                         size=12),
             mode="markers",
             name="Start Time"
@@ -36,46 +58,48 @@ class Plot(object):
         trace1 = go.Scatter(
             x=end_times,
             y=apis,
-            marker=dict(color='rgba(204, 204, 204, 0.95)',
+            marker=dict(color=light_color_trans,
                         line=dict(width=1,
-                                  color='rgba(217, 217, 217, 1.0)'),
+                                  color=dark_color),
                         size=12),
             mode="markers",
             name="End Time"
         )
 
         data = [trace0, trace1]
-        layout = go.Layout(title="%s's API Start and End Times" % _filename,
+        layout = go.Layout(title="%s's API Start and End Times" % file_name,
                            xaxis=dict(title="Time (s)",
-                                      showgrid=False,
+                                      showgrid=True,
                                       showline=True,
-                                      linecolor='rgb(102, 102, 102)',
-                                      titlefont=dict(color='rgb(204, 204, 204)'),
-                                      tickfont=dict(color='rgb(102, 102, 102)'),
+                                      linecolor=dark_color_trans,
+                                      titlefont=dict(color=dark_color),
+                                      tickfont=dict(color=dark_color),
                                       autotick=False,
                                       dtick=10,
                                       ticks='outside',
-                                      tickcolor='rgb(102, 102, 102)'),
+                                      tickmode='auto',
+                                      nticks=50,
+                                      tickcolor=dark_color),
                            margin=dict(
-                               l=140,
+                               l=l_margin,
                                r=40,
-                               b=50,
+                               b=60,
                                t=80
                            ),
                            legend=dict(
                                font=dict(
                                    size=10,
                                ),
-                               yanchor='middle',
+                               yanchor='bottom',
                                xanchor='right',
                            ),
-                           width=1280,
-                           height=800,
-                           paper_bgcolor='rgb(254, 247, 234)',
-                           plot_bgcolor='rgb(254, 247, 234)',
+                           width=800,
+                           height=g_height,
+                           paper_bgcolor=light_color,
+                           plot_bgcolor=light_color,
                            hovermode='closest'
                            )
 
         fig = go.Figure(data=data, layout=layout)
 
-        plot(fig, filename='%s.html' % _filename.replace(".", "-"), auto_open=False)
+        plot(fig, filename='%s.html' % _filename.replace(".", "-"), auto_open=False, image_filename=_filename)

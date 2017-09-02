@@ -2,8 +2,8 @@
     "general": {
         "binary_name": "e26bd11c525dfca4152ed74b2fb97e5c30a091239c2dbe877a312a1cfcf34004.bin", 
         "date_time_analysis": 1502972286.060902, 
-        "duration_analysis": "43.711162", 
-        "duration_sample": "42.859750", 
+        "duration_analysis": "02:43.711162", 
+        "duration_sample": "01:42.859750", 
         "file_name": "ctb-locker-64.json", 
         "seen_first": 1502968685.84375, 
         "seen_last": 1502968788.7035
@@ -208,6 +208,13 @@
                     "description": "Retrieves the short path form of the specified path.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364989(v=vs.85).aspx"
                 }, 
+                "NtCreateFile": {
+                    "called_first": 1502968685.85875, 
+                    "called_last": 1502968691.5625, 
+                    "count": 39, 
+                    "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
+                }, 
                 "NtCreateSection": {
                     "called_first": 1502968685.85875, 
                     "called_last": 1502968691.03075, 
@@ -277,34 +284,6 @@
                     "count": 1, 
                     "description": "Retrieves the path of the directory designated for temporary files.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364992(v=vs.85).aspx"
-                }, 
-                "NtCreateFile": {
-                    "called_first": 1502968685.85875, 
-                    "called_last": 1502968691.5625, 
-                    "count": 39, 
-                    "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
-                }, 
-                "NtMapViewOfSection": {
-                    "called_first": 1502968685.85875, 
-                    "called_last": 1502968691.03075, 
-                    "count": 12, 
-                    "description": "Moves the file pointer of the specified file.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
-                }, 
-                "NtProtectVirtualMemory": {
-                    "called_first": 1502968686.06175, 
-                    "called_last": 1502968691.5165, 
-                    "count": 19, 
-                    "description": "Provides an efficient mechanism to bring into memory potentially discontiguous virtual address ranges     in a process address space.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/hh780543(v=vs.85).aspx"
-                }, 
-                "SetFilePointer": {
-                    "called_first": 1502968685.89075, 
-                    "called_last": 1502968686.23375, 
-                    "count": 3, 
-                    "description": "Moves the file pointer of the specified file.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
                 }
             }
         }, 
@@ -330,6 +309,13 @@
                     "description": "Deletes an existing file.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363915(v=vs.85).aspx"
                 }, 
+                "SetFilePointer": {
+                    "called_first": 1502968685.89075, 
+                    "called_last": 1502968686.23375, 
+                    "count": 3, 
+                    "description": "Moves the file pointer of the specified file.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
+                }, 
                 "SetFilePointerEx": {
                     "called_first": 1502968685.89075, 
                     "called_last": 1502968686.23375, 
@@ -341,13 +327,6 @@
         }, 
         "threatening": {
             "apis": {
-                "EnumWindows": {
-                    "called_first": 1502968691.07775, 
-                    "called_last": 1502968691.07775, 
-                    "count": 1, 
-                    "description": "The LookupPrivilegeValue function retrieves the locally unique identifier (LUID) used on a specified system to locally represent the specified privilege name.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379180(v=vs.85).aspx"
-                }, 
                 "LoadStringW": {
                     "called_first": 1502968690.12475, 
                     "called_last": 1502968690.12475, 

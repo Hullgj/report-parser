@@ -2,8 +2,8 @@
     "general": {
         "binary_name": "f427ce3eb392caf248f0bf2ec625c6b3d0369c4a9da67b3631b90f08455567bb.bin", 
         "date_time_analysis": 1502973842.651066, 
-        "duration_analysis": "42.943119", 
-        "duration_sample": "52.682854", 
+        "duration_analysis": "02:42.943119", 
+        "duration_sample": "08:52.682854", 
         "file_name": "torrent-locker-66.json", 
         "seen_first": 1502969828.441396, 
         "seen_last": 1502970361.12425
@@ -204,6 +204,13 @@
                     "description": "Retrieves the path of the shared Windows directory on a multi-user system.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724403(v=vs.85).aspx"
                 }, 
+                "GlobalMemoryStatusEx": {
+                    "called_first": 1502970241.96825, 
+                    "called_last": 1502970241.96825, 
+                    "count": 1, 
+                    "description": "Retrieves information about the system's current usage of both physical and virtual memory.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366589(v=vs.85).aspx"
+                }, 
                 "LookupPrivilegeValueW": {
                     "called_first": 1502969828.644396, 
                     "called_last": 1502969828.644396, 
@@ -299,6 +306,13 @@
                     "description": "Retrieves a handle that can be used to obtain a pointer to the first byte of the specified resource in memory.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms648046(v=vs.85).aspx"
                 }, 
+                "NtCreateFile": {
+                    "called_first": 1502970241.96825, 
+                    "called_last": 1502970260.42125, 
+                    "count": 12, 
+                    "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
+                }, 
                 "NtCreateSection": {
                     "called_first": 1502970257.90625, 
                     "called_last": 1502970261.59325, 
@@ -393,47 +407,12 @@
                     "description": "The CryptAcquireContext function is used to acquire a handle to a particular key container within a particular cryptographic service provider (CSP). This returned handle is used in calls to CryptoAPI functions that use the selected CSP.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379886(v=vs.85).aspx"
                 }, 
-                "GlobalMemoryStatusEx": {
-                    "called_first": 1502970241.96825, 
-                    "called_last": 1502970241.96825, 
-                    "count": 1, 
-                    "description": "Retrieves information about the system's current usage of both physical and virtual memory.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366589(v=vs.85).aspx"
-                }, 
-                "NtCreateFile": {
-                    "called_first": 1502970241.96825, 
-                    "called_last": 1502970260.42125, 
-                    "count": 12, 
-                    "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
-                }, 
-                "NtMapViewOfSection": {
-                    "called_first": 1502970257.90625, 
-                    "called_last": 1502970261.59325, 
-                    "count": 5, 
-                    "description": "Moves the file pointer of the specified file.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
-                }, 
-                "NtProtectVirtualMemory": {
-                    "called_first": 1502970257.71825, 
-                    "called_last": 1502970261.81225, 
-                    "count": 10, 
-                    "description": "Provides an efficient mechanism to bring into memory potentially discontiguous virtual address ranges     in a process address space.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/hh780543(v=vs.85).aspx"
-                }, 
                 "SetFileAttributesW": {
                     "called_first": 1502970241.96825, 
                     "called_last": 1502970257.23425, 
                     "count": 4, 
                     "description": "Sets the attributes for a file or directory.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365535(v=vs.85).aspx"
-                }, 
-                "SetFilePointer": {
-                    "called_first": 1502970259.89025, 
-                    "called_last": 1502970259.89025, 
-                    "count": 1, 
-                    "description": "Moves the file pointer of the specified file.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
                 }
             }
         }, 
@@ -452,6 +431,13 @@
     "termination": {
         "deleting": {
             "apis": {
+                "SetFilePointer": {
+                    "called_first": 1502970259.89025, 
+                    "called_last": 1502970259.89025, 
+                    "count": 1, 
+                    "description": "Moves the file pointer of the specified file.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
+                }, 
                 "SetFilePointerEx": {
                     "called_first": 1502970259.89025, 
                     "called_last": 1502970259.89025, 

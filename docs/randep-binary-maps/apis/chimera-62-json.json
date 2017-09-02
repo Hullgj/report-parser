@@ -2,8 +2,8 @@
     "general": {
         "binary_name": "730fe55c9cecdae09b8f44bfcd6ddc8735f157ad5d4ea748e02e2f4a740619f8.bin", 
         "date_time_analysis": 1502970430.11269, 
-        "duration_analysis": "51.677357", 
-        "duration_sample": "09.921875", 
+        "duration_analysis": "02:51.677357", 
+        "duration_sample": "02:09.921875", 
         "file_name": "chimera-62.json", 
         "seen_first": 1502966829.84375, 
         "seen_last": 1502966959.765625
@@ -194,6 +194,13 @@
                     "description": "Retrieves the size of the specified file.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364957(v=vs.85).aspx"
                 }, 
+                "NtCreateFile": {
+                    "called_first": 1502966946.828625, 
+                    "called_last": 1502966957.156625, 
+                    "count": 320, 
+                    "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
+                }, 
                 "NtDuplicateObject": {
                     "called_first": 1502966837.468625, 
                     "called_last": 1502966924.500625, 
@@ -267,13 +274,6 @@
                     "description": "The CryptAcquireContext function is used to acquire a handle to a particular key container within a particular cryptographic service provider (CSP). This returned handle is used in calls to CryptoAPI functions that use the selected CSP.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379886(v=vs.85).aspx"
                 }, 
-                "NtCreateFile": {
-                    "called_first": 1502966946.828625, 
-                    "called_last": 1502966957.156625, 
-                    "count": 320, 
-                    "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
-                }, 
                 "NtSetInformationFile": {
                     "called_first": 1502966946.828625, 
                     "called_last": 1502966953.187625, 
@@ -299,13 +299,6 @@
         }, 
         "threatening": {
             "apis": {
-                "EnumWindows": {
-                    "called_first": 1502966829.87575, 
-                    "called_last": 1502966829.87575, 
-                    "count": 1, 
-                    "description": "The LookupPrivilegeValue function retrieves the locally unique identifier (LUID) used on a specified system to locally represent the specified privilege name.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379180(v=vs.85).aspx"
-                }, 
                 "NtWriteFile": {
                     "called_first": 1502966946.828625, 
                     "called_last": 1502966959.765625, 

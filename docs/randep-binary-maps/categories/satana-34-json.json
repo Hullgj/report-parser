@@ -2,8 +2,8 @@
     "general": {
         "binary_name": "unpacked.mem", 
         "date_time_analysis": 1502826181.235869, 
-        "duration_analysis": "38.755971", 
-        "duration_sample": "01.265625", 
+        "duration_analysis": "03:38.755971", 
+        "duration_sample": "03:01.265625", 
         "file_name": "satana-34.json", 
         "seen_first": 1502822581.859375, 
         "seen_last": 1502822763.125

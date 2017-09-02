@@ -2,8 +2,8 @@
     "general": {
         "binary_name": "jigsaw", 
         "date_time_analysis": 1502882675.738744, 
-        "duration_analysis": "56.482405", 
-        "duration_sample": "10.746604", 
+        "duration_analysis": "02:56.482405", 
+        "duration_sample": "07:10.746604", 
         "file_name": "jigsaw-50.json", 
         "seen_first": 1502878658.612146, 
         "seen_last": 1502879089.35875
@@ -91,6 +91,13 @@
                     "count": 2, 
                     "description": "Retrieves the current time zone settings. These settings control the translations between Coordinated Universal Time (UTC) and local time.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724421(v=vs.85).aspx"
+                }, 
+                "GlobalMemoryStatusEx": {
+                    "called_first": 1502878659.362146, 
+                    "called_last": 1502879084.73375, 
+                    "count": 19, 
+                    "description": "Retrieves information about the system's current usage of both physical and virtual memory.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366589(v=vs.85).aspx"
                 }, 
                 "IsDebuggerPresent": {
                     "called_first": 1502878659.081146, 
@@ -215,6 +222,13 @@
                     "description": "Retrieves a list of drive letters and mounted folder paths for the specified volume.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa364998(v=vs.85).aspx"
                 }, 
+                "NtCreateFile": {
+                    "called_first": 1502878658.644146, 
+                    "called_last": 1502879088.04675, 
+                    "count": 339, 
+                    "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
+                }, 
                 "NtCreateSection": {
                     "called_first": 1502878658.722146, 
                     "called_last": 1502879088.04675, 
@@ -291,34 +305,6 @@
                     "count": 3984, 
                     "description": "The CryptEncrypt function encrypts data. The algorithm used to encrypt the data is designated by the key held by the CSP module and is referenced by the hKey parameter.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa379924(v=vs.85).aspx"
-                }, 
-                "GlobalMemoryStatusEx": {
-                    "called_first": 1502878659.362146, 
-                    "called_last": 1502879084.73375, 
-                    "count": 19, 
-                    "description": "Retrieves information about the system's current usage of both physical and virtual memory.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366589(v=vs.85).aspx"
-                }, 
-                "NtCreateFile": {
-                    "called_first": 1502878658.644146, 
-                    "called_last": 1502879088.04675, 
-                    "count": 339, 
-                    "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
-                }, 
-                "NtMapViewOfSection": {
-                    "called_first": 1502878658.722146, 
-                    "called_last": 1502879088.04675, 
-                    "count": 32, 
-                    "description": "Moves the file pointer of the specified file.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
-                }, 
-                "NtProtectVirtualMemory": {
-                    "called_first": 1502878658.675146, 
-                    "called_last": 1502879077.70275, 
-                    "count": 106, 
-                    "description": "Provides an efficient mechanism to bring into memory potentially discontiguous virtual address ranges     in a process address space.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/hh780543(v=vs.85).aspx"
                 }
             }
         }, 

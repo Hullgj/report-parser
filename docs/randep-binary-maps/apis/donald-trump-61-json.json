@@ -2,8 +2,8 @@
     "general": {
         "binary_name": "4cea9dbc941756f7298521104001bc20cb73cfdda06a60a9e90760188661f5e4.bin", 
         "date_time_analysis": 1502968643.013978, 
-        "duration_analysis": "54.398983", 
-        "duration_sample": "42.813000", 
+        "duration_analysis": "02:54.398983", 
+        "duration_sample": "01:42.813000", 
         "file_name": "donald-trump-61.json", 
         "seen_first": 1502965048.015625, 
         "seen_last": 1502965150.828625
@@ -98,6 +98,13 @@
                     "count": 3, 
                     "description": "Retrieves the path of the shared Windows directory on a multi-user system.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms724403(v=vs.85).aspx"
+                }, 
+                "GlobalMemoryStatusEx": {
+                    "called_first": 1502965053.812625, 
+                    "called_last": 1502965061.531625, 
+                    "count": 3, 
+                    "description": "Retrieves information about the system's current usage of both physical and virtual memory.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366589(v=vs.85).aspx"
                 }, 
                 "IsDebuggerPresent": {
                     "called_first": 1502965053.640625, 
@@ -222,6 +229,13 @@
                     "description": "Retrieves a handle that can be used to obtain a pointer to the first byte of the specified resource in memory.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/ms648046(v=vs.85).aspx"
                 }, 
+                "NtCreateFile": {
+                    "called_first": 1502965049.687625, 
+                    "called_last": 1502965062.359625, 
+                    "count": 59, 
+                    "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
+                }, 
                 "NtCreateSection": {
                     "called_first": 1502965049.687625, 
                     "called_last": 1502965060.359625, 
@@ -291,41 +305,6 @@
                     "count": 1, 
                     "description": "The CryptHashData function adds data to a specified hash object. This function and CryptHashSessionKey can be called multiple times to compute the hash of long or discontinuous data streams.", 
                     "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa380202(v=vs.85).aspx"
-                }, 
-                "GlobalMemoryStatusEx": {
-                    "called_first": 1502965053.812625, 
-                    "called_last": 1502965061.531625, 
-                    "count": 3, 
-                    "description": "Retrieves information about the system's current usage of both physical and virtual memory.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa366589(v=vs.85).aspx"
-                }, 
-                "NtCreateFile": {
-                    "called_first": 1502965049.687625, 
-                    "called_last": 1502965062.359625, 
-                    "count": 59, 
-                    "description": "Creates or opens a file or I/O device. The most commonly used I/O devices are as follows: file, file     stream, directory, physical disk, volume, console buffer, tape drive, communications resource, mailslot, and     pipe. The function returns a handle that can be used to access the file or device for various types of     I/O depending on the file or device and the flags and attributes specified.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa363858(v=vs.85).aspx"
-                }, 
-                "NtMapViewOfSection": {
-                    "called_first": 1502965049.687625, 
-                    "called_last": 1502965063.328625, 
-                    "count": 26, 
-                    "description": "Moves the file pointer of the specified file.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365542(v=vs.85).aspx"
-                }, 
-                "NtProtectVirtualMemory": {
-                    "called_first": 1502965050.781625, 
-                    "called_last": 1502965058.250625, 
-                    "count": 20, 
-                    "description": "Provides an efficient mechanism to bring into memory potentially discontiguous virtual address ranges     in a process address space.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/hh780543(v=vs.85).aspx"
-                }, 
-                "SetFilePointer": {
-                    "called_first": 1502965050.047625, 
-                    "called_last": 1502965062.359625, 
-                    "count": 18, 
-                    "description": "Moves the file pointer of the specified file.", 
-                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
                 }
             }
         }, 
@@ -334,6 +313,13 @@
     "termination": {
         "deleting": {
             "apis": {
+                "SetFilePointer": {
+                    "called_first": 1502965050.047625, 
+                    "called_last": 1502965062.359625, 
+                    "count": 18, 
+                    "description": "Moves the file pointer of the specified file.", 
+                    "link": "https://msdn.microsoft.com/en-us/library/windows/desktop/aa365541(v=vs.85).aspx"
+                }, 
                 "SetFilePointerEx": {
                     "called_first": 1502965050.047625, 
                     "called_last": 1502965050.172625, 

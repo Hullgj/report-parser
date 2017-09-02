@@ -29,7 +29,7 @@ class Tools(object):
                 time_diff = self.time_convert(t_diff).strftime('%H:%M:%S.%f')
             elif abs(t_diff) >= 60:
                 time_diff = self.time_convert(t_diff).strftime('%M:%S.%f')
-            if abs(t_diff) >= 0:
+            elif abs(t_diff) >= 0:
                 time_diff = self.time_convert(t_diff).strftime('%S.%f')
             else:
                 time_diff = self.time_convert(t_diff).strftime('0.%f')
