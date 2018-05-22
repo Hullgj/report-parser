@@ -1,7 +1,5 @@
 
 #!/bin/bash
-PID_SAVE="start_dynamsis_save_pid.txt"
-
 function checkErr {
 	if [[ "$1" -ne 0 ]]; then
 		if [[ -n "$3" ]]; then
@@ -32,13 +30,20 @@ function comment {
 	echo "[-] $1"
 }
 
+PID_SAVE="start_dynamsis_save_pid.txt"
+if [[ -f $PID_SAVE ]]; then
+	comment "Deleting $PID_SAVE"
+	rm $PID_SAVE
+fi
+
 function startCuckoo {
 	source /home/gavin/cuckoo/bin/activate
 	checkErr $? "VirtualEnvironment active" "Unable to enter Cuckoo VirtualEnvironment" 
 	nohup cuckoo rooter --sudo -g gavin > start_dynamsis.log &
 	echo $! >> $PID_SAVE
 	checkErr $? "Rooter Started" "Unable to start rooter" "exit"
-	cuckoo webserver run > /dev/null
+	nohup cuckoo web > /dev/null 2>&1 &
+	echo $! >> $PID_SAVE
 	checkErr $? "Webserver started on 127.0.0.1:8080" "Webserver not started. Port might be busy." 
 	cuckoo -d
 	checkErr $?
@@ -53,7 +58,7 @@ function iptablesAddRule {
 		fi
 		comment "Adding rule: $RULE"
 		MODE="-A"
-		comment "${RULE/ -C / -A }"
+		eval "${RULE/ -C / -A }"
 	fi
 }
 
@@ -83,7 +88,7 @@ function setFirewallRules {
 	MODE="-C"
 	RULES=(
 		"sudo iptables -t nat $MODE POSTROUTING -o ens33 -s 192.168.56.0/24 -j MASQUERADE"
-		"sudo iptables $MODE FORWARD DROP"
+		"sudo iptables -P FORWARD DROP"
 		"sudo iptables $MODE FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT"
 		"sudo iptables $MODE FORWARD -s 192.168.56.0/24 -j ACCEPT"
 		"sudo iptables $MODE FORWARD -s 192.168.56.0/24 -d 192.168.56.0/24 -j ACCEPT"
